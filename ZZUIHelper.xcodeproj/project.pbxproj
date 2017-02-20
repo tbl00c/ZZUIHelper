@@ -50,6 +50,7 @@
 		C2A10C911E5AA297000960D9 /* ZZUITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C901E5AA297000960D9 /* ZZUITableViewDataSource.m */; };
 		C2A10C9C1E5ACB27000960D9 /* ZZUICollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C991E5ACB27000960D9 /* ZZUICollectionViewDataSource.m */; };
 		C2A10C9D1E5ACB27000960D9 /* ZZUICollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C9B1E5ACB27000960D9 /* ZZUICollectionViewDelegate.m */; };
+		C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,8 @@
 		C2A10C991E5ACB27000960D9 /* ZZUICollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDataSource.m; sourceTree = "<group>"; };
 		C2A10C9A1E5ACB27000960D9 /* ZZUICollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewDelegate.h; sourceTree = "<group>"; };
 		C2A10C9B1E5ACB27000960D9 /* ZZUICollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDelegate.m; sourceTree = "<group>"; };
+		C2A10C9F1E5AE12D000960D9 /* ZZSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSettingViewController.h; sourceTree = "<group>"; };
+		C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,7 @@
 		C22239E31E5815F5002CB428 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C2A10C9E1E5AE11C000960D9 /* ZZSettingViewController */,
 				C2A10C7D1E5A41D0000960D9 /* ZZWindowController */,
 				C2A10C6B1E5A37C7000960D9 /* ZZNewProjectViewController */,
 				C2A10C651E5A2F4E000960D9 /* ZZNewFileViewController */,
@@ -562,6 +566,15 @@
 			path = ZZPortocol;
 			sourceTree = "<group>";
 		};
+		C2A10C9E1E5AE11C000960D9 /* ZZSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2A10C9F1E5AE12D000960D9 /* ZZSettingViewController.h */,
+				C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */,
+			);
+			path = ZZSettingViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -667,6 +680,7 @@
 				C2A10C841E5A98BB000960D9 /* ZZUIViewController.m in Sources */,
 				C2223A171E587ABE002CB428 /* ZZUIResponder.m in Sources */,
 				C2A10C911E5AA297000960D9 /* ZZUITableViewDataSource.m in Sources */,
+				C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */,
 				C2A10C881E5A98F1000960D9 /* ZZProtocol.m in Sources */,
 				C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */,
 				C2A10C561E5A17C2000960D9 /* ZZUICollectionView.m in Sources */,

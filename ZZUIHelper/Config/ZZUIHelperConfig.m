@@ -21,18 +21,18 @@
             [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"isFirstRun"];
             // 默认设置
             [config setAuthorName:@"ZZUIHelper"];
-            [config setProjectName:@"ZZUIHelperProject"];
+            [config setProjectName:@"zhuanzhuan"];
             [config resetToDefaultConfig];
         }
     });
-    config.layoutLibrary = ZZUIHelperLayoutLibraryMasonry;
-//    config.newLineLeftParenthesis = YES;
     return config;
 }
 
 - (void)resetToDefaultConfig
 {
     [self setClassPrefix:@"ZZ"];
+    [self setNewLineLeftParenthesis:NO];
+    [self setLayoutLibrary:ZZUIHelperLayoutLibraryMasonry];
 }
 
 - (NSString *)copyrightCodeByFileName:(NSString *)fileName
@@ -79,6 +79,28 @@
 - (void)setClassPrefix:(NSString *)classPrefix
 {
     [[NSUserDefaults standardUserDefaults] setObject:classPrefix ? classPrefix : @"" forKey:@"classPrefix"];
+}
+
+//MARK: 风格
+- (BOOL)newLineLeftParenthesis
+{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"newLineLeftParenthesis"];
+    return number.boolValue;
+}
+- (void)setNewLineLeftParenthesis:(BOOL)newLineLeftParenthesis
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@(newLineLeftParenthesis) forKey:@"newLineLeftParenthesis"];
+}
+
+//MARK: 布局
+- (ZZUIHelperLayoutLibrary)layoutLibrary
+{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"layoutLibrary"];
+    return number.integerValue;
+}
+- (void)setLayoutLibrary:(ZZUIHelperLayoutLibrary)layoutLibrary
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@(layoutLibrary) forKey:@"layoutLibrary"];
 }
 
 

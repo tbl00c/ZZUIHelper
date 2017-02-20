@@ -9,7 +9,10 @@
 #import "ZZUIResponder.h"
 #import "ZZUIControl.h"
 #import "ZZUIScrollView.h"
+#import "ZZUITableView.h"
+#import "ZZUICollectionView.h"
 #import "ZZProtocol.h"
+#import "ZZNSMutableArray.h"
 
 @implementation ZZUIResponder
 
@@ -43,7 +46,13 @@
     NSMutableArray *array = self.interfaceProperties ? self.interfaceProperties.mutableCopy : @[].mutableCopy;
     [array addObject:property];
     _interfaceProperties = array;
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+    if ([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) {
+        ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
+        [self addPublicProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+    }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+    }
 }
 
 - (BOOL)removePublicProperty:(ZZNSObject *)property
@@ -216,7 +225,13 @@
     NSMutableArray *array = self.extensionProperties ? self.extensionProperties.mutableCopy : @[].mutableCopy;
     [array addObject:property];
     _extensionProperties = array;
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+    if ([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) {
+        ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
+        [self addPrivateProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+    }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+    }
 }
 
 - (BOOL)removePrivateProperty:(ZZNSObject *)property

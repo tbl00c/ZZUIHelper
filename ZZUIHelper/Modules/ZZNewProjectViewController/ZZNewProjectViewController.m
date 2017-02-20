@@ -45,7 +45,7 @@
         ZZUIResponder *object = [[NSClassFromString(className) alloc] init];
         [object setClassName:className];
         [ZZClassHelper sharedInstance].curClass = object;
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROJECT object:nil];
         [self dismissController:self];
     }
 }

@@ -13,7 +13,8 @@
 #define     PMARK                   @"//MARK: "
 #define     PMARK_                  @"#pragma mark -"
 
-#define     LEFT_PARENTHESIS        ([ZZUIHelperConfig sharedInstance].newLineLeftParenthesis ? @"\n{" : @" {")
+#define     NEW_LINE                [ZZUIHelperConfig sharedInstance].newLineLeftParenthesis
+#define     LEFT_PARENTHESIS        (NEW_LINE ? @"\n{" : @" {")
 
 // loadView
 #define     M_LOADVIEW(code)        [NSString stringWithFormat:@"\
@@ -51,7 +52,7 @@ code] /*自定义代码*/
 }\n\n\
 ",\
 LEFT_PARENTHESIS,\
-LEFT_PARENTHESIS,\
+(NEW_LINE ? @"\n\t{" : @" {"),\
 code, /*自定义代码*/\
 ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry ? @"\t\t[self p_addMasonry];\n" : @"")] /*是否使用了Masonry*/
 
@@ -67,7 +68,7 @@ code, /*自定义代码*/\
 }\n\n\
 ",\
 LEFT_PARENTHESIS,\
-LEFT_PARENTHESIS,\
+(NEW_LINE ? @"\n\t{" : @" {"),\
 code, /*自定义代码*/\
 ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry ? @"\t\t[self p_addMasonry];\n" : @"")] /*是否使用了Masonry*/
 
@@ -76,7 +77,7 @@ code, /*自定义代码*/\
 - (%@ *)%@\
 %@\n\
 \tif(!_%@)\
-\t%@\n\
+%@\n\
 %@\
 \t}\n\
 \treturn _%@;\n\
@@ -85,7 +86,7 @@ code, /*自定义代码*/\
 class, name,\
 LEFT_PARENTHESIS,\
 name,\
-LEFT_PARENTHESIS, \
+(NEW_LINE ? @"\n\t{" : @" {"), \
 code,\
 name]
 

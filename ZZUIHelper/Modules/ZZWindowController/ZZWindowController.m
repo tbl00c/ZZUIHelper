@@ -7,16 +7,23 @@
 //
 
 #import "ZZWindowController.h"
+#import "ZZNewProjectViewController.h"
 
-@interface ZZWindowController () <NSToolbarDelegate>
+@interface ZZWindowController ()
 
-@property (weak) IBOutlet NSToolbar *toolBar;
 
 @end
 
 @implementation ZZWindowController
 
 //MARK: NSToolbarDelegate
+- (IBAction)newButtonClick:(id)sender {
+    ZZNewProjectViewController *vc = [[ZZNewProjectViewController alloc] initWithNibName:@"ZZNewProjectViewController" bundle:nil];
+    NSViewController *presentVC = self.window.contentViewController.childViewControllers[1];
+    [presentVC presentViewControllerAsSheet:vc];
+}
 
+- (IBAction)exportButtonClick:(id)sender {
+}
 
 @end
