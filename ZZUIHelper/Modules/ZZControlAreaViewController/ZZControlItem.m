@@ -16,6 +16,11 @@
 
 @implementation ZZControlItem
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
 - (void)setButtonTitle:(NSString *)buttonTitle
 {
     _buttonTitle = buttonTitle;

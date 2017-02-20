@@ -738,6 +738,10 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="kyW-h0-9Vl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="oVx-B3-IQ9"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Kes-uK-vJX">
                                     <rect key="frame" x="1" y="263" width="209" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -848,11 +852,11 @@
             <objects>
                 <viewController title="控件区" id="xHv-3Q-xFa" customClass="ZZControlAreaViewController" sceneMemberID="viewController">
                     <view key="view" id="NrK-He-J4Z">
-                        <rect key="frame" x="0.0" y="0.0" width="220" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBH-yY-txs">
-                                <rect key="frame" x="0.0" y="278" width="220" height="22"/>
+                                <rect key="frame" x="0.0" y="278" width="230" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="VQy-Cm-mAu"/>
                                 </constraints>
@@ -863,13 +867,13 @@
                                 </searchFieldCell>
                             </searchField>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6V-0D-MuF">
-                                <rect key="frame" x="0.0" y="0.0" width="220" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="280"/>
                                 <clipView key="contentView" drawsBackground="NO" id="e65-7q-6vK">
-                                    <rect key="frame" x="1" y="1" width="218" height="278"/>
+                                    <rect key="frame" x="1" y="1" width="228" height="278"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="JR1-6f-QFG">
-                                            <rect key="frame" x="0.0" y="0.0" width="218" height="278"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="228" height="278"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="MiJ-Wn-LD5">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -884,10 +888,11 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="4QY-Gn-bIm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="4QY-Gn-bIm"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="Msn-KG-lAH"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="4lD-lL-Uxj">
-                                    <rect key="frame" x="1" y="263" width="218" height="16"/>
+                                    <rect key="frame" x="1" y="263" width="228" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TrF-Q8-vuA">
