@@ -666,35 +666,12 @@
                         </toolbar>
                     </window>
                     <connections>
-                        <segue destination="tjf-4c-lPC" kind="relationship" relationship="window.shadowedContentViewController" id="4pL-pm-bYP"/>
+                        <segue destination="PRm-7j-OkR" kind="relationship" relationship="window.shadowedContentViewController" id="Kvu-ic-nce"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-108" y="170"/>
-        </scene>
-        <!--Main View Controller-->
-        <scene sceneID="EcM-CB-lVJ">
-            <objects>
-                <splitViewController id="tjf-4c-lPC" customClass="ZZMainViewController" sceneMemberID="viewController">
-                    <splitViewItems>
-                        <splitViewItem id="GIn-nT-BDa"/>
-                        <splitViewItem id="sjA-g0-4MX"/>
-                        <splitViewItem id="UnQ-Wp-9Zn"/>
-                    </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="fXN-x7-LXU">
-                        <rect key="frame" x="0.0" y="0.0" width="436" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </splitView>
-                    <connections>
-                        <segue destination="BeY-w8-Zjc" kind="relationship" relationship="splitItems" id="dgW-3k-S8P"/>
-                        <segue destination="tXM-eD-6Pe" kind="relationship" relationship="splitItems" id="biI-ob-fVV"/>
-                        <segue destination="HVe-8e-bMt" kind="relationship" relationship="splitItems" id="NOe-YM-bMS"/>
-                    </connections>
-                </splitViewController>
-                <customObject id="W4B-5h-HNY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="508" y="163"/>
         </scene>
         <!--元素区-->
         <scene sceneID="Nas-Tp-gz6">
@@ -778,7 +755,30 @@
                 </viewController>
                 <customObject id="F69-4V-QBv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069" y="-33"/>
+            <point key="canvasLocation" x="1055" y="-268"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="HiL-mK-hwG">
+            <objects>
+                <splitViewController id="PRm-7j-OkR" customClass="ZZMainViewController" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="siT-Xh-1QB"/>
+                        <splitViewItem id="be8-Vb-3Lw"/>
+                        <splitViewItem id="aKV-6d-tNX"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="YdW-tZ-Sho">
+                        <rect key="frame" x="0.0" y="0.0" width="435" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="BeY-w8-Zjc" kind="relationship" relationship="splitItems" id="IUx-q9-zgq"/>
+                        <segue destination="tXM-eD-6Pe" kind="relationship" relationship="splitItems" id="7l4-4Y-UFv"/>
+                        <segue destination="HVe-8e-bMt" kind="relationship" relationship="splitItems" id="Gy4-Jd-FO5"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="Ffc-vb-gWS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550.5" y="-66"/>
         </scene>
         <!--代码区-->
         <scene sceneID="Ywd-ub-8bB">
@@ -845,7 +845,7 @@
                 </viewController>
                 <customObject id="5O1-6t-UZo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="333"/>
+            <point key="canvasLocation" x="1174" y="111"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="sPP-we-fnH">
@@ -866,20 +866,52 @@
                 </splitViewController>
                 <customObject id="Lkb-RY-ZHU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159" y="797"/>
+            <point key="canvasLocation" x="550" y="598"/>
         </scene>
-        <!--View Controller-->
+        <!--属性区-->
         <scene sceneID="PwG-Rs-0Ej">
             <objects>
-                <viewController id="xwB-Kd-gYj" sceneMemberID="viewController">
+                <viewController title="属性区" id="xwB-Kd-gYj" sceneMemberID="viewController">
                     <view key="view" id="U3b-UZ-MZ5">
-                        <rect key="frame" x="0.0" y="0.0" width="230" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="30"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-By-IWm">
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="30"/>
+                                <clipView key="contentView" id="vC9-CM-soF">
+                                    <rect key="frame" x="1" y="1" width="228" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hj9-C0-kSn">
+                                            <rect key="frame" x="0.0" y="0.0" width="213" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="jUu-Gd-CLh"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="ppJ-Nq-hfl">
+                                    <rect key="frame" x="1" y="13" width="228" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="HQ9-gs-CwG">
+                                    <rect key="frame" x="213" y="1" width="16" height="28"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="MAc-By-IWm" firstAttribute="leading" secondItem="U3b-UZ-MZ5" secondAttribute="leading" id="0Rm-D7-vVN"/>
+                            <constraint firstAttribute="bottom" secondItem="MAc-By-IWm" secondAttribute="bottom" id="7Dh-zZ-7Mt"/>
+                            <constraint firstItem="MAc-By-IWm" firstAttribute="top" secondItem="U3b-UZ-MZ5" secondAttribute="top" id="lLx-0j-aG1"/>
+                            <constraint firstAttribute="trailing" secondItem="MAc-By-IWm" secondAttribute="trailing" id="rLB-FG-LdU"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="1EC-3R-qCu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="644"/>
+            <point key="canvasLocation" x="1054" y="461"/>
         </scene>
         <!--控件区-->
         <scene sceneID="OeF-qQ-A1Z">
@@ -924,6 +956,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="4QY-Gn-bIm"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="Msn-KG-lAH"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="n1B-1W-ctN"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4lD-lL-Uxj">
                                     <rect key="frame" x="1" y="263" width="228" height="16"/>
@@ -954,7 +987,7 @@
                 </viewController>
                 <customObject id="mdE-PU-xXZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="1014"/>
+            <point key="canvasLocation" x="1054" y="825"/>
         </scene>
         <!--设置-->
         <scene sceneID="dWh-og-g7Y">
