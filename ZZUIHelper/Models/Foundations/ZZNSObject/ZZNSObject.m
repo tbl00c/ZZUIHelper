@@ -42,14 +42,17 @@
 
 - (NSArray *)getterCodeExtCode
 {
-    return @[];
+    NSMutableArray *extCode = @[].mutableCopy;
+    [extCode addObject:[NSString stringWithFormat:@"_%@ = [[%@ alloc] init];", self.propertyName, self.className]];
+    return extCode;
 }
+
 - (NSString *)getterCode
 {
     NSString *getterCode = @"";
     NSArray *extCodes = [self getterCodeExtCode];
     for (NSString *code in extCodes) {
-        getterCode = [getterCode stringByAppendingFormat:@"\t\t%@", code];
+        getterCode = [getterCode stringByAppendingFormat:@"\t\t%@\n", code];
     }
     getterCode = M_GETTER(self.className, self.propertyName, getterCode);
     return getterCode;

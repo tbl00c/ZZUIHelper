@@ -7,13 +7,22 @@
 //
 
 #import "ZZUITableView.h"
+#import "ZZUITableViewDelegate.h"
+#import "ZZUITableViewDataSource.h"
 
 @implementation ZZUITableView
+
+- (NSArray *)delegates
+{
+    ZZUITableViewDataSource *dataSource = [[ZZUITableViewDataSource alloc] init];
+    ZZUITableViewDelegate *delegate = [[ZZUITableViewDelegate alloc] init];
+    return @[dataSource, delegate];
+}
 
 - (NSArray *)getterCodeExtCode
 {
     NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
-    [extCode addObject:[NSString stringWithFormat:@"[_%@ setDataSource:self];\n", self.propertyName]];
+    [extCode addObject:[NSString stringWithFormat:@"[_%@ setDataSource:self];", self.propertyName]];
     return extCode;
 }
 

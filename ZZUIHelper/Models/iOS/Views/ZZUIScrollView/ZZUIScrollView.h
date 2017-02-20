@@ -7,7 +7,10 @@
 //
 
 #import "ZZUIView.h"
+#import "ZZProtocol.h"
 
 @interface ZZUIScrollView : ZZUIView
+
+@property (nonatomic, strong, readonly) NSArray *delegates;
 
 @end

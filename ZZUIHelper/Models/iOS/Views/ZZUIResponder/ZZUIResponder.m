@@ -9,6 +9,7 @@
 #import "ZZUIResponder.h"
 #import "ZZUIControl.h"
 #import "ZZUIScrollView.h"
+#import "ZZProtocol.h"
 
 @implementation ZZUIResponder
 
@@ -73,11 +74,20 @@
 /// 类拓展
 - (NSString *)extensionCode
 {
-    if (self.extensionProperties.count > 0 || self.extensionDelegates.count > 0) {
+    NSArray *delegatesArray = self.childDelegateViewsArray;
+    if (self.extensionProperties.count > 0 || delegatesArray.count > 0) {
         NSString *extensionCode = [NSString stringWithFormat:@"@interface %@ ()", self.className];
-        if (self.extensionDelegates.count > 0) {    // 协议
-            
+        if (delegatesArray.count > 0) {    // 协议
+            NSString *delegateCode = @"";
+            for (ZZProtocol *protocol in delegatesArray) {
+                if (delegateCode.length > 0) {
+                    delegateCode = [delegateCode stringByAppendingString:@",\n"];
+                }
+                delegateCode = [delegateCode stringByAppendingString:protocol.protocolName];
+            }
+            extensionCode = [extensionCode stringByAppendingFormat:@" <\n%@\n>", delegateCode];
         }
+        
         extensionCode = [extensionCode stringByAppendingString:@"\n\n"];
         for (ZZNSObject *object in self.extensionProperties) {
             if (object.propertyCode.length > 0) {
@@ -134,7 +144,13 @@
     NSArray *delegateArray = self.childDelegateViewsArray;
     if (delegateArray.count > 0) {
         NSString *delegateCode = [NSString stringWithFormat:@"%@ Delegate\n", PMARK_];
-        
+        for (ZZProtocol *protocol in delegateArray) {
+            delegateCode = [delegateCode stringByAppendingFormat:@"%@ %@\n", PMARK, protocol.protocolName];
+            NSArray *protocolMethods = protocol.protocolMethodsCode;
+            for (NSString *method in protocolMethods) {
+                delegateCode = [delegateCode stringByAppendingString:method];
+            }
+        }
         return delegateCode;
     }
     return nil;
@@ -261,14 +277,31 @@
 - (NSArray *)childDelegateViewsArray
 {
     NSMutableArray *delegateArray = [[NSMutableArray alloc] init];
-    for (ZZNSObject *object in self.interfaceProperties) {
-        if ([[object class] isSubclassOfClass:[ZZUIScrollView class]]) {
-            [delegateArray addObject:object];
+    
+    BOOL (^containDelegate)(NSArray *array, NSString *delegateName) = ^BOOL (NSArray *array, NSString *delegateName) {
+        for (ZZProtocol *protocol in array) {
+            if ([protocol.protocolName isEqualToString:delegateName]) {
+                return YES;
+            }
+        }
+        return NO;
+    };
+    for (ZZUIScrollView *object in self.interfaceProperties) {
+        if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && object.delegates.count > 0) {
+            for (ZZProtocol *protocol in object.delegates) {
+                if (!containDelegate(delegateArray, protocol.protocolName)) {
+                    [delegateArray addObject:protocol];
+                }
+            }
         }
     }
-    for (ZZNSObject *object in self.extensionProperties) {
-        if ([[object class] isSubclassOfClass:[ZZUIScrollView class]]) {
-            [delegateArray addObject:object];
+    for (ZZUIScrollView *object in self.extensionProperties) {
+        if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && object.delegates.count > 0) {
+            for (ZZProtocol *protocol in object.delegates) {
+                if (!containDelegate(delegateArray, protocol.protocolName)) {
+                    [delegateArray addObject:protocol];
+                }
+            }
         }
     }
     return delegateArray;

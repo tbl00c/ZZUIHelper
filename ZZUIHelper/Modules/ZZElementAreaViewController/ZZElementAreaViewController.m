@@ -52,7 +52,11 @@
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     ZZNSObject *object = self.data[row];
-    return [NSString stringWithFormat:@"%@ - %@ (%@)", object.className, object.propertyName, object.remarks.length > 0 ? object.remarks : @""];
+    NSString *classInfo = [NSString stringWithFormat:@"%@ - %@", object.className, object.propertyName];
+    if (object.remarks.length > 0) {
+        classInfo = [classInfo stringByAppendingFormat:@" (%@)", object.remarks];
+    }
+    return classInfo;
 }
 
 #pragma mark - # Event Response

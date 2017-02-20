@@ -43,8 +43,6 @@
 @property (nonatomic, strong, readonly) NSString *extensionCode;
 /// 类拓展中的属性列表
 @property (nonatomic, strong, readonly) NSArray *extensionProperties;
-/// 类拓展中的协议列表
-@property (nonatomic, strong, readonly) NSArray *extensionDelegates;
 
 /// 类实现代码
 @property (nonatomic, strong, readonly) NSString *implementationCode;

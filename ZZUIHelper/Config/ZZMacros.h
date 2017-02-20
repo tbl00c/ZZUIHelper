@@ -10,90 +10,104 @@
 #ifndef ZZMacros_h
 #define ZZMacros_h
 
-#define     PMARK                   @"#pragma mark"
+#define     PMARK                   @"//MARK: "
 #define     PMARK_                  @"#pragma mark -"
 
-#define     NEWLINE                 ([ZZUIHelperConfig sharedInstance].newLineLeftParenthesis
+#define     LEFT_PARENTHESIS        ([ZZUIHelperConfig sharedInstance].newLineLeftParenthesis ? @"\n{" : @" {")
 
 // loadView
 #define     M_LOADVIEW(code)        [NSString stringWithFormat:@"\
 - (void)loadView\
-%@{\n\
+%@\n\
 \t[super loadView];\n\n\
 %@\
 %@\
 }\n\n\
 ",\
-([ZZUIHelperConfig sharedInstance].newLineLeftParenthesis ? @"\n" : @" "), /*是否换行*/\
+LEFT_PARENTHESIS,\
 code, /*自定义代码*/\
 ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry ? @"\t[self p_addMasonry];\n" : @"")] /*是否使用了Masonry*/
 
 
 // viewDidLoad
 #define     M_VIEWDIDLOAD(code)     [NSString stringWithFormat:@"\
-- (void)viewDidLoad%@{\n\
+- (void)viewDidLoad%@\n\
 \t[super viewDidLoad];\n\n\
 %@\
 }\n\n\
 ",\
-NEWLINE ? @"\n" : @" "),/*是否换行*/\
+LEFT_PARENTHESIS,\
 code] /*自定义代码*/
 
 // initWithFrame
 #define     M_INITWITHFRAME(code)        [NSString stringWithFormat:@"\
 - (id)initWithFrame:(CGRect)frame\
-%@{\n\
-\tif(self = [super initWithFrame:frame])%@{\n\
+%@\n\
+\tif (self = [super initWithFrame:frame])%@\n\
 %@\
 %@\
 \t}\n\
 \treturn self;\n\
 }\n\n\
 ",\
-NEWLINE ? @"\n" : @" "), /*是否换行*/\
-NEWLINE ? @"\n\t" : @" "), /*是否换行*/\
+LEFT_PARENTHESIS,\
+LEFT_PARENTHESIS,\
+code, /*自定义代码*/\
+([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry ? @"\t\t[self p_addMasonry];\n" : @"")] /*是否使用了Masonry*/
+
+// initWithFrame
+#define     M_INIT_CELL(code)        [NSString stringWithFormat:@"\
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier\
+%@\n\
+\tif (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])%@\n\
+%@\
+%@\
+\t}\n\
+\treturn self;\n\
+}\n\n\
+",\
+LEFT_PARENTHESIS,\
+LEFT_PARENTHESIS,\
 code, /*自定义代码*/\
 ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry ? @"\t\t[self p_addMasonry];\n" : @"")] /*是否使用了Masonry*/
 
 // getter
 #define     M_GETTER(class, name, code)              [NSString stringWithFormat:@"\
 - (%@ *)%@\
-%@{\n\
+%@\n\
 \tif(!_%@)\
-%@{\n\
-\t\t_%@ = [[%@ alloc] init];\n\
+\t%@\n\
 %@\
 \t}\n\
 \treturn _%@;\n\
 }\n\n\
 ",\
 class, name,\
-NEWLINE ? @"\n" : @" "), /*是否换行*/\
+LEFT_PARENTHESIS,\
 name,\
-NEWLINE ? @"\t\n" : @" "), /*是否换行*/\
-name, class,\
+LEFT_PARENTHESIS, \
 code,\
 name]
 
 // action
 #define     M_ACTION(class, name, code)             [NSString stringWithFormat:@"\
 - (void)%@(%@ *)sender\
-%@{\n\
+%@\n\
 %@\
 }\n\n\
 ",\
 name, class,\
-NEWLINE ? @"\n" : @" "), /*是否换行*/\
+LEFT_PARENTHESIS,\
 code]
 
 // Masonry
 #define     M_P_ADDMASONRY(code)                    [NSString stringWithFormat:@"\
 - (void)p_addMasonry\
-%@{\n\
+%@\n\
 %@\
 }\n\n\
 ",\
-NEWLINE ? @"\n" : @" "), /*是否换行*/\
+LEFT_PARENTHESIS,\
 code]
 
 #define     M_MASONRY(name, code)                   [NSString stringWithFormat:@"\

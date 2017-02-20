@@ -25,7 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
-    [layout setItemSize:CGSizeMake(130, 100)];
+    [layout setItemSize:CGSizeMake(125, 100)];
+    [layout setMinimumLineSpacing:0];
+    [layout setMinimumInteritemSpacing:0];
 
     self.data = [ZZControlHelper sharedInstance].controls;
     [self.collectionView registerClass:[ZZControlItem class] forItemWithIdentifier:@"ZZControlItem"];

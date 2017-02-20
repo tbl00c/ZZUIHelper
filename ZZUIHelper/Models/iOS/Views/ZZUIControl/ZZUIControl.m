@@ -14,7 +14,7 @@
 {
     NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
     if (self.actionMethodName.length > 0 && self.eventType.length > 0) {
-        [extCode addObject:[NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@];\n", self.propertyName, self.actionMethodName, self.eventType]];
+        [extCode addObject:[NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@];", self.propertyName, self.actionMethodName, self.eventType]];
     }
     return extCode;
 }
