@@ -10,6 +10,7 @@
 
 @interface ZZControlItem ()
 @property (weak) IBOutlet NSButtonCell *button;
+@property (weak) IBOutlet NSTextField *titleLabel;
 
 @end
 
@@ -18,7 +19,7 @@
 - (void)setButtonTitle:(NSString *)buttonTitle
 {
     _buttonTitle = buttonTitle;
-    [self.button setTitle:buttonTitle];
+    self.titleLabel.stringValue = buttonTitle;
 }
 
 - (IBAction)buttonClicked:(id)sender {

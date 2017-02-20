@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
-    [layout setItemSize:CGSizeMake(125, 100)];
+    [layout setItemSize:CGSizeMake(105, 100)];
     [layout setMinimumLineSpacing:0];
     [layout setMinimumInteritemSpacing:0];
 
