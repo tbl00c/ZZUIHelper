@@ -24,8 +24,8 @@
 {
 //    return @[@{@"ClassName" : @"UIView"}];
     return @[
-             @"UILabel",
              @"UIImageView",
+             @"UILabel",
              @"UIButton",
              @"UIView",
              @"UITableView",
