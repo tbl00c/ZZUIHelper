@@ -7,8 +7,9 @@
 //
 
 #import "ZZElementAreaViewController.h"
+#import "ZZNewFileViewController.h"
 
-@interface ZZElementAreaViewController () <NSTableViewDataSource>
+@interface ZZElementAreaViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet NSTableView *tableView;
 
@@ -59,6 +60,13 @@
     }
     return classInfo;
 }
+
+//MARK: NSTableViewDelegate
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+//    NSInteger row = [notification.object selectedRow];
+}
+
 
 #pragma mark - # Event Response
 - (IBAction)deleteButtonClick:(id)sender {

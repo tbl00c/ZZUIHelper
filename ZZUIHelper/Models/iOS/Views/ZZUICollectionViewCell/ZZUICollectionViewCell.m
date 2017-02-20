@@ -11,5 +11,9 @@
 
 @implementation ZZUICollectionViewCell
 
+- (NSString *)curView
+{
+    return @"self.contentView";
+}
 
 @end
