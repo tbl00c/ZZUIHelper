@@ -114,7 +114,7 @@ code]
 #define     M_MASONRY(name, code)                   [NSString stringWithFormat:@"\
 \t[self.%@ mas_makeConstraints:^(MASConstraintMaker *make) {\n\
 %@\
-\t];\n\
+\t}];\n\
 ",\
 name,\
 code]

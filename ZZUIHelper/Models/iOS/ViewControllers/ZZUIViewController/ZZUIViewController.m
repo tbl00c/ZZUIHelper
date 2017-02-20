@@ -21,7 +21,7 @@
     if (childViewArray.count > 0) {
         NSString *loadViewCode = @"";
         for (ZZUIView *view in childViewArray) {
-            loadViewCode = [loadViewCode stringByAppendingFormat:@"\t[%@ addSubView:self.%@];\n", self.curView, view.propertyName];
+            loadViewCode = [loadViewCode stringByAppendingFormat:@"\t[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
         }
         loadViewCode = M_LOADVIEW(loadViewCode);
         initCode = [initCode stringByAppendingString:loadViewCode];

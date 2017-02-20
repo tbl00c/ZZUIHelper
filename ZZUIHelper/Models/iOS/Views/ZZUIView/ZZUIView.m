@@ -18,7 +18,7 @@
     // initWithFrame
     if (childViewArray.count > 0) {
         for (ZZUIView *view in childViewArray) {
-            initCode = [initCode stringByAppendingFormat:@"\t\t[%@ addSubView:self.%@];\n", self.curView, view.propertyName];
+            initCode = [initCode stringByAppendingFormat:@"\t\t[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
         }
         initCode = M_INITWITHFRAME(initCode);
     }

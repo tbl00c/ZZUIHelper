@@ -21,13 +21,13 @@
 {
     NSString *fileName = [self.className stringByAppendingString:@".h"];
     NSString *copyrightCode = [[ZZUIHelperConfig sharedInstance] copyrightCodeByFileName:fileName];
-    NSString *code = [NSString stringWithFormat:@"%@%@", copyrightCode, self.interfaceCode];
+    NSString *code = [NSString stringWithFormat:@"%@#import <UIKit/UIKit.h>\n\n%@", copyrightCode, self.interfaceCode];
     return code;
 }
 
 - (NSString *)interfaceCode
 {
-    NSString *interfaceCode = [NSString stringWithFormat:@"@interfacr %@ : %@\n\n", self.className, self.superClassName];
+    NSString *interfaceCode = [NSString stringWithFormat:@"@interface %@ : %@\n\n", self.className, self.superClassName];
     
     for (ZZNSObject *object in self.interfaceProperties) {
         if (object.propertyCode.length > 0) {
