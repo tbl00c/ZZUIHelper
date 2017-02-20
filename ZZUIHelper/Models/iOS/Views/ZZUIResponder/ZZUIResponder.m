@@ -72,7 +72,7 @@
 {
     NSString *fileName = [self.className stringByAppendingString:@".m"];
     NSString *copyrightCode = [[ZZUIHelperConfig sharedInstance] copyrightCodeByFileName:fileName];
-    NSString *code = copyrightCode;
+    NSString *code = [copyrightCode stringByAppendingFormat:@"#import \"%@.h\"\n\n", self.className];
     if (self.extensionCode.length > 0) {        // 类拓展
         code = [code stringByAppendingString:self.extensionCode];
     }
@@ -112,7 +112,7 @@
 /// 实现
 - (NSString *)implementationCode
 {
-    NSString *implementationCode = [NSString stringWithFormat:@"@implementationCode %@\n\n", self.className];
+    NSString *implementationCode = [NSString stringWithFormat:@"@implementation %@\n\n", self.className];
     
     // 初始化代码
     NSString *initCode = self.implementationInitCode;
