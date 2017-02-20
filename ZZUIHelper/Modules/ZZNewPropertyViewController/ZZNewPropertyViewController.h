@@ -1,5 +1,5 @@
 //
-//  ZZNewProjectViewController.h
+//  ZZNewPropertyViewController.h
 //  ZZUIHelper
 //
 //  Created by 李伯坤 on 2017/2/20.
@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ZZNewProjectViewController : NSViewController
+@interface ZZNewPropertyViewController : NSViewController
+
+@property (nonatomic, strong) NSString *className;
 
 @end

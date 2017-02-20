@@ -7,7 +7,7 @@
 //
 
 #import "ZZElementAreaViewController.h"
-#import "ZZNewFileViewController.h"
+#import "ZZNewPropertyViewController.h"
 
 @interface ZZElementAreaViewController () <NSTableViewDataSource, NSTableViewDelegate>
 

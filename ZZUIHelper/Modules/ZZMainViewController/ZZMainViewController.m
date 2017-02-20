@@ -7,7 +7,7 @@
 //
 
 #import "ZZMainViewController.h"
-#import "ZZNewProjectViewController.h"
+#import "ZZNewFileViewController.h"
 
 @interface ZZMainViewController ()
 
@@ -19,7 +19,7 @@
     [super viewDidAppear];
     
     if ([ZZClassHelper sharedInstance].curClass == nil) {
-        ZZNewProjectViewController *vc = [[ZZNewProjectViewController alloc] init];
+        ZZNewFileViewController *vc = [[ZZNewFileViewController alloc] initWithNibName:@"ZZNewFileViewController" bundle:nil];
         [self presentViewControllerAsSheet:vc];
     }
 }

@@ -36,10 +36,6 @@
 		C2A10C5A1E5A180D000960D9 /* ZZUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C591E5A180D000960D9 /* ZZUISwitch.m */; };
 		C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C5F1E5A22BA000960D9 /* ZZControlItem.m */; };
 		C2A10C641E5A2A4A000960D9 /* ZZControlItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10C631E5A2A4A000960D9 /* ZZControlItem.xib */; };
-		C2A10C691E5A2F62000960D9 /* ZZNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C671E5A2F62000960D9 /* ZZNewFileViewController.m */; };
-		C2A10C6A1E5A2F62000960D9 /* ZZNewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10C681E5A2F62000960D9 /* ZZNewFileViewController.xib */; };
-		C2A10C6F1E5A37D3000960D9 /* ZZNewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C6D1E5A37D3000960D9 /* ZZNewProjectViewController.m */; };
-		C2A10C701E5A37D3000960D9 /* ZZNewProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10C6E1E5A37D3000960D9 /* ZZNewProjectViewController.xib */; };
 		C2A10C751E5A3B59000960D9 /* ZZUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C741E5A3B59000960D9 /* ZZUITableViewCell.m */; };
 		C2A10C7B1E5A3B7D000960D9 /* ZZUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C7A1E5A3B7D000960D9 /* ZZUICollectionViewCell.m */; };
 		C2A10C801E5A41E6000960D9 /* ZZWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C7F1E5A41E6000960D9 /* ZZWindowController.m */; };
@@ -51,6 +47,10 @@
 		C2A10C9C1E5ACB27000960D9 /* ZZUICollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C991E5ACB27000960D9 /* ZZUICollectionViewDataSource.m */; };
 		C2A10C9D1E5ACB27000960D9 /* ZZUICollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C9B1E5ACB27000960D9 /* ZZUICollectionViewDelegate.m */; };
 		C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */; };
+		C2A10CB11E5AEF0B000960D9 /* ZZNewPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CAF1E5AEF0B000960D9 /* ZZNewPropertyViewController.m */; };
+		C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */; };
+		C2A10CB71E5AEF39000960D9 /* ZZNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */; };
+		C2A10CB81E5AEF39000960D9 /* ZZNewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,12 +113,6 @@
 		C2A10C5E1E5A22BA000960D9 /* ZZControlItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZControlItem.h; sourceTree = "<group>"; };
 		C2A10C5F1E5A22BA000960D9 /* ZZControlItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZControlItem.m; sourceTree = "<group>"; };
 		C2A10C631E5A2A4A000960D9 /* ZZControlItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZControlItem.xib; sourceTree = "<group>"; };
-		C2A10C661E5A2F62000960D9 /* ZZNewFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewFileViewController.h; sourceTree = "<group>"; };
-		C2A10C671E5A2F62000960D9 /* ZZNewFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewFileViewController.m; sourceTree = "<group>"; };
-		C2A10C681E5A2F62000960D9 /* ZZNewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewFileViewController.xib; sourceTree = "<group>"; };
-		C2A10C6C1E5A37D3000960D9 /* ZZNewProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewProjectViewController.h; sourceTree = "<group>"; };
-		C2A10C6D1E5A37D3000960D9 /* ZZNewProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewProjectViewController.m; sourceTree = "<group>"; };
-		C2A10C6E1E5A37D3000960D9 /* ZZNewProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewProjectViewController.xib; sourceTree = "<group>"; };
 		C2A10C731E5A3B59000960D9 /* ZZUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableViewCell.h; sourceTree = "<group>"; };
 		C2A10C741E5A3B59000960D9 /* ZZUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableViewCell.m; sourceTree = "<group>"; };
 		C2A10C791E5A3B7D000960D9 /* ZZUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewCell.h; sourceTree = "<group>"; };
@@ -141,6 +135,12 @@
 		C2A10C9B1E5ACB27000960D9 /* ZZUICollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDelegate.m; sourceTree = "<group>"; };
 		C2A10C9F1E5AE12D000960D9 /* ZZSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSettingViewController.h; sourceTree = "<group>"; };
 		C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSettingViewController.m; sourceTree = "<group>"; };
+		C2A10CAE1E5AEF0B000960D9 /* ZZNewPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewPropertyViewController.h; sourceTree = "<group>"; };
+		C2A10CAF1E5AEF0B000960D9 /* ZZNewPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewPropertyViewController.m; sourceTree = "<group>"; };
+		C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewPropertyViewController.xib; sourceTree = "<group>"; };
+		C2A10CB41E5AEF39000960D9 /* ZZNewFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewFileViewController.h; sourceTree = "<group>"; };
+		C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewFileViewController.m; sourceTree = "<group>"; };
+		C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewFileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,10 +200,10 @@
 		C22239E31E5815F5002CB428 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C2A10CB31E5AEF39000960D9 /* ZZNewFileViewController */,
+				C2A10CAD1E5AEF0B000960D9 /* ZZNewPropertyViewController */,
 				C2A10C9E1E5AE11C000960D9 /* ZZSettingViewController */,
 				C2A10C7D1E5A41D0000960D9 /* ZZWindowController */,
-				C2A10C6B1E5A37C7000960D9 /* ZZNewProjectViewController */,
-				C2A10C651E5A2F4E000960D9 /* ZZNewFileViewController */,
 				C2A10C4C1E5A1583000960D9 /* ZZControlAreaViewController */,
 				C2223A0D1E587674002CB428 /* ZZMainViewController */,
 				C2A10C471E5A0E67000960D9 /* ZZElementAreaViewController */,
@@ -501,26 +501,6 @@
 			path = ZZUISwitch;
 			sourceTree = "<group>";
 		};
-		C2A10C651E5A2F4E000960D9 /* ZZNewFileViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C2A10C661E5A2F62000960D9 /* ZZNewFileViewController.h */,
-				C2A10C671E5A2F62000960D9 /* ZZNewFileViewController.m */,
-				C2A10C681E5A2F62000960D9 /* ZZNewFileViewController.xib */,
-			);
-			path = ZZNewFileViewController;
-			sourceTree = "<group>";
-		};
-		C2A10C6B1E5A37C7000960D9 /* ZZNewProjectViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C2A10C6C1E5A37D3000960D9 /* ZZNewProjectViewController.h */,
-				C2A10C6D1E5A37D3000960D9 /* ZZNewProjectViewController.m */,
-				C2A10C6E1E5A37D3000960D9 /* ZZNewProjectViewController.xib */,
-			);
-			path = ZZNewProjectViewController;
-			sourceTree = "<group>";
-		};
 		C2A10C711E5A3B38000960D9 /* ZZUICollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +553,26 @@
 				C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */,
 			);
 			path = ZZSettingViewController;
+			sourceTree = "<group>";
+		};
+		C2A10CAD1E5AEF0B000960D9 /* ZZNewPropertyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2A10CAE1E5AEF0B000960D9 /* ZZNewPropertyViewController.h */,
+				C2A10CAF1E5AEF0B000960D9 /* ZZNewPropertyViewController.m */,
+				C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */,
+			);
+			path = ZZNewPropertyViewController;
+			sourceTree = "<group>";
+		};
+		C2A10CB31E5AEF39000960D9 /* ZZNewFileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2A10CB41E5AEF39000960D9 /* ZZNewFileViewController.h */,
+				C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */,
+				C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */,
+			);
+			path = ZZNewFileViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -634,11 +634,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */,
 				C21789C41E55D64500AF8BEE /* Assets.xcassets in Resources */,
-				C2A10C6A1E5A2F62000960D9 /* ZZNewFileViewController.xib in Resources */,
 				C21789C71E55D64500AF8BEE /* Main.storyboard in Resources */,
 				C2A10C641E5A2A4A000960D9 /* ZZControlItem.xib in Resources */,
-				C2A10C701E5A37D3000960D9 /* ZZNewProjectViewController.xib in Resources */,
+				C2A10CB81E5AEF39000960D9 /* ZZNewFileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,8 +656,8 @@
 				C2A10C8B1E5A9FB6000960D9 /* ZZUIScrollViewDelegate.m in Sources */,
 				C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */,
 				C2223A221E587CCC002CB428 /* ZZNSMutableArray.m in Sources */,
+				C2A10CB71E5AEF39000960D9 /* ZZNewFileViewController.m in Sources */,
 				C2A10C421E5A0B65000960D9 /* ZZUITextField.m in Sources */,
-				C2A10C6F1E5A37D3000960D9 /* ZZNewProjectViewController.m in Sources */,
 				C2A10C4A1E5A0E79000960D9 /* ZZElementAreaViewController.m in Sources */,
 				C2A10C751E5A3B59000960D9 /* ZZUITableViewCell.m in Sources */,
 				C2223A1B1E587AEB002CB428 /* ZZUIView.m in Sources */,
@@ -667,7 +667,6 @@
 				C2A10C5A1E5A180D000960D9 /* ZZUISwitch.m in Sources */,
 				C2A10C4F1E5A1597000960D9 /* ZZControlAreaViewController.m in Sources */,
 				C2A10C2F1E59C2CD000960D9 /* ZZUIButton.m in Sources */,
-				C2A10C691E5A2F62000960D9 /* ZZNewFileViewController.m in Sources */,
 				C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */,
 				C2A10C9C1E5ACB27000960D9 /* ZZUICollectionViewDataSource.m in Sources */,
 				C2A10C3B1E5A0AA9000960D9 /* ZZUILabel.m in Sources */,
@@ -687,6 +686,7 @@
 				C2A10C461E5A0D6B000960D9 /* ZZClassHelper.m in Sources */,
 				C2A10C241E59881E000960D9 /* NSString+MMBJ.m in Sources */,
 				C2223A281E5880F1002CB428 /* ZZUITableView.m in Sources */,
+				C2A10CB11E5AEF0B000960D9 /* ZZNewPropertyViewController.m in Sources */,
 				C2A10C801E5A41E6000960D9 /* ZZWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

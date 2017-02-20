@@ -7,7 +7,7 @@
 //
 
 #import "ZZWindowController.h"
-#import "ZZNewProjectViewController.h"
+#import "ZZNewFileViewController.h"
 
 @interface ZZWindowController ()
 
@@ -18,7 +18,7 @@
 
 //MARK: NSToolbarDelegate
 - (IBAction)newButtonClick:(id)sender {
-    ZZNewProjectViewController *vc = [[ZZNewProjectViewController alloc] initWithNibName:@"ZZNewProjectViewController" bundle:nil];
+    ZZNewFileViewController *vc = [[ZZNewFileViewController alloc] initWithNibName:@"ZZNewFileViewController" bundle:nil];
     NSViewController *presentVC = self.window.contentViewController.childViewControllers[1];
     [presentVC presentViewControllerAsSheet:vc];
 }

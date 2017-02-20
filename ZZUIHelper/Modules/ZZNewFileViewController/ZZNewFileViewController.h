@@ -10,6 +10,4 @@
 
 @interface ZZNewFileViewController : NSViewController
 
-@property (nonatomic, strong) NSString *className;
-
 @end

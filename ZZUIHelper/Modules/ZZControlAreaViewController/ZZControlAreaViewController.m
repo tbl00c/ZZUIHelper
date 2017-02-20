@@ -7,7 +7,7 @@
 //
 
 #import "ZZControlAreaViewController.h"
-#import "ZZNewFileViewController.h"
+#import "ZZNewPropertyViewController.h"
 #import "ZZControlItem.h"
 
 @interface ZZControlAreaViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate, ZZControlItemDelegate>
@@ -60,7 +60,7 @@
 //MARK: ZZControlItemDelegate
 - (void)didSelectItemWithClassName:(NSString *)className
 {
-    ZZNewFileViewController *vc = [[ZZNewFileViewController alloc] initWithNibName:@"ZZNewFileViewController" bundle:nil];
+    ZZNewPropertyViewController *vc = [[ZZNewPropertyViewController alloc] initWithNibName:@"ZZNewPropertyViewController" bundle:nil];
     [vc setClassName:className];
     [self presentViewControllerAsSheet:vc];
 }

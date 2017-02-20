@@ -7,48 +7,47 @@
 //
 
 #import "ZZNewFileViewController.h"
-#import "NSString+MMBJ.h"
 
-@interface ZZNewFileViewController ()
-@property (weak) IBOutlet NSTextField *classNameLabel;
-@property (weak) IBOutlet NSTextField *propertyNameTF;
-@property (weak) IBOutlet NSTextField *remarkTF;
-@property (weak) IBOutlet NSTextField *warningLabel;
+@interface ZZNewFileViewController () <NSComboBoxDelegate>
+
+@property (weak) IBOutlet NSTextField *classNameTF;
+
+@property (weak) IBOutlet NSComboBoxCell *superClassCobox;
 
 @end
 
 @implementation ZZNewFileViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    self.classNameLabel.stringValue = [self.className substringFromIndex:2];
-    self.propertyNameTF.stringValue = [[self.className substringFromIndex:4] lowerFirstCharacter];
+    
+    self.classNameTF.stringValue = [ZZUIHelperConfig sharedInstance].classPrefix;
+    [self.superClassCobox addItemsWithObjectValues:[ZZClassHelper sharedInstance].superClassArray];
+    [self.superClassCobox selectItemAtIndex:0];
 }
 
-- (void)setClassName:(NSString *)className
+#pragma mark - # Delegate
+//MARK: NSComboBoxDelegate
+- (void)comboBoxSelectionDidChange:(NSNotification *)notification
 {
-    _className = className;
-    self.classNameLabel.stringValue = className;
+    NSInteger index = self.superClassCobox.indexOfSelectedItem;
+    NSString *superClass = [ZZClassHelper sharedInstance].superClassArray[index];
+    self.classNameTF.stringValue = [[ZZUIHelperConfig sharedInstance].classPrefix stringByAppendingString:[superClass substringFromIndex:2]];
 }
 
+#pragma mark - # Event Response
 - (IBAction)okButtonClick:(id)sender {
-    NSString *propertyName = self.propertyNameTF.stringValue;
-    NSString *remark = self.remarkTF.stringValue;
-    if (propertyName.length > 0 && [[ZZClassHelper sharedInstance] canNamed:propertyName]) {
-        Class cls = NSClassFromString(self.className);
-        id a = [[cls alloc] init];
-        [[ZZClassHelper sharedInstance].curClass addPrivateProperty:a withName:propertyName andRemarks:remark];
+    NSString *className = self.classNameTF.stringValue;
+    NSInteger index = self.superClassCobox.indexOfSelectedItem;
+    NSString *superClass = [ZZClassHelper sharedInstance].superClassArray[index];
+    if (className.length > 0) {
+        NSString *zzClassName = [@"ZZ" stringByAppendingString:superClass];
+        ZZUIResponder *object = [[NSClassFromString(zzClassName) alloc] init];
+        [object setClassName:className];
+        [ZZClassHelper sharedInstance].curClass = object;
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROJECT object:nil];
         [self dismissController:self];
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     }
-    else {
-        self.warningLabel.stringValue = @"类名不可用";
-    }
-}
-
-- (IBAction)cancelButtonClick:(id)sender {
-    [self dismissController:self];
 }
 
 @end
