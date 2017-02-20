@@ -64,7 +64,13 @@
 //MARK: NSTableViewDelegate
 - (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
-//    NSInteger row = [notification.object selectedRow];
+    NSInteger row = [notification.object selectedRow];
+    if (row >= 0 && row < self.data.count) {
+        ZZNSObject *object = self.data[row];
+        ZZNewPropertyViewController *vc = [[ZZNewPropertyViewController alloc] initWithNibName:@"ZZNewPropertyViewController" bundle:nil];
+        [vc setObject:object];
+        [self presentViewControllerAsSheet:vc];
+    }
 }
 
 

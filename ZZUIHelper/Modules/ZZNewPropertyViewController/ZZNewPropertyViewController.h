@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSString *className;
 
+@property (nonatomic, strong) ZZNSObject *object;
+
 @end
