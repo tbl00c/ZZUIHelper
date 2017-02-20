@@ -23,16 +23,17 @@
 - (NSArray *)controls
 {
 //    return @[@{@"ClassName" : @"UIView"}];
-    return @[@"UIView",
+    return @[
              @"UILabel",
-             @"UITextField",
-             @"UITextView",
              @"UIImageView",
              @"UIButton",
-             @"UISwitch",
-             @"UIScrollView",
+             @"UIView",
              @"UITableView",
-             @"UICollectionView"];
+             @"UICollectionView",
+             @"UITextField",
+             @"UITextView",
+             @"UIScrollView",
+             @"UISwitch"];
 }
 
 @end
