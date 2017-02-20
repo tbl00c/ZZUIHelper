@@ -41,8 +41,8 @@
     NSInteger index = self.superClassCobox.indexOfSelectedItem;
     NSString *superClass = [ZZClassHelper sharedInstance].superClassArray[index];
     if (className.length > 0) {
-        NSString *className = [@"ZZ" stringByAppendingString:superClass];
-        ZZUIResponder *object = [[NSClassFromString(className) alloc] init];
+        NSString *zzClassName = [@"ZZ" stringByAppendingString:superClass];
+        ZZUIResponder *object = [[NSClassFromString(zzClassName) alloc] init];
         [object setClassName:className];
         [ZZClassHelper sharedInstance].curClass = object;
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROJECT object:nil];

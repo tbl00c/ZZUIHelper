@@ -701,23 +701,23 @@
             <objects>
                 <viewController title="元素区" id="BeY-w8-Zjc" customClass="ZZElementAreaViewController" sceneMemberID="viewController">
                     <view key="view" id="IVy-E0-PVa">
-                        <rect key="frame" x="0.0" y="0.0" width="260" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="211" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-pp-dbX">
-                                <rect key="frame" x="0.0" y="20" width="260" height="280"/>
+                                <rect key="frame" x="0.0" y="20" width="211" height="280"/>
                                 <clipView key="contentView" id="E7i-ok-J1C">
-                                    <rect key="frame" x="1" y="1" width="258" height="278"/>
+                                    <rect key="frame" x="1" y="1" width="209" height="278"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" id="tbe-60-ebm">
-                                            <rect key="frame" x="0.0" y="0.0" width="258" height="278"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="209" height="278"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="255" minWidth="40" maxWidth="1000" id="Wzq-qO-4H1">
+                                                <tableColumn width="206" minWidth="40" maxWidth="1000" id="Wzq-qO-4H1">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -739,7 +739,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Kes-uK-vJX">
-                                    <rect key="frame" x="1" y="263" width="258" height="16"/>
+                                    <rect key="frame" x="1" y="263" width="209" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="nDG-yp-8MJ">
@@ -748,7 +748,7 @@
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gHk-Cf-7Rm">
-                                <rect key="frame" x="-6" y="-7" width="272" height="32"/>
+                                <rect key="frame" x="-6" y="-7" width="223" height="32"/>
                                 <buttonCell key="cell" type="push" title=" 删除" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ygj-XV-36F">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -774,7 +774,7 @@
                 </viewController>
                 <customObject id="F69-4V-QBv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1303.5" y="51"/>
+            <point key="canvasLocation" x="1278.5" y="51"/>
         </scene>
         <!--代码区-->
         <scene sceneID="Ywd-ub-8bB">
