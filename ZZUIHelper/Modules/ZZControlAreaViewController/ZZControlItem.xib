@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ZZControlItem">
             <connections>
+                <outlet property="bgView" destination="BMp-Yx-2aq" id="nZP-IK-UHc"/>
                 <outlet property="horizontalLine" destination="np9-bx-pXM" id="lRo-mh-LZl"/>
                 <outlet property="titleLabel" destination="R3D-Yc-bHA" id="VFz-tf-Sxk"/>
                 <outlet property="verticalLine" destination="Mi7-Ea-VTh" id="SSF-rl-Wlc"/>
@@ -27,6 +28,10 @@
                     <rect key="frame" x="200" y="59" width="5" height="96"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </box>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Yx-2aq">
+                    <rect key="frame" x="15" y="79" width="163" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3D-Yc-bHA">
                     <rect key="frame" x="40" y="79" width="113" height="86"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

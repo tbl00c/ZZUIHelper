@@ -35,6 +35,8 @@
     self.data = [ZZControlHelper sharedInstance].controls;
     [self.collectionView registerClass:[ZZControlItem class] forItemWithIdentifier:@"ZZControlItem"];
     self.collectionView.content = self.data;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deselectAllCells) name:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
 }
 
 - (void)viewWillLayout
@@ -85,7 +87,10 @@
 }
 
 #pragma mark - # Event Reponse
-- (IBAction)addButtonClick:(id)sender {
+- (void)deselectAllCells
+{
+    NSSet *selectIndexPaths = self.collectionView.selectionIndexPaths;
+    [self.collectionView deselectItemsAtIndexPaths:selectIndexPaths];
 }
 
 @end

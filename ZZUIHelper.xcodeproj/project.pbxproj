@@ -238,14 +238,14 @@
 		C22239E31E5815F5002CB428 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C2A10C7D1E5A41D0000960D9 /* ZZWindowController */,
+				C2223A0D1E587674002CB428 /* ZZMainViewController */,
 				C2A10CB31E5AEF39000960D9 /* ZZNewFileViewController */,
 				C2A10CAD1E5AEF0B000960D9 /* ZZNewPropertyViewController */,
 				C2A10C9E1E5AE11C000960D9 /* ZZSettingViewController */,
-				C2A10C7D1E5A41D0000960D9 /* ZZWindowController */,
-				C2A10C4C1E5A1583000960D9 /* ZZControlAreaViewController */,
-				C2223A0D1E587674002CB428 /* ZZMainViewController */,
 				C2A10C471E5A0E67000960D9 /* ZZElementAreaViewController */,
 				C2223A081E5875DA002CB428 /* ZZCodeAreaViewController */,
+				C2A10C4C1E5A1583000960D9 /* ZZControlAreaViewController */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

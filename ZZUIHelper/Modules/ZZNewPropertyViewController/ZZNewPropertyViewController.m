@@ -46,6 +46,7 @@
             self.object.remarks = remark;
             [self dismissController:self];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
         }
         else {
             self.warningLabel.stringValue = @"类名不可用";
@@ -58,6 +59,7 @@
             [[ZZClassHelper sharedInstance].curClass addPrivateProperty:a withName:propertyName andRemarks:remark];
             [self dismissController:self];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
         }
         else {
             self.warningLabel.stringValue = @"类名不可用";
@@ -66,6 +68,7 @@
 }
 
 - (IBAction)cancelButtonClick:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
     [self dismissController:self];
 }
 
