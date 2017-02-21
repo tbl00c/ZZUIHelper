@@ -37,7 +37,7 @@
     _object = object;
     self.classNameLabel.stringValue = [object.className stringByAppendingString:@" -"];
     self.propertyNameLabel.stringValue = object.propertyName;
-    NSString *remark = [@"备注:  " stringByAppendingString:object.remarks ? object.remarks : @""];
+    NSString *remark = [@"备注:  " stringByAppendingString:object.remarks ? object.remarks : @"无"];
     self.remarksLabel.stringValue = remark;
 }
 
