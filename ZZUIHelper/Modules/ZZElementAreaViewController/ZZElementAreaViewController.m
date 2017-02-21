@@ -10,7 +10,7 @@
 #import "ZZNewPropertyViewController.h"
 #import "ZZElementCell.h"
 
-@interface ZZElementAreaViewController () <NSTableViewDataSource, NSTableViewDelegate>
+@interface ZZElementAreaViewController () <NSTableViewDataSource, NSTableViewDelegate, ZZElementCellDelegate>
 
 @property (weak) IBOutlet NSTableView *tableView;
 
@@ -58,6 +58,7 @@
     ZZNSObject *object = self.data[row];
     ZZElementCell *cell = [tableView makeViewWithIdentifier:@"ZZElementCell" owner:tableView];
     [cell setObject:object];
+    [cell setDelegate:self];
     return cell;
 }
 
@@ -78,12 +79,10 @@
     return 70;
 }
 
-
-#pragma mark - # Event Response
-- (IBAction)deleteButtonClick:(id)sender {
-    NSInteger curIndex = self.tableView.selectedRow;
-    if (curIndex >= 0 && curIndex < self.data.count) {
-        ZZNSObject *object = self.data[curIndex];
+//MARK: ZZElementCellDelegate
+- (void)elementCellDeleteButtonClick:(ZZNSObject *)object
+{
+    if (object) {
         if ([[ZZClassHelper sharedInstance].curClass.interfaceProperties containsObject:object]) {
             [[ZZClassHelper sharedInstance].curClass removePublicProperty:object];
         }
@@ -94,6 +93,7 @@
     }
 }
 
+#pragma mark - # Event Response
 - (void)deselectAllCells
 {
     [self.tableView deselectRow:self.tableView.selectedRow];

@@ -41,4 +41,10 @@
     self.remarksLabel.stringValue = remark;
 }
 
+- (IBAction)deleteButtonClick:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(elementCellDeleteButtonClick:)]) {
+        [self.delegate elementCellDeleteButtonClick:self.object];
+    }
+}
+
 @end

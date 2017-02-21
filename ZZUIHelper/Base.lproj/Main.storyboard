@@ -683,13 +683,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="88" horizontalPageScroll="10" verticalLineScroll="88" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-pp-dbX">
-                                <rect key="frame" x="0.0" y="20" width="211" height="280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="211" height="300"/>
                                 <clipView key="contentView" id="E7i-ok-J1C">
-                                    <rect key="frame" x="1" y="1" width="209" height="278"/>
+                                    <rect key="frame" x="1" y="1" width="209" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="86" rowSizeStyle="automatic" viewBased="YES" id="tbe-60-ebm">
-                                            <rect key="frame" x="0.0" y="0.0" width="209" height="278"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="209" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -708,8 +708,12 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
+                                                        <box verticalHuggingPriority="750" boxType="separator" id="1Kg-XO-peT">
+                                                            <rect key="frame" x="1" y="1" width="206" height="5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </box>
                                                         <tableCellView identifier="ZZElementCell" id="S53-32-al5" customClass="ZZElementCell">
-                                                            <rect key="frame" x="1" y="1" width="206" height="86"/>
+                                                            <rect key="frame" x="1" y="8" width="206" height="86"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-82-rhy">
@@ -732,6 +736,20 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6j6-oh-Ujc">
+                                                                    <rect key="frame" x="176" y="57" width="20" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="8fV-9h-XWK"/>
+                                                                        <constraint firstAttribute="width" constant="20" id="eTa-Pi-bb0"/>
+                                                                    </constraints>
+                                                                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="close" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" id="T48-3Y-mrB">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="deleteButtonClick:" target="S53-32-al5" id="zbE-4U-Fk3"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8j-NB-Coh">
                                                                     <rect key="frame" x="68" y="60" width="44" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -745,9 +763,11 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="Cl0-82-rhy" secondAttribute="bottom" id="3dg-qn-ZAe"/>
                                                                 <constraint firstAttribute="trailing" secondItem="AFn-pr-VoF" secondAttribute="trailing" id="9N8-D5-hA7"/>
+                                                                <constraint firstItem="6j6-oh-Ujc" firstAttribute="top" secondItem="S53-32-al5" secondAttribute="top" constant="9" id="Aim-Ac-O2T"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Cl0-82-rhy" secondAttribute="trailing" id="Bmb-AZ-NxZ"/>
                                                                 <constraint firstItem="Cl0-82-rhy" firstAttribute="top" secondItem="AFn-pr-VoF" secondAttribute="bottom" constant="13" id="hgJ-tV-xsn"/>
                                                                 <constraint firstItem="Cl0-82-rhy" firstAttribute="leading" secondItem="S53-32-al5" secondAttribute="leading" constant="15" id="joS-0I-uNE"/>
+                                                                <constraint firstAttribute="trailing" secondItem="6j6-oh-Ujc" secondAttribute="trailing" constant="10" id="nbU-FS-npU"/>
                                                                 <constraint firstItem="AFn-pr-VoF" firstAttribute="leading" secondItem="S53-32-al5" secondAttribute="leading" constant="15" id="zUX-XV-gBv"/>
                                                             </constraints>
                                                             <connections>
@@ -756,10 +776,6 @@
                                                                 <outlet property="remarksLabel" destination="AFn-pr-VoF" id="cio-TA-2pE"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <box verticalHuggingPriority="750" boxType="separator" id="1Kg-XO-peT">
-                                                            <rect key="frame" x="1" y="89" width="206" height="5"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        </box>
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
@@ -783,25 +799,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gHk-Cf-7Rm">
-                                <rect key="frame" x="-6" y="-7" width="223" height="32"/>
-                                <buttonCell key="cell" type="push" title=" 删除" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ygj-XV-36F">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <connections>
-                                        <action selector="deleteButtonClick:" target="BeY-w8-Zjc" id="mVX-l4-63p"/>
-                                    </connections>
-                                </buttonCell>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="i6k-pp-dbX" secondAttribute="trailing" id="35e-Qh-con"/>
-                            <constraint firstItem="gHk-Cf-7Rm" firstAttribute="top" secondItem="i6k-pp-dbX" secondAttribute="bottom" constant="-1" id="6Tk-PX-UGx"/>
-                            <constraint firstAttribute="bottom" secondItem="gHk-Cf-7Rm" secondAttribute="bottom" id="IAk-Se-cR4"/>
-                            <constraint firstItem="i6k-pp-dbX" firstAttribute="top" secondItem="IVy-E0-PVa" secondAttribute="top" id="KtL-w8-Iqe"/>
-                            <constraint firstItem="i6k-pp-dbX" firstAttribute="leading" secondItem="IVy-E0-PVa" secondAttribute="leading" id="mw2-q2-dWl"/>
-                            <constraint firstItem="gHk-Cf-7Rm" firstAttribute="leading" secondItem="IVy-E0-PVa" secondAttribute="leading" id="puG-lA-x7c"/>
-                            <constraint firstAttribute="trailing" secondItem="gHk-Cf-7Rm" secondAttribute="trailing" id="wqj-dS-xED"/>
+                            <constraint firstItem="i6k-pp-dbX" firstAttribute="top" secondItem="IVy-E0-PVa" secondAttribute="top" id="Qmf-b6-G9e"/>
+                            <constraint firstItem="i6k-pp-dbX" firstAttribute="leading" secondItem="IVy-E0-PVa" secondAttribute="leading" id="TKi-Hg-wLv"/>
+                            <constraint firstAttribute="trailing" secondItem="i6k-pp-dbX" secondAttribute="trailing" id="f4I-mV-BEw"/>
+                            <constraint firstAttribute="bottom" secondItem="i6k-pp-dbX" secondAttribute="bottom" id="wXE-He-JIf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1213,5 +1216,6 @@
         <image name="bar0" width="60" height="35"/>
         <image name="bar1" width="62" height="36.5"/>
         <image name="bar2" width="195" height="108"/>
+        <image name="close" width="15" height="15"/>
     </resources>
 </document>
