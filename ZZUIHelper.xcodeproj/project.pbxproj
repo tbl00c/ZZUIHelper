@@ -63,6 +63,7 @@
 		C2D6CA8B1E5BE14E00EEF76B /* ZZUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA6D1E5BE14E00EEF76B /* ZZUITextField.m */; };
 		C2D6CA8C1E5BE14E00EEF76B /* ZZUITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA701E5BE14E00EEF76B /* ZZUITextView.m */; };
 		C2D6CA8D1E5BE14E00EEF76B /* ZZUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA731E5BE14E00EEF76B /* ZZUIView.m */; };
+		C2D6CA931E5C0CF400EEF76B /* ZZElementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA921E5C0CF400EEF76B /* ZZElementCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +181,8 @@
 		C2D6CA701E5BE14E00EEF76B /* ZZUITextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextView.m; sourceTree = "<group>"; };
 		C2D6CA721E5BE14E00EEF76B /* ZZUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIView.h; sourceTree = "<group>"; };
 		C2D6CA731E5BE14E00EEF76B /* ZZUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIView.m; sourceTree = "<group>"; };
+		C2D6CA911E5C0CF400EEF76B /* ZZElementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZElementCell.h; sourceTree = "<group>"; };
+		C2D6CA921E5C0CF400EEF76B /* ZZElementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZElementCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,8 @@
 			children = (
 				C2A10C481E5A0E79000960D9 /* ZZElementAreaViewController.h */,
 				C2A10C491E5A0E79000960D9 /* ZZElementAreaViewController.m */,
+				C2D6CA911E5C0CF400EEF76B /* ZZElementCell.h */,
+				C2D6CA921E5C0CF400EEF76B /* ZZElementCell.m */,
 			);
 			path = ZZElementAreaViewController;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				C2D6CA7A1E5BE14E00EEF76B /* ZZUIViewController.m in Sources */,
 				C2D6CA831E5BE14E00EEF76B /* ZZUIResponder.m in Sources */,
 				C2D6CA8C1E5BE14E00EEF76B /* ZZUITextView.m in Sources */,
+				C2D6CA931E5C0CF400EEF76B /* ZZElementCell.m in Sources */,
 				C2D6CA861E5BE14E00EEF76B /* ZZUISwitch.m in Sources */,
 				C2A10C801E5A41E6000960D9 /* ZZWindowController.m in Sources */,
 			);

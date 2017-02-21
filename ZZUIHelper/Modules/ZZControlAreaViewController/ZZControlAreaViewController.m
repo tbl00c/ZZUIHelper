@@ -46,6 +46,11 @@
     [self.collectionView reloadData];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - # Delegate
 //MARK: NSCollectionViewDataSource
 - (NSInteger)collectionView:(NSCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

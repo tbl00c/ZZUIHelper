@@ -8,6 +8,7 @@
 
 #import "ZZElementAreaViewController.h"
 #import "ZZNewPropertyViewController.h"
+#import "ZZElementCell.h"
 
 @interface ZZElementAreaViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
@@ -31,6 +32,7 @@
     [super viewDidAppear];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_NEW_PROJECT object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deselectAllCells) name:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
 }
 
 - (void)dealloc
@@ -51,14 +53,12 @@
     return self.data.count;
 }
 
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     ZZNSObject *object = self.data[row];
-    NSString *classInfo = [NSString stringWithFormat:@"%@ - %@", object.className, object.propertyName];
-    if (object.remarks.length > 0) {
-        classInfo = [classInfo stringByAppendingFormat:@" (%@)", object.remarks];
-    }
-    return classInfo;
+    ZZElementCell *cell = [tableView makeViewWithIdentifier:@"ZZElementCell" owner:tableView];
+    [cell setObject:object];
+    return cell;
 }
 
 //MARK: NSTableViewDelegate
@@ -71,6 +71,11 @@
         [vc setObject:object];
         [self presentViewControllerAsSheet:vc];
     }
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    return 70;
 }
 
 
@@ -89,5 +94,9 @@
     }
 }
 
+- (void)deselectAllCells
+{
+    [self.tableView deselectRow:self.tableView.selectedRow];
+}
 
 @end
