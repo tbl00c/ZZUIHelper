@@ -10,7 +10,9 @@
 #import "ZZNewPropertyViewController.h"
 #import "ZZControlItem.h"
 
-@interface ZZControlAreaViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate, ZZControlItemDelegate>
+#define     MAX_CELL_WIDTH      130
+
+@interface ZZControlAreaViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout, ZZControlItemDelegate>
 
 @property (weak) IBOutlet NSSearchField *searchBar;
 
@@ -22,17 +24,20 @@
 
 @implementation ZZControlAreaViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
-    [layout setItemSize:CGSizeMake(105, 100)];
-    [layout setMinimumLineSpacing:5];
-    [layout setMinimumInteritemSpacing:5];
-    [layout setSectionInset:NSEdgeInsetsMake(5, 5, 5, 5)];
-
+    
     self.data = [ZZControlHelper sharedInstance].controls;
     [self.collectionView registerClass:[ZZControlItem class] forItemWithIdentifier:@"ZZControlItem"];
     self.collectionView.content = self.data;
+}
+
+- (void)viewWillLayout
+{
+    [super viewWillLayout];
+    
+    [self.collectionView reloadData];
 }
 
 #pragma mark - # Delegate
@@ -56,6 +61,35 @@
     for (NSIndexPath *indexPath in indexPaths) {
         NSLog(@"%ld", indexPath.item);
     }
+}
+
+//MARK: NSCollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger line = 2;
+    CGFloat width = (self.view.frame.size.width - line * 10) / line;
+    while (width > MAX_CELL_WIDTH) {
+        line ++;
+        width = (self.view.frame.size.width - line * 10) / line;
+    }
+   
+    CGFloat height = width * 20 / 21;
+    return CGSizeMake(width, height);
+}
+
+- (CGFloat)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 6.0f;
+}
+
+- (CGFloat)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 6.0f;
+}
+
+- (NSEdgeInsets)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return NSEdgeInsetsMake(6, 6, 6, 6);
 }
 
 //MARK: ZZControlItemDelegate

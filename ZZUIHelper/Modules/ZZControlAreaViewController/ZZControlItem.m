@@ -9,8 +9,8 @@
 #import "ZZControlItem.h"
 
 @interface ZZControlItem ()
-@property (weak) IBOutlet NSButtonCell *button;
-@property (weak) IBOutlet NSTextField *titleLabel;
+
+@property (weak) IBOutlet NSButton *button;
 
 @end
 
@@ -19,12 +19,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
 }
 
 - (void)setButtonTitle:(NSString *)buttonTitle
 {
     _buttonTitle = buttonTitle;
-    self.titleLabel.stringValue = buttonTitle;
+    [self.button setTitle:buttonTitle];
 }
 
 - (IBAction)buttonClicked:(id)sender {

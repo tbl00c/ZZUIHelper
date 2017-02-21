@@ -7,8 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ZZControlItem">
             <connections>
-                <outlet property="button" destination="OyV-di-EAK" id="JSX-80-h3T"/>
-                <outlet property="titleLabel" destination="UBu-Jw-d44" id="zkp-ze-7Ba"/>
+                <outlet property="button" destination="hRx-4I-K7G" id="cY0-L9-PRk"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -18,12 +17,9 @@
             <rect key="frame" x="0.0" y="0.0" width="105" height="101"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hRx-4I-K7G">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRx-4I-K7G">
                     <rect key="frame" x="0.0" y="3" width="105" height="96"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="96" id="Stf-Dk-xfl"/>
-                        <constraint firstAttribute="width" constant="105" id="VNp-KD-dXE"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OyV-di-EAK">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -32,23 +28,7 @@
                         <action selector="buttonClicked:" target="-2" id="f5r-Il-rVL"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBu-Jw-d44">
-                    <rect key="frame" x="6" y="42" width="93" height="17"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="xmV-nR-sAT">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
             </subviews>
-            <constraints>
-                <constraint firstItem="hRx-4I-K7G" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="11q-PS-fpB"/>
-                <constraint firstItem="UBu-Jw-d44" firstAttribute="centerX" secondItem="hRx-4I-K7G" secondAttribute="centerX" id="4Qy-Pe-lC1"/>
-                <constraint firstItem="UBu-Jw-d44" firstAttribute="centerY" secondItem="hRx-4I-K7G" secondAttribute="centerY" id="Xjm-ry-mMT"/>
-                <constraint firstAttribute="trailing" secondItem="UBu-Jw-d44" secondAttribute="trailing" constant="8" id="Zpf-M0-eu7"/>
-                <constraint firstItem="UBu-Jw-d44" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="dD0-gk-r0r"/>
-                <constraint firstItem="hRx-4I-K7G" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="udk-ib-2om"/>
-            </constraints>
             <point key="canvasLocation" x="-56.5" y="271.5"/>
         </customView>
     </objects>
