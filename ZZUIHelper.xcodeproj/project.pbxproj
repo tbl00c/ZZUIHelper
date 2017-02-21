@@ -64,6 +64,7 @@
 		C2D6CA8C1E5BE14E00EEF76B /* ZZUITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA701E5BE14E00EEF76B /* ZZUITextView.m */; };
 		C2D6CA8D1E5BE14E00EEF76B /* ZZUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA731E5BE14E00EEF76B /* ZZUIView.m */; };
 		C2D6CA931E5C0CF400EEF76B /* ZZElementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA921E5C0CF400EEF76B /* ZZElementCell.m */; };
+		C2D6CA971E5C191B00EEF76B /* ZZPropertyEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA961E5C191B00EEF76B /* ZZPropertyEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +184,8 @@
 		C2D6CA731E5BE14E00EEF76B /* ZZUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIView.m; sourceTree = "<group>"; };
 		C2D6CA911E5C0CF400EEF76B /* ZZElementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZElementCell.h; sourceTree = "<group>"; };
 		C2D6CA921E5C0CF400EEF76B /* ZZElementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZElementCell.m; sourceTree = "<group>"; };
+		C2D6CA951E5C191B00EEF76B /* ZZPropertyEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyEditViewController.h; sourceTree = "<group>"; };
+		C2D6CA961E5C191B00EEF76B /* ZZPropertyEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,7 @@
 				C2A10C9E1E5AE11C000960D9 /* ZZSettingViewController */,
 				C2A10C471E5A0E67000960D9 /* ZZElementAreaViewController */,
 				C2223A081E5875DA002CB428 /* ZZCodeAreaViewController */,
+				C2D6CA941E5C190300EEF76B /* ZZPropertyEditViewController */,
 				C2A10C4C1E5A1583000960D9 /* ZZControlAreaViewController */,
 			);
 			path = Modules;
@@ -670,6 +674,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C2D6CA941E5C190300EEF76B /* ZZPropertyEditViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2D6CA951E5C191B00EEF76B /* ZZPropertyEditViewController.h */,
+				C2D6CA961E5C191B00EEF76B /* ZZPropertyEditViewController.m */,
+			);
+			path = ZZPropertyEditViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -780,6 +793,7 @@
 				C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */,
 				C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */,
 				C2D6CA801E5BE14E00EEF76B /* ZZUIControl.m in Sources */,
+				C2D6CA971E5C191B00EEF76B /* ZZPropertyEditViewController.m in Sources */,
 				C2D6CA7C1E5BE14E00EEF76B /* ZZUICollectionView.m in Sources */,
 				C2D6CA791E5BE14E00EEF76B /* ZZProtocol.m in Sources */,
 				C2D6CA7E1E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m in Sources */,

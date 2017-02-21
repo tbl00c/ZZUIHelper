@@ -50,9 +50,6 @@
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
         [self addPublicProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
     }
-    else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
-    }
 }
 
 - (BOOL)removePublicProperty:(ZZNSObject *)property
@@ -61,7 +58,6 @@
         NSMutableArray *array = self.interfaceProperties.mutableCopy;
         [array removeObject:property];
         _interfaceProperties = array;
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
         return YES;
     }
     return NO;
@@ -227,9 +223,7 @@
     _extensionProperties = array;
     if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
-        [self addPrivateProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];    }
-    else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+        [self addPrivateProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
     }
 }
 
@@ -239,7 +233,6 @@
         NSMutableArray *array = self.extensionProperties.mutableCopy;
         [array removeObject:property];
         _extensionProperties = array;
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
         return YES;
     }
     return NO;

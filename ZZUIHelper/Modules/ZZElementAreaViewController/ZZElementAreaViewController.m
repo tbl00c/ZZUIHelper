@@ -68,6 +68,7 @@
     NSInteger row = [notification.object selectedRow];
     if (row >= 0 && row < self.data.count) {
         ZZNSObject *object = self.data[row];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:object];
         ZZNewPropertyViewController *vc = [[ZZNewPropertyViewController alloc] initWithNibName:@"ZZNewPropertyViewController" bundle:nil];
         [vc setObject:object];
         [self presentViewControllerAsSheet:vc];
@@ -89,7 +90,7 @@
         else if ([[ZZClassHelper sharedInstance].curClass.extensionProperties containsObject:object]) {
             [[ZZClassHelper sharedInstance].curClass removePrivateProperty:object];
         }
-        [self reloadData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     }
 }
 

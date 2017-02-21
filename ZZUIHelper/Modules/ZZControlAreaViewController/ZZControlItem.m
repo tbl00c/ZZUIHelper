@@ -44,12 +44,15 @@
     [self.verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.bottom.and.right.mas_equalTo(0);
     }];
+    
+    [self.bgView setHidden:!self.selected];
 }
 
 - (void)setButtonTitle:(NSString *)buttonTitle
 {
     _buttonTitle = buttonTitle;
     self.titleLabel.stringValue = buttonTitle;
+    [self.bgView setHidden:!self.selected];
 }
 
 - (void)setSelected:(BOOL)selected

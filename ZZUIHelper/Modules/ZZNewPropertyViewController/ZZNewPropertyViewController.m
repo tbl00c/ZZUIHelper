@@ -45,7 +45,7 @@
             self.object.propertyName = propertyName;
             self.object.remarks = remark;
             [self dismissController:self];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:self.object];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
         }
         else {
@@ -58,7 +58,7 @@
             id a = [[cls alloc] init];
             [[ZZClassHelper sharedInstance].curClass addPrivateProperty:a withName:propertyName andRemarks:remark];
             [self dismissController:self];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:a];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
         }
         else {

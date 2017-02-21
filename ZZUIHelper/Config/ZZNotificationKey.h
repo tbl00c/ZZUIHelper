@@ -12,6 +12,7 @@
 
 #define     NOTI_NEW_PROJECT                    @"NOTI_NEW_PROJECT"
 #define     NOTI_CLASS_PROPERTY_CHANGED         @"NOTI_CLASS_PROPERTY_CHANGED"
+#define     NOTI_CLASS_PROPERTY_EDIT            @"NOTI_CLASS_PROPERTY_EDIT"
 #define     NOTI_NEW_PROPERTY_VC_CLOSE          @"NOTI_NEW_PROPERTY_VC_CLOSE"
 #define     NOTI_SETTING_EDIT                   @"NOTI_NEW_PROJECT"
 
