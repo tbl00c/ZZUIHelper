@@ -8,13 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol ZZControlItemDelegate <NSObject>
-
-- (void)didSelectItemWithClassName:(NSString *)className;
-
-@end
-
 @interface ZZControlItem : NSCollectionViewItem
-@property (nonatomic, weak) id<ZZControlItemDelegate> delegate;
 @property (nonatomic, strong) NSString *buttonTitle;
 @end

@@ -12,7 +12,7 @@
 
 #define     MAX_CELL_WIDTH      130
 
-@interface ZZControlAreaViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout, ZZControlItemDelegate>
+@interface ZZControlAreaViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout>
 
 @property (weak) IBOutlet NSSearchField *searchBar;
 
@@ -27,6 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
+    [layout setMinimumLineSpacing:0];
+    [layout setMinimumInteritemSpacing:0];
     
     self.data = [ZZControlHelper sharedInstance].controls;
     [self.collectionView registerClass:[ZZControlItem class] forItemWithIdentifier:@"ZZControlItem"];
@@ -51,15 +55,18 @@
 {
     ZZControlItem *item = [collectionView makeItemWithIdentifier:@"ZZControlItem" forIndexPath:indexPath];
     item.buttonTitle = self.data[indexPath.item];
-    item.delegate = self;
     return item;
 }
 
 //MARK: NSCollectionViewDelegate
-- (void)collectionView:(NSCollectionView *)collectionView didSelectItemsAtIndexPaths:(nonnull NSSet<NSIndexPath *> *)indexPaths
+- (void)collectionView:(NSCollectionView *)collectionView didSelectItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths
 {
-    for (NSIndexPath *indexPath in indexPaths) {
-        NSLog(@"%ld", indexPath.item);
+    NSInteger index = [[indexPaths allObjects][0] item];
+    if (index >= 0 && index < self.data.count) {
+        NSString *className = [@"ZZ" stringByAppendingString:self.data[index]];
+        ZZNewPropertyViewController *vc = [[ZZNewPropertyViewController alloc] initWithNibName:@"ZZNewPropertyViewController" bundle:nil];
+        [vc setClassName:className];
+        [self presentViewControllerAsSheet:vc];
     }
 }
 
@@ -67,37 +74,14 @@
 - (CGSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger line = 2;
-    CGFloat width = (self.view.frame.size.width - line * 10) / line;
+    CGFloat width = (self.view.frame.size.width - 2) / line;
     while (width > MAX_CELL_WIDTH) {
         line ++;
-        width = (self.view.frame.size.width - line * 10) / line;
+        width = (self.view.frame.size.width - 2) / line;
     }
    
     CGFloat height = width * 20 / 21;
     return CGSizeMake(width, height);
-}
-
-- (CGFloat)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 6.0f;
-}
-
-- (CGFloat)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 6.0f;
-}
-
-- (NSEdgeInsets)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return NSEdgeInsetsMake(6, 6, 6, 6);
-}
-
-//MARK: ZZControlItemDelegate
-- (void)didSelectItemWithClassName:(NSString *)className
-{
-    ZZNewPropertyViewController *vc = [[ZZNewPropertyViewController alloc] initWithNibName:@"ZZNewPropertyViewController" bundle:nil];
-    [vc setClassName:className];
-    [self presentViewControllerAsSheet:vc];
 }
 
 #pragma mark - # Event Reponse

@@ -938,7 +938,7 @@
                                     <rect key="frame" x="1" y="1" width="228" height="278"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView id="JR1-6f-QFG">
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="JR1-6f-QFG">
                                             <rect key="frame" x="0.0" y="0.0" width="228" height="278"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="MiJ-Wn-LD5">
@@ -947,7 +947,7 @@
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="xHv-3Q-xFa" id="vCa-bG-SWa"/>
-                                                <outlet property="delegate" destination="xHv-3Q-xFa" id="TTl-nM-oxe"/>
+                                                <outlet property="delegate" destination="xHv-3Q-xFa" id="ibc-kN-bmU"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>

@@ -10,7 +10,10 @@
 
 @interface ZZControlItem ()
 
-@property (weak) IBOutlet NSButton *button;
+@property (weak) IBOutlet NSTextField *titleLabel;
+
+@property (weak) IBOutlet NSBox *horizontalLine;
+@property (weak) IBOutlet NSBox *verticalLine;
 
 @end
 
@@ -20,21 +23,23 @@
 {
     [super viewDidLoad];
     
-    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(0);
+        make.width.mas_lessThanOrEqualTo(self.view);
+    }];
+    
+    [self.horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.and.bottom.mas_equalTo(0);
+    }];
+    [self.verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.bottom.and.right.mas_equalTo(0);
     }];
 }
 
 - (void)setButtonTitle:(NSString *)buttonTitle
 {
     _buttonTitle = buttonTitle;
-    [self.button setTitle:buttonTitle];
+    self.titleLabel.stringValue = buttonTitle;
 }
 
-- (IBAction)buttonClicked:(id)sender {
-    NSString *className = [@"ZZ" stringByAppendingString:self.buttonTitle];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectItemWithClassName:)]) {
-        [self.delegate didSelectItemWithClassName:className];
-    }
-}
 @end
