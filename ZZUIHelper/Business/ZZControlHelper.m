@@ -33,7 +33,8 @@
              @"UITextField",
              @"UITextView",
              @"UIScrollView",
-             @"UISwitch"];
+             @"UISwitch",
+             @"NSMutableArray"];
 }
 
 @end

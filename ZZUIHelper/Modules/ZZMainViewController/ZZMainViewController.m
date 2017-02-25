@@ -9,11 +9,21 @@
 #import "ZZMainViewController.h"
 #import "ZZNewFileViewController.h"
 
+#import "ZZMethod.h"
+
 @interface ZZMainViewController ()
 
 @end
 
 @implementation ZZMainViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    ZZMethod *methods = [[ZZMethod alloc] init];
+    [methods setMethodNameWithParams:@"    - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath   "];
+}
 
 - (void)viewDidAppear {
     [super viewDidAppear];

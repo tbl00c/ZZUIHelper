@@ -14,4 +14,6 @@
 
 - (NSString *)lowerFirstCharacter;
 
+- (NSString *)strip;
+
 @end

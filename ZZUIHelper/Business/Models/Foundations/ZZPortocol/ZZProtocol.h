@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZZMethod.h"
 
 @interface ZZProtocol : NSObject
 
@@ -16,7 +17,7 @@
 
 @property (nonatomic, strong, readonly) NSString *protocolName;
 
-@property (nonatomic, strong, readonly) NSArray *protocolMethods;
+@property (nonatomic, strong, readonly) NSArray<ZZMethod *> *protocolMethods;
 
 @property (nonatomic, strong, readonly) NSArray *protocolMethodsCode;
 

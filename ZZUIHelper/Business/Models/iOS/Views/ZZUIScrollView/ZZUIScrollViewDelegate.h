@@ -10,14 +10,4 @@
 
 @interface ZZUIScrollViewDelegate : ZZProtocol
 
-- (NSString *)scrollViewDidScroll;
-
-- (NSString *)scrollViewWillBeginDragging;
-
-- (NSString *)scrollViewDidEndDraggingwillDecelerate;
-
-- (NSString *)scrollViewDidEndDecelerating;
-
-- (NSString *)scrollViewDidEndScrollingAnimation;
-
 @end

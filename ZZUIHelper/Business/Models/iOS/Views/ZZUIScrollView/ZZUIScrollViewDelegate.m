@@ -8,6 +8,12 @@
 
 #import "ZZUIScrollViewDelegate.h"
 
+@interface ZZUIScrollViewDelegate ()
+
+@property (nonatomic, strong) NSMutableArray *delegates;
+
+@end
+
 @implementation ZZUIScrollViewDelegate
 @synthesize protocolMethods = _protocolMethods;
 @synthesize protocolMethodsCode = _protocolMethodsCode;

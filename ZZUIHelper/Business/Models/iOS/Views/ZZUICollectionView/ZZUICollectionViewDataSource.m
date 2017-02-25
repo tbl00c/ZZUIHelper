@@ -58,7 +58,7 @@
 
 - (NSString *)collectionViewnumberOfItemsInSection
 {
-    NSString *code = [NSString stringWithFormat:@"- (NSInteger)collectionView:(%@ *)%@ numberOfItemsInSection:(NSIndexPath *)indexPath%@\n\treturn self.data.count;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
+    NSString *code = [NSString stringWithFormat:@"- (NSInteger)collectionView:(%@ *)%@ numberOfItemsInSection:(NSInteger)section%@\n\treturn self.data.count;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
     return code;
 }
 

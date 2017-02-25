@@ -30,4 +30,10 @@
     return self;
 }
 
+- (NSString *)strip
+{
+    NSString *stripString = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return stripString;
+}
+
 @end

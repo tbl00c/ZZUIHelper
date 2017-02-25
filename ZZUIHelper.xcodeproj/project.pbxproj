@@ -26,6 +26,9 @@
 		C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */; };
 		C2A10CB71E5AEF39000960D9 /* ZZNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */; };
 		C2A10CB81E5AEF39000960D9 /* ZZNewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */; };
+		C2B3F5D01E608096000E42CE /* ZZMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5CF1E608096000E42CE /* ZZMethod.m */; };
+		C2B3F5D31E60F307000E42CE /* ZZParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5D21E60F307000E42CE /* ZZParam.m */; };
+		C2B3F5D61E60F621000E42CE /* ZZUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5D51E60F621000E42CE /* ZZUtility.m */; };
 		C2D6CA211E5BE12700EEF76B /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA011E5BE12700EEF76B /* NSDate+Extension.m */; };
 		C2D6CA221E5BE12700EEF76B /* NSString+MMBJ.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA031E5BE12700EEF76B /* NSString+MMBJ.m */; };
 		C2D6CA231E5BE12700EEF76B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C2D6CA051E5BE12700EEF76B /* LICENSE */; };
@@ -105,6 +108,12 @@
 		C2A10CB41E5AEF39000960D9 /* ZZNewFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewFileViewController.h; sourceTree = "<group>"; };
 		C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewFileViewController.m; sourceTree = "<group>"; };
 		C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewFileViewController.xib; sourceTree = "<group>"; };
+		C2B3F5CE1E608096000E42CE /* ZZMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMethod.h; sourceTree = "<group>"; };
+		C2B3F5CF1E608096000E42CE /* ZZMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMethod.m; sourceTree = "<group>"; };
+		C2B3F5D11E60F307000E42CE /* ZZParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZParam.h; sourceTree = "<group>"; };
+		C2B3F5D21E60F307000E42CE /* ZZParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZParam.m; sourceTree = "<group>"; };
+		C2B3F5D41E60F621000E42CE /* ZZUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUtility.h; sourceTree = "<group>"; };
+		C2B3F5D51E60F621000E42CE /* ZZUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUtility.m; sourceTree = "<group>"; };
 		C2D6CA001E5BE12700EEF76B /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		C2D6CA011E5BE12700EEF76B /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		C2D6CA021E5BE12700EEF76B /* NSString+MMBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MMBJ.h"; sourceTree = "<group>"; };
@@ -282,6 +291,8 @@
 				C2A10C4B1E5A1400000960D9 /* ZZNotificationKey.h */,
 				C2A10C1A1E59614B000960D9 /* ZZUIHelperConfig.h */,
 				C2A10C1B1E59614B000960D9 /* ZZUIHelperConfig.m */,
+				C2B3F5D41E60F621000E42CE /* ZZUtility.h */,
+				C2B3F5D51E60F621000E42CE /* ZZUtility.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -359,6 +370,17 @@
 			path = ZZNewFileViewController;
 			sourceTree = "<group>";
 		};
+		C2B3F5CD1E60807C000E42CE /* ZZMethod */ = {
+			isa = PBXGroup;
+			children = (
+				C2B3F5D11E60F307000E42CE /* ZZParam.h */,
+				C2B3F5D21E60F307000E42CE /* ZZParam.m */,
+				C2B3F5CE1E608096000E42CE /* ZZMethod.h */,
+				C2B3F5CF1E608096000E42CE /* ZZMethod.m */,
+			);
+			path = ZZMethod;
+			sourceTree = "<group>";
+		};
 		C2D6C9FE1E5BE12700EEF76B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +456,7 @@
 		C2D6CA301E5BE14E00EEF76B /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				C2B3F5CD1E60807C000E42CE /* ZZMethod */,
 				C2D6CA371E5BE14E00EEF76B /* ZZPortocol */,
 				C2D6CA341E5BE14E00EEF76B /* ZZNSObject */,
 				C2D6CA311E5BE14E00EEF76B /* ZZNSMutableArray */,
@@ -792,12 +815,15 @@
 				C2D6CA881E5BE14E00EEF76B /* ZZUITableViewDataSource.m in Sources */,
 				C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */,
 				C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */,
+				C2B3F5D61E60F621000E42CE /* ZZUtility.m in Sources */,
 				C2D6CA801E5BE14E00EEF76B /* ZZUIControl.m in Sources */,
+				C2B3F5D01E608096000E42CE /* ZZMethod.m in Sources */,
 				C2D6CA971E5C191B00EEF76B /* ZZPropertyEditViewController.m in Sources */,
 				C2D6CA7C1E5BE14E00EEF76B /* ZZUICollectionView.m in Sources */,
 				C2D6CA791E5BE14E00EEF76B /* ZZProtocol.m in Sources */,
 				C2D6CA7E1E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m in Sources */,
 				C2D6CA8B1E5BE14E00EEF76B /* ZZUITextField.m in Sources */,
+				C2B3F5D31E60F307000E42CE /* ZZParam.m in Sources */,
 				C2D6CA261E5BE12700EEF76B /* MASConstraintMaker.m in Sources */,
 				C2D6CA271E5BE12700EEF76B /* MASLayoutConstraint.m in Sources */,
 				C2A10C461E5A0D6B000960D9 /* ZZClassHelper.m in Sources */,
