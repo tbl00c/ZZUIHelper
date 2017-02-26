@@ -10,40 +10,33 @@
 
 @implementation ZZUICollectionViewDelegate
 
-- (NSString *)className
-{
-    return @"UICollectionView";
-}
-
-- (NSString *)propertyName
-{
-    return @"collectionView";
-}
-
-- (NSString *)protocolName
-{
-    return @"UICollectionViewDelegate";
-}
-
 - (NSArray *)protocolMethods
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:@"collectionView:didSelectItemAtIndexPath"];
-    [array addObjectsFromArray:[super protocolMethods]];
+    [array addObject:self.collectionView_didSelectItemAtIndexPath];
+    NSArray *superProtocolMethods = [super protocolMethods];
+    for (ZZMethod *method in superProtocolMethods) {
+        [method setSelected:NO];
+    }
+    [array addObjectsFromArray:superProtocolMethods];
     return array;
 }
 
-- (NSArray *)protocolMethodsCode
+
+- (ZZMethod *)collectionView_didSelectItemAtIndexPath
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:[self collectionViewdidSelectItemAtIndexPath]];
-    return array;
+    if (!_collectionView_didSelectItemAtIndexPath) {
+        _collectionView_didSelectItemAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath" selected:YES];
+    }
+    return _collectionView_didSelectItemAtIndexPath;
 }
 
-- (NSString *)collectionViewdidSelectItemAtIndexPath
+- (ZZMethod *)collectionView_didDeselectItemAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)collectionView:(%@ *)%@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_collectionView_didDeselectItemAtIndexPath) {
+        _collectionView_didDeselectItemAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath" selected:NO];
+    }
+    return _collectionView_didDeselectItemAtIndexPath;
 }
 
 @end

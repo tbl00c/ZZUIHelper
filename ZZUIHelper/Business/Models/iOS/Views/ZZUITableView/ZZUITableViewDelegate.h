@@ -10,16 +10,18 @@
 
 @interface ZZUITableViewDelegate : ZZUIScrollViewDelegate
 
-- (NSString *)tableViewdidSelectRowAtIndexPath;
+@property (nonatomic, strong) ZZMethod *tableView_didSelectRowAtIndexPath;
 
-- (NSString *)tableViewheightForRowAtIndexPath;
+@property (nonatomic, strong) ZZMethod *tableView_didDeselectRowAtIndexPath;
 
-- (NSString *)tableViewheightForHeaderInSection;
+@property (nonatomic, strong) ZZMethod *tableView_heightForRowAtIndexPath;
 
-- (NSString *)tableViewheightForFooterInSection;
+@property (nonatomic, strong) ZZMethod *tableView_heightForHeaderInSection;
 
-- (NSString *)tableViewviewForHeaderInSection;
+@property (nonatomic, strong) ZZMethod *tableView_heightForFooterInSection;
 
-- (NSString *)tableViewviewForFooterInSection;
+@property (nonatomic, strong) ZZMethod *tableView_viewForHeaderInSection;
+
+@property (nonatomic, strong) ZZMethod *tableView_viewForFooterInSection;
 
 @end

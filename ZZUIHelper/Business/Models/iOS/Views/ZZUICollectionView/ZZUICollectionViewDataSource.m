@@ -10,81 +10,69 @@
 
 @implementation ZZUICollectionViewDataSource
 
-- (NSString *)className
-{
-    return @"UICollectionView";
-}
-
-- (NSString *)propertyName
-{
-    return @"collectionView";
-}
-
-- (NSString *)protocolName
-{
-    return @"UICollectionViewDataSource";
-}
-
 - (NSArray *)protocolMethods
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:@"numberOfSectionsInCollectionView:"];
-    [array addObject:@"collectionView:numberOfItemsInSection:"];
-    [array addObject:@"collectionView:cellForItemAtIndexPath:"];
-    [array addObject:@"collectionView:viewForSupplementaryElementOfKind:atIndexPath:"];
-    [array addObject:@"collectionView:canMoveItemAtIndexPath:"];
-    [array addObject:@"collectionView:moveItemAtIndexPath:toIndexPath:"];
-    [array addObjectsFromArray:[super protocolMethods]];
+    [array addObject:self.numberOfSectionsInCollectionView];
+    [array addObject:self.collectionView_numberOfItemsInSection];
+    [array addObject:self.collectionView_cellForItemAtIndexPath];
+    [array addObject:self.collectionView_viewForSupplementaryElementOfKind_atIndexPath];
+    [array addObject:self.collectionView_canMoveItemAtIndexPath];
+    [array addObject:self.collectionView_moveItemAtIndexPath_toIndexPath];
+    NSArray *superProtocolMethods = [super protocolMethods];
+    for (ZZMethod *method in superProtocolMethods) {
+        [method setSelected:NO];
+    }
+    [array addObjectsFromArray:superProtocolMethods];
     return array;
 }
 
-- (NSArray *)protocolMethodsCode
+- (ZZMethod *)numberOfSectionsInCollectionView
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:[self numberOfSectionsInCollectionView]];
-    [array addObject:[self collectionViewnumberOfItemsInSection]];
-    [array addObject:[self collectionViewcellForItemAtIndexPath]];
-//    [array addObject:[self collectionViewviewForSupplementaryElementOfKindatIndexPath]];
-//    [array addObject:[self collectionViewcanMoveItemAtIndexPath]];
-//    [array addObject:[self collectionViewmoveItemAtIndexPathtoIndexPath]];
-    return array;
+    if (!_numberOfSectionsInCollectionView) {
+        _numberOfSectionsInCollectionView = [[ZZMethod alloc] initWithMethodName:@"- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView" selected:YES];
+    }
+    return _numberOfSectionsInCollectionView;
 }
 
-- (NSString *)numberOfSectionsInCollectionView
+- (ZZMethod *)collectionView_numberOfItemsInSection
 {
-    NSString *code = [NSString stringWithFormat:@"- (NSInteger)numberOfSectionsInCollectionView:(%@ *)%@%@\n\treturn 1;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_collectionView_numberOfItemsInSection) {
+        _collectionView_numberOfItemsInSection = [[ZZMethod alloc] initWithMethodName:@"- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section" selected:YES];
+    }
+    return _collectionView_numberOfItemsInSection;
 }
 
-- (NSString *)collectionViewnumberOfItemsInSection
+- (ZZMethod *)collectionView_cellForItemAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (NSInteger)collectionView:(%@ *)%@ numberOfItemsInSection:(NSInteger)section%@\n\treturn self.data.count;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_collectionView_cellForItemAtIndexPath) {
+        _collectionView_cellForItemAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath" selected:YES];
+    }
+    return _collectionView_cellForItemAtIndexPath;
 }
 
-- (NSString *)collectionViewcellForItemAtIndexPath
+- (ZZMethod *)collectionView_viewForSupplementaryElementOfKind_atIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (UICollectionViewCell *)collectionView:(%@ *)%@ cellForItemAtIndexPath:(NSIndexPath *)indexPath%@\n\treturn nil;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_collectionView_viewForSupplementaryElementOfKind_atIndexPath) {
+        _collectionView_viewForSupplementaryElementOfKind_atIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath" selected:NO];
+    }
+    return _collectionView_viewForSupplementaryElementOfKind_atIndexPath;
 }
 
-- (NSString *)collectionViewviewForSupplementaryElementOfKindatIndexPath
+- (ZZMethod *)collectionView_canMoveItemAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (UICollectionReusableView *)collectionView:(%@ *)%@ viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath%@\n\treturn nil;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_collectionView_canMoveItemAtIndexPath) {
+        _collectionView_canMoveItemAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath" selected:NO];
+    }
+    return _collectionView_canMoveItemAtIndexPath;
 }
 
-- (NSString *)collectionViewcanMoveItemAtIndexPath
+- (ZZMethod *)collectionView_moveItemAtIndexPath_toIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (BOOL)collectionView:(%@ *)%@ canMoveItemAtIndexPath:(NSIndexPath *)indexPath%@\n\treturn YES;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_collectionView_moveItemAtIndexPath_toIndexPath) {
+        _collectionView_moveItemAtIndexPath_toIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath" selected:NO];
+    }
+    return _collectionView_moveItemAtIndexPath_toIndexPath;
 }
-
-- (NSString *)collectionViewmoveItemAtIndexPathtoIndexPath
-{
-    NSString *code = [NSString stringWithFormat:@"- (void)collectionView:(%@ *)%@ moveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)indexPath%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
-}
-
 
 @end

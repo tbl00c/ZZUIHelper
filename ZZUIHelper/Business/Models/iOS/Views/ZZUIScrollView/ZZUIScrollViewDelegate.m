@@ -16,79 +16,74 @@
 
 @implementation ZZUIScrollViewDelegate
 @synthesize protocolMethods = _protocolMethods;
-@synthesize protocolMethodsCode = _protocolMethodsCode;
-
-- (NSString *)className
-{
-    return @"UIScrollView";
-}
-
-- (NSString *)propertyName
-{
-    return @"scrollView";
-}
-
-- (NSString *)protocolName
-{
-    return @"UIScrollViewDelegate";
-}
 
 - (NSArray *)protocolMethods
 {
     if (!_protocolMethods) {
         NSMutableArray *methods = [[NSMutableArray alloc] init];
-        [methods addObject:@"scrollViewDidScroll:"];
-        [methods addObject:@"scrollViewWillBeginDragging:"];
-        [methods addObject:@"scrollViewDidEndDragging:willDecelerate:"];
-        [methods addObject:@"scrollViewDidEndDecelerating:"];
-        [methods addObject:@"scrollViewDidEndScrollingAnimation:"];
+        [methods addObject:self.scrollViewDidScroll];
+        [methods addObject:self.scrollViewWillBeginDragging];
+        [methods addObject:self.scrollViewDidEndDragging_willDecelerate];
+        [methods addObject:self.scrollViewWillBeginDecelerating];
+        [methods addObject:self.scrollViewDidEndDecelerating];
+        [methods addObject:self.scrollViewDidEndScrollingAnimation];
+        NSArray *superProtocolMethods = [super protocolMethods];
+        for (ZZMethod *method in superProtocolMethods) {
+            [method setSelected:NO];
+        }
+        [methods addObjectsFromArray:superProtocolMethods];
         _protocolMethods = methods;
     }
     return _protocolMethods;
 }
 
-- (NSArray *)protocolMethodsCode
+#pragma mark - # Getter
+- (ZZMethod *)scrollViewDidScroll
 {
-    if (!_protocolMethodsCode) {
-        NSMutableArray *methods = [[NSMutableArray alloc] init];
-        [methods addObject:[self scrollViewDidScroll]];
-        [methods addObject:[self scrollViewWillBeginDragging]];
-        [methods addObject:[self scrollViewDidEndDraggingwillDecelerate]];
-        [methods addObject:[self scrollViewDidEndDecelerating]];
-        [methods addObject:[self scrollViewDidEndScrollingAnimation]];
-        _protocolMethodsCode = methods;
+    if (!_scrollViewDidScroll) {
+        _scrollViewDidScroll = [[ZZMethod alloc] initWithMethodName:@"- (void)scrollViewDidScroll:(UIScrollView *)scrollView" selected:YES];
     }
-    return _protocolMethodsCode;
+    return _scrollViewDidScroll;
 }
 
-- (NSString *)scrollViewDidScroll
+- (ZZMethod *)scrollViewWillBeginDragging
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)scrollViewDidScroll:(%@ *)%@%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_scrollViewWillBeginDragging) {
+        _scrollViewWillBeginDragging = [[ZZMethod alloc] initWithMethodName:@"- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView" selected:YES];
+    }
+    return _scrollViewWillBeginDragging;
 }
 
-- (NSString *)scrollViewWillBeginDragging
+- (ZZMethod *)scrollViewDidEndDragging_willDecelerate
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)scrollViewWillBeginDragging:(%@ *)%@%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_scrollViewDidEndDragging_willDecelerate) {
+        _scrollViewDidEndDragging_willDecelerate = [[ZZMethod alloc] initWithMethodName:@"- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate" selected:YES];
+    }
+    return _scrollViewDidEndDragging_willDecelerate;
 }
 
-- (NSString *)scrollViewDidEndDraggingwillDecelerate
+- (ZZMethod *)scrollViewWillBeginDecelerating
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)scrollViewDidEndDragging:(%@ *)%@ willDecelerate:(BOOL)decelerate%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_scrollViewWillBeginDecelerating) {
+        _scrollViewWillBeginDecelerating = [[ZZMethod alloc] initWithMethodName:@"- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;" selected:NO];
+    }
+    return _scrollViewWillBeginDecelerating;
 }
 
-- (NSString *)scrollViewDidEndDecelerating
+- (ZZMethod *)scrollViewDidEndDecelerating
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)scrollViewDidEndDecelerating:(%@ *)%@%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_scrollViewDidEndDecelerating) {
+        _scrollViewDidEndDecelerating = [[ZZMethod alloc] initWithMethodName:@"- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView" selected:YES];
+    }
+    return _scrollViewDidEndDecelerating;
 }
 
-- (NSString *)scrollViewDidEndScrollingAnimation
+- (ZZMethod *)scrollViewDidEndScrollingAnimation
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)scrollViewDidEndScrollingAnimation:(%@ *)%@%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_scrollViewDidEndScrollingAnimation) {
+        _scrollViewDidEndScrollingAnimation = [[ZZMethod alloc] initWithMethodName:@"- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView" selected:YES];
+    }
+    return _scrollViewDidEndScrollingAnimation;
 }
 
 @end

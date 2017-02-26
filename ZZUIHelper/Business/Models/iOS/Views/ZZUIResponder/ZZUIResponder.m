@@ -151,10 +151,7 @@
         NSString *delegateCode = [NSString stringWithFormat:@"%@ Delegate\n", PMARK_];
         for (ZZProtocol *protocol in delegateArray) {
             delegateCode = [delegateCode stringByAppendingFormat:@"%@ %@\n", PMARK, protocol.protocolName];
-            NSArray *protocolMethods = protocol.protocolMethodsCode;
-            for (NSString *method in protocolMethods) {
-                delegateCode = [delegateCode stringByAppendingString:method];
-            }
+            delegateCode = [delegateCode stringByAppendingString:protocol.protocolCode];
         }
         return delegateCode;
     }

@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
     ZZMethod *methods = [[ZZMethod alloc] init];
-    [methods setMethodNameWithParams:@"    - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath   "];
+    [methods setMethodName:@"    - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath   "];
 }
 
 - (void)viewDidAppear {

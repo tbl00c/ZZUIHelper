@@ -10,6 +10,7 @@
 
 @interface ZZUICollectionViewDelegate : ZZUIScrollViewDelegate
 
-- (NSString *)collectionViewdidSelectItemAtIndexPath;
+@property (nonatomic, strong) ZZMethod *collectionView_didSelectItemAtIndexPath;
+@property (nonatomic, strong) ZZMethod *collectionView_didDeselectItemAtIndexPath;
 
 @end

@@ -10,80 +10,77 @@
 
 @implementation ZZUITableViewDelegate
 
-- (NSString *)className
-{
-    return @"UITableView";
-}
-
-- (NSString *)propertyName
-{
-    return @"tableView";
-}
-
-- (NSString *)protocolName
-{
-    return @"UITableViewDelegate";
-}
-
 - (NSArray *)protocolMethods
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:@"tableView:didSelectRowAtIndexPath"];
-    [array addObject:@"tableView:heightForRowAtIndexPath:"];
-    [array addObject:@"tableView:heightForHeaderInSection"];
-    [array addObject:@"tableView:heightForFooterInSection:"];
-    [array addObject:@"tableView:viewForHeaderInSection:"];
-    [array addObject:@"tableView:viewForFooterInSection:"];
-    [array addObjectsFromArray:[super protocolMethods]];
+    [array addObject:self.tableView_didSelectRowAtIndexPath];
+    [array addObject:self.tableView_heightForRowAtIndexPath];
+    [array addObject:self.tableView_heightForHeaderInSection];
+    [array addObject:self.tableView_heightForFooterInSection];
+    [array addObject:self.tableView_viewForHeaderInSection];
+    [array addObject:self.tableView_viewForFooterInSection];
+    NSArray *superProtocolMethods = [super protocolMethods];
+    for (ZZMethod *method in superProtocolMethods) {
+        [method setSelected:NO];
+    }
+    [array addObjectsFromArray:superProtocolMethods];
     return array;
 }
 
-- (NSArray *)protocolMethodsCode
+- (ZZMethod *)tableView_didSelectRowAtIndexPath
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:[self tableViewdidSelectRowAtIndexPath]];
-    [array addObject:[self tableViewheightForRowAtIndexPath]];
-//    [array addObject:[self tableViewheightForHeaderInSection]];
-//    [array addObject:[self tableViewheightForFooterInSection]];
-//    [array addObject:[self tableViewviewForHeaderInSection]];
-//    [array addObject:[self tableViewviewForFooterInSection]];
-    return array;
+    if (!_tableView_didSelectRowAtIndexPath) {
+        _tableView_didSelectRowAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath" selected:YES];
+    }
+    return _tableView_didSelectRowAtIndexPath;
 }
 
-- (NSString *)tableViewdidSelectRowAtIndexPath
+- (ZZMethod *)tableView_didDeselectRowAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)tableView:(%@ *)%@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_didDeselectRowAtIndexPath) {
+        _tableView_didDeselectRowAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath" selected:YES];
+    }
+    return _tableView_didDeselectRowAtIndexPath;
 }
 
-- (NSString *)tableViewheightForRowAtIndexPath
+- (ZZMethod *)tableView_heightForRowAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (CGFloat)tableView:(%@ *)%@ heightForRowAtIndexPath:(NSIndexPath *)indexPath%@\n\treturn 50.0f\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_heightForRowAtIndexPath) {
+        _tableView_heightForRowAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath" selected:NO];
+    }
+    return _tableView_heightForRowAtIndexPath;
 }
 
-- (NSString *)tableViewheightForHeaderInSection
+- (ZZMethod *)tableView_heightForHeaderInSection
 {
-    NSString *code = [NSString stringWithFormat:@"- (CGFloat)tableView:(%@ *)%@ heightForHeaderInSection:(NSIndexPath *)indexPath%@\n\treturn 50.0f;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_heightForHeaderInSection) {
+        _tableView_heightForHeaderInSection = [[ZZMethod alloc] initWithMethodName:@"- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section" selected:NO];
+    }
+    return _tableView_heightForHeaderInSection;
 }
 
-- (NSString *)tableViewheightForFooterInSection
+- (ZZMethod *)tableView_heightForFooterInSection
 {
-    NSString *code = [NSString stringWithFormat:@"- (CGFloat)tableView:(%@ *)%@ heightForFooterInSection:(NSIndexPath *)indexPath%@\n\treturn 50.0f;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_heightForFooterInSection) {
+        _tableView_heightForFooterInSection = [[ZZMethod alloc] initWithMethodName:@"- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section" selected:NO];
+    }
+    return _tableView_heightForFooterInSection;
 }
 
-- (NSString *)tableViewviewForHeaderInSection
+- (ZZMethod *)tableView_viewForHeaderInSection
 {
-    NSString *code = [NSString stringWithFormat:@"- (UIView *)tableView:(%@ *)%@ viewForHeaderInSection:(NSInteger)section%@\n\treturn nil;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_viewForHeaderInSection) {
+        _tableView_viewForHeaderInSection = [[ZZMethod alloc] initWithMethodName:@"- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section" selected:NO];
+    }
+    return _tableView_viewForHeaderInSection;
 }
 
-- (NSString *)tableViewviewForFooterInSection
+- (ZZMethod *)tableView_viewForFooterInSection
 {
-    NSString *code = [NSString stringWithFormat:@"- (UIView *)tableView:(%@ *)%@ viewForFooterInSection:(NSInteger)section%@\n\treturn nil;\n}\n\n", self.className, self.propertyName,LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_viewForFooterInSection) {
+        _tableView_viewForFooterInSection = [[ZZMethod alloc] initWithMethodName:@"- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section" selected:NO];
+    }
+    return _tableView_viewForFooterInSection;
 }
 
 @end

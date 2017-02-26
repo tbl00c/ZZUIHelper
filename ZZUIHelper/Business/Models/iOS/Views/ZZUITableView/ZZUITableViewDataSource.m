@@ -10,89 +10,79 @@
 
 @implementation ZZUITableViewDataSource
 
-- (NSString *)className
-{
-    return @"UITableView";
-}
-
-- (NSString *)propertyName
-{
-    return @"tableView";
-}
-
-- (NSString *)protocolName
-{
-    return @"UITableViewDataSource";
-}
-
 - (NSArray *)protocolMethods
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:@"numberOfSectionsInTableView:"];
-    [array addObject:@"tableView:numberOfRowsInSection:"];
-    [array addObject:@"tableView:cellForRowAtIndexPath:"];
-    [array addObject:@"tableView:canEditRowAtIndexPath:"];
-    [array addObject:@"tableView:canMoveRowAtIndexPath:"];
-    [array addObject:@"tableView:commitEditingStyle:forRowAtIndexPath:"];
-    [array addObject:@"tableView:moveRowAtIndexPath:toIndexPath:"];
+    [array addObject:self.numberOfSectionsInTableView];
+    [array addObject:self.tableView_numberOfRowsInSection];
+    [array addObject:self.tableView_cellForRowAtIndexPath];
+    [array addObject:self.tableView_canEditRowAtIndexPath];
+    [array addObject:self.tableView_canMoveRowAtIndexPath];
+    [array addObject:self.tableView_commitEditingStyle_forRowAtIndexPath];
+    [array addObject:self.tableView_moveRowAtIndexPath_toIndexPath];
+    NSArray *superProtocolMethods = [super protocolMethods];
+    for (ZZMethod *method in superProtocolMethods) {
+        [method setSelected:NO];
+    }
+    [array addObjectsFromArray:superProtocolMethods];
     return array;
 }
 
-- (NSArray *)protocolMethodsCode
+- (ZZMethod *)numberOfSectionsInTableView
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:[self numberOfSectionsInTableView]];
-    [array addObject:[self tableViewnumberOfRowsInSection]];
-    [array addObject:[self tableViewcellForRowAtIndexPath]];
-//    [array addObject:[self tableViewcanEditRowAtIndexPath]];
-//    [array addObject:[self tableViewcanMoveRowAtIndexPath]];
-//    [array addObject:[self tableViewcommitEditingStyleforRowAtIndexPath]];
-//    [array addObject:[self tableViewmoveRowAtIndexPathtoIndexPath]];
-    return array;
+    if (!_numberOfSectionsInTableView) {
+        _numberOfSectionsInTableView = [[ZZMethod alloc] initWithMethodName:@"- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView" selected:YES];
+    }
+    return _numberOfSectionsInTableView;
 }
 
-- (NSString *)numberOfSectionsInTableView
+- (ZZMethod *)tableView_numberOfRowsInSection
 {
-    NSString *code = [NSString stringWithFormat:@"- (NSInteger)numberOfSectionsInTableView:(%@ *)%@%@\n\treturn 1;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_numberOfRowsInSection) {
+        _tableView_numberOfRowsInSection = [[ZZMethod alloc] initWithMethodName:@"- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section" selected:YES];
+    }
+    return _tableView_numberOfRowsInSection;
 }
 
-- (NSString *)tableViewnumberOfRowsInSection
+- (ZZMethod *)tableView_cellForRowAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (NSInteger)tableView:(%@ *)%@ numberOfRowsInSection:(NSInteger *)section%@\n\treturn self.data.count;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_cellForRowAtIndexPath) {
+        _tableView_cellForRowAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath" selected:YES];
+    }
+    return _tableView_cellForRowAtIndexPath;
 }
 
-- (NSString *)tableViewcellForRowAtIndexPath
+- (ZZMethod *)tableView_canEditRowAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (UITableViewCell *)tableView:(%@ *)%@ cellForRowAtIndexPath:(NSIndexPath *)indexPath%@\n\treturn nil;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_canEditRowAtIndexPath) {
+        _tableView_canEditRowAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath" selected:NO];
+    }
+    return _tableView_canEditRowAtIndexPath;
 }
 
-- (NSString *)tableViewcanEditRowAtIndexPath
+- (ZZMethod *)tableView_canMoveRowAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (BOOL)tableView:(%@ *)%@ canEditRowAtIndexPath:(NSIndexPath *)indexPath%@\n\treturn YES;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_canMoveRowAtIndexPath) {
+        _tableView_canMoveRowAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath" selected:NO];
+    }
+    return _tableView_canMoveRowAtIndexPath;
 }
 
-- (NSString *)tableViewcanMoveRowAtIndexPath
+- (ZZMethod *)tableView_commitEditingStyle_forRowAtIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (BOOL)tableView:(%@ *)%@ canMoveRowAtIndexPath:(NSIndexPath *)indexPath%@\n\treturn YES;\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_commitEditingStyle_forRowAtIndexPath) {
+        _tableView_commitEditingStyle_forRowAtIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath" selected:NO];
+    }
+    return _tableView_commitEditingStyle_forRowAtIndexPath;
 }
 
-- (NSString *)tableViewcommitEditingStyleforRowAtIndexPath
+- (ZZMethod *)tableView_moveRowAtIndexPath_toIndexPath
 {
-    NSString *code = [NSString stringWithFormat:@"- (void)tableView:(%@ *)%@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
+    if (!_tableView_moveRowAtIndexPath_toIndexPath) {
+        _tableView_moveRowAtIndexPath_toIndexPath = [[ZZMethod alloc] initWithMethodName:@"- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath" selected:NO];
+    }
+    return _tableView_moveRowAtIndexPath_toIndexPath;
 }
-- (NSString *)tableViewmoveRowAtIndexPathtoIndexPath
-{
-    NSString *code = [NSString stringWithFormat:@"- (void)tableView:(%@ *)%@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath%@\n\n}\n\n", self.className, self.propertyName, LEFT_PARENTHESIS];
-    return code;
-}
-
-
 
 
 @end
