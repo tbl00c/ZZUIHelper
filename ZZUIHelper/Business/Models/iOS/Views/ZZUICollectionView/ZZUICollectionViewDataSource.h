@@ -10,11 +10,11 @@
 
 @interface ZZUICollectionViewDataSource : ZZProtocol
 
-- (NSString *)numberOfSectionsInCollectionView;
-- (NSString *)collectionViewnumberOfItemsInSection;
-- (NSString *)collectionViewcellForItemAtIndexPath;
-- (NSString *)collectionViewviewForSupplementaryElementOfKindatIndexPath;
-- (NSString *)collectionViewcanMoveItemAtIndexPath;
-- (NSString *)collectionViewmoveItemAtIndexPathtoIndexPath;
+@property (nonatomic, strong) ZZMethod *numberOfSectionsInCollectionView;
+@property (nonatomic, strong) ZZMethod *collectionView_numberOfItemsInSection;
+@property (nonatomic, strong) ZZMethod *collectionView_cellForItemAtIndexPath;
+@property (nonatomic, strong) ZZMethod *collectionView_viewForSupplementaryElementOfKind_atIndexPath;
+@property (nonatomic, strong) ZZMethod *collectionView_canMoveItemAtIndexPath;
+@property (nonatomic, strong) ZZMethod *collectionView_moveItemAtIndexPath_toIndexPath;
 
 @end
