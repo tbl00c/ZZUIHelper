@@ -11,12 +11,16 @@
 #import "ZZUICollectionViewDataSource.h"
 
 @implementation ZZUICollectionView
+@synthesize delegates = _delegates;
 
 - (NSArray *)delegates
 {
-    ZZUICollectionViewDataSource *dataSource = [[ZZUICollectionViewDataSource alloc] init];
-    ZZUICollectionViewDelegate *delegate = [[ZZUICollectionViewDelegate alloc] init];
-    return @[dataSource, delegate];
+    if (!_delegates) {
+        ZZUICollectionViewDataSource *dataSource = [[ZZUICollectionViewDataSource alloc] init];
+        ZZUICollectionViewDelegate *delegate = [[ZZUICollectionViewDelegate alloc] init];
+        _delegates = @[dataSource, delegate];
+    }
+    return _delegates;
 }
 
 - (NSString *)curView

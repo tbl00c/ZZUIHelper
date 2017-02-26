@@ -10,11 +10,15 @@
 #import "ZZUIScrollViewDelegate.h"
 
 @implementation ZZUIScrollView
+@synthesize delegates = _delegates;
 
 - (NSArray *)delegates
 {
-    ZZUIScrollViewDelegate *delegate = [[ZZUIScrollViewDelegate alloc] init];
-    return @[delegate];
+    if (!_delegates) {
+        ZZUIScrollViewDelegate *delegate = [[ZZUIScrollViewDelegate alloc] init];
+        _delegates = @[delegate];
+    }
+    return _delegates;
 }
 
 - (NSArray *)getterCodeExtCode

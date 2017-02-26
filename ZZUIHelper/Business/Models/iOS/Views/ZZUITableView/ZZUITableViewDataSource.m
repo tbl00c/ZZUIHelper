@@ -9,6 +9,7 @@
 #import "ZZUITableViewDataSource.h"
 
 @implementation ZZUITableViewDataSource
+@synthesize protocolMethods = _protocolMethods;
 @synthesize numberOfSectionsInTableView = _numberOfSectionsInTableView;
 @synthesize tableView_numberOfRowsInSection = _tableView_numberOfRowsInSection;
 @synthesize tableView_cellForRowAtIndexPath = _tableView_cellForRowAtIndexPath;
@@ -17,22 +18,30 @@
 @synthesize tableView_commitEditingStyle_forRowAtIndexPath = _tableView_commitEditingStyle_forRowAtIndexPath;
 @synthesize tableView_moveRowAtIndexPath_toIndexPath = _tableView_moveRowAtIndexPath_toIndexPath;
 
+- (NSString *)protocolKey
+{
+    return @"dataSource";
+}
+
 - (NSArray *)protocolMethods
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:self.numberOfSectionsInTableView];
-    [array addObject:self.tableView_numberOfRowsInSection];
-    [array addObject:self.tableView_cellForRowAtIndexPath];
-    [array addObject:self.tableView_canEditRowAtIndexPath];
-    [array addObject:self.tableView_canMoveRowAtIndexPath];
-    [array addObject:self.tableView_commitEditingStyle_forRowAtIndexPath];
-    [array addObject:self.tableView_moveRowAtIndexPath_toIndexPath];
-    NSArray *superProtocolMethods = [super protocolMethods];
-    for (ZZMethod *method in superProtocolMethods) {
-        [method setSelected:NO];
+    if (!_protocolMethods) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [array addObject:self.numberOfSectionsInTableView];
+        [array addObject:self.tableView_numberOfRowsInSection];
+        [array addObject:self.tableView_cellForRowAtIndexPath];
+        [array addObject:self.tableView_canEditRowAtIndexPath];
+        [array addObject:self.tableView_canMoveRowAtIndexPath];
+        [array addObject:self.tableView_commitEditingStyle_forRowAtIndexPath];
+        [array addObject:self.tableView_moveRowAtIndexPath_toIndexPath];
+        NSArray *superProtocolMethods = [super protocolMethods];
+        for (ZZMethod *method in superProtocolMethods) {
+            [method setSelected:NO];
+        }
+        [array addObjectsFromArray:superProtocolMethods];
+        _protocolMethods = array;
     }
-    [array addObjectsFromArray:superProtocolMethods];
-    return array;
+    return _protocolMethods;
 }
 
 - (ZZMethod *)numberOfSectionsInTableView

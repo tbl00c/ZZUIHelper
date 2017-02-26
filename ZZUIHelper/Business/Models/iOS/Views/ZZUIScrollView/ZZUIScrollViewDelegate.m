@@ -23,6 +23,11 @@
 @synthesize scrollViewDidEndDecelerating = _scrollViewDidEndDecelerating;
 @synthesize scrollViewDidEndScrollingAnimation = _scrollViewDidEndScrollingAnimation;
 
+- (NSString *)protocolKey
+{
+    return @"delegate";
+}
+
 - (NSArray *)protocolMethods
 {
     if (!_protocolMethods) {

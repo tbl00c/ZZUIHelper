@@ -9,6 +9,7 @@
 #import "ZZUITableViewDelegate.h"
 
 @implementation ZZUITableViewDelegate
+@synthesize protocolMethods = _protocolMethods;
 @synthesize tableView_didSelectRowAtIndexPath = _tableView_didSelectRowAtIndexPath;
 @synthesize tableView_didDeselectRowAtIndexPath = _tableView_didDeselectRowAtIndexPath;
 @synthesize tableView_heightForRowAtIndexPath = _tableView_heightForRowAtIndexPath;
@@ -17,21 +18,29 @@
 @synthesize tableView_viewForHeaderInSection = _tableView_viewForHeaderInSection;
 @synthesize tableView_viewForFooterInSection = _tableView_viewForFooterInSection;
 
+- (NSString *)protocolKey
+{
+    return @"delegate";
+}
+
 - (NSArray *)protocolMethods
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:self.tableView_didSelectRowAtIndexPath];
-    [array addObject:self.tableView_heightForRowAtIndexPath];
-    [array addObject:self.tableView_heightForHeaderInSection];
-    [array addObject:self.tableView_heightForFooterInSection];
-    [array addObject:self.tableView_viewForHeaderInSection];
-    [array addObject:self.tableView_viewForFooterInSection];
-    NSArray *superProtocolMethods = [super protocolMethods];
-    for (ZZMethod *method in superProtocolMethods) {
-        [method setSelected:NO];
+    if (!_protocolMethods) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [array addObject:self.tableView_didSelectRowAtIndexPath];
+        [array addObject:self.tableView_heightForRowAtIndexPath];
+        [array addObject:self.tableView_heightForHeaderInSection];
+        [array addObject:self.tableView_heightForFooterInSection];
+        [array addObject:self.tableView_viewForHeaderInSection];
+        [array addObject:self.tableView_viewForFooterInSection];
+        NSArray *superProtocolMethods = [super protocolMethods];
+        for (ZZMethod *method in superProtocolMethods) {
+            [method setSelected:NO];
+        }
+        [array addObjectsFromArray:superProtocolMethods];
+        _protocolMethods = array;
     }
-    [array addObjectsFromArray:superProtocolMethods];
-    return array;
+    return _protocolMethods;
 }
 
 - (ZZMethod *)tableView_didSelectRowAtIndexPath

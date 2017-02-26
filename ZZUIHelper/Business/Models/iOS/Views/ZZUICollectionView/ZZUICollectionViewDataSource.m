@@ -9,6 +9,7 @@
 #import "ZZUICollectionViewDataSource.h"
 
 @implementation ZZUICollectionViewDataSource
+@synthesize protocolMethods = _protocolMethods;
 @synthesize numberOfSectionsInCollectionView = _numberOfSectionsInCollectionView;
 @synthesize collectionView_numberOfItemsInSection = _collectionView_numberOfItemsInSection;
 @synthesize collectionView_cellForItemAtIndexPath = _collectionView_cellForItemAtIndexPath;
@@ -16,21 +17,29 @@
 @synthesize collectionView_canMoveItemAtIndexPath = _collectionView_canMoveItemAtIndexPath;
 @synthesize collectionView_moveItemAtIndexPath_toIndexPath = _collectionView_moveItemAtIndexPath_toIndexPath;
 
+- (NSString *)protocolKey
+{
+    return @"dataSource";
+}
+
 - (NSArray *)protocolMethods
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:self.numberOfSectionsInCollectionView];
-    [array addObject:self.collectionView_numberOfItemsInSection];
-    [array addObject:self.collectionView_cellForItemAtIndexPath];
-    [array addObject:self.collectionView_viewForSupplementaryElementOfKind_atIndexPath];
-    [array addObject:self.collectionView_canMoveItemAtIndexPath];
-    [array addObject:self.collectionView_moveItemAtIndexPath_toIndexPath];
-    NSArray *superProtocolMethods = [super protocolMethods];
-    for (ZZMethod *method in superProtocolMethods) {
-        [method setSelected:NO];
+    if (!_protocolMethods) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [array addObject:self.numberOfSectionsInCollectionView];
+        [array addObject:self.collectionView_numberOfItemsInSection];
+        [array addObject:self.collectionView_cellForItemAtIndexPath];
+        [array addObject:self.collectionView_viewForSupplementaryElementOfKind_atIndexPath];
+        [array addObject:self.collectionView_canMoveItemAtIndexPath];
+        [array addObject:self.collectionView_moveItemAtIndexPath_toIndexPath];
+        NSArray *superProtocolMethods = [super protocolMethods];
+        for (ZZMethod *method in superProtocolMethods) {
+            [method setSelected:NO];
+        }
+        [array addObjectsFromArray:superProtocolMethods];
+        _protocolMethods = array;
     }
-    [array addObjectsFromArray:superProtocolMethods];
-    return array;
+    return _protocolMethods;
 }
 
 - (ZZMethod *)numberOfSectionsInCollectionView

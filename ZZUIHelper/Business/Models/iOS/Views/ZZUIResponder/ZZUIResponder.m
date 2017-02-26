@@ -150,8 +150,10 @@
     if (delegateArray.count > 0) {
         NSString *delegateCode = @"";
         for (ZZProtocol *protocol in delegateArray) {
-            delegateCode = [delegateCode stringByAppendingFormat:@"%@ %@\n", PMARK, protocol.protocolName];
-            delegateCode = [delegateCode stringByAppendingString:protocol.protocolCode];
+            NSString *code = protocol.protocolCode;
+            if (code.length > 0) {
+                delegateCode = [delegateCode stringByAppendingFormat:@"%@ %@\n%@", PMARK, protocol.protocolName, code];
+            }
         }
         if (delegateCode.length > 0) {
             delegateCode = [[NSString stringWithFormat:@"%@ Delegate\n", PMARK_] stringByAppendingString:delegateCode];

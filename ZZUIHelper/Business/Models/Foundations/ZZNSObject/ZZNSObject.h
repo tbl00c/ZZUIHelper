@@ -31,7 +31,4 @@
 @property (nonatomic, strong, readonly) NSString *getterCode;
 - (NSArray *)getterCodeExtCode;
 
-/// Delegate代码
-@property (nonatomic, strong, readonly) NSString *delegateCode;
-
 @end

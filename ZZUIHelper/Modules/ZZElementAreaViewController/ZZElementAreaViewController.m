@@ -7,7 +7,6 @@
 //
 
 #import "ZZElementAreaViewController.h"
-#import "ZZNewPropertyViewController.h"
 #import "ZZElementCell.h"
 
 @interface ZZElementAreaViewController () <NSTableViewDataSource, NSTableViewDelegate, ZZElementCellDelegate>
@@ -68,10 +67,7 @@
     NSInteger row = [notification.object selectedRow];
     if (row >= 0 && row < self.data.count) {
         ZZNSObject *object = self.data[row];
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:object];
-        ZZNewPropertyViewController *vc = [[ZZNewPropertyViewController alloc] initWithNibName:@"ZZNewPropertyViewController" bundle:nil];
-        [vc setObject:object];
-        [self presentViewControllerAsSheet:vc];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_SELECTED object:object];
     }
 }
 

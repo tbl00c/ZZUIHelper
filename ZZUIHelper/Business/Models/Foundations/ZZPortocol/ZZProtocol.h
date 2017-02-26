@@ -11,6 +11,8 @@
 
 @interface ZZProtocol : NSObject
 
+@property (nonatomic, strong) NSString *protocolKey;
+
 @property (nonatomic, strong, readonly) NSString *protocolName;
 
 @property (nonatomic, strong, readonly) NSArray<ZZMethod *> *protocolMethods;

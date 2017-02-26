@@ -7,21 +7,19 @@
 //
 
 #import "ZZPropertyEditViewController.h"
+#import "ZZPropertyClassViewController.h"
+#import "ZZPropertyEventsViewController.h"
+#import "ZZPropertyProtocolsViewController.h"
 #import "ZZUIScrollView.h"
-
-@interface ZZPropertyEditViewController ()
-
-@property (unsafe_unretained) IBOutlet NSTextView *textView;
-
-@end
+#import "ZZUIControl.h"
 
 @implementation ZZPropertyEditViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_EDIT object:nil];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_SELECTED object:nil];
 }
 
 - (void)dealloc
@@ -32,24 +30,45 @@
 - (void)editProperty:(NSNotification *)notification
 {
     ZZNSObject *object = notification.object;
-    NSString *code = @"";
-    if (object) {
-        code = [code stringByAppendingFormat:@"%@\n", object.propertyName];
-        code = [code stringByAppendingFormat:@"ClassName: %@\n", object.className];
-        code = [code stringByAppendingFormat:@"Remark: %@\n\n", object.remarks.length > 0 ? object.remarks : @"无备注"];
-        
-        if ([[object class] isSubclassOfClass:[ZZUIScrollView class]]) {
-            for (ZZProtocol *protocol in [(ZZUIScrollView *)object delegates]) {
-                code = [code stringByAppendingString:@"-------------------------------------------------\n"];
-                code = [code stringByAppendingFormat:@"%@\n", protocol.protocolName];
-                for (NSString *methods in protocol.protocolMethods) {
-                    code = [code stringByAppendingFormat:@"%@\n", methods];
-                }
-                code = [code stringByAppendingString:@"\n"];
-            }
+    
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+
+    // Class
+    NSTabViewItem *classViewItem = [[NSTabViewItem alloc] init];
+    [classViewItem setLabel:@"Class"];
+    ZZPropertyClassViewController *classVC = [[ZZPropertyClassViewController alloc] initWithNibName:@"ZZPropertyClassViewController" bundle:nil];
+    [classViewItem.view addSubview:classVC.view];
+    [classViewItem setViewController:classVC];
+    [items addObject:classViewItem];
+    
+    // Events
+    if ([[object class] isSubclassOfClass:[ZZUIControl class]] && [(ZZUIControl *)object actionMethods].count > 0) {
+        NSTabViewItem *eventsViewItem = [[NSTabViewItem alloc] init];
+        [eventsViewItem setLabel:@"Events"];
+        ZZPropertyEventsViewController *eventsVC = [[ZZPropertyEventsViewController alloc] initWithNibName:@"ZZPropertyEventsViewController" bundle:nil];
+        [eventsVC setObject:object];
+        [eventsVC setEvents:[(ZZUIControl *)object actionMethods]];
+        [eventsViewItem.view addSubview:eventsVC.view];
+        [eventsViewItem setViewController:eventsVC];
+        [items addObject:eventsViewItem];
+    }
+    
+    // Delegates
+    if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && [(ZZUIScrollView *)object delegates].count > 0) {
+        for (ZZProtocol *protocol in [(ZZUIScrollView *)object delegates]) {
+            NSTabViewItem *protocolViewItem = [[NSTabViewItem alloc] init];
+            [protocolViewItem setLabel:protocol.protocolKey];
+            ZZPropertyProtocolsViewController *protocolVC = [[ZZPropertyProtocolsViewController alloc] initWithNibName:@"ZZPropertyProtocolsViewController" bundle:nil];
+            [protocolVC setObject:object];
+            [protocolVC setProtocol:protocol];
+            [protocolViewItem.view addSubview:protocolVC.view];
+            [protocolViewItem setViewController:protocolVC];
+            [items addObject:protocolViewItem];
         }
     }
-    self.textView.string = code;
+    
+    [self setTabViewItems:items];
+    [self setSelectedTabViewItemIndex:0];
 }
 
 @end

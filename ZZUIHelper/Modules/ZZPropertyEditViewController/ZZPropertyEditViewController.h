@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ZZPropertyEditViewController : NSViewController
+@interface ZZPropertyEditViewController : NSTabViewController
 
 @end

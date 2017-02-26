@@ -26,44 +26,24 @@
 {
     [super viewDidLoad];
     
-    if (self.className) {
-        self.classNameLabel.stringValue = [self.className substringFromIndex:2];
-        self.propertyNameTF.stringValue = [[self.className substringFromIndex:4] lowerFirstCharacter];
-    }
-    else {
-        self.classNameLabel.stringValue = self.object.className;
-        self.propertyNameTF.stringValue = self.object.propertyName;
-        self.remarkTF.stringValue = self.object.remarks;
-    }
+    self.classNameLabel.stringValue = [self.className substringFromIndex:2];
+    self.propertyNameTF.stringValue = [[self.className substringFromIndex:4] lowerFirstCharacter];
 }
 
 - (IBAction)okButtonClick:(id)sender {
     NSString *propertyName = self.propertyNameTF.stringValue;
     NSString *remark = self.remarkTF.stringValue;
-    if (self.object) {  // 编辑
-        if (propertyName.length > 0 && ([propertyName isEqualToString:self.object.propertyName] || [[ZZClassHelper sharedInstance] canNamed:propertyName])) {
-            self.object.propertyName = propertyName;
-            self.object.remarks = remark;
-            [self dismissController:self];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:self.object];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
-        }
-        else {
-            self.warningLabel.stringValue = @"类名不可用";
-        }
+
+    if (propertyName.length > 0 && [[ZZClassHelper sharedInstance] canNamed:propertyName]) {
+        Class cls = NSClassFromString(self.className);
+        id a = [[cls alloc] init];
+        [[ZZClassHelper sharedInstance].curClass addPrivateProperty:a withName:propertyName andRemarks:remark];
+        [self dismissController:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:a];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
     }
-    else {              // 新建
-        if (propertyName.length > 0 && [[ZZClassHelper sharedInstance] canNamed:propertyName]) {
-            Class cls = NSClassFromString(self.className);
-            id a = [[cls alloc] init];
-            [[ZZClassHelper sharedInstance].curClass addPrivateProperty:a withName:propertyName andRemarks:remark];
-            [self dismissController:self];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:a];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
-        }
-        else {
-            self.warningLabel.stringValue = @"类名不可用";
-        }
+    else {
+        self.warningLabel.stringValue = @"类名不可用";
     }
 }
 

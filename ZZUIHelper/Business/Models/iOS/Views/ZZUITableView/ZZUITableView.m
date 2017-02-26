@@ -11,12 +11,16 @@
 #import "ZZUITableViewDataSource.h"
 
 @implementation ZZUITableView
+@synthesize delegates = _delegates;
 
 - (NSArray *)delegates
 {
-    ZZUITableViewDataSource *dataSource = [[ZZUITableViewDataSource alloc] init];
-    ZZUITableViewDelegate *delegate = [[ZZUITableViewDelegate alloc] init];
-    return @[dataSource, delegate];
+    if (!_delegates) {
+        ZZUITableViewDataSource *dataSource = [[ZZUITableViewDataSource alloc] init];
+        ZZUITableViewDelegate *delegate = [[ZZUITableViewDelegate alloc] init];
+        _delegates = @[dataSource, delegate];
+    }
+    return _delegates;
 }
 
 - (NSArray *)getterCodeExtCode

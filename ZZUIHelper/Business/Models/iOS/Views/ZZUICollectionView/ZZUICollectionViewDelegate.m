@@ -9,19 +9,28 @@
 #import "ZZUICollectionViewDelegate.h"
 
 @implementation ZZUICollectionViewDelegate
+@synthesize protocolMethods = _protocolMethods;
 @synthesize collectionView_didSelectItemAtIndexPath = _collectionView_didSelectItemAtIndexPath;
 @synthesize collectionView_didDeselectItemAtIndexPath = _collectionView_didDeselectItemAtIndexPath;
 
+- (NSString *)protocolKey
+{
+    return @"delegate";
+}
+
 - (NSArray *)protocolMethods
 {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:self.collectionView_didSelectItemAtIndexPath];
-    NSArray *superProtocolMethods = [super protocolMethods];
-    for (ZZMethod *method in superProtocolMethods) {
-        [method setSelected:NO];
+    if (!_protocolMethods) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [array addObject:self.collectionView_didSelectItemAtIndexPath];
+        NSArray *superProtocolMethods = [super protocolMethods];
+        for (ZZMethod *method in superProtocolMethods) {
+            [method setSelected:NO];
+        }
+        [array addObjectsFromArray:superProtocolMethods];
+        _protocolMethods = array;
     }
-    [array addObjectsFromArray:superProtocolMethods];
-    return array;
+    return _protocolMethods;
 }
 
 
