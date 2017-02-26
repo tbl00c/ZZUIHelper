@@ -9,50 +9,32 @@
 #import "ZZUIControl.h"
 
 @implementation ZZUIControl
+@synthesize actionMethods = _actionMethods;
 
-- (NSArray *)getterCodeExtCode
+- (NSArray *)actionMethods
 {
-    NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
-    if (self.actionMethodName.length > 0 && self.eventType.length > 0) {
-        [extCode addObject:[NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@];", self.propertyName, self.actionMethodName, self.eventType]];
+    if (!_actionMethods) {
+        _actionMethods = @[];
     }
-    return extCode;
+    return _actionMethods;
 }
 
-- (NSArray *)actionMethodExtCode
+- (NSString *)actionMethodsCode
 {
-    return @[];
-}
-
-- (NSString *)actionMethodRemarks
-{
-    NSString *remarks = self.remarks.length > 0 ? self.remarks : self.propertyName;
-    remarks = [NSString stringWithFormat:@"/// %@点击事件\n", remarks];
-    return remarks;
-}
-
-- (NSString *)actionMethod
-{
-    if (self.actionMethodName.length > 0 && self.eventType.length > 0) {
-        NSString *actionExtCode = @"";
-        NSArray *extCodes = [self actionMethodExtCode];
-        if (extCodes.count > 0) {
-            for (NSString *code in extCodes) {
-                actionExtCode = [actionExtCode stringByAppendingFormat:@"\t\t%@", code];
+    if (self.actionMethods.count > 0) {
+        NSMutableString *code = [[NSMutableString alloc] init];
+        for (ZZMethod *method in self.actionMethods) {
+            if (method.selected) {
+                if (method.remarks) {
+                    [code appendFormat:@"%@\n", method.remarks];
+                }
+                [code appendFormat:@"%@\n", method.methodCode];
             }
         }
-        else {
-            actionExtCode = @"\n";
-        }
-        
-        NSString *action = @"";
-        if (self.actionMethodRemarks.length > 0) {
-            action = [action stringByAppendingString:self.actionMethodRemarks];
-        }
-        action = [action stringByAppendingString:M_ACTION(self.className, self.actionMethodName, actionExtCode)];
-        return action;
+        return code;
     }
-    return nil;
+    
+    return @"";
 }
 
 

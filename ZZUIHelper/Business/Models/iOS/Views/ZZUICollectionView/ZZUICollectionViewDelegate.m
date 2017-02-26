@@ -9,6 +9,8 @@
 #import "ZZUICollectionViewDelegate.h"
 
 @implementation ZZUICollectionViewDelegate
+@synthesize collectionView_didSelectItemAtIndexPath = _collectionView_didSelectItemAtIndexPath;
+@synthesize collectionView_didDeselectItemAtIndexPath = _collectionView_didDeselectItemAtIndexPath;
 
 - (NSArray *)protocolMethods
 {

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZZMethod.h"
 
 @interface ZZNSObject : NSObject
 
@@ -28,7 +29,7 @@
 
 /// Getter方法代码
 @property (nonatomic, strong, readonly) NSString *getterCode;
-@property (nonatomic, strong, readonly) NSArray *getterCodeExtCode;
+- (NSArray *)getterCodeExtCode;
 
 /// Delegate代码
 @property (nonatomic, strong, readonly) NSString *delegateCode;

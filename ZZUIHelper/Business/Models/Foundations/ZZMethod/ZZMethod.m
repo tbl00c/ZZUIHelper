@@ -42,7 +42,7 @@
 
 - (NSString *)methodCode
 {
-    NSString *code = [self.methodName stringByAppendingString: self.methodContent];
+    NSString *code = [self.methodName stringByAppendingString:self.methodContent ? self.methodContent : @""];
     return code;
 }
 
@@ -166,34 +166,34 @@
 - (NSString *)methodContent
 {
     if (!_methodContent) {
-        _methodContent = @"";
+        NSMutableString *content = [[NSMutableString alloc] init];
         if (self.methodContentArray.count > 0) {        // 有代码
             NSString *code = [self p_methodContentByArray:self.methodContentArray space:1];
-            _methodContent = [_methodContent stringByAppendingString:code];
+            [content appendFormat:@"%@\n", code];
         }
         else {                                          // 无代码，自动加入return语句
-            _methodContent = NEW_LINE ? @"\n{\n" : @" {\n";
-            _methodContent = [_methodContent stringByAppendingString:@"\t"];
+            [content appendFormat:@"%@\t",(NEW_LINE ? @"\n{\n" : @" {\n")];
             if ([self.returnType hasSuffix:@"*"]) {
-                _methodContent = [_methodContent stringByAppendingString:@"return nil;"];
+                [content appendString:@"return nil;"];
             }
             else if ([self.returnType isEqualToString:@"BOOL"]) {
-                _methodContent = [_methodContent stringByAppendingString:@"return YES;"];
+                [content appendString:@"return YES;"];
             }
-            else if (![self.returnType isEqualToString:@"CGSize"]){
-                _methodContent = [_methodContent stringByAppendingString:@"return CGSizeZero;"];
+            else if ([self.returnType isEqualToString:@"CGSize"]){
+                [content appendString:@"return CGSizeZero;"];
             }
-            else if (![self.returnType isEqualToString:@"CGRect"]){
-                _methodContent = [_methodContent stringByAppendingString:@"return CGRectZero;"];
+            else if ([self.returnType isEqualToString:@"CGRect"]){
+                [content appendString:@"return CGRectZero;"];
             }
-            else if (![self.returnType isEqualToString:@"UIEdgeInsets"]){
-                _methodContent = [_methodContent stringByAppendingString:@"return UIEdgeInsetsZero;"];
+            else if ([self.returnType isEqualToString:@"UIEdgeInsets"]){
+                [content appendString:@"return UIEdgeInsetsZero;"];
             }
             else if (![self.returnType isEqualToString:@"void"]){
-                _methodContent = [_methodContent stringByAppendingString:@"return 0;"];
+                [content appendString:@"return 0;"];
             }
-            _methodContent = [_methodContent stringByAppendingString:@"\n}\n"];
+            [content appendString:@"\n}\n"];
         }
+        _methodContent = content;
     }
     return _methodContent;
 }
@@ -226,7 +226,7 @@
     while (code.length > 0) {
         NSString *left = [code componentsSeparatedByString:@"{"][0];
         NSString *right = [code componentsSeparatedByString:@"}"][0];
-        if (left.length < right.length) {
+        if (left.length < right.length) {       // {
             [code deleteCharactersInRange:NSMakeRange(0, left.length + 1)];
             NSArray *lineArray = [left componentsSeparatedByString:@"\n"];
             for (NSString *line in lineArray) {
@@ -240,7 +240,7 @@
                 [data addObject:subCode];
             }
         }
-        else if (left.length > right.length){
+        else if (left.length > right.length){   // }
             [code deleteCharactersInRange:NSMakeRange(0, right.length + 1)];
             NSArray *lineArray = [right componentsSeparatedByString:@"\n"];
             for (NSString *line in lineArray) {
@@ -287,9 +287,15 @@
         else if ([item isKindOfClass:[NSArray class]]){
             NSString *subString = [self p_methodContentByArray:item space:space + 1];
             [code appendString:subString];
+            if (i < array.count - 1 && [array[i + 1] isKindOfClass:[NSString class]] && [array[i + 1] hasPrefix:@"]"]) {        // )];
+                [code appendFormat:@"%@\n", array[++i]];
+            }
+            else {
+                [code appendString:@"\n"];
+            }
         }
     }
-    [code appendFormat:@"%@}\n", [self tabSpace:space - 1]];
+    [code appendFormat:@"%@}", [self tabSpace:space - 1]];
     return code;
 }
 

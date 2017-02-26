@@ -13,4 +13,6 @@
 /// 类实现初始化代码
 @property (nonatomic, strong, readonly) NSString *implementationInitCode;
 
+@property (nonatomic, strong, readonly) ZZMethod *m_initWithFrame;
+
 @end

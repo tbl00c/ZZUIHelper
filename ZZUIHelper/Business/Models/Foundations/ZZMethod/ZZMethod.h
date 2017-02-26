@@ -25,6 +25,9 @@
 /// 返回值类型
 @property (nonatomic, strong, readonly) NSString *returnType;
 
+/// 备注
+@property (nonatomic, strong) NSString *remarks;
+
 #pragma mark - # 方法内容
 /// 方法体
 @property (nonatomic, strong, readonly) NSString *methodContent;

@@ -9,6 +9,13 @@
 #import "ZZUITableViewDelegate.h"
 
 @implementation ZZUITableViewDelegate
+@synthesize tableView_didSelectRowAtIndexPath = _tableView_didSelectRowAtIndexPath;
+@synthesize tableView_didDeselectRowAtIndexPath = _tableView_didDeselectRowAtIndexPath;
+@synthesize tableView_heightForRowAtIndexPath = _tableView_heightForRowAtIndexPath;
+@synthesize tableView_heightForHeaderInSection = _tableView_heightForHeaderInSection;
+@synthesize tableView_heightForFooterInSection = _tableView_heightForFooterInSection;
+@synthesize tableView_viewForHeaderInSection = _tableView_viewForHeaderInSection;
+@synthesize tableView_viewForFooterInSection = _tableView_viewForFooterInSection;
 
 - (NSArray *)protocolMethods
 {

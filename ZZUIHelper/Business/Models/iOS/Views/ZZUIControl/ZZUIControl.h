@@ -10,14 +10,8 @@
 
 @interface ZZUIControl : ZZUIView
 
-@property (nonatomic, strong, readonly) NSString *actionMethodName;
+@property (nonatomic, strong, readonly) NSArray *actionMethods;
 
-@property (nonatomic, strong, readonly) NSString *actionMethodRemarks;
-
-@property (nonatomic, strong, readonly) NSString *eventType;
-
-@property (nonatomic, strong, readonly) NSString *actionMethod;
-
-@property (nonatomic, strong, readonly) NSArray *actionMethodExtCode;
+@property (nonatomic, strong, readonly) NSString *actionMethodsCode;
 
 @end

@@ -10,24 +10,20 @@
 #import "ZZUISwitch.h"
 
 @implementation ZZUISwitch
+@synthesize actionValueChanged = _actionValueChanged;
 
-- (NSString *)actionMethodName
+- (NSArray *)actionMethods
 {
-    NSString *action = [self.propertyName stringByAppendingString:@"StateChanged:"];
-    return action;
+    return @[self.actionValueChanged];
 }
 
-- (NSString *)actionMethodRemarks
+#pragma mark - # Getter
+- (ZZMethod *)actionValueChanged
 {
-    NSString *remarks = self.remarks.length > 0 ? self.remarks : self.propertyName;
-    remarks = [NSString stringWithFormat:@"/// %@状态改变\n", remarks];
-    return remarks;
+    if (!_actionValueChanged) {
+        _actionValueChanged = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@ValueChanged:(UISwitch *)sender", self.propertyName] selected:YES];
+    }
+    return _actionValueChanged;
 }
-
-- (NSString *)eventType
-{
-    return @"UIControlEventValueChanged";
-}
-
 
 @end

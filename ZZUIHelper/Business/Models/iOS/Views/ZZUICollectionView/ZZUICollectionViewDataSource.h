@@ -10,11 +10,11 @@
 
 @interface ZZUICollectionViewDataSource : ZZProtocol
 
-@property (nonatomic, strong) ZZMethod *numberOfSectionsInCollectionView;
-@property (nonatomic, strong) ZZMethod *collectionView_numberOfItemsInSection;
-@property (nonatomic, strong) ZZMethod *collectionView_cellForItemAtIndexPath;
-@property (nonatomic, strong) ZZMethod *collectionView_viewForSupplementaryElementOfKind_atIndexPath;
-@property (nonatomic, strong) ZZMethod *collectionView_canMoveItemAtIndexPath;
-@property (nonatomic, strong) ZZMethod *collectionView_moveItemAtIndexPath_toIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *numberOfSectionsInCollectionView;
+@property (nonatomic, strong, readonly) ZZMethod *collectionView_numberOfItemsInSection;
+@property (nonatomic, strong, readonly) ZZMethod *collectionView_cellForItemAtIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *collectionView_viewForSupplementaryElementOfKind_atIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *collectionView_canMoveItemAtIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *collectionView_moveItemAtIndexPath_toIndexPath;
 
 @end

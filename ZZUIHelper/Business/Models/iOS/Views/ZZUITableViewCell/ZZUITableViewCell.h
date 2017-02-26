@@ -10,4 +10,6 @@
 
 @interface ZZUITableViewCell : ZZUIView
 
+@property (nonatomic, strong, readonly) ZZMethod *m_initWithStyle_reuseIdentifier;
+
 @end

@@ -9,24 +9,60 @@
 #import "ZZUIButton.h"
 
 @implementation ZZUIButton
+@synthesize actionTouchDown = _actionTouchDown;
+@synthesize actionTouchDownRepeat = _actionTouchDownRepeat;
+@synthesize actionTouchUpInside = _actionTouchUpInside;
+@synthesize actionTouchUpOutside = _actionTouchUpOutside;
+@synthesize actionTouchCancel = _actionTouchCancel;
 
-- (NSString *)actionMethodName
+- (NSArray *)actionMethods
 {
-    NSString *action = [self.propertyName hasSuffix:@"Button"] ? self.propertyName : [self.propertyName stringByAppendingString:@"Button"];
-    action = [action stringByAppendingString:@"Clicked:"];
-    return action;
+    return @[self.actionTouchDown,
+             self.actionTouchDownRepeat,
+             self.actionTouchUpInside,
+             self.actionTouchUpOutside,
+             self.actionTouchCancel];
 }
 
-- (NSString *)actionMethodRemarks
+#pragma mark - # Getter
+- (ZZMethod *)actionTouchDown
 {
-    NSString *remarks = self.remarks.length > 0 ? self.remarks : self.propertyName;
-    remarks = [NSString stringWithFormat:@"/// %@点击事件\n", remarks];
-    return remarks;
+    if (!_actionTouchDown) {
+        _actionTouchDown = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchDown:(UIButton *)sender", self.propertyName] selected:NO];
+    }
+    return _actionTouchDown;
 }
 
-- (NSString *)eventType
+- (ZZMethod *)actionTouchDownRepeat
 {
-    return @"UIControlEventTouchUpInside";
+    if (!_actionTouchDownRepeat) {
+        _actionTouchDownRepeat = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchDownRepeat:(UIButton *)sender", self.propertyName] selected:NO];
+    }
+    return _actionTouchDownRepeat;
+}
+
+- (ZZMethod *)actionTouchUpInside
+{
+    if (!_actionTouchUpInside) {
+        _actionTouchUpInside = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@Clicked:(UIButton *)sender", self.propertyName] selected:YES];
+    }
+    return _actionTouchUpInside;
+}
+
+- (ZZMethod *)actionTouchUpOutside
+{
+    if (!_actionTouchUpOutside) {
+        _actionTouchUpOutside = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchUpOutside:(UIButton *)sender", self.propertyName] selected:NO];
+    }
+    return _actionTouchUpOutside;
+}
+
+- (ZZMethod *)actionTouchCancel
+{
+    if (!_actionTouchCancel) {
+        _actionTouchCancel = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchCancel:(UIButton *)sender", self.propertyName] selected:NO];
+    }
+    return _actionTouchCancel;
 }
 
 @end

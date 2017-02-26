@@ -148,10 +148,13 @@
 {
     NSArray *delegateArray = self.childDelegateViewsArray;
     if (delegateArray.count > 0) {
-        NSString *delegateCode = [NSString stringWithFormat:@"%@ Delegate\n", PMARK_];
+        NSString *delegateCode = @"";
         for (ZZProtocol *protocol in delegateArray) {
             delegateCode = [delegateCode stringByAppendingFormat:@"%@ %@\n", PMARK, protocol.protocolName];
             delegateCode = [delegateCode stringByAppendingString:protocol.protocolCode];
+        }
+        if (delegateCode.length > 0) {
+            delegateCode = [[NSString stringWithFormat:@"%@ Delegate\n", PMARK_] stringByAppendingString:delegateCode];
         }
         return delegateCode;
     }
@@ -164,8 +167,8 @@
     if (controlsArray.count > 0) {
         NSString *eventCode = @"";
         for (ZZUIControl *control in controlsArray) {
-            if (control.actionMethod.length > 0) {
-                eventCode = [eventCode stringByAppendingString:control.actionMethod];
+            if (control.actionMethodsCode.length > 0) {
+                eventCode = [eventCode stringByAppendingString:control.actionMethodsCode];
             }
         }
         if (eventCode.length > 0) {
@@ -181,11 +184,15 @@
     NSArray *childViews = self.childViewsArray;
     if (childViews.count > 0 && [ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
         NSString *privateCode = [NSString stringWithFormat:@"%@ Private Methods\n", PMARK_];
-        NSString *code = @"";
+        
+        ZZMethod *method = [[ZZMethod alloc] initWithMethodName:@"- (void)p_addMasonry"];
+        NSMutableString *code = [[NSMutableString alloc] init];
         for (ZZUIResponder *view in childViews) {
-            code = [code stringByAppendingString:view.masonryCode];
+            [code appendString:view.masonryCode];
         }
-        privateCode = [privateCode stringByAppendingString:M_P_ADDMASONRY(code)];
+        [method addMethodContentCode:code];
+        
+        privateCode = [privateCode stringByAppendingFormat:@"%@\n", method.methodCode];
         return privateCode;
     }
     return nil;
@@ -238,11 +245,11 @@
 #pragma mark - # Getter
 - (NSString *)masonryCode
 {
-    NSString *masonryCode = @"";
+    NSMutableString *masonryCode = [[NSMutableString alloc] init];;
     if (self.remarks.length > 0) {
-        masonryCode = [masonryCode stringByAppendingFormat:@"\t// %@\n", self.remarks];
+        [masonryCode appendFormat:@"// %@\n", self.remarks];
     }
-    masonryCode = [masonryCode stringByAppendingString:M_MASONRY(self.propertyName, @"\n")];
+    [masonryCode appendFormat:@"[self.%@  mas_makeConstraints:^(MASConstraintMaker *make) {\n\n}];\n", self.propertyName];
     return masonryCode;
 }
 

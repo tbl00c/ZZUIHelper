@@ -10,4 +10,6 @@
 
 @interface ZZUISwitch : ZZUIControl
 
+@property (nonatomic, strong, readonly) ZZMethod *actionValueChanged;
+
 @end

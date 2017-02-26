@@ -10,18 +10,12 @@
 
 @interface ZZUITableViewDelegate : ZZUIScrollViewDelegate
 
-@property (nonatomic, strong) ZZMethod *tableView_didSelectRowAtIndexPath;
-
-@property (nonatomic, strong) ZZMethod *tableView_didDeselectRowAtIndexPath;
-
-@property (nonatomic, strong) ZZMethod *tableView_heightForRowAtIndexPath;
-
-@property (nonatomic, strong) ZZMethod *tableView_heightForHeaderInSection;
-
-@property (nonatomic, strong) ZZMethod *tableView_heightForFooterInSection;
-
-@property (nonatomic, strong) ZZMethod *tableView_viewForHeaderInSection;
-
-@property (nonatomic, strong) ZZMethod *tableView_viewForFooterInSection;
+@property (nonatomic, strong, readonly) ZZMethod *tableView_didSelectRowAtIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *tableView_didDeselectRowAtIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *tableView_heightForRowAtIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *tableView_heightForHeaderInSection;
+@property (nonatomic, strong, readonly) ZZMethod *tableView_heightForFooterInSection;
+@property (nonatomic, strong, readonly) ZZMethod *tableView_viewForHeaderInSection;
+@property (nonatomic, strong, readonly) ZZMethod *tableView_viewForFooterInSection;
 
 @end

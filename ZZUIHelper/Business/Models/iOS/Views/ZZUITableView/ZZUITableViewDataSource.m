@@ -9,6 +9,13 @@
 #import "ZZUITableViewDataSource.h"
 
 @implementation ZZUITableViewDataSource
+@synthesize numberOfSectionsInTableView = _numberOfSectionsInTableView;
+@synthesize tableView_numberOfRowsInSection = _tableView_numberOfRowsInSection;
+@synthesize tableView_cellForRowAtIndexPath = _tableView_cellForRowAtIndexPath;
+@synthesize tableView_canEditRowAtIndexPath = _tableView_canEditRowAtIndexPath;
+@synthesize tableView_canMoveRowAtIndexPath = _tableView_canMoveRowAtIndexPath;
+@synthesize tableView_commitEditingStyle_forRowAtIndexPath = _tableView_commitEditingStyle_forRowAtIndexPath;
+@synthesize tableView_moveRowAtIndexPath_toIndexPath = _tableView_moveRowAtIndexPath_toIndexPath;
 
 - (NSArray *)protocolMethods
 {
@@ -32,7 +39,7 @@
 {
     if (!_numberOfSectionsInTableView) {
         _numberOfSectionsInTableView = [[ZZMethod alloc] initWithMethodName:@"- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView" selected:YES];
-        [_numberOfSectionsInTableView addMethodContentCode:@"if (YES) {\nreturn 1;\n}\n else { \nfor (int i = 0; i < 10; i ++)\n{\nNSLog(@\"Hello\");\n}\nreturn 10;\n}"];
+        [_numberOfSectionsInTableView addMethodContentCode:@"return 1;"];
     }
     return _numberOfSectionsInTableView;
 }

@@ -16,6 +16,12 @@
 
 @implementation ZZUIScrollViewDelegate
 @synthesize protocolMethods = _protocolMethods;
+@synthesize scrollViewDidScroll = _scrollViewDidScroll;
+@synthesize scrollViewWillBeginDragging = _scrollViewWillBeginDragging;
+@synthesize scrollViewDidEndDragging_willDecelerate = _scrollViewDidEndDragging_willDecelerate;
+@synthesize scrollViewWillBeginDecelerating = _scrollViewWillBeginDecelerating;
+@synthesize scrollViewDidEndDecelerating = _scrollViewDidEndDecelerating;
+@synthesize scrollViewDidEndScrollingAnimation = _scrollViewDidEndScrollingAnimation;
 
 - (NSArray *)protocolMethods
 {

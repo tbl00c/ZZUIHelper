@@ -9,22 +9,35 @@
 #import "ZZUIView.h"
 
 @implementation ZZUIView
+@synthesize m_initWithFrame = _m_initWithFrame;
 
 - (NSString *)implementationInitCode
 {
-    NSString *initCode = @"";
     NSArray *childViewArray = self.childViewsArray;
-    
-    // initWithFrame
     if (childViewArray.count > 0) {
+        NSMutableString *initCode = [NSMutableString stringWithString:@"if (self = [super initWithFrame:frame]) {"];
         for (ZZUIView *view in childViewArray) {
-            initCode = [initCode stringByAppendingFormat:@"\t\t[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
+            [initCode appendFormat:@"[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
         }
-        initCode = M_INITWITHFRAME(initCode);
+        [initCode appendString:@"}\nreturn self;\n"];
+        
+        [self.m_initWithFrame clearMethodContent];
+        [self.m_initWithFrame addMethodContentCode:initCode];
+        
+        return [self.m_initWithFrame.methodCode stringByAppendingString:@"\n"];
     }
     
-    return initCode;
+    return @"";
 }
 
+
+#pragma mark - # Getter
+- (ZZMethod *)m_initWithFrame
+{
+    if (!_m_initWithFrame) {
+        _m_initWithFrame = [[ZZMethod alloc] initWithMethodName:@"- (id)initWithFrame:(CGRect)frame"];
+    }
+    return _m_initWithFrame;
+}
 
 @end

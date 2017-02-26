@@ -15,4 +15,14 @@
 /// loadView方法代码
 @property (nonatomic, strong, readonly) NSString *implementationLoadViewCode;
 
+@property (nonatomic, strong, readonly) NSArray *methodArray;
+
+@property (nonatomic, strong, readonly) ZZMethod *loadView;
+@property (nonatomic, strong, readonly) ZZMethod *viewDidLoad;
+@property (nonatomic, strong, readonly) ZZMethod *viewWillAppear;
+@property (nonatomic, strong, readonly) ZZMethod *viewDidAppear;
+@property (nonatomic, strong, readonly) ZZMethod *viewWillDisappear;
+@property (nonatomic, strong, readonly) ZZMethod *viewDidDisappear;
+@property (nonatomic, strong, readonly) ZZMethod *deallocMethod;
+
 @end

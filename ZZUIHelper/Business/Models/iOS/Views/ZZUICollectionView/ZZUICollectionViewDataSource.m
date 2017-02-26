@@ -9,6 +9,12 @@
 #import "ZZUICollectionViewDataSource.h"
 
 @implementation ZZUICollectionViewDataSource
+@synthesize numberOfSectionsInCollectionView = _numberOfSectionsInCollectionView;
+@synthesize collectionView_numberOfItemsInSection = _collectionView_numberOfItemsInSection;
+@synthesize collectionView_cellForItemAtIndexPath = _collectionView_cellForItemAtIndexPath;
+@synthesize collectionView_viewForSupplementaryElementOfKind_atIndexPath = _collectionView_viewForSupplementaryElementOfKind_atIndexPath;
+@synthesize collectionView_canMoveItemAtIndexPath = _collectionView_canMoveItemAtIndexPath;
+@synthesize collectionView_moveItemAtIndexPath_toIndexPath = _collectionView_moveItemAtIndexPath_toIndexPath;
 
 - (NSArray *)protocolMethods
 {

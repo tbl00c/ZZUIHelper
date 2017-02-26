@@ -10,7 +10,7 @@
 
 @interface ZZUICollectionViewDelegate : ZZUIScrollViewDelegate
 
-@property (nonatomic, strong) ZZMethod *collectionView_didSelectItemAtIndexPath;
-@property (nonatomic, strong) ZZMethod *collectionView_didDeselectItemAtIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *collectionView_didSelectItemAtIndexPath;
+@property (nonatomic, strong, readonly) ZZMethod *collectionView_didDeselectItemAtIndexPath;
 
 @end

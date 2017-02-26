@@ -8,7 +8,14 @@
 
 #import "ZZNSObject.h"
 
+@interface ZZNSObject ()
+
+@property (nonatomic, strong, readonly) ZZMethod *getterMethod;
+
+@end
+
 @implementation ZZNSObject
+@synthesize getterMethod = _getterMethod;
 
 - (id)init
 {
@@ -49,13 +56,27 @@
 
 - (NSString *)getterCode
 {
-    NSString *getterCode = @"";
     NSArray *extCodes = [self getterCodeExtCode];
-    for (NSString *code in extCodes) {
-        getterCode = [getterCode stringByAppendingFormat:@"\t\t%@\n", code];
+    if (extCodes.count > 0) {
+        NSMutableString *getterCode = [NSMutableString stringWithFormat:@"if (!_%@) {", self.propertyName];;
+        for (NSString *code in extCodes) {
+            [getterCode appendFormat:@"%@\n", code];
+        }
+        [getterCode appendFormat:@"}\nreturn _%@;\n", self.propertyName];
+        [self.getterMethod clearMethodContent];
+        [self.getterMethod addMethodContentCode:getterCode];
+        return [self.getterMethod.methodCode stringByAppendingString:@"\n"];
     }
-    getterCode = M_GETTER(self.className, self.propertyName, getterCode);
-    return getterCode;
+    
+    return @"";
+}
+
+- (ZZMethod *)getterMethod
+{
+    if (!_getterMethod) {
+        _getterMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (%@ *)%@", self.className, self.propertyName]];
+    }
+    return _getterMethod;
 }
 
 @end

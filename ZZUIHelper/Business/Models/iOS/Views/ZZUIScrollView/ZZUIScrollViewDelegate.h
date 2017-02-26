@@ -10,16 +10,11 @@
 
 @interface ZZUIScrollViewDelegate : ZZProtocol
 
-@property (nonatomic, strong) ZZMethod *scrollViewDidScroll;
-
-@property (nonatomic, strong) ZZMethod *scrollViewWillBeginDragging;
-
-@property (nonatomic, strong) ZZMethod *scrollViewDidEndDragging_willDecelerate;
-
-@property (nonatomic, strong) ZZMethod *scrollViewWillBeginDecelerating;
-
-@property (nonatomic, strong) ZZMethod *scrollViewDidEndDecelerating;
-
-@property (nonatomic, strong) ZZMethod *scrollViewDidEndScrollingAnimation;
+@property (nonatomic, strong, readonly) ZZMethod *scrollViewDidScroll;
+@property (nonatomic, strong, readonly) ZZMethod *scrollViewWillBeginDragging;
+@property (nonatomic, strong, readonly) ZZMethod *scrollViewDidEndDragging_willDecelerate;
+@property (nonatomic, strong, readonly) ZZMethod *scrollViewWillBeginDecelerating;
+@property (nonatomic, strong, readonly) ZZMethod *scrollViewDidEndDecelerating;
+@property (nonatomic, strong, readonly) ZZMethod *scrollViewDidEndScrollingAnimation;
 
 @end
