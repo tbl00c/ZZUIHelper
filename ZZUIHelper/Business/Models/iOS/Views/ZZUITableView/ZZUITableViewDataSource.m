@@ -32,6 +32,7 @@
 {
     if (!_numberOfSectionsInTableView) {
         _numberOfSectionsInTableView = [[ZZMethod alloc] initWithMethodName:@"- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView" selected:YES];
+        [_numberOfSectionsInTableView addMethodContentCode:@"if (YES) {\nreturn 1;\n}\n else { \nfor (int i = 0; i < 10; i ++)\n{\nNSLog(@\"Hello\");\n}\nreturn 10;\n}"];
     }
     return _numberOfSectionsInTableView;
 }
@@ -40,6 +41,7 @@
 {
     if (!_tableView_numberOfRowsInSection) {
         _tableView_numberOfRowsInSection = [[ZZMethod alloc] initWithMethodName:@"- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section" selected:YES];
+        [_tableView_numberOfRowsInSection addMethodContentCode:@"return self.data.count;"];
     }
     return _tableView_numberOfRowsInSection;
 }

@@ -13,8 +13,6 @@
 
 @property (nonatomic, strong, readonly) NSString *methodCode;
 
-@property (nonatomic, assign, readonly) BOOL isClassMethod;
-
 @property (nonatomic, assign) BOOL selected;
 
 #pragma mark - # 方法名
@@ -27,15 +25,22 @@
 /// 返回值类型
 @property (nonatomic, strong, readonly) NSString *returnType;
 
-@property (nonatomic, strong, readonly) NSArray *params;
-
 #pragma mark - # 方法内容
-@property (nonatomic, strong) NSString *methodContent;
-
-@property (nonatomic, strong, readonly) NSArray *methodContentArray;
+/// 方法体
+@property (nonatomic, strong, readonly) NSString *methodContent;
 
 - (id)initWithMethodName:(NSString *)methodName;
 
 - (id)initWithMethodName:(NSString *)methodName selected:(BOOL)selected;
+
+/**
+ * 添加方法体代码块
+ */
+- (void)addMethodContentCode:(NSString *)code;
+
+/**
+ * 清空方法体代码
+ */
+- (BOOL)clearMethodContent;
 
 @end

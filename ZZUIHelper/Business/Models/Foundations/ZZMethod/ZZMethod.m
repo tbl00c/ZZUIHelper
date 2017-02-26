@@ -8,6 +8,19 @@
 
 #import "ZZMethod.h"
 
+@interface ZZMethod ()
+
+/// 是不是类方法
+@property (nonatomic, assign, readonly) BOOL isClassMethod;
+
+/// 参数
+@property (nonatomic, strong, readonly) NSArray *params;
+
+/// 方法体代码行
+@property (nonatomic, strong, readonly) NSMutableArray *methodContentArray;
+
+@end
+
 @implementation ZZMethod
 @synthesize methodName = _methodName;
 @synthesize methodContent = _methodContent;
@@ -93,7 +106,7 @@
     _returnType = [codeArray[0] substringFromIndex:1];
     code = [[code substringFromIndex:_returnType.length + 2] strip];
     _returnType = [_returnType strip];
-    NSLog(@"返回值类型：(%@)", self.returnType);
+//    NSLog(@"返回值类型：(%@)", self.returnType);
     
     // 方法名和参数
     if (![code containsString:@"("]) {   // 无参数
@@ -126,7 +139,7 @@
             NSString *param = k_n[1];
             [params addObject:param];
         }
-        NSLog(@"方法名-无参数：(%@)", self.methodNameWithoutParams);
+//        NSLog(@"方法名-无参数：(%@)", self.methodNameWithoutParams);
         
         // 参数
         if (types.count > 0 || params.count > 0) {
@@ -140,47 +153,153 @@
                 NSString *name = params[i];
                 ZZParam *param = [[ZZParam alloc] initWithType:type andName:name];
                 [data addObject:param];
-                NSLog(@"参数：(%@)", param.param);
+//                NSLog(@"参数：(%@)", param.param);
             }
             _params = data;
         }
     }
     
-    NSLog(@"方法名：(%@)", self.methodName);
+//    NSLog(@"方法名：(%@)", self.methodName);
 }
 
 #pragma mark - # 方法内容
 - (NSString *)methodContent
 {
     if (!_methodContent) {
-        _methodContent = NEW_LINE ? @"\n{\n" : @" {\n";
-        if (self.methodContentArray.count > 0) {
-            for (NSString *code in self.methodContentArray) {
-                _methodContent = [_methodContent stringByAppendingFormat:@"\t%@\n", code];
+        _methodContent = @"";
+        if (self.methodContentArray.count > 0) {        // 有代码
+            NSString *code = [self p_methodContentByArray:self.methodContentArray space:1];
+            _methodContent = [_methodContent stringByAppendingString:code];
+        }
+        else {                                          // 无代码，自动加入return语句
+            _methodContent = NEW_LINE ? @"\n{\n" : @" {\n";
+            _methodContent = [_methodContent stringByAppendingString:@"\t"];
+            if ([self.returnType hasSuffix:@"*"]) {
+                _methodContent = [_methodContent stringByAppendingString:@"return nil;"];
             }
+            else if ([self.returnType isEqualToString:@"BOOL"]) {
+                _methodContent = [_methodContent stringByAppendingString:@"return YES;"];
+            }
+            else if (![self.returnType isEqualToString:@"CGSize"]){
+                _methodContent = [_methodContent stringByAppendingString:@"return CGSizeZero;"];
+            }
+            else if (![self.returnType isEqualToString:@"CGRect"]){
+                _methodContent = [_methodContent stringByAppendingString:@"return CGRectZero;"];
+            }
+            else if (![self.returnType isEqualToString:@"UIEdgeInsets"]){
+                _methodContent = [_methodContent stringByAppendingString:@"return UIEdgeInsetsZero;"];
+            }
+            else if (![self.returnType isEqualToString:@"void"]){
+                _methodContent = [_methodContent stringByAppendingString:@"return 0;"];
+            }
+            _methodContent = [_methodContent stringByAppendingString:@"\n}\n"];
         }
-        else {
-            _methodContent = [_methodContent stringByAppendingString:@"\n"];
-        }
-        _methodContent = [_methodContent stringByAppendingString:@"}\n"];
     }
     return _methodContent;
 }
 
-- (NSArray *)methodContentArray
+- (NSMutableArray *)methodContentArray
 {
-    if (!_methodContentArray && ![self.returnType isEqualToString:@"void"]) {
-        if ([self.returnType hasSuffix:@"*"]) {
-            _methodContentArray = @[@"return nil;"];
-        }
-        else if ([self.returnType isEqualToString:@"BOOL"]) {
-            _methodContentArray = @[@"return YES;"];
-        }
-        else {
-            _methodContentArray = @[@"return 0;"];
-        }
+    if (!_methodContentArray) {
+        _methodContentArray = [[NSMutableArray alloc] init];
     }
     return _methodContentArray;
+}
+
+- (void)addMethodContentCode:(NSString *)code
+{
+    NSArray *codeArray = [self p_formatMethodContentCode:code.mutableCopy];
+    [self.methodContentArray addObjectsFromArray:codeArray];
+}
+
+- (BOOL)clearMethodContent
+{
+    _methodContent = nil;
+    _methodContentArray = nil;
+    return YES;
+}
+
+#pragma mark - # Private Methods
+- (NSMutableArray *)p_formatMethodContentCode:(NSMutableString *)code
+{
+    NSMutableArray *data = [[NSMutableArray alloc] init];
+    while (code.length > 0) {
+        NSString *left = [code componentsSeparatedByString:@"{"][0];
+        NSString *right = [code componentsSeparatedByString:@"}"][0];
+        if (left.length < right.length) {
+            [code deleteCharactersInRange:NSMakeRange(0, left.length + 1)];
+            NSArray *lineArray = [left componentsSeparatedByString:@"\n"];
+            for (NSString *line in lineArray) {
+                NSString *lineCode = [line strip];
+                if (lineCode.length > 0) {
+                    [data addObject:lineCode];
+                }
+            }
+            if (code.length > 0) {
+                NSArray *subCode = [self p_formatMethodContentCode:code];
+                [data addObject:subCode];
+            }
+        }
+        else if (left.length > right.length){
+            [code deleteCharactersInRange:NSMakeRange(0, right.length + 1)];
+            NSArray *lineArray = [right componentsSeparatedByString:@"\n"];
+            for (NSString *line in lineArray) {
+                NSString *lineCode = [line strip];
+                if (lineCode.length > 0) {
+                    [data addObject:lineCode];
+                }
+            }
+            return data;
+        }
+        else {
+            NSArray *lineArray = [right componentsSeparatedByString:@"\n"];
+            for (NSString *line in lineArray) {
+                NSString *lineCode = [line strip];
+                if (lineCode.length > 0) {
+                    [data addObject:lineCode];
+                }
+            }
+            return data;
+        }
+    }
+    
+    return data;
+}
+
+- (NSString *)p_methodContentByArray:(NSArray *)array space:(NSInteger)space
+{
+    NSMutableString *code = [[NSMutableString alloc] init];
+    if (!NEW_LINE) {
+        [code appendString:@" {\n"];
+    }
+    else {
+        [code appendFormat:@"\n%@{\n", [self tabSpace:space - 1]];
+        
+    }
+    for (int i = 0; i < array.count; i++) {
+        id item = array[i];
+        if ([item isKindOfClass:[NSString class]]) {
+            [code appendFormat:@"%@%@", [self tabSpace:space], item];
+            if (i == array.count - 1 || ![array[i + 1] isKindOfClass:[NSArray class]]) {
+                [code appendString:@"\n"];
+            }
+        }
+        else if ([item isKindOfClass:[NSArray class]]){
+            NSString *subString = [self p_methodContentByArray:item space:space + 1];
+            [code appendString:subString];
+        }
+    }
+    [code appendFormat:@"%@}\n", [self tabSpace:space - 1]];
+    return code;
+}
+
+- (NSString *)tabSpace:(NSInteger)space
+{
+    NSMutableString *code = [[NSMutableString alloc] init];
+    for (NSInteger i = 0; i < space; i++) {
+        [code appendString:@"\t"];
+    }
+    return code;
 }
 
 @end

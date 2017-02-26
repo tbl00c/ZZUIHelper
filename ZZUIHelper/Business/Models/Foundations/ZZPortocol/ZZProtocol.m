@@ -10,4 +10,24 @@
 
 @implementation ZZProtocol
 
+- (NSString *)protocolName
+{
+    NSString *protocolName = NSStringFromClass([self class]);
+    if ([protocolName hasPrefix:@"ZZ"]) {
+        protocolName = [protocolName substringFromIndex:2];
+    }
+    return protocolName;
+}
+
+- (NSString *)protocolCode
+{
+    NSString *code = @"";
+    for (ZZMethod *method in self.protocolMethods) {
+        if (method.selected) {
+            code = [code stringByAppendingFormat:@"%@\n", method.methodCode];
+        }
+    }
+    return code;
+}
+
 @end
