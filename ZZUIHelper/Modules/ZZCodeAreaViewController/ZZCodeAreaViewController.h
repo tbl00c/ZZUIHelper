@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ZZCodeAreaViewController : NSViewController
+@interface ZZCodeAreaViewController : NSTabViewController
 
 @end
