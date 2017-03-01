@@ -19,6 +19,9 @@
         for (ZZUIView *view in childViewArray) {
             [initCode appendFormat:@"[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
         }
+        if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
+            [initCode appendString:@"[self p_addMasonry];\n"];
+        }
         [initCode appendString:@"}\nreturn self;"];
         [self.m_initWithStyle_reuseIdentifier addMethodContentCode:initCode];
         return [self.m_initWithStyle_reuseIdentifier.methodCode stringByAppendingString:@"\n"];

@@ -29,7 +29,6 @@
 /// 接口中的属性列表
 @property (nonatomic, strong, readonly) NSArray *interfaceProperties;
 
-
 - (void)addPublicProperty:(ZZNSObject *)property withName:(NSString *)name andRemarks:(NSString *)remarks;
 
 - (BOOL)removePublicProperty:(ZZNSObject *)property;
@@ -60,6 +59,10 @@
 - (void)addPrivateProperty:(ZZNSObject *)property withName:(NSString *)name andRemarks:(NSString *)remarks;
 
 - (BOOL)removePrivateProperty:(ZZNSObject *)property;
+
+- (BOOL)removePrivatePropertyAtIndex:(NSInteger)index;
+
+- (BOOL)movePrivatePropertyAtIndex:(NSInteger)index toIndex:(NSInteger)toIndex;
 
 
 @end

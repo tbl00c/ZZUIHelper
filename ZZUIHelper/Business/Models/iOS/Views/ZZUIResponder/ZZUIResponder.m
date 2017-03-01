@@ -43,13 +43,13 @@
 {
     property.propertyName = name;
     property.remarks = remarks;
-    NSMutableArray *array = self.interfaceProperties ? self.interfaceProperties.mutableCopy : @[].mutableCopy;
-    [array addObject:property];
-    _interfaceProperties = array;
     if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
         [self addPublicProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
     }
+    NSMutableArray *array = self.interfaceProperties ? self.interfaceProperties.mutableCopy : @[].mutableCopy;
+    [array addObject:property];
+    _interfaceProperties = array;
 }
 
 - (BOOL)removePublicProperty:(ZZNSObject *)property
@@ -224,13 +224,13 @@
 {
     property.propertyName = name;
     property.remarks = remarks;
-    NSMutableArray *array = self.extensionProperties ? self.extensionProperties.mutableCopy : @[].mutableCopy;
-    [array addObject:property];
-    _extensionProperties = array;
     if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
         [self addPrivateProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
     }
+    NSMutableArray *array = self.extensionProperties ? self.extensionProperties.mutableCopy : @[].mutableCopy;
+    [array addObject:property];
+    _extensionProperties = array;
 }
 
 - (BOOL)removePrivateProperty:(ZZNSObject *)property
@@ -244,6 +244,37 @@
     return NO;
 }
 
+- (BOOL)removePrivatePropertyAtIndex:(NSInteger)index
+{
+    if (index < self.extensionProperties.count) {
+        NSMutableArray *array = self.extensionProperties.mutableCopy;
+        [array removeObjectAtIndex:index];
+        _extensionProperties = array;
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)movePrivatePropertyAtIndex:(NSInteger)index toIndex:(NSInteger)toIndex
+{
+    if (index >= self.extensionProperties.count || toIndex > self.extensionProperties.count) {
+        return NO;
+    }
+    NSMutableArray *array = self.extensionProperties.mutableCopy;
+    id data = array[index];
+    if (index > toIndex) {
+        [array removeObjectAtIndex:index];
+        [array insertObject:data atIndex:toIndex];
+    }
+    else if (index < toIndex) {
+        [array insertObject:data atIndex:toIndex];
+        [array removeObjectAtIndex:index];
+    }
+    _extensionProperties = array;
+ 
+    return YES;
+}
+
 #pragma mark - # Getter
 - (NSString *)masonryCode
 {
@@ -251,7 +282,7 @@
     if (self.remarks.length > 0) {
         [masonryCode appendFormat:@"// %@\n", self.remarks];
     }
-    [masonryCode appendFormat:@"[self.%@  mas_makeConstraints:^(MASConstraintMaker *make) {\n\n}];\n", self.propertyName];
+    [masonryCode appendFormat:@"[self.%@ mas_makeConstraints:^(MASConstraintMaker *make) {\n\n}];\n", self.propertyName];
     return masonryCode;
 }
 

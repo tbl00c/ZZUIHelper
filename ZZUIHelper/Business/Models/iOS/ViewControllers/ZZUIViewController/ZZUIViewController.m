@@ -28,6 +28,9 @@
         for (ZZUIView *view in childViewArray) {
             [code appendFormat:@"[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
         }
+        if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
+            [code appendString:@"[self p_addMasonry];\n"];
+        }
         [self.loadView clearMethodContent];
         [self.loadView addMethodContentCode:code];
     }

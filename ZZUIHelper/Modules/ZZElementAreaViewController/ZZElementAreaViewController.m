@@ -23,6 +23,8 @@
 {
     [super viewDidLoad];
     
+    [self.tableView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
+    
     [self reloadData];
 }
 
@@ -43,6 +45,12 @@
 {
     self.data = [ZZClassHelper sharedInstance].properties.mutableCopy;
     [self.tableView reloadData];
+    [self.tableView deselectRow:self.tableView.selectedRow];
+    if (self.data.count > 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:self.data.count - 1] byExtendingSelection:YES];
+        });
+    }
 }
 
 #pragma mark - # Delegate
@@ -88,6 +96,49 @@
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     }
+}
+
+- (BOOL)tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard
+{
+    [tableView deselectRow:tableView.selectedRow];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    [pboard declareTypes:[NSArray arrayWithObject:@"NSFilenamesPboardType"] owner:self];
+    [pboard setData:data forType:@"ZZElementCell"];
+    return YES;
+}
+
+- (NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id<NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
+{
+    return NSDragOperationMove;
+}
+
+- (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation
+{
+    NSPasteboard *pboard = [info draggingPasteboard];
+    NSData *rowData = [pboard dataForType:@"ZZElementCell"];
+    NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
+    NSInteger dragRow = [rowIndexes firstIndex];
+    
+    if (dragRow < row) {
+        [self.data insertObject:[self.data objectAtIndex:dragRow] atIndex:row];
+        [self.data removeObjectAtIndex:dragRow];
+    }
+    else {
+        NSString * zData = [self.data objectAtIndex:dragRow];
+        [self.data removeObjectAtIndex:dragRow];
+        [self.data insertObject:zData atIndex:row];
+    }
+    
+    [[ZZClassHelper sharedInstance].curClass movePrivatePropertyAtIndex:dragRow toIndex:row];
+    
+    [self.tableView noteNumberOfRowsChanged];
+    [self.tableView reloadData];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
+    });
+    
+    return YES;
 }
 
 #pragma mark - # Event Response

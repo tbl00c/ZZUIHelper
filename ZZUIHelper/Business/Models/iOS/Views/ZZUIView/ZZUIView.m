@@ -19,6 +19,11 @@
         for (ZZUIView *view in childViewArray) {
             [initCode appendFormat:@"[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
         }
+        
+        if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
+            [initCode appendString:@"[self p_addMasonry];\n"];
+        }
+        
         [initCode appendString:@"}\nreturn self;\n"];
         
         [self.m_initWithFrame clearMethodContent];
