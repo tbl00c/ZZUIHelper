@@ -140,7 +140,7 @@
         implementationCode = [implementationCode stringByAppendingString:getterCode];
     }
     
-    implementationCode = [implementationCode stringByAppendingString:@"@end\n\n"];
+    implementationCode = [implementationCode stringByAppendingString:@"@end\n"];
     return implementationCode;
 }
 

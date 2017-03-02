@@ -21,6 +21,8 @@
 		C223E6981E66E0D10004F3DD /* ZZPropertySectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C223E6971E66E0D10004F3DD /* ZZPropertySectionHeaderView.m */; };
 		C22569F91E67F048008E7785 /* ZZControlListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C22569F71E67F048008E7785 /* ZZControlListItem.m */; };
 		C22569FA1E67F048008E7785 /* ZZControlListItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22569F81E67F048008E7785 /* ZZControlListItem.xib */; };
+		C2256A8D1E680808008E7785 /* MGSFragaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2256A8C1E680808008E7785 /* MGSFragaria.framework */; };
+		C2256A8F1E680813008E7785 /* MGSFragaria.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2256A8C1E680808008E7785 /* MGSFragaria.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C24BE4281E66C1D100BE3886 /* ZZPropertyPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BE4261E66C1D100BE3886 /* ZZPropertyPViewController.m */; };
 		C24BE4291E66C1D100BE3886 /* ZZPropertyPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24BE4271E66C1D100BE3886 /* ZZPropertyPViewController.xib */; };
 		C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C1B1E59614B000960D9 /* ZZUIHelperConfig.m */; };
@@ -83,6 +85,20 @@
 		C2D6CA971E5C191B00EEF76B /* ZZPropertyEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA961E5C191B00EEF76B /* ZZPropertyEditViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C2256A901E680813008E7785 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C2256A8F1E680813008E7785 /* MGSFragaria.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C21789B71E55D64500AF8BEE /* ZZUIHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZUIHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21789BA1E55D64500AF8BEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +124,7 @@
 		C22569F61E67F048008E7785 /* ZZControlListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZControlListItem.h; sourceTree = "<group>"; };
 		C22569F71E67F048008E7785 /* ZZControlListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZControlListItem.m; sourceTree = "<group>"; };
 		C22569F81E67F048008E7785 /* ZZControlListItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZControlListItem.xib; sourceTree = "<group>"; };
+		C2256A8C1E680808008E7785 /* MGSFragaria.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGSFragaria.framework; sourceTree = "<group>"; };
 		C24BE4251E66C1D100BE3886 /* ZZPropertyPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyPViewController.h; sourceTree = "<group>"; };
 		C24BE4261E66C1D100BE3886 /* ZZPropertyPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyPViewController.m; sourceTree = "<group>"; };
 		C24BE4271E66C1D100BE3886 /* ZZPropertyPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyPViewController.xib; sourceTree = "<group>"; };
@@ -237,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2256A8D1E680808008E7785 /* MGSFragaria.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +504,7 @@
 		C2D6C9FE1E5BE12700EEF76B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C2256A8C1E680808008E7785 /* MGSFragaria.framework */,
 				C2D6C9FF1E5BE12700EEF76B /* Categories */,
 				C2D6CA041E5BE12700EEF76B /* Masonry */,
 			);
@@ -821,6 +840,7 @@
 				C21789B31E55D64500AF8BEE /* Sources */,
 				C21789B41E55D64500AF8BEE /* Frameworks */,
 				C21789B51E55D64500AF8BEE /* Resources */,
+				C2256A901E680813008E7785 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1063,6 +1083,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZZUIHelper",
+					"$(PROJECT_DIR)/ZZUIHelper/Extensions",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZZUIHelper/ZZPrefixHeader.pch";
 				INFOPLIST_FILE = ZZUIHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1077,6 +1102,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZZUIHelper",
+					"$(PROJECT_DIR)/ZZUIHelper/Extensions",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZZUIHelper/ZZPrefixHeader.pch";
 				INFOPLIST_FILE = ZZUIHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

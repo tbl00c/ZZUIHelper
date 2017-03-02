@@ -629,7 +629,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="ZZWindowController" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="ZZUIHelper" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="500" height="300"/>
@@ -652,9 +652,14 @@
                                         <action selector="exportButtonClick:" target="B8D-0N-5wS" id="YHf-t3-tUf"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="024F1AEF-35A8-4A9F-B635-FD4C5BCD01A0" label="设置" paletteLabel="设置" tag="-1" image="bar2" id="DLI-T6-xCt">
+                                <toolbarItem implicitItemIdentifier="024F1AEF-35A8-4A9F-B635-FD4C5BCD01A0" label="生成配置" paletteLabel="生成配置" tag="-1" image="bar2" id="DLI-T6-xCt">
                                     <connections>
                                         <segue destination="ws0-YG-Y9w" kind="modal" id="rLf-ti-ro0"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="0A654DC3-7D53-4A5D-9C56-5B6C2368E4AB" label="显示设置" paletteLabel="显示设置" tag="-1" image="setting" id="hQH-VV-Dy3">
+                                    <connections>
+                                        <action selector="codeSettingButtonClick:" target="B8D-0N-5wS" id="VLy-65-Ffr"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
@@ -662,6 +667,7 @@
                                 <toolbarItem reference="iSy-q3-Zmh"/>
                                 <toolbarItem reference="ikQ-eq-UHg"/>
                                 <toolbarItem reference="HL0-sb-wsU"/>
+                                <toolbarItem reference="hQH-VV-Dy3"/>
                                 <toolbarItem reference="DLI-T6-xCt"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -1276,5 +1282,6 @@
         <image name="bar2" width="195" height="108"/>
         <image name="close" width="15" height="15"/>
         <image name="list_waterfall" width="17" height="17"/>
+        <image name="setting" width="133" height="111.5"/>
     </resources>
 </document>

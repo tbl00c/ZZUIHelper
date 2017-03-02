@@ -8,6 +8,8 @@
 
 #import "ZZWindowController.h"
 #import "ZZNewFileViewController.h"
+#import <MGSFragaria/MGSFragaria.h>
+
 
 @interface ZZWindowController ()
 
@@ -58,6 +60,12 @@
     }
     
     [[NSWorkspace sharedWorkspace] openFile:path];
+}
+
+- (IBAction)codeSettingButtonClick:(id)sender {
+    MGSFragariaFontsAndColoursPrefsViewController *vc = [[MGSFragariaFontsAndColoursPrefsViewController alloc] init];
+    NSViewController *presentVC = self.window.contentViewController.childViewControllers[1];
+    [presentVC presentViewControllerAsModalWindow:vc];
 }
 
 - (BOOL)p_writeCode:(NSString *)code toFileAtPath:(NSString *)filePath
