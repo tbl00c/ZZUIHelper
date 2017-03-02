@@ -31,7 +31,7 @@
 
 - (NSString *)className
 {
-    if (!_className) {
+    if (_className.length == 0) {
         return self.superClassName;
     }
     return _className;

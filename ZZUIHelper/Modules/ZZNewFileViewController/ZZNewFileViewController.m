@@ -14,6 +14,8 @@
 
 @property (weak) IBOutlet NSComboBoxCell *superClassCobox;
 
+@property (weak) IBOutlet NSTextField *defineSuperClassNameLabel;
+
 @end
 
 @implementation ZZNewFileViewController
@@ -33,6 +35,7 @@
     NSInteger index = self.superClassCobox.indexOfSelectedItem;
     NSString *superClass = [ZZClassHelper sharedInstance].superClassArray[index];
     self.classNameTF.stringValue = [[ZZUIHelperConfig sharedInstance].classPrefix stringByAppendingString:[superClass substringFromIndex:2]];
+    [self.defineSuperClassNameLabel setPlaceholderString:superClass];
 }
 
 #pragma mark - # Event Response
@@ -40,10 +43,13 @@
     NSString *className = self.classNameTF.stringValue;
     NSInteger index = self.superClassCobox.indexOfSelectedItem;
     NSString *superClass = [ZZClassHelper sharedInstance].superClassArray[index];
+    NSString *defineSuperClass = self.defineSuperClassNameLabel.stringValue;
+    defineSuperClass = defineSuperClass.length == 0 ? superClass : defineSuperClass;
     if (className.length > 0) {
         NSString *zzClassName = [@"ZZ" stringByAppendingString:superClass];
         ZZUIResponder *object = [[NSClassFromString(zzClassName) alloc] init];
         [object setClassName:className];
+        [object setSuperClassName:defineSuperClass];
         [ZZClassHelper sharedInstance].curClass = object;
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROJECT object:nil];
         [self dismissController:self];

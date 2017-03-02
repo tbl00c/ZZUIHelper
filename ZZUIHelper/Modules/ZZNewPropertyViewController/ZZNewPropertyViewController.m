@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *uiClassName;
 
 @property (weak) IBOutlet NSTextField *classNameLabel;
+@property (weak) IBOutlet NSTextField *definedClassNameLabel;
 @property (weak) IBOutlet NSTextField *propertyNameTF;
 @property (weak) IBOutlet NSTextField *remarkTF;
 @property (weak) IBOutlet NSTextField *warningLabel;
@@ -26,20 +27,23 @@
 {
     [super viewDidLoad];
     
-    self.classNameLabel.stringValue = [self.className substringFromIndex:2];
-    self.propertyNameTF.stringValue = [[self.className substringFromIndex:4] lowerFirstCharacter];
+    NSString *className = [self.className substringFromIndex:2];
+    self.definedClassNameLabel.placeholderString = className;
+    self.classNameLabel.stringValue = className;
+    self.propertyNameTF.stringValue = [[className substringFromIndex:2] lowerFirstCharacter];
 }
 
 - (IBAction)okButtonClick:(id)sender {
     NSString *propertyName = self.propertyNameTF.stringValue;
     NSString *remark = self.remarkTF.stringValue;
-
+    NSString *definedClassName = self.definedClassNameLabel.stringValue;
     if (propertyName.length > 0 && [[ZZClassHelper sharedInstance] canNamed:propertyName]) {
         Class cls = NSClassFromString(self.className);
-        id a = [[cls alloc] init];
-        [[ZZClassHelper sharedInstance].curClass addPrivateProperty:a withName:propertyName andRemarks:remark];
+        ZZNSObject *object = [[cls alloc] init];
+        [object setClassName:definedClassName];
+        [[ZZClassHelper sharedInstance].curClass addPrivateProperty:object withName:propertyName andRemarks:remark];
         [self dismissController:self];
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:a];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:object];
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
     }
     else {

@@ -35,7 +35,7 @@
         }
     }
     
-    interfaceCode = [interfaceCode stringByAppendingString:@"@end\n\n"];
+    interfaceCode = [interfaceCode stringByAppendingString:@"@end\n"];
     return interfaceCode;
 }
 
