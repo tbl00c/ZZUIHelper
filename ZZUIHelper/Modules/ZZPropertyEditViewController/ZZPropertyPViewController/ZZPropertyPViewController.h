@@ -1,5 +1,5 @@
 //
-//  ZZPropertyClassViewController.h
+//  ZZPropertyPViewController.h
 //  ZZUIHelper
 //
 //  Created by 李伯坤 on 2017/2/26.
@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ZZNSObject.h"
 
-@interface ZZPropertyClassViewController : NSViewController
+@interface ZZPropertyPViewController : NSViewController
 
 @property (nonatomic, weak) ZZNSObject *object;
 

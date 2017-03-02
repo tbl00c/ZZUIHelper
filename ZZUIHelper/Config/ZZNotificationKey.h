@@ -10,10 +10,10 @@
 #ifndef ZZNotificationKey_h
 #define ZZNotificationKey_h
 
-#define     NOTI_NEW_PROJECT                    @"NOTI_NEW_PROJECT"
-#define     NOTI_CLASS_PROPERTY_CHANGED         @"NOTI_CLASS_PROPERTY_CHANGED"
-#define     NOTI_CLASS_PROPERTY_SELECTED        @"NOTI_CLASS_PROPERTY_SELECTED"
-#define     NOTI_CLASS_PROPERTY_EDIT            @"NOTI_CLASS_PROPERTY_EDIT"
+#define     NOTI_NEW_PROJECT                    @"NOTI_NEW_PROJECT"                 // 新建文件
+#define     NOTI_CLASS_PROPERTY_CHANGED         @"NOTI_CLASS_PROPERTY_CHANGED"      // 控件增减
+#define     NOTI_CLASS_PROPERTY_SELECTED        @"NOTI_CLASS_PROPERTY_SELECTED"     // 控件选中
+#define     NOTI_CLASS_PROPERTY_EDIT            @"NOTI_CLASS_PROPERTY_EDIT"         // 控件编辑
 #define     NOTI_NEW_PROPERTY_VC_CLOSE          @"NOTI_NEW_PROPERTY_VC_CLOSE"
 #define     NOTI_SETTING_EDIT                   @"NOTI_NEW_PROJECT"
 

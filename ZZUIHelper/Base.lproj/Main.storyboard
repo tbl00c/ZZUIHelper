@@ -813,7 +813,7 @@
                 </viewController>
                 <customObject id="F69-4V-QBv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054.5" y="-268"/>
+            <point key="canvasLocation" x="1054" y="-268"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="HiL-mK-hwG">
@@ -1032,13 +1032,13 @@
                                 </searchFieldCell>
                             </searchField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6V-0D-MuF">
-                                <rect key="frame" x="0.0" y="20" width="230" height="280"/>
+                                <rect key="frame" x="0.0" y="22" width="230" height="278"/>
                                 <clipView key="contentView" drawsBackground="NO" id="e65-7q-6vK">
-                                    <rect key="frame" x="0.0" y="0.0" width="230" height="280"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="230" height="278"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="JR1-6f-QFG">
-                                            <rect key="frame" x="0.0" y="0.0" width="230" height="280"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="278"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="MiJ-Wn-LD5">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -1062,7 +1062,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TrF-Q8-vuA">
-                                    <rect key="frame" x="213" y="1" width="16" height="244"/>
+                                    <rect key="frame" x="214" y="0.0" width="16" height="273"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1074,7 +1074,7 @@
                             <constraint firstAttribute="trailing" secondItem="lBH-yY-txs" secondAttribute="trailing" id="MKb-kq-lmS"/>
                             <constraint firstItem="lBH-yY-txs" firstAttribute="leading" secondItem="NrK-He-J4Z" secondAttribute="leading" id="N4m-0E-NAo"/>
                             <constraint firstAttribute="trailing" secondItem="lBH-yY-txs" secondAttribute="trailing" id="SXw-GE-nIz"/>
-                            <constraint firstAttribute="bottom" secondItem="E6V-0D-MuF" secondAttribute="bottom" constant="20" id="bwI-hu-xTN"/>
+                            <constraint firstAttribute="bottom" secondItem="E6V-0D-MuF" secondAttribute="bottom" constant="22" id="bwI-hu-xTN"/>
                             <constraint firstItem="E6V-0D-MuF" firstAttribute="leading" secondItem="NrK-He-J4Z" secondAttribute="leading" id="khz-mL-wyJ"/>
                             <constraint firstAttribute="bottom" secondItem="lBH-yY-txs" secondAttribute="bottom" id="wLg-2i-3ZO"/>
                         </constraints>

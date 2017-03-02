@@ -21,6 +21,8 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+//    [self setWantsLayer:YES];
+//    [self.layer setBackgroundColor:[NSColor windowBackgroundColor].CGColor];
     [self.classNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
         make.top.mas_equalTo(12);

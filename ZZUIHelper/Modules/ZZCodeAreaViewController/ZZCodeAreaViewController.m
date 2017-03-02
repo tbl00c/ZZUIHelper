@@ -32,6 +32,9 @@
         [self.tabViewItems[0] setLabel:[NSString stringWithFormat:@"%@.h", className]];
         [self.tabViewItems[1] setLabel:[NSString stringWithFormat:@"%@.m", className]];
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tabView selectTabViewItemAtIndex:1];
+    });
 }
 
 

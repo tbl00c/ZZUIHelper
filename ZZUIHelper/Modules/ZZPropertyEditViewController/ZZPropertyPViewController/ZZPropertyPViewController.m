@@ -1,18 +1,18 @@
 //
-//  ZZPropertyClassViewController.m
+//  ZZPropertyPViewController.m
 //  ZZUIHelper
 //
 //  Created by 李伯坤 on 2017/2/26.
 //  Copyright © 2017年 李伯坤. All rights reserved.
 //
 
-#import "ZZPropertyClassViewController.h"
+#import "ZZPropertyPViewController.h"
 
-@interface ZZPropertyClassViewController ()
+@interface ZZPropertyPViewController ()
 
 @end
 
-@implementation ZZPropertyClassViewController
+@implementation ZZPropertyPViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

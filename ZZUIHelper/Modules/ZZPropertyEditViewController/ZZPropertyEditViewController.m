@@ -7,9 +7,8 @@
 //
 
 #import "ZZPropertyEditViewController.h"
-#import "ZZPropertyClassViewController.h"
-#import "ZZPropertyEventsViewController.h"
-#import "ZZPropertyProtocolsViewController.h"
+#import "ZZPropertyPViewController.h"
+#import "ZZPropertyMViewController.h"
 #import "ZZUIScrollView.h"
 #import "ZZUIControl.h"
 
@@ -33,42 +32,45 @@
     
     NSMutableArray *items = [[NSMutableArray alloc] init];
 
-    // Class
-    NSTabViewItem *classViewItem = [[NSTabViewItem alloc] init];
-    [classViewItem setLabel:@"Class"];
-    ZZPropertyClassViewController *classVC = [[ZZPropertyClassViewController alloc] initWithNibName:@"ZZPropertyClassViewController" bundle:nil];
-    [classViewItem.view addSubview:classVC.view];
-    [classViewItem setViewController:classVC];
-    [items addObject:classViewItem];
+//    // Class
+//    NSTabViewItem *classViewItem = [[NSTabViewItem alloc] init];
+//    [classViewItem setLabel:@"Class"];
+//    ZZPropertyClassViewController *classVC = [[ZZPropertyClassViewController alloc] initWithNibName:@"ZZPropertyClassViewController" bundle:nil];
+//    [classViewItem.view addSubview:classVC.view];
+//    [classViewItem setViewController:classVC];
+//    [items addObject:classViewItem];
     
+    /// M
     // Events
+    NSMutableArray *mData = [[NSMutableArray alloc] init];
     if ([[object class] isSubclassOfClass:[ZZUIControl class]] && [(ZZUIControl *)object actionMethods].count > 0) {
-        NSTabViewItem *eventsViewItem = [[NSTabViewItem alloc] init];
-        [eventsViewItem setLabel:@"Events"];
-        ZZPropertyEventsViewController *eventsVC = [[ZZPropertyEventsViewController alloc] initWithNibName:@"ZZPropertyEventsViewController" bundle:nil];
-        [eventsVC setObject:object];
-        [eventsVC setEvents:[(ZZUIControl *)object actionMethods]];
-        [eventsViewItem.view addSubview:eventsVC.view];
-        [eventsViewItem setViewController:eventsVC];
-        [items addObject:eventsViewItem];
+        ZZPropertySectionModel *eventsMethods = [[ZZPropertySectionModel alloc] initWithSectionTitle:@"Events" andData:[(ZZUIControl *)object actionMethods]];
+        [mData addObject:eventsMethods];
     }
     
     // Delegates
     if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && [(ZZUIScrollView *)object delegates].count > 0) {
         for (ZZProtocol *protocol in [(ZZUIScrollView *)object delegates]) {
-            NSTabViewItem *protocolViewItem = [[NSTabViewItem alloc] init];
-            [protocolViewItem setLabel:protocol.protocolKey];
-            ZZPropertyProtocolsViewController *protocolVC = [[ZZPropertyProtocolsViewController alloc] initWithNibName:@"ZZPropertyProtocolsViewController" bundle:nil];
-            [protocolVC setObject:object];
-            [protocolVC setProtocol:protocol];
-            [protocolViewItem.view addSubview:protocolVC.view];
-            [protocolViewItem setViewController:protocolVC];
-            [items addObject:protocolViewItem];
+            ZZPropertySectionModel *protocolMethods = [[ZZPropertySectionModel alloc] initWithSectionTitle:protocol.protocolName andData:protocol.protocolMethods];
+            [mData addObject:protocolMethods];
         }
     }
     
+    if (mData.count > 0) {
+        NSTabViewItem *eventsViewItem = [[NSTabViewItem alloc] init];
+        [eventsViewItem setLabel:@"M"];
+        ZZPropertyMViewController *mVC = [[ZZPropertyMViewController alloc] initWithNibName:@"ZZPropertyMViewController" bundle:nil];
+        [mVC setObject:object];
+        [mVC setData:mData];
+        [eventsViewItem.view addSubview:mVC.view];
+        [eventsViewItem setViewController:mVC];
+        [items addObject:eventsViewItem];
+    }
+    
     [self setTabViewItems:items];
-    [self setSelectedTabViewItemIndex:0];
+    if (items.count > 0) {
+        [self setSelectedTabViewItemIndex:0];
+    }
 }
 
 @end
