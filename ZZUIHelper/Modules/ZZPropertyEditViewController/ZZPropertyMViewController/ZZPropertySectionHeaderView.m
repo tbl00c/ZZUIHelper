@@ -12,6 +12,12 @@
 
 @property (nonatomic, strong) NSTextField *titleLabel;
 
+@property (nonatomic, strong) NSImageView *statusImageView;
+
+@property (nonatomic, strong) NSView *topLine;
+
+@property (nonatomic, strong) NSView *bottomLine;
+
 @end
 
 @implementation ZZPropertySectionHeaderView
@@ -27,15 +33,56 @@
             make.centerY.mas_equalTo(0);
             make.right.mas_lessThanOrEqualTo(-10);
         }];
+        
+        [self addSubview:self.statusImageView];
+        [self.statusImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-15);
+            make.centerY.mas_equalTo(0);
+            make.size.mas_equalTo(20);
+        }];
+        
+        [self addSubview:self.topLine];
+        [self.topLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.top.and.right.mas_equalTo(0);
+            make.height.mas_equalTo(1);
+        }];
+        
+        [self addSubview:self.bottomLine];
+        [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.bottom.and.right.mas_equalTo(0);
+            make.height.mas_equalTo(1);
+        }];
     }
     return self;
 }
 
-- (void)setTitle:(NSString *)title
+- (void)setModel:(ZZPropertySectionModel *)model
 {
-    self.titleLabel.stringValue = title;
+    _model = model;
+    self.titleLabel.stringValue = model.sectionTitle;
+    [self.statusImageView setImage:model.showAllItems ? [NSImage imageNamed:@"section_selected"] : [NSImage imageNamed:@"section_deselected"]];
+    [self setShowBottomLine:_showBottomLine];
 }
 
+- (void)setShowBottomLine:(BOOL)showBottomLine
+{
+    _showBottomLine = showBottomLine;
+    if (showBottomLine && self.model && !self.model.showAllItems) {
+        [self.bottomLine setHidden:NO];
+    }
+    else {
+        [self.bottomLine setHidden:YES];
+    }
+}
+
+- (void)mouseUp:(NSEvent *)event
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickedPropertySectionHeaderView:)]) {
+        [self.delegate didClickedPropertySectionHeaderView:self.model];
+    }
+}
+
+#pragma mark - # Getter
 - (NSTextField *)titleLabel
 {
     if (!_titleLabel) {
@@ -46,6 +93,35 @@
         [_titleLabel setFont:[NSFont boldSystemFontOfSize:13]];
     }
     return _titleLabel;
+}
+
+- (NSView *)topLine
+{
+    if (!_topLine) {
+        _topLine = [[NSView alloc] init];
+        [_topLine setWantsLayer:YES];
+        [_topLine.layer setBackgroundColor:[NSColor lightGrayColor].CGColor];
+    }
+    return _topLine;
+}
+
+- (NSView *)bottomLine
+{
+    if (!_bottomLine) {
+        _bottomLine = [[NSView alloc] init];
+        [_bottomLine setWantsLayer:YES];
+        [_bottomLine.layer setBackgroundColor:[NSColor lightGrayColor].CGColor];
+        [_bottomLine setHidden:YES];
+    }
+    return _bottomLine;
+}
+
+- (NSImageView *)statusImageView
+{
+    if (!_statusImageView) {
+        _statusImageView = [[NSImageView alloc] init];
+    }
+    return _statusImageView;
 }
 
 @end

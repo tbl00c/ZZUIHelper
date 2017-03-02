@@ -10,7 +10,7 @@
 #import "ZZPropertyMethodCell.h"
 #import "ZZPropertySectionHeaderView.h"
 
-@interface ZZPropertyMViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout>
+@interface ZZPropertyMViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout, ZZPropertySectionHeaderViewDelegate>
 
 @property (weak) IBOutlet NSCollectionView *collectionView;
 
@@ -27,7 +27,6 @@
     NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
     [layout setMinimumLineSpacing:0];
     [layout setMinimumInteritemSpacing:0];
-    [layout setSectionInset:NSEdgeInsetsZero];
     [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
     [self.collectionView registerClass:[ZZPropertySectionHeaderView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withIdentifier:@"ZZPropertySectionHeaderView"];
 }
@@ -57,7 +56,7 @@
 {
     if (section < self.data.count) {
         ZZPropertySectionModel *model = self.data[section];
-        return model.count;
+        return model.showAllItems ? model.count : 0;
     }
     return 0;
 }
@@ -80,7 +79,10 @@
     if ([kind isEqualToString:@"UICollectionElementKindSectionHeader"]) {
         ZZPropertySectionModel *sectionModel = indexPath.section < self.data.count ? self.data[indexPath.section] : nil;
         ZZPropertySectionHeaderView *headerView = [collectionView makeSupplementaryViewOfKind:kind withIdentifier:@"ZZPropertySectionHeaderView" forIndexPath:indexPath];
-        [headerView setTitle:sectionModel.sectionTitle];
+        [headerView setModel:sectionModel];
+        [headerView setDelegate:self];
+        [headerView setShowBottomLine:indexPath.section == self.data.count - 1];
+        return headerView;
     }
     return nil;
 }
@@ -94,6 +96,22 @@
 - (CGSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeMake(collectionView.frame.size.width, 30);
+}
+
+- (NSEdgeInsets)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if (section < self.data.count) {
+        ZZPropertySectionModel *model = self.data[section];
+        return model.showAllItems ? NSEdgeInsetsMake(0, 0, 10, 0) : NSEdgeInsetsZero;
+    }
+    return NSEdgeInsetsZero;
+}
+
+//MARK: ZZPropertySectionHeaderViewDelegate
+- (void)didClickedPropertySectionHeaderView:(ZZPropertySectionModel *)model
+{
+    model.showAllItems = !model.showAllItems;
+    [self.collectionView reloadData];
 }
 
 @end

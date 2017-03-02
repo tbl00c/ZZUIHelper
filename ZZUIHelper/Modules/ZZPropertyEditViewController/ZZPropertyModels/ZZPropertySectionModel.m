@@ -15,6 +15,7 @@
     if (self = [super init]) {
         self.sectionTitle = sectionTitle;
         self.sectionData = data;
+        self.showAllItems = YES;
     }
     return self;
 }

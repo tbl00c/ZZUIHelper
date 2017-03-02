@@ -16,6 +16,9 @@
 
 @property (nonatomic, assign, readonly) NSInteger count;
 
+/// 显示所有的元素，默认YES
+@property (nonatomic, assign) BOOL showAllItems;
+
 - (id)initWithSectionTitle:(NSString *)sectionTitle andData:(NSArray *)data;
 
 - (id)objectAtIndex:(NSUInteger)index;

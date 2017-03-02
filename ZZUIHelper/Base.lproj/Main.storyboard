@@ -897,7 +897,7 @@
                 </tabViewController>
                 <customObject id="8vP-gG-xlE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="506"/>
+            <point key="canvasLocation" x="1046" y="491"/>
         </scene>
         <!--Class.h-->
         <scene sceneID="nEi-0E-6Dh">
@@ -1021,24 +1021,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBH-yY-txs">
-                                <rect key="frame" x="0.0" y="0.0" width="230" height="22"/>
+                                <rect key="frame" x="27" y="3" width="197" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="VQy-Cm-mAu"/>
+                                    <constraint firstAttribute="height" constant="24" id="VQy-Cm-mAu"/>
                                 </constraints>
                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="VUo-rI-LSd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </searchFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="xHv-3Q-xFa" id="KHM-st-AGi"/>
+                                </connections>
                             </searchField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6V-0D-MuF">
-                                <rect key="frame" x="0.0" y="22" width="230" height="278"/>
+                                <rect key="frame" x="0.0" y="30" width="230" height="270"/>
                                 <clipView key="contentView" drawsBackground="NO" id="e65-7q-6vK">
-                                    <rect key="frame" x="0.0" y="0.0" width="230" height="278"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="230" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="JR1-6f-QFG">
-                                            <rect key="frame" x="0.0" y="0.0" width="230" height="278"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="270"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="MiJ-Wn-LD5">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -1055,28 +1058,42 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="4QY-Gn-bIm"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="Msn-KG-lAH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="n1B-1W-ctN"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="n1B-1W-ctN"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4lD-lL-Uxj">
                                     <rect key="frame" x="1" y="263" width="228" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TrF-Q8-vuA">
-                                    <rect key="frame" x="214" y="0.0" width="16" height="273"/>
+                                    <rect key="frame" x="214" y="0.0" width="16" height="270"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="6LI-TO-tH2">
+                                <rect key="frame" x="6" y="7" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="Fvc-kh-aTj"/>
+                                    <constraint firstAttribute="height" constant="15" id="lLU-4D-rOJ"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="list_waterfall" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="1N5-cE-pfJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="layoutButtonClick:" target="xHv-3Q-xFa" id="LvI-Jc-Aho"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="E6V-0D-MuF" secondAttribute="trailing" id="1fZ-HT-Wbp"/>
-                            <constraint firstItem="lBH-yY-txs" firstAttribute="leading" secondItem="NrK-He-J4Z" secondAttribute="leading" id="3Ej-al-QyH"/>
                             <constraint firstItem="E6V-0D-MuF" firstAttribute="top" secondItem="NrK-He-J4Z" secondAttribute="top" id="5co-JE-dKg"/>
-                            <constraint firstAttribute="trailing" secondItem="lBH-yY-txs" secondAttribute="trailing" id="MKb-kq-lmS"/>
-                            <constraint firstItem="lBH-yY-txs" firstAttribute="leading" secondItem="NrK-He-J4Z" secondAttribute="leading" id="N4m-0E-NAo"/>
-                            <constraint firstAttribute="trailing" secondItem="lBH-yY-txs" secondAttribute="trailing" id="SXw-GE-nIz"/>
-                            <constraint firstAttribute="bottom" secondItem="E6V-0D-MuF" secondAttribute="bottom" constant="22" id="bwI-hu-xTN"/>
+                            <constraint firstAttribute="trailing" secondItem="lBH-yY-txs" secondAttribute="trailing" constant="6" id="NI0-nr-9Vx"/>
+                            <constraint firstItem="6LI-TO-tH2" firstAttribute="leading" secondItem="NrK-He-J4Z" secondAttribute="leading" constant="6" id="PUj-Lq-E1k"/>
+                            <constraint firstAttribute="bottom" secondItem="E6V-0D-MuF" secondAttribute="bottom" constant="30" id="bwI-hu-xTN"/>
+                            <constraint firstAttribute="bottom" secondItem="lBH-yY-txs" secondAttribute="bottom" constant="3" id="kgD-sU-Fjk"/>
                             <constraint firstItem="E6V-0D-MuF" firstAttribute="leading" secondItem="NrK-He-J4Z" secondAttribute="leading" id="khz-mL-wyJ"/>
-                            <constraint firstAttribute="bottom" secondItem="lBH-yY-txs" secondAttribute="bottom" id="wLg-2i-3ZO"/>
+                            <constraint firstAttribute="bottom" secondItem="6LI-TO-tH2" secondAttribute="bottom" constant="7" id="lEl-ml-n0P"/>
+                            <constraint firstItem="lBH-yY-txs" firstAttribute="leading" secondItem="6LI-TO-tH2" secondAttribute="trailing" constant="6" id="wNE-SE-uX0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1258,5 +1275,6 @@
         <image name="bar1" width="62" height="36.5"/>
         <image name="bar2" width="195" height="108"/>
         <image name="close" width="15" height="15"/>
+        <image name="list_waterfall" width="17" height="17"/>
     </resources>
 </document>

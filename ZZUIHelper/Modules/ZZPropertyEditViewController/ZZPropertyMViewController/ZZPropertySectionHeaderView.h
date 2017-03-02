@@ -7,9 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ZZPropertySectionModel.h"
+
+@protocol ZZPropertySectionHeaderViewDelegate <NSObject>
+
+- (void)didClickedPropertySectionHeaderView:(ZZPropertySectionModel *)model;
+
+@end
 
 @interface ZZPropertySectionHeaderView : NSView
 
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) ZZPropertySectionModel *model;
+
+@property (nonatomic, weak) id<ZZPropertySectionHeaderViewDelegate> delegate;
+
+@property (nonatomic, assign) BOOL showBottomLine;
 
 @end

@@ -19,6 +19,8 @@
 		C223E6911E66DB4B0004F3DD /* ZZPropertyMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C223E68F1E66DB4B0004F3DD /* ZZPropertyMethodCell.m */; };
 		C223E6921E66DB4B0004F3DD /* ZZPropertyMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C223E6901E66DB4B0004F3DD /* ZZPropertyMethodCell.xib */; };
 		C223E6981E66E0D10004F3DD /* ZZPropertySectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C223E6971E66E0D10004F3DD /* ZZPropertySectionHeaderView.m */; };
+		C22569F91E67F048008E7785 /* ZZControlListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C22569F71E67F048008E7785 /* ZZControlListItem.m */; };
+		C22569FA1E67F048008E7785 /* ZZControlListItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22569F81E67F048008E7785 /* ZZControlListItem.xib */; };
 		C24BE4281E66C1D100BE3886 /* ZZPropertyPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BE4261E66C1D100BE3886 /* ZZPropertyPViewController.m */; };
 		C24BE4291E66C1D100BE3886 /* ZZPropertyPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24BE4271E66C1D100BE3886 /* ZZPropertyPViewController.xib */; };
 		C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C1B1E59614B000960D9 /* ZZUIHelperConfig.m */; };
@@ -103,6 +105,9 @@
 		C223E6901E66DB4B0004F3DD /* ZZPropertyMethodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyMethodCell.xib; sourceTree = "<group>"; };
 		C223E6961E66E0D10004F3DD /* ZZPropertySectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertySectionHeaderView.h; sourceTree = "<group>"; };
 		C223E6971E66E0D10004F3DD /* ZZPropertySectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertySectionHeaderView.m; sourceTree = "<group>"; };
+		C22569F61E67F048008E7785 /* ZZControlListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZControlListItem.h; sourceTree = "<group>"; };
+		C22569F71E67F048008E7785 /* ZZControlListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZControlListItem.m; sourceTree = "<group>"; };
+		C22569F81E67F048008E7785 /* ZZControlListItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZControlListItem.xib; sourceTree = "<group>"; };
 		C24BE4251E66C1D100BE3886 /* ZZPropertyPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyPViewController.h; sourceTree = "<group>"; };
 		C24BE4261E66C1D100BE3886 /* ZZPropertyPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyPViewController.m; sourceTree = "<group>"; };
 		C24BE4271E66C1D100BE3886 /* ZZPropertyPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyPViewController.xib; sourceTree = "<group>"; };
@@ -395,6 +400,9 @@
 				C2A10C5E1E5A22BA000960D9 /* ZZControlItem.h */,
 				C2A10C5F1E5A22BA000960D9 /* ZZControlItem.m */,
 				C2A10C631E5A2A4A000960D9 /* ZZControlItem.xib */,
+				C22569F61E67F048008E7785 /* ZZControlListItem.h */,
+				C22569F71E67F048008E7785 /* ZZControlListItem.m */,
+				C22569F81E67F048008E7785 /* ZZControlListItem.xib */,
 			);
 			path = ZZControlAreaViewController;
 			sourceTree = "<group>";
@@ -866,6 +874,7 @@
 				C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */,
 				C21789C41E55D64500AF8BEE /* Assets.xcassets in Resources */,
 				C223E67C1E66C6B10004F3DD /* ZZPropertyMViewController.xib in Resources */,
+				C22569FA1E67F048008E7785 /* ZZControlListItem.xib in Resources */,
 				C21789C71E55D64500AF8BEE /* Main.storyboard in Resources */,
 				C2A10C641E5A2A4A000960D9 /* ZZControlItem.xib in Resources */,
 				C223E6921E66DB4B0004F3DD /* ZZPropertyMethodCell.xib in Resources */,
@@ -927,6 +936,7 @@
 				C2D6CA971E5C191B00EEF76B /* ZZPropertyEditViewController.m in Sources */,
 				C2D6CA7C1E5BE14E00EEF76B /* ZZUICollectionView.m in Sources */,
 				C2D6CA791E5BE14E00EEF76B /* ZZProtocol.m in Sources */,
+				C22569F91E67F048008E7785 /* ZZControlListItem.m in Sources */,
 				C24BE4281E66C1D100BE3886 /* ZZPropertyPViewController.m in Sources */,
 				C2D6CA7E1E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m in Sources */,
 				C2D6CA8B1E5BE14E00EEF76B /* ZZUITextField.m in Sources */,
