@@ -165,37 +165,34 @@
 #pragma mark - # 方法内容
 - (NSString *)methodContent
 {
-    if (!_methodContent) {
-        NSMutableString *content = [[NSMutableString alloc] init];
-        if (self.methodContentArray.count > 0) {        // 有代码
-            NSString *code = [self p_methodContentByArray:self.methodContentArray space:1];
-            [content appendFormat:@"%@\n", code];
-        }
-        else {                                          // 无代码，自动加入return语句
-            [content appendFormat:@"%@\t",(NEW_LINE ? @"\n{\n" : @" {\n")];
-            if ([self.returnType hasSuffix:@"*"]) {
-                [content appendString:@"return nil;"];
-            }
-            else if ([self.returnType isEqualToString:@"BOOL"]) {
-                [content appendString:@"return YES;"];
-            }
-            else if ([self.returnType isEqualToString:@"CGSize"]){
-                [content appendString:@"return CGSizeZero;"];
-            }
-            else if ([self.returnType isEqualToString:@"CGRect"]){
-                [content appendString:@"return CGRectZero;"];
-            }
-            else if ([self.returnType isEqualToString:@"UIEdgeInsets"]){
-                [content appendString:@"return UIEdgeInsetsZero;"];
-            }
-            else if (![self.returnType isEqualToString:@"void"]){
-                [content appendString:@"return 0;"];
-            }
-            [content appendString:@"\n}\n"];
-        }
-        _methodContent = content;
+    NSMutableString *content = [[NSMutableString alloc] init];
+    if (self.methodContentArray.count > 0) {        // 有代码
+        NSString *code = [self p_methodContentByArray:self.methodContentArray space:1];
+        [content appendFormat:@"%@\n", code];
     }
-    return _methodContent;
+    else {                                          // 无代码，自动加入return语句
+        [content appendFormat:@"%@\t",(NEW_LINE ? @"\n{\n" : @" {\n")];
+        if ([self.returnType hasSuffix:@"*"]) {
+            [content appendString:@"return nil;"];
+        }
+        else if ([self.returnType isEqualToString:@"BOOL"]) {
+            [content appendString:@"return YES;"];
+        }
+        else if ([self.returnType isEqualToString:@"CGSize"]){
+            [content appendString:@"return CGSizeZero;"];
+        }
+        else if ([self.returnType isEqualToString:@"CGRect"]){
+            [content appendString:@"return CGRectZero;"];
+        }
+        else if ([self.returnType isEqualToString:@"UIEdgeInsets"]){
+            [content appendString:@"return UIEdgeInsetsZero;"];
+        }
+        else if (![self.returnType isEqualToString:@"void"]){
+            [content appendString:@"return 0;"];
+        }
+        [content appendString:@"\n}\n"];
+    }
+    return content;
 }
 
 - (NSMutableArray *)methodContentArray
