@@ -32,13 +32,13 @@
     
     NSMutableArray *items = [[NSMutableArray alloc] init];
 
-//    // Class
-//    NSTabViewItem *classViewItem = [[NSTabViewItem alloc] init];
-//    [classViewItem setLabel:@"Class"];
-//    ZZPropertyClassViewController *classVC = [[ZZPropertyClassViewController alloc] initWithNibName:@"ZZPropertyClassViewController" bundle:nil];
-//    [classViewItem.view addSubview:classVC.view];
-//    [classViewItem setViewController:classVC];
-//    [items addObject:classViewItem];
+    // P
+    NSTabViewItem *classViewItem = [[NSTabViewItem alloc] init];
+    [classViewItem setLabel:@"  P  "];
+    ZZPropertyPViewController *classVC = [[ZZPropertyPViewController alloc] initWithNibName:@"ZZPropertyPViewController" bundle:nil];
+    [classViewItem.view addSubview:classVC.view];
+    [classViewItem setViewController:classVC];
+    [items addObject:classViewItem];
     
     /// M
     // Events
@@ -58,7 +58,7 @@
     
     if (mData.count > 0) {
         NSTabViewItem *eventsViewItem = [[NSTabViewItem alloc] init];
-        [eventsViewItem setLabel:@"M"];
+        [eventsViewItem setLabel:@"  M  "];
         ZZPropertyMViewController *mVC = [[ZZPropertyMViewController alloc] initWithNibName:@"ZZPropertyMViewController" bundle:nil];
         [mVC setObject:object];
         [mVC setData:mData];
