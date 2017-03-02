@@ -31,6 +31,13 @@
     self.definedClassNameLabel.placeholderString = className;
     self.classNameLabel.stringValue = className;
     self.propertyNameTF.stringValue = [[className substringFromIndex:2] lowerFirstCharacter];
+    
+}
+
+- (void)viewDidAppear
+{
+    [super viewDidAppear];
+    [self.propertyNameTF becomeFirstResponder];
 }
 
 - (IBAction)okButtonClick:(id)sender {
