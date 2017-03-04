@@ -37,5 +37,16 @@
     return @"";
 }
 
+- (NSArray *)getterCodeExtCode
+{
+    NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
+    for (ZZMethod *method in self.actionMethods) {
+        if (method.selected) {
+            [extCode addObject:[NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@]", self.propertyName, method.actionName, method.eventsType]];
+        }
+    }
+    return extCode;
+}
+
 
 @end

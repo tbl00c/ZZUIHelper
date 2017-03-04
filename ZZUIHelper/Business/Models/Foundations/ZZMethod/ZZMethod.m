@@ -87,14 +87,15 @@
     _methodName = code;
     
     // 方法类型
+    _actionName = @"";
     if ([code hasPrefix:@"-"]) {
         code = [[code stringByReplacingOccurrencesOfString:@"-" withString:@""] strip];
-        _methodNameWithoutParams = @"-";
+        _methodNameWithoutParams = @"- ";
     }
     if ([code hasPrefix:@"+"]) {
         _isClassMethod = YES;
         code = [[code stringByReplacingOccurrencesOfString:@"+" withString:@""] strip];
-        _methodNameWithoutParams = @"+";
+        _methodNameWithoutParams = @"+ ";
     }
     
     // 返回值
@@ -110,7 +111,7 @@
     
     // 方法名和参数
     if (![code containsString:@"("]) {   // 无参数
-        _methodNameWithoutParams = [_methodNameWithoutParams stringByAppendingFormat:@" %@:", code];
+        _actionName = [_actionName stringByAppendingString:code];
         _params = nil;
     }
     else {      // 有参数
@@ -134,11 +135,12 @@
                 return;
             }
             NSString *title = k_n[0];
-            _methodNameWithoutParams = [_methodNameWithoutParams stringByAppendingFormat:@" %@:", title];
+            _actionName = [_actionName stringByAppendingFormat:@"%@:", title];
             
             NSString *param = k_n[1];
             [params addObject:param];
         }
+        _methodNameWithoutParams = [_methodNameWithoutParams stringByAppendingString:_actionName];
 //        NSLog(@"方法名-无参数：(%@)", self.methodNameWithoutParams);
         
         // 参数

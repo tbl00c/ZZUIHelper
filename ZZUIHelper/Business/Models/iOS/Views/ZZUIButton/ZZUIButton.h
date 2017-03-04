@@ -16,5 +16,4 @@
 @property (nonatomic, strong, readonly) ZZMethod *actionTouchUpOutside;
 @property (nonatomic, strong, readonly) ZZMethod *actionTouchCancel;
 
-
 @end

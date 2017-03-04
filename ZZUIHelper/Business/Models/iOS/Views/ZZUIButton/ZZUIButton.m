@@ -29,6 +29,7 @@
 {
     if (!_actionTouchDown) {
         _actionTouchDown = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchDown:(UIButton *)sender", self.propertyName] selected:NO];
+        _actionTouchDown.eventsType = @"UIControlEventTouchDown";
     }
     return _actionTouchDown;
 }
@@ -37,6 +38,7 @@
 {
     if (!_actionTouchDownRepeat) {
         _actionTouchDownRepeat = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchDownRepeat:(UIButton *)sender", self.propertyName] selected:NO];
+        _actionTouchDownRepeat.eventsType = @"UIControlEventTouchDownRepeat";
     }
     return _actionTouchDownRepeat;
 }
@@ -44,7 +46,8 @@
 - (ZZMethod *)actionTouchUpInside
 {
     if (!_actionTouchUpInside) {
-        _actionTouchUpInside = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@Clicked:(UIButton *)sender", self.propertyName] selected:YES];
+        _actionTouchUpInside = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchUpInside:(UIButton *)sender", self.propertyName] selected:YES];
+        _actionTouchUpInside.eventsType = @"UIControlEventTouchUpInside";
     }
     return _actionTouchUpInside;
 }
@@ -53,6 +56,7 @@
 {
     if (!_actionTouchUpOutside) {
         _actionTouchUpOutside = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchUpOutside:(UIButton *)sender", self.propertyName] selected:NO];
+        _actionTouchUpOutside.eventsType = @"UIControlEventTouchUpOutside";
     }
     return _actionTouchUpOutside;
 }
@@ -61,6 +65,7 @@
 {
     if (!_actionTouchCancel) {
         _actionTouchCancel = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@TouchCancel:(UIButton *)sender", self.propertyName] selected:NO];
+        _actionTouchCancel.eventsType = @"UIControlEventTouchCancel";
     }
     return _actionTouchCancel;
 }

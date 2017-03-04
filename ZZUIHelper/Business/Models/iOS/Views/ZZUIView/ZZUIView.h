@@ -10,6 +10,9 @@
 
 @interface ZZUIView : ZZUIResponder
 
+/// 属性
+@property (nonatomic, strong) NSArray *properties;
+
 /// 类实现初始化代码
 @property (nonatomic, strong, readonly) NSString *implementationInitCode;
 

@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ZZNSObject.h"
+#import "ZZUIResponder.h"
 
 @interface ZZPropertyPViewController : NSViewController
 
-@property (nonatomic, weak) ZZNSObject *object;
+@property (nonatomic, weak) ZZUIResponder *object;
 
 @end

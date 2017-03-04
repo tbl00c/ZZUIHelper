@@ -22,8 +22,14 @@
 /// 方法名（不包含返回值类型和参数）
 @property (nonatomic, strong, readonly) NSString *methodNameWithoutParams;
 
+/// 方法名（不包含 - 、返回值类型和参数）
+@property (nonatomic, strong, readonly) NSString *actionName;
+
 /// 返回值类型
 @property (nonatomic, strong, readonly) NSString *returnType;
+
+/// 时间名称
+@property (nonatomic, strong) NSString *eventsType;
 
 /// 备注
 @property (nonatomic, strong) NSString *remarks;

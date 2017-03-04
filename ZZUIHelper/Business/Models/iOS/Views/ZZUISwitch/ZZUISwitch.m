@@ -22,6 +22,7 @@
 {
     if (!_actionValueChanged) {
         _actionValueChanged = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@ValueChanged:(UISwitch *)sender", self.propertyName] selected:YES];
+        _actionValueChanged.eventsType = @"UIControlEventValueChanged";
     }
     return _actionValueChanged;
 }
