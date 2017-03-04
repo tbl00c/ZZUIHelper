@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ZZPropertyEditViewController : NSTabViewController
+@interface ZZPropertyEditViewController : NSViewController
+
+@property (nonatomic, strong) ZZNSObject *object;
+
+@property (nonatomic, strong) NSArray *data;
+
+@property (weak) IBOutlet NSCollectionView *collectionView;
 
 @end

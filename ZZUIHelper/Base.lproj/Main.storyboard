@@ -868,7 +868,7 @@
         <!--代码区-->
         <scene sceneID="bJk-8j-oru">
             <objects>
-                <tabViewController title="代码区" selectedTabViewItemIndex="0" id="XFB-eZ-pNZ" customClass="ZZCodeAreaViewController" sceneMemberID="viewController">
+                <tabViewController title="代码区" selectedTabViewItemIndex="1" id="XFB-eZ-pNZ" customClass="ZZCodeAreaViewController" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem identifier="" id="2OG-XA-wYW"/>
                         <tabViewItem identifier="" id="MGP-jM-uiF"/>
@@ -893,20 +893,64 @@
         <!--属性区-->
         <scene sceneID="vzB-NX-eKR">
             <objects>
-                <viewController title="属性区" id="Toi-Sp-i1Q" sceneMemberID="viewController">
-                    <view key="view" id="3e7-dS-t5M">
-                        <rect key="frame" x="0.0" y="0.0" width="230" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
                 <customObject id="wXw-r9-Mhb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController title="属性区" id="Toi-Sp-i1Q" customClass="ZZPropertyEditViewController" sceneMemberID="viewController">
+                    <view key="view" id="3e7-dS-t5M">
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="282"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eP-DD-BdN">
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="282"/>
+                                <clipView key="contentView" id="4zu-7K-ckc">
+                                    <rect key="frame" x="0.0" y="0.0" width="230" height="282"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="doA-KT-2U4">
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="282"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="s3P-J9-gTY">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Toi-Sp-i1Q" id="qpY-Pn-pHA"/>
+                                                <outlet property="delegate" destination="Toi-Sp-i1Q" id="0Xr-ee-XGh"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="WPT-AO-OLr"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="yBC-d6-VKy">
+                                    <rect key="frame" x="1" y="263" width="228" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="uA2-Sw-sCW">
+                                    <rect key="frame" x="214" y="0.0" width="16" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8eP-DD-BdN" secondAttribute="trailing" id="FkL-S6-uc3"/>
+                            <constraint firstAttribute="bottom" secondItem="8eP-DD-BdN" secondAttribute="bottom" id="G5X-bK-1Wg"/>
+                            <constraint firstItem="8eP-DD-BdN" firstAttribute="leading" secondItem="3e7-dS-t5M" secondAttribute="leading" id="VL9-PQ-clh"/>
+                            <constraint firstItem="8eP-DD-BdN" firstAttribute="top" secondItem="3e7-dS-t5M" secondAttribute="top" id="X1f-QU-VPO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="doA-KT-2U4" id="OhP-gM-SKm"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="980" y="491"/>
+            <point key="canvasLocation" x="980" y="497"/>
         </scene>
-        <!--代码区-声明-->
+        <!--Class.h-->
         <scene sceneID="nEi-0E-6Dh">
             <objects>
-                <viewController title="代码区-声明" id="9g8-CF-6vJ" customClass="ZZCodeHFileViewController" sceneMemberID="viewController">
+                <viewController title="Class.h" id="9g8-CF-6vJ" customClass="ZZCodeHFileViewController" sceneMemberID="viewController">
                     <view key="view" id="Vwr-dN-Ynk">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -953,10 +997,10 @@
             </objects>
             <point key="canvasLocation" x="1824" y="-60"/>
         </scene>
-        <!--代码区-实现-->
+        <!--Class.m-->
         <scene sceneID="NTu-rw-UZf">
             <objects>
-                <viewController title="代码区-实现" id="1IL-bM-qDb" customClass="ZZCodeMFileViewController" sceneMemberID="viewController">
+                <viewController title="Class.m" id="1IL-bM-qDb" customClass="ZZCodeMFileViewController" sceneMemberID="viewController">
                     <view key="view" id="Udx-vh-Ofl">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1003,10 +1047,10 @@
             </objects>
             <point key="canvasLocation" x="1824" y="314"/>
         </scene>
-        <!--布局区-->
+        <!--Layout-->
         <scene sceneID="7dq-8f-m2V">
             <objects>
-                <viewController title="布局区" id="MyW-Un-uyW" customClass="ZZCodeLayoutViewController" sceneMemberID="viewController">
+                <viewController title="Layout" id="MyW-Un-uyW" customClass="ZZCodeLayoutViewController" sceneMemberID="viewController">
                     <view key="view" id="GuF-Ld-ck9">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

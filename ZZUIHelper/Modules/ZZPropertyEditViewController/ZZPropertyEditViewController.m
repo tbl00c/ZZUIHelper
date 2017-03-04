@@ -7,12 +7,29 @@
 //
 
 #import "ZZPropertyEditViewController.h"
-#import "ZZPropertyPViewController.h"
-#import "ZZPropertyMViewController.h"
+#import "ZZPropertyEditViewController+Delegate.h"
 #import "ZZUIScrollView.h"
 #import "ZZUIControl.h"
 
+@interface ZZPropertyEditViewController ()
+
+@end
+
 @implementation ZZPropertyEditViewController
+
+- (void)loadView
+{
+    [super loadView];
+    
+    [self.collectionView setWantsLayer:YES];
+    [self.collectionView.layer setBackgroundColor:[NSColor windowBackgroundColor].CGColor];
+    
+    NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
+    [layout setMinimumLineSpacing:0];
+    [layout setMinimumInteritemSpacing:0];
+    [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
+    [self.collectionView registerClass:[ZZPropertySectionHeaderView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withIdentifier:@"ZZPropertySectionHeaderView"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,17 +47,6 @@
 {
     ZZNSObject *object = notification.object;
     
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-
-    // P
-    NSTabViewItem *classViewItem = [[NSTabViewItem alloc] init];
-    [classViewItem setLabel:@"  P  "];
-    ZZPropertyPViewController *classVC = [[ZZPropertyPViewController alloc] initWithNibName:@"ZZPropertyPViewController" bundle:nil];
-    [classViewItem.view addSubview:classVC.view];
-    [classViewItem setViewController:classVC];
-    [items addObject:classViewItem];
-    
-    /// M
     // Events
     NSMutableArray *mData = [[NSMutableArray alloc] init];
     if ([[object class] isSubclassOfClass:[ZZUIControl class]] && [(ZZUIControl *)object actionMethods].count > 0) {
@@ -56,21 +62,10 @@
         }
     }
     
-    if (mData.count > 0) {
-        NSTabViewItem *eventsViewItem = [[NSTabViewItem alloc] init];
-        [eventsViewItem setLabel:@"  M  "];
-        ZZPropertyMViewController *mVC = [[ZZPropertyMViewController alloc] initWithNibName:@"ZZPropertyMViewController" bundle:nil];
-        [mVC setObject:object];
-        [mVC setData:mData];
-        [eventsViewItem.view addSubview:mVC.view];
-        [eventsViewItem setViewController:mVC];
-        [items addObject:eventsViewItem];
-    }
-    
-    [self setTabViewItems:items];
-    if (items.count > 0) {
-        [self setSelectedTabViewItemIndex:0];
-    }
+    self.object = object;
+    self.data = mData;
+    [self.collectionView reloadData];
 }
+
 
 @end
