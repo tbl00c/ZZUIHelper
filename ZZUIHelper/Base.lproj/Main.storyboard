@@ -821,10 +821,10 @@
             </objects>
             <point key="canvasLocation" x="1054" y="-268"/>
         </scene>
-        <!--Main View Controller-->
+        <!--中部区域-->
         <scene sceneID="HiL-mK-hwG">
             <objects>
-                <splitViewController id="PRm-7j-OkR" customClass="ZZMainViewController" sceneMemberID="viewController">
+                <splitViewController title="中部区域" id="PRm-7j-OkR" customClass="ZZMainViewController" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="siT-Xh-1QB"/>
                         <splitViewItem id="1z7-hG-402"/>
@@ -844,21 +844,21 @@
             </objects>
             <point key="canvasLocation" x="550.5" y="-71.5"/>
         </scene>
-        <!--Split View Controller-->
+        <!--右边栏-->
         <scene sceneID="sPP-we-fnH">
             <objects>
-                <splitViewController id="HVe-8e-bMt" sceneMemberID="viewController">
+                <splitViewController title="右边栏" id="HVe-8e-bMt" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="ugF-Mh-Lhb"/>
-                        <splitViewItem id="UMR-gW-hqW"/>
+                        <splitViewItem id="GZb-Pg-1a0"/>
+                        <splitViewItem id="3Vs-fM-79w"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" id="Pq6-OK-NRf">
                         <rect key="frame" x="100" y="6" width="350" height="386"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
                     <connections>
-                        <segue destination="ZTB-5l-nit" kind="relationship" relationship="splitItems" id="DCi-8q-cgw"/>
-                        <segue destination="xHv-3Q-xFa" kind="relationship" relationship="splitItems" id="oDr-1i-Dva"/>
+                        <segue destination="Toi-Sp-i1Q" kind="relationship" relationship="splitItems" id="QbU-db-e0g"/>
+                        <segue destination="xHv-3Q-xFa" kind="relationship" relationship="splitItems" id="MGq-lF-ydI"/>
                     </connections>
                 </splitViewController>
                 <customObject id="Lkb-RY-ZHU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -890,25 +890,23 @@
             </objects>
             <point key="canvasLocation" x="1164" y="127"/>
         </scene>
-        <!--Property Edit View Controller-->
-        <scene sceneID="SCc-VH-vZh">
+        <!--属性区-->
+        <scene sceneID="vzB-NX-eKR">
             <objects>
-                <tabViewController id="ZTB-5l-nit" customClass="ZZPropertyEditViewController" sceneMemberID="viewController">
-                    <tabView key="tabView" type="noTabsNoBorder" id="zDc-X3-FIi">
-                        <rect key="frame" x="52" y="0.0" width="228" height="300"/>
+                <viewController title="属性区" id="Toi-Sp-i1Q" sceneMemberID="viewController">
+                    <view key="view" id="3e7-dS-t5M">
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <font key="font" metaFont="message"/>
-                        <tabViewItems/>
-                    </tabView>
-                </tabViewController>
-                <customObject id="8vP-gG-xlE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <customObject id="wXw-r9-Mhb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="491"/>
+            <point key="canvasLocation" x="980" y="491"/>
         </scene>
-        <!--Class.h-->
+        <!--代码区-声明-->
         <scene sceneID="nEi-0E-6Dh">
             <objects>
-                <viewController title="Class.h" id="9g8-CF-6vJ" customClass="ZZCodeHFileViewController" sceneMemberID="viewController">
+                <viewController title="代码区-声明" id="9g8-CF-6vJ" customClass="ZZCodeHFileViewController" sceneMemberID="viewController">
                     <view key="view" id="Vwr-dN-Ynk">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -955,10 +953,10 @@
             </objects>
             <point key="canvasLocation" x="1824" y="-60"/>
         </scene>
-        <!--Class.m-->
+        <!--代码区-实现-->
         <scene sceneID="NTu-rw-UZf">
             <objects>
-                <viewController title="Class.m" id="1IL-bM-qDb" customClass="ZZCodeMFileViewController" sceneMemberID="viewController">
+                <viewController title="代码区-实现" id="1IL-bM-qDb" customClass="ZZCodeMFileViewController" sceneMemberID="viewController">
                     <view key="view" id="Udx-vh-Ofl">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1005,10 +1003,10 @@
             </objects>
             <point key="canvasLocation" x="1824" y="314"/>
         </scene>
-        <!--Layout-->
+        <!--布局区-->
         <scene sceneID="7dq-8f-m2V">
             <objects>
-                <viewController title="Layout" id="MyW-Un-uyW" customClass="ZZCodeLayoutViewController" sceneMemberID="viewController">
+                <viewController title="布局区" id="MyW-Un-uyW" customClass="ZZCodeLayoutViewController" sceneMemberID="viewController">
                     <view key="view" id="GuF-Ld-ck9">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1111,10 +1109,10 @@
             </objects>
             <point key="canvasLocation" x="980" y="867"/>
         </scene>
-        <!--设置-->
+        <!--生成设置-->
         <scene sceneID="dWh-og-g7Y">
             <objects>
-                <viewController title="设置" id="ws0-YG-Y9w" customClass="ZZSettingViewController" sceneMemberID="viewController">
+                <viewController title="生成设置" id="ws0-YG-Y9w" customClass="ZZSettingViewController" sceneMemberID="viewController">
                     <view key="view" id="B9I-Zj-fV4">
                         <rect key="frame" x="0.0" y="0.0" width="272" height="297"/>
                         <autoresizingMask key="autoresizingMask"/>
