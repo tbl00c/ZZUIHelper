@@ -11,6 +11,4 @@
 
 @interface ZZUIScrollView : ZZUIView
 
-@property (nonatomic, strong, readonly) NSArray *delegates;
-
 @end

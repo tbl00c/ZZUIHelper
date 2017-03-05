@@ -18,11 +18,6 @@
 @synthesize tableView_viewForHeaderInSection = _tableView_viewForHeaderInSection;
 @synthesize tableView_viewForFooterInSection = _tableView_viewForFooterInSection;
 
-- (NSString *)protocolKey
-{
-    return @"delegate";
-}
-
 - (NSArray *)protocolMethods
 {
     if (!_protocolMethods) {

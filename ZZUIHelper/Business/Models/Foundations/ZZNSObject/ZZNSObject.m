@@ -7,16 +7,13 @@
 //
 
 #import "ZZNSObject.h"
-
-@interface ZZNSObject ()
-
-@property (nonatomic, strong, readonly) ZZMethod *getterMethod;
-
-@end
+#import "ZZCALayer.h"
 
 @implementation ZZNSObject
-@synthesize getterMethod = _getterMethod;
+@synthesize properties = _properties;
+@synthesize delegates = _delegates;
 
+#pragma mark - # 类名
 - (id)init
 {
     if (self = [super init]) {
@@ -37,6 +34,7 @@
     return _className;
 }
 
+#pragma mark - # 属性代码
 - (NSString *)propertyCode
 {
     NSString *propertyCode = @"";
@@ -47,36 +45,61 @@
     return propertyCode;
 }
 
-- (NSArray *)getterCodeExtCode
+- (NSArray *)delegates
 {
-    NSMutableArray *extCode = @[].mutableCopy;
-    [extCode addObject:[NSString stringWithFormat:@"_%@ = [[%@ alloc] init];", self.propertyName, self.className]];
-    return extCode;
+    if (!_delegates) {
+        _delegates = @[];
+    }
+    return _delegates;
 }
 
-- (NSString *)getterCode
+#pragma mark - # Getter
+- (NSMutableArray *)properties
 {
-    NSArray *extCodes = [self getterCodeExtCode];
-    if (extCodes.count > 0) {
-        NSMutableString *getterCode = [NSMutableString stringWithFormat:@"if (!_%@) {", self.propertyName];;
-        for (NSString *code in extCodes) {
-            [getterCode appendFormat:@"%@\n", code];
-        }
-        [getterCode appendFormat:@"}\nreturn _%@;\n", self.propertyName];
-        [self.getterMethod clearMethodContent];
-        [self.getterMethod addMethodContentCode:getterCode];
-        return [self.getterMethod.methodCode stringByAppendingString:@"\n"];
+    if (!_properties) {
+        _properties = [[NSMutableArray alloc] init];
     }
-    
-    return @"";
+    return _properties;
 }
 
 - (ZZMethod *)getterMethod
 {
-    if (!_getterMethod) {
-        _getterMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (%@ *)%@", self.className, self.propertyName]];
+    ZZMethod *getterMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (%@ *)%@", self.className, self.propertyName]];
+    NSMutableString *getterCode = [NSMutableString stringWithFormat:@"if (!_%@) {\n", self.propertyName];
+    [getterCode appendFormat:@"_%@ = %@;\n", self.propertyName, self.getterCodeInitMethodName];
+    
+    NSArray *properties = self.properties;
+    for (ZZPropertyGroup *group in properties) {
+        for (ZZProperty *item in group.properties) {
+            if (item.selected) {
+                if ([group.groupName isEqualToString:@"CALayer"]) {
+                    [getterCode appendFormat:@"[_%@.layer %@];\n", self.propertyName, item.propertyCode];
+                }
+                else {
+                    [getterCode appendFormat:@"[_%@ %@];\n", self.propertyName, item.propertyCode];
+                }
+            }
+        }
+        for (ZZProperty *item in group.privateProperties) {
+            if (item.selected) {
+                [getterCode appendFormat:@"[_%@ %@];\n", self.propertyName, item.propertyCode];
+            }
+        }
     }
-    return _getterMethod;
+    
+    [getterCode appendFormat:@"}\nreturn _%@;\n", self.propertyName];
+    [getterMethod addMethodContentCode:getterCode];
+    return getterMethod;
+}
+
+- (NSString *)getterCodeInitMethodName
+{
+    return [NSString stringWithFormat:@"[[%@ alloc] init]", self.className];
+}
+
+- (NSString *)getterCode
+{
+    return [[self.getterMethod methodCode] stringByAppendingString:@"\n"];
 }
 
 @end

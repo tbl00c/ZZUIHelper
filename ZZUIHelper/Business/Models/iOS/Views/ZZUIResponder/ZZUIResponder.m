@@ -13,6 +13,7 @@
 #import "ZZUICollectionView.h"
 #import "ZZProtocol.h"
 #import "ZZNSMutableArray.h"
+#import "ZZUICollectionViewFlowLayout.h"
 
 @implementation ZZUIResponder
 
@@ -85,12 +86,20 @@
         if (delegatesArray.count > 0) {    // 协议
             NSString *delegateCode = @"";
             for (ZZProtocol *protocol in delegatesArray) {
-                if (delegateCode.length > 0) {
-                    delegateCode = [delegateCode stringByAppendingString:@",\n"];
+                NSInteger count = 0;
+                for (ZZMethod *method in protocol.protocolMethods) {
+                    count += (method.selected ? 1 : 0);
                 }
-                delegateCode = [delegateCode stringByAppendingString:protocol.protocolName];
+                if (count > 0) {
+                    if (delegateCode.length > 0) {
+                        delegateCode = [delegateCode stringByAppendingString:@",\n"];
+                    }
+                    delegateCode = [delegateCode stringByAppendingString:protocol.protocolName];
+                }
             }
-            extensionCode = [extensionCode stringByAppendingFormat:@" <\n%@\n>", delegateCode];
+            if (delegateCode.length > 0) {
+                extensionCode = [extensionCode stringByAppendingFormat:@" <\n%@\n>", delegateCode];
+            }
         }
         
         extensionCode = [extensionCode stringByAppendingString:@"\n\n"];
@@ -229,6 +238,10 @@
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
         [self addPrivateProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
     }
+    if ([[property class] isSubclassOfClass:[ZZUICollectionView class]] && [[ZZClassHelper sharedInstance] canNamed:@"collectionViewFlowLayout"]) {
+        ZZUICollectionViewFlowLayout *layout = [[ZZUICollectionViewFlowLayout alloc] init];
+        [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:[property.propertyName stringByAppendingString:@"CollectionViewLayout"]];
+    }
     NSMutableArray *array = self.extensionProperties ? self.extensionProperties.mutableCopy : @[].mutableCopy;
     [array addObject:property];
     _extensionProperties = array;
@@ -332,7 +345,7 @@
         return NO;
     };
     for (ZZUIScrollView *object in self.interfaceProperties) {
-        if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && object.delegates.count > 0) {
+        if (object.delegates.count > 0) {
             for (ZZProtocol *protocol in object.delegates) {
                 if (!containDelegate(delegateArray, protocol.protocolName)) {
                     [delegateArray addObject:protocol];
@@ -341,7 +354,7 @@
         }
     }
     for (ZZUIScrollView *object in self.extensionProperties) {
-        if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && object.delegates.count > 0) {
+        if (object.delegates.count > 0) {
             for (ZZProtocol *protocol in object.delegates) {
                 if (!containDelegate(delegateArray, protocol.protocolName)) {
                     [delegateArray addObject:protocol];

@@ -11,6 +11,19 @@
 
 @implementation ZZUISwitch
 @synthesize events = _events;
+@synthesize properties = _properties;
+
+- (NSMutableArray *)properties
+{
+    if (!_properties) {
+        _properties = [super properties];
+        
+        ZZProperty *on = [[ZZProperty alloc] initWithPropertyName:@"on" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UISwitch" properties:@[on]];
+        [_properties addObject:group];
+    }
+    return _properties;
+}
 
 - (NSArray *)events
 {

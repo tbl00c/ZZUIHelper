@@ -9,13 +9,41 @@
 #import "ZZUIView.h"
 
 @implementation ZZUIView
-@synthesize m_initWithFrame = _m_initWithFrame;
+@synthesize properties = _properties;
+@synthesize delegates = _delegates;
+
+- (NSArray *)delegates
+{
+    if (!_delegates) {
+        _delegates = @[];
+    }
+    return _delegates;
+}
+
+- (NSMutableArray *)properties
+{
+    if (!_properties) {
+        _properties = [super properties];
+        [_properties addObjectsFromArray:self.layer.properties];
+        ZZProperty *tag = [[ZZProperty alloc] initWithPropertyName:@"tag" type:ZZPropertyTypeNumber defaultValue:@(0)];
+        ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" type:ZZPropertyTypeObject defaultValue:@"[UIColor clearColor]"];
+        ZZProperty *alpha = [[ZZProperty alloc] initWithPropertyName:@"alpha" type:ZZPropertyTypeNumber defaultValue:@(1)];
+        ZZProperty *hidden = [[ZZProperty alloc] initWithPropertyName:@"hidden" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZProperty *userInteractionEnabled = [[ZZProperty alloc] initWithPropertyName:@"userInteractionEnabled" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZProperty *contentMode = [[ZZProperty alloc] initWithPropertyName:@"contentMode" type:ZZPropertyTypeObject defaultValue:@"UIViewContentModeScaleToFill"];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIView" properties:@[tag, color, alpha, hidden, userInteractionEnabled, contentMode]];
+        [_properties addObject:group];
+    }
+    return _properties;
+}
 
 - (NSString *)implementationInitCode
 {
+    NSString *code = @"";
     NSArray *childViewArray = self.childViewsArray;
     if (childViewArray.count > 0) {
-        NSMutableString *initCode = [NSMutableString stringWithString:@"if (self = [super initWithFrame:frame]) {"];
+        ZZMethod *initMethod = [[ZZMethod alloc] initWithMethodName:self.m_initMethodName];
+        NSMutableString *initCode = [NSMutableString stringWithFormat:@"if (self = [super %@]) {", initMethod.superMethodName];
         for (ZZUIView *view in childViewArray) {
             [initCode appendFormat:@"[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
         }
@@ -26,23 +54,24 @@
         
         [initCode appendString:@"}\nreturn self;\n"];
         
-        [self.m_initWithFrame clearMethodContent];
-        [self.m_initWithFrame addMethodContentCode:initCode];
-        
-        return [self.m_initWithFrame.methodCode stringByAppendingString:@"\n"];
+        [initMethod addMethodContentCode:initCode];
+        code = [initMethod methodCode];
     }
-    
-    return @"";
+
+    return [code stringByAppendingString:@"\n"];
 }
 
-
-#pragma mark - # Getter
-- (ZZMethod *)m_initWithFrame
+- (NSString *)m_initMethodName
 {
-    if (!_m_initWithFrame) {
-        _m_initWithFrame = [[ZZMethod alloc] initWithMethodName:@"- (id)initWithFrame:(CGRect)frame"];
+    return @"- (id)initWithFrame:(CGRect)frame";
+}
+
+- (ZZCALayer *)layer
+{
+    if (!_layer) {
+        _layer = [[ZZCALayer alloc] init];
     }
-    return _m_initWithFrame;
+    return _layer;
 }
 
 @end

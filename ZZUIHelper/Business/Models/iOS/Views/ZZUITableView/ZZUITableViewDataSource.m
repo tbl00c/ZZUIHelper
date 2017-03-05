@@ -18,11 +18,6 @@
 @synthesize tableView_commitEditingStyle_forRowAtIndexPath = _tableView_commitEditingStyle_forRowAtIndexPath;
 @synthesize tableView_moveRowAtIndexPath_toIndexPath = _tableView_moveRowAtIndexPath_toIndexPath;
 
-- (NSString *)protocolKey
-{
-    return @"dataSource";
-}
-
 - (NSArray *)protocolMethods
 {
     if (!_protocolMethods) {

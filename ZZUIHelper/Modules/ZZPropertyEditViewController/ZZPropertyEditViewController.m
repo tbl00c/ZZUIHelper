@@ -8,7 +8,6 @@
 
 #import "ZZPropertyEditViewController.h"
 #import "ZZPropertyEditViewController+Delegate.h"
-#import "ZZUIScrollView.h"
 #import "ZZUIControl.h"
 
 @interface ZZPropertyEditViewController ()
@@ -34,6 +33,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_SELECTED object:nil];
 }
 
+- (void)viewWillLayout
+{
+    [super viewWillLayout];
+    
+    [self.collectionView reloadData];
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -43,23 +49,33 @@
 {
     ZZNSObject *object = notification.object;
     
-    // Events
-    NSMutableArray *mData = [[NSMutableArray alloc] init];
-    if ([[object class] isSubclassOfClass:[ZZUIControl class]] && [(ZZUIControl *)object events].count > 0) {
-        ZZPropertySectionModel *eventsMethods = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeEvent title:@"Events" andData:[(ZZUIControl *)object events]];
-        [mData addObject:eventsMethods];
-    }
+    NSMutableArray *data = [[NSMutableArray alloc] init];
     
-    // Delegates
-    if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && [(ZZUIScrollView *)object delegates].count > 0) {
-        for (ZZProtocol *protocol in [(ZZUIScrollView *)object delegates]) {
-            ZZPropertySectionModel *protocolMethods = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeDelegate title:protocol.protocolName andData:protocol.protocolMethods];
-            [mData addObject:protocolMethods];
+    // Properties
+    if (object.properties.count > 0) {
+        for (ZZPropertyGroup *group in object.properties) {
+            if (group.properties.count > 0) {
+                ZZPropertySectionModel *classSection = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeProperty title:group.groupName andData:group.properties];
+                [data insertObject:classSection atIndex:0];
+            }
         }
     }
     
+    // Events
+    if ([[object class] isSubclassOfClass:[ZZUIControl class]] && [(ZZUIControl *)object events].count > 0) {
+        ZZPropertySectionModel *eventsMethods = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeEvent title:@"Events" andData:[(ZZUIControl *)object events]];
+        [data addObject:eventsMethods];
+    }
+    
+    // Delegates
+    for (ZZProtocol *protocol in [object delegates]) {
+        ZZPropertySectionModel *protocolMethods = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeDelegate title:protocol.protocolName andData:protocol.protocolMethods];
+        [data addObject:protocolMethods];
+    }
+    
+    
     self.object = object;
-    self.data = mData;
+    self.data = data;
     [self.collectionView reloadData];
 }
 

@@ -12,6 +12,7 @@
 
 @implementation ZZUICollectionView
 @synthesize delegates = _delegates;
+@synthesize properties = _properties;
 
 - (NSArray *)delegates
 {
@@ -28,21 +29,31 @@
     return @"self.contentView";
 }
 
-- (NSArray *)getterCodeExtCode
+- (NSString *)getterCodeInitMethodName
 {
-    NSMutableArray *extCode = @[].mutableCopy;
-    [extCode addObject:@"UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];"];
-    [extCode addObject:@"[layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];"];
-    [extCode addObject:@"[layout setHeaderReferenceSize:CGSizeZero];"];
-    [extCode addObject:@"[layout setFooterReferenceSize:CGSizeZero];"];
-    [extCode addObject:@"[layout setMinimumLineSpacing:0];"];
-    [extCode addObject:@"[layout setMinimumInteritemSpacing:0];"];
-    [extCode addObject:@"[layout setSectionInset:UIEdgeInsetsZero];"];
-    [extCode addObject:[NSString stringWithFormat:@"_%@ = [[%@ alloc] initWithFrame:CGRectZero collectionViewLayout:layout];", self.propertyName, self.className]];
-    [extCode addObject:[NSString stringWithFormat:@"[_%@ setBackgroundColor:[UIColor whiteColor]];", self.propertyName]];
-    [extCode addObject:[NSString stringWithFormat:@"[_%@ setDataSource:self];", self.propertyName]];
-    [extCode addObject:[NSString stringWithFormat:@"[_%@ setDelegate:self];", self.propertyName]];
-    return extCode;
+    return [NSString stringWithFormat:@"[[%@ alloc] initWithFrame:CGRectZero collectionViewLayout:self.collectionViewFlowLayout]", self.className];
+}
+
+- (NSMutableArray *)properties
+{
+    if (!_properties) {
+        _properties = [super properties];
+        for (ZZPropertyGroup *group in _properties) {
+            for (ZZProperty *property in group.properties) {
+                if ([property.propertyName isEqualToString:@"backgroundColor"]) {
+                    property.selected = YES;
+                    property.value = @"[UIColor whiteColor]";
+                }
+            }
+        }
+        
+        ZZProperty *dataSource = [[ZZProperty alloc] initWithPropertyName:@"dataSource" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
+        ZZProperty *allowsSelection = [[ZZProperty alloc] initWithPropertyName:@"allowsSelection" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *allowsMultipleSelection = [[ZZProperty alloc] initWithPropertyName:@"allowsMultipleSelection" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UICollectionView" properties:@[allowsSelection, allowsMultipleSelection] privateProperties:@[dataSource]];
+        [_properties addObject:group];
+    }
+    return _properties;
 }
 
 @end

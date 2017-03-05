@@ -8,14 +8,49 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, ZZPropertyType) {
+    ZZPropertyTypeObject,
+    ZZPropertyTypeNumber,
+    ZZPropertyTypeBOOL,
+    ZZPropertyTypeString,
+};
+
 @interface ZZProperty : NSObject
 
 @property (nonatomic, strong) NSString *propertyName;
+
+@property (nonatomic, assign) ZZPropertyType type;
 
 @property (nonatomic, strong) id value;
 
 @property (nonatomic, strong) id defaultValue;
 
 @property (nonatomic, assign) BOOL selected;
+
+@property (nonatomic, strong, readonly) NSString *propertyCode;
+
+@property (nonatomic, strong) NSString *(^propertyCodeByValue)(id Value);
+
+/// 直接插入代码，选中
+- (id)initWithPropertyCode:(NSString *)propertyCode;
+
+- (id)initWithPropertyName:(NSString *)propertyName type:(ZZPropertyType)type defaultValue:(id)defaultValue;
+- (id)initWithPropertyName:(NSString *)propertyName type:(ZZPropertyType)type defaultValue:(id)defaultValue selecetd:(BOOL)selected;
+
+@end
+
+@interface ZZPropertyGroup : NSObject
+
+@property (nonatomic, strong) NSString *groupName;
+
+@property (nonatomic, strong) NSArray *properties;
+
+@property (nonatomic, strong) NSArray *privateProperties;
+
+- (id)initWithGroupName:(NSString *)groupName properties:(NSArray *)properties;
+
+- (id)initWithGroupName:(NSString *)groupName properties:(NSArray *)properties privateProperties:(NSArray *)privateProperties;
+
+- (void)removePropertiy:(ZZProperty *)property;
 
 @end

@@ -10,6 +10,30 @@
 
 @implementation ZZUIButton
 @synthesize events = _events;
+@synthesize properties = _properties;
+
+- (NSMutableArray *)properties
+{
+    if (!_properties) {
+        _properties = [super properties];
+
+        ZZProperty *title = [[ZZProperty alloc] initWithPropertyName:@"title" type:ZZPropertyTypeString defaultValue:@""];
+        [title setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setTitle:%@ forState:UIControlStateNormal", value];
+        }];
+        ZZProperty *titleColor = [[ZZProperty alloc] initWithPropertyName:@"titleColor" type:ZZPropertyTypeObject defaultValue:@"[UIColor blackColor]"];
+        [titleColor setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setTitleColor:%@ forState:UIControlStateNormal", value];
+        }];
+        ZZProperty *image = [[ZZProperty alloc] initWithPropertyName:@"image" type:ZZPropertyTypeObject defaultValue:@""];
+        [image setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setImage:%@ forState:UIControlStateNormal", value];
+        }];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIButton" properties:@[title, titleColor, image]];
+        [_properties addObject:group];
+    }
+    return _properties;
+}
 
 - (NSArray *)events
 {

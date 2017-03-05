@@ -13,11 +13,6 @@
 @synthesize collectionView_didSelectItemAtIndexPath = _collectionView_didSelectItemAtIndexPath;
 @synthesize collectionView_didDeselectItemAtIndexPath = _collectionView_didDeselectItemAtIndexPath;
 
-- (NSString *)protocolKey
-{
-    return @"delegate";
-}
-
 - (NSArray *)protocolMethods
 {
     if (!_protocolMethods) {

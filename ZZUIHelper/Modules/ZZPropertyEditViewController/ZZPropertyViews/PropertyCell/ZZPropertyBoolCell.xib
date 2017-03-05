@@ -5,9 +5,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ZZPropertyMethodCell">
+        <customObject id="-2" userLabel="File's Owner" customClass="ZZPropertyBoolCell">
             <connections>
-                <outlet property="checkButton" destination="WkC-1q-Orb" id="4HU-TA-gUw"/>
+                <outlet property="checkButton" destination="wVh-oa-XC3" id="L8w-AW-1bw"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -17,15 +17,15 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WkC-1q-Orb">
-                    <rect key="frame" x="210" y="95" width="61" height="18"/>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVh-oa-XC3">
+                    <rect key="frame" x="135" y="139" width="61" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="pQC-de-xgv">
+                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="L1R-Sx-e2s">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system" size="12"/>
                     </buttonCell>
                     <connections>
-                        <action selector="checkButtonClick:" target="-2" id="IJ1-S3-DKW"/>
+                        <action selector="checkButtonClick:" target="-2" id="uiv-Z8-qg5"/>
                     </connections>
                 </button>
             </subviews>

@@ -9,6 +9,7 @@
 #import "ZZUIControl.h"
 
 @implementation ZZUIControl
+@synthesize properties = _properties;
 @synthesize events = _events;
 
 - (void)setPropertyName:(NSString *)propertyName
@@ -46,15 +47,30 @@
     return @"";
 }
 
-- (NSArray *)getterCodeExtCode
+- (NSMutableArray *)properties
 {
-    NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
-    for (ZZEvent *event in self.events) {
-        if (event.selected) {
-            [extCode addObject:[NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@]", self.propertyName, event.actionName, event.eventType]];
+    if (!_properties) {
+        _properties = [super properties];
+        for (ZZPropertyGroup *group in _properties) {
+            for (ZZProperty *property in group.properties) {
+                if ([property.propertyName isEqualToString:@"userInteractionEnabled"]) {
+                    property.defaultValue = @(YES);
+                }
+            }
         }
+        NSMutableArray *privateProperties = [[NSMutableArray alloc] init];
+        for (ZZEvent *event in self.events) {
+            if (event.selected) {
+                NSString *propertyCode = [NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@]", self.propertyName, event.actionName, event.eventType];
+                ZZProperty *property = [[ZZProperty alloc] initWithPropertyCode:propertyCode];
+                [privateProperties addObject:property];
+            }
+        }
+        ZZProperty *enabled = [[ZZProperty alloc] initWithPropertyName:@"enabled" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIControl" properties:@[enabled] privateProperties:privateProperties];
+        [_properties addObject:group];
     }
-    return extCode;
+    return _properties;
 }
 
 

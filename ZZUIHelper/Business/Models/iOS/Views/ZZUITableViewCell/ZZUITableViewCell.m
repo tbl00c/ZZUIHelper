@@ -9,39 +9,16 @@
 #import "ZZUITableViewCell.h"
 
 @implementation ZZUITableViewCell
-@synthesize m_initWithStyle_reuseIdentifier = _m_initWithStyle_reuseIdentifier;
-
-- (NSString *)implementationInitCode
-{
-    NSArray *childViewArray = self.childViewsArray;
-    if (childViewArray.count > 0) {
-        NSMutableString *initCode = @"if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {".mutableCopy;
-        for (ZZUIView *view in childViewArray) {
-            [initCode appendFormat:@"[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
-        }
-        if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
-            [initCode appendString:@"[self p_addMasonry];\n"];
-        }
-        [initCode appendString:@"}\nreturn self;"];
-        [self.m_initWithStyle_reuseIdentifier addMethodContentCode:initCode];
-        return [self.m_initWithStyle_reuseIdentifier.methodCode stringByAppendingString:@"\n"];
-    }
-    
-    return @"";
-}
 
 - (NSString *)curView
 {
     return @"self.contentView";
 }
 
-#pragma mark - # Getter
-- (ZZMethod *)m_initWithStyle_reuseIdentifier
+- (NSString *)m_initMethodName
 {
-    if (!_m_initWithStyle_reuseIdentifier) {
-        _m_initWithStyle_reuseIdentifier = [[ZZMethod alloc] initWithMethodName:@"- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier"];
-    }
-    return _m_initWithStyle_reuseIdentifier;
+    return @"- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier";
 }
+
 
 @end

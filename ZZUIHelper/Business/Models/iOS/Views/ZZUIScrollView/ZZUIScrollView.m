@@ -10,6 +10,7 @@
 #import "ZZUIScrollViewDelegate.h"
 
 @implementation ZZUIScrollView
+@synthesize properties = _properties;
 @synthesize delegates = _delegates;
 
 - (NSArray *)delegates
@@ -21,11 +22,31 @@
     return _delegates;
 }
 
-- (NSArray *)getterCodeExtCode
+- (NSMutableArray *)properties
 {
-    NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
-    [extCode addObject:[NSString stringWithFormat:@"[_%@ setDelegate:self];", self.propertyName]];
-    return extCode;
+    if (!_properties) {
+        _properties = [super properties];
+        for (ZZPropertyGroup *group in _properties) {
+            for (ZZProperty *property in group.properties) {
+                if ([property.propertyName isEqualToString:@"userInteractionEnabled"]) {
+                    property.defaultValue = @(YES);
+                }
+            }
+        }
+        ZZProperty *delegate = [[ZZProperty alloc] initWithPropertyName:@"delegate" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
+        ZZProperty *pagingEnabled = [[ZZProperty alloc] initWithPropertyName:@"pagingEnabled" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZProperty *scrollEnabled = [[ZZProperty alloc] initWithPropertyName:@"scrollEnabled" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *scrollsToTop = [[ZZProperty alloc] initWithPropertyName:@"scrollsToTop" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *bounces = [[ZZProperty alloc] initWithPropertyName:@"bounces" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *alwaysBounceVertical = [[ZZProperty alloc] initWithPropertyName:@"alwaysBounceVertical" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *alwaysBounceHorizontal = [[ZZProperty alloc] initWithPropertyName:@"alwaysBounceHorizontal" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *showsHorizontalScrollIndicator = [[ZZProperty alloc] initWithPropertyName:@"showsHorizontalScrollIndicator" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *showsVerticalScrollIndicator = [[ZZProperty alloc] initWithPropertyName:@"showsVerticalScrollIndicator" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIScrollView" properties:@[pagingEnabled, scrollEnabled, scrollsToTop, bounces, alwaysBounceVertical, alwaysBounceHorizontal, showsVerticalScrollIndicator, showsHorizontalScrollIndicator] privateProperties:@[delegate]];
+        [_properties addObject:group];
+    }
+    
+    return _properties;
 }
 
 @end

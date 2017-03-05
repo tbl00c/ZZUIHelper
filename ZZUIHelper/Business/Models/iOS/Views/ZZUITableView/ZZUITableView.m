@@ -11,6 +11,7 @@
 #import "ZZUITableViewDataSource.h"
 
 @implementation ZZUITableView
+@synthesize properties = _properties;
 @synthesize delegates = _delegates;
 
 - (NSArray *)delegates
@@ -23,11 +24,20 @@
     return _delegates;
 }
 
-- (NSArray *)getterCodeExtCode
+- (NSMutableArray *)properties
 {
-    NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
-    [extCode addObject:[NSString stringWithFormat:@"[_%@ setDataSource:self];", self.propertyName]];
-    return extCode;
+    if (!_properties) {
+        _properties = [super properties];
+        ZZProperty *dataSource = [[ZZProperty alloc] initWithPropertyName:@"dataSource" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
+        ZZProperty *rowHeight = [[ZZProperty alloc] initWithPropertyName:@"rowHeight" type:ZZPropertyTypeNumber defaultValue:@(0)];
+        ZZProperty *sectionHeaderHeight = [[ZZProperty alloc] initWithPropertyName:@"sectionHeaderHeight" type:ZZPropertyTypeNumber defaultValue:@(0)];
+        ZZProperty *sectionFooterHeight = [[ZZProperty alloc] initWithPropertyName:@"sectionFooterHeight" type:ZZPropertyTypeNumber defaultValue:@(0)];
+        ZZProperty *separatorInset = [[ZZProperty alloc] initWithPropertyName:@"separatorInset" type:ZZPropertyTypeObject defaultValue:@"NSEdgeInsetsZero"];
+        ZZProperty *editing = [[ZZProperty alloc] initWithPropertyName:@"editing" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITableView" properties:@[rowHeight, sectionHeaderHeight, sectionFooterHeight, separatorInset, editing] privateProperties:@[dataSource]];
+        [_properties addObject:group];
+    }
+    return _properties;
 }
 
 @end

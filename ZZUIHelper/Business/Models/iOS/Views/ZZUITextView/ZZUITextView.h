@@ -6,8 +6,8 @@
 //  Copyright © 2017年 李伯坤. All rights reserved.
 //
 
-#import "ZZUIView.h"
+#import "ZZUIScrollView.h"
 
-@interface ZZUITextView : ZZUIView
+@interface ZZUITextView : ZZUIScrollView
 
 @end

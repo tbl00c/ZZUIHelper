@@ -31,6 +31,8 @@
 /// 备注
 @property (nonatomic, strong) NSString *remarks;
 
+@property (nonatomic, strong) NSString *superMethodName;
+
 #pragma mark - # 方法内容
 /// 方法体
 @property (nonatomic, strong, readonly) NSString *methodContent;

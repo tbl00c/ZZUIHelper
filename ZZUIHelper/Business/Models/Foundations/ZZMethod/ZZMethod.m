@@ -160,6 +160,7 @@
             _params = data;
         }
     }
+    self.superMethodName = code;
     
 //    NSLog(@"方法名：(%@)", self.methodName);
 }

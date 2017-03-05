@@ -7,15 +7,12 @@
 //
 
 #import "ZZUIResponder.h"
+#import "ZZCALayer.h"
 
 @interface ZZUIView : ZZUIResponder
 
-/// 属性
-@property (nonatomic, strong) NSArray *properties;
+@property (nonatomic, strong) NSString *m_initMethodName;
 
-/// 类实现初始化代码
-@property (nonatomic, strong, readonly) NSString *implementationInitCode;
-
-@property (nonatomic, strong, readonly) ZZMethod *m_initWithFrame;
+@property (nonatomic, strong) ZZCALayer *layer;
 
 @end

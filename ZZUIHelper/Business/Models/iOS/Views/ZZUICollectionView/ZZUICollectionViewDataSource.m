@@ -17,11 +17,6 @@
 @synthesize collectionView_canMoveItemAtIndexPath = _collectionView_canMoveItemAtIndexPath;
 @synthesize collectionView_moveItemAtIndexPath_toIndexPath = _collectionView_moveItemAtIndexPath_toIndexPath;
 
-- (NSString *)protocolKey
-{
-    return @"dataSource";
-}
-
 - (NSArray *)protocolMethods
 {
     if (!_protocolMethods) {

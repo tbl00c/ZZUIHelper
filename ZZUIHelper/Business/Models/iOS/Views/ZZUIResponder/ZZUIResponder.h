@@ -37,7 +37,6 @@
 /// m文件代码
 @property (nonatomic, strong, readonly) NSString *mFileCode;
 
-
 /// 类拓展代码
 @property (nonatomic, strong, readonly) NSString *extensionCode;
 /// 类拓展中的属性列表

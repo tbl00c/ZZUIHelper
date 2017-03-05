@@ -7,6 +7,8 @@
 //
 
 #import "ZZPropertyEditViewController+Delegate.h"
+#import "ZZPropertyBoolCell.h"
+#import "ZZPropertyStringCell.h"
 #import "ZZPropertyEventCell.h"
 #import "ZZPropertyMethodCell.h"
 
@@ -19,6 +21,8 @@
     [layout setMinimumInteritemSpacing:0];
     
     [self.collectionView registerClass:[ZZPropertySectionHeaderView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withIdentifier:@"ZZPropertySectionHeaderView"];
+    [self.collectionView registerClass:[ZZPropertyBoolCell class] forItemWithIdentifier:@"ZZPropertyBoolCell"];
+    [self.collectionView registerClass:[ZZPropertyStringCell class] forItemWithIdentifier:@"ZZPropertyStringCell"];
     [self.collectionView registerClass:[ZZPropertyEventCell class] forItemWithIdentifier:@"ZZPropertyEventCell"];
     [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
 }
@@ -42,6 +46,19 @@
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath
 {
     ZZPropertySectionModel *model = self.data[indexPath.section];
+    if (model.sectionType == ZZPropertySectionTypeProperty) {
+        ZZProperty *property = [self.data[indexPath.section] objectAtIndex:indexPath.item];
+        if (property.type == ZZPropertyTypeBOOL) {
+            ZZPropertyBoolCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyBoolCell" forIndexPath:indexPath];
+            [cell setProperty:property];
+            return cell;
+        }
+        else if (property.type == ZZPropertyTypeNumber || property.type == ZZPropertyTypeString || property.type == ZZPropertyTypeObject) {
+            ZZPropertyStringCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyStringCell" forIndexPath:indexPath];
+            [cell setProperty:property];
+            return cell;
+        }
+    }
     if (model.sectionType == ZZPropertySectionTypeEvent) {
         ZZPropertyEventCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyEventCell" forIndexPath:indexPath];
         ZZEvent *event = [self.data[indexPath.section] objectAtIndex:indexPath.item];
@@ -74,7 +91,10 @@
 - (CGSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ZZPropertySectionModel *model = self.data[indexPath.section];
-    if (model.sectionType == ZZPropertySectionTypeEvent) {
+    if (model.sectionType == ZZPropertySectionTypeProperty) {
+        return CGSizeMake(collectionView.frame.size.width, 25);
+    }
+    else if (model.sectionType == ZZPropertySectionTypeEvent) {
         return CGSizeMake(collectionView.frame.size.width, 60);
     }
     else if (model.sectionType == ZZPropertySectionTypeDelegate) {
