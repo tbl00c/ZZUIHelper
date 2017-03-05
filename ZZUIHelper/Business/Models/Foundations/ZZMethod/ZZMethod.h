@@ -28,9 +28,6 @@
 /// 返回值类型
 @property (nonatomic, strong, readonly) NSString *returnType;
 
-/// 时间名称
-@property (nonatomic, strong) NSString *eventsType;
-
 /// 备注
 @property (nonatomic, strong) NSString *remarks;
 

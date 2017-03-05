@@ -10,9 +10,10 @@
 
 @implementation ZZPropertySectionModel
 
-- (id)initWithSectionTitle:(NSString *)sectionTitle andData:(NSArray *)data
+- (id)initWithSectionType:(ZZPropertySectionType)sectionType title:(NSString *)sectionTitle andData:(NSArray *)data;
 {
     if (self = [super init]) {
+        self.sectionType = sectionType;
         self.sectionTitle = sectionTitle;
         self.sectionData = data;
         self.showAllItems = YES;

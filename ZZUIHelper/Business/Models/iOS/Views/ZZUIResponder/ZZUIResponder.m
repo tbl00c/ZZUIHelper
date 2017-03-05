@@ -169,8 +169,9 @@
     if (controlsArray.count > 0) {
         NSString *eventCode = @"";
         for (ZZUIControl *control in controlsArray) {
-            if (control.actionMethodsCode.length > 0) {
-                eventCode = [eventCode stringByAppendingString:control.actionMethodsCode];
+            NSString *code = control.eventsCode;
+            if (code.length > 0) {
+                eventCode = [eventCode stringByAppendingString:code];
             }
         }
         if (eventCode.length > 0) {

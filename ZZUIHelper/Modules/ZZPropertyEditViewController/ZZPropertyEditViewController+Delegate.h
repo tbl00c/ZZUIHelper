@@ -7,9 +7,10 @@
 //
 
 #import "ZZPropertyEditViewController.h"
-#import "ZZPropertyMethodCell.h"
 #import "ZZPropertySectionHeaderView.h"
 
 @interface ZZPropertyEditViewController (Delegate) <NSCollectionViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout, ZZPropertySectionHeaderViewDelegate>
+
+- (void)registerViewsForCollectionView:(NSCollectionView *)collectionView;
 
 @end

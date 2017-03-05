@@ -7,11 +7,12 @@
 //
 
 #import "ZZUIView.h"
+#import "ZZEvent.h"
 
 @interface ZZUIControl : ZZUIView
 
-@property (nonatomic, strong, readonly) NSArray *actionMethods;
+@property (nonatomic, strong, readonly) NSArray<ZZEvent *> *events;
 
-@property (nonatomic, strong, readonly) NSString *actionMethodsCode;
+@property (nonatomic, strong, readonly) NSString *eventsCode;
 
 @end

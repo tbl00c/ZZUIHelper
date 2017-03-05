@@ -10,21 +10,15 @@
 #import "ZZUISwitch.h"
 
 @implementation ZZUISwitch
-@synthesize actionValueChanged = _actionValueChanged;
+@synthesize events = _events;
 
-- (NSArray *)actionMethods
+- (NSArray *)events
 {
-    return @[self.actionValueChanged];
-}
-
-#pragma mark - # Getter
-- (ZZMethod *)actionValueChanged
-{
-    if (!_actionValueChanged) {
-        _actionValueChanged = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)%@ValueChanged:(UISwitch *)sender", self.propertyName] selected:YES];
-        _actionValueChanged.eventsType = @"UIControlEventValueChanged";
+    if (!_events) {
+        ZZEvent *valueChanged = [[ZZEvent alloc] initWithEventType:@"UIControlEventValueChanged" selected:YES];
+        _events = @[valueChanged];
     }
-    return _actionValueChanged;
+    return _events;
 }
 
 @end

@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, ZZPropertySectionType) {
+    ZZPropertySectionTypeProperty,
+    ZZPropertySectionTypeEvent,
+    ZZPropertySectionTypeDelegate,
+};
+
 @interface ZZPropertySectionModel : NSObject
+
+@property (nonatomic, assign) ZZPropertySectionType sectionType;
 
 @property (nonatomic, strong) NSString *sectionTitle;
 
@@ -19,7 +27,7 @@
 /// 显示所有的元素，默认YES
 @property (nonatomic, assign) BOOL showAllItems;
 
-- (id)initWithSectionTitle:(NSString *)sectionTitle andData:(NSArray *)data;
+- (id)initWithSectionType:(ZZPropertySectionType)sectionType title:(NSString *)sectionTitle andData:(NSArray *)data;
 
 - (id)objectAtIndex:(NSUInteger)index;
 

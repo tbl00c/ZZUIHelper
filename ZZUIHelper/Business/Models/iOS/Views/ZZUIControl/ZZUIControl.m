@@ -9,26 +9,35 @@
 #import "ZZUIControl.h"
 
 @implementation ZZUIControl
-@synthesize actionMethods = _actionMethods;
+@synthesize events = _events;
 
-- (NSArray *)actionMethods
+- (void)setPropertyName:(NSString *)propertyName
 {
-    if (!_actionMethods) {
-        _actionMethods = @[];
+    [super setPropertyName:propertyName];
+    for (ZZEvent *event in self.events) {
+        [event setPropertyName:propertyName];
+        [event setClassName:self.className];
     }
-    return _actionMethods;
 }
 
-- (NSString *)actionMethodsCode
+- (NSArray *)events
 {
-    if (self.actionMethods.count > 0) {
+    if (!_events) {
+        _events = @[];
+    }
+    return _events;
+}
+
+- (NSString *)eventsCode
+{
+    if (self.events.count > 0) {
         NSMutableString *code = [[NSMutableString alloc] init];
-        for (ZZMethod *method in self.actionMethods) {
-            if (method.selected) {
-                if (method.remarks) {
-                    [code appendFormat:@"%@\n", method.remarks];
+        for (ZZEvent *event in self.events) {
+            if (event.selected) {
+                if (event.method.remarks) {
+                    [code appendFormat:@"%@\n", event.method.remarks];
                 }
-                [code appendFormat:@"%@\n", method.methodCode];
+                [code appendFormat:@"%@\n", event.method.methodCode];
             }
         }
         return code;
@@ -40,9 +49,9 @@
 - (NSArray *)getterCodeExtCode
 {
     NSMutableArray *extCode = [super getterCodeExtCode].mutableCopy;
-    for (ZZMethod *method in self.actionMethods) {
-        if (method.selected) {
-            [extCode addObject:[NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@]", self.propertyName, method.actionName, method.eventsType]];
+    for (ZZEvent *event in self.events) {
+        if (event.selected) {
+            [extCode addObject:[NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@]", self.propertyName, event.actionName, event.eventType]];
         }
     }
     return extCode;

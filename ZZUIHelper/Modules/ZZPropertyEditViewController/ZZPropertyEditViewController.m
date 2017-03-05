@@ -24,11 +24,7 @@
     [self.collectionView setWantsLayer:YES];
     [self.collectionView.layer setBackgroundColor:[NSColor windowBackgroundColor].CGColor];
     
-    NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
-    [layout setMinimumLineSpacing:0];
-    [layout setMinimumInteritemSpacing:0];
-    [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
-    [self.collectionView registerClass:[ZZPropertySectionHeaderView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withIdentifier:@"ZZPropertySectionHeaderView"];
+    [self registerViewsForCollectionView:self.collectionView];
 }
 
 - (void)viewDidLoad {
@@ -49,15 +45,15 @@
     
     // Events
     NSMutableArray *mData = [[NSMutableArray alloc] init];
-    if ([[object class] isSubclassOfClass:[ZZUIControl class]] && [(ZZUIControl *)object actionMethods].count > 0) {
-        ZZPropertySectionModel *eventsMethods = [[ZZPropertySectionModel alloc] initWithSectionTitle:@"Events" andData:[(ZZUIControl *)object actionMethods]];
+    if ([[object class] isSubclassOfClass:[ZZUIControl class]] && [(ZZUIControl *)object events].count > 0) {
+        ZZPropertySectionModel *eventsMethods = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeEvent title:@"Events" andData:[(ZZUIControl *)object events]];
         [mData addObject:eventsMethods];
     }
     
     // Delegates
     if ([[object class] isSubclassOfClass:[ZZUIScrollView class]] && [(ZZUIScrollView *)object delegates].count > 0) {
         for (ZZProtocol *protocol in [(ZZUIScrollView *)object delegates]) {
-            ZZPropertySectionModel *protocolMethods = [[ZZPropertySectionModel alloc] initWithSectionTitle:protocol.protocolName andData:protocol.protocolMethods];
+            ZZPropertySectionModel *protocolMethods = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeDelegate title:protocol.protocolName andData:protocol.protocolMethods];
             [mData addObject:protocolMethods];
         }
     }

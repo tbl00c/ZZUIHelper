@@ -10,10 +10,4 @@
 
 @interface ZZUIButton : ZZUIControl
 
-@property (nonatomic, strong, readonly) ZZMethod *actionTouchDown;
-@property (nonatomic, strong, readonly) ZZMethod *actionTouchDownRepeat;
-@property (nonatomic, strong, readonly) ZZMethod *actionTouchUpInside;
-@property (nonatomic, strong, readonly) ZZMethod *actionTouchUpOutside;
-@property (nonatomic, strong, readonly) ZZMethod *actionTouchCancel;
-
 @end

@@ -1,48 +1,26 @@
 //
-//  ZZPropertyMViewController.m
+//  ZZPropertyEditViewController+Delegate.m
 //  ZZUIHelper
 //
-//  Created by 李伯坤 on 2017/3/1.
+//  Created by 李伯坤 on 2017/3/4.
 //  Copyright © 2017年 李伯坤. All rights reserved.
 //
 
-#import "ZZPropertyMViewController.h"
+#import "ZZPropertyEditViewController+Delegate.h"
+#import "ZZPropertyEventCell.h"
 #import "ZZPropertyMethodCell.h"
-#import "ZZPropertySectionHeaderView.h"
 
-@interface ZZPropertyMViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout, ZZPropertySectionHeaderViewDelegate>
+@implementation ZZPropertyEditViewController (Delegate)
 
-@property (weak) IBOutlet NSCollectionView *collectionView;
-
-@end
-
-@implementation ZZPropertyMViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self.collectionView setWantsLayer:YES];
-    [self.collectionView.layer setBackgroundColor:[NSColor windowBackgroundColor].CGColor];
-    
+- (void)registerViewsForCollectionView:(NSCollectionView *)collectionView
+{
     NSCollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
     [layout setMinimumLineSpacing:0];
     [layout setMinimumInteritemSpacing:0];
-    [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
+    
     [self.collectionView registerClass:[ZZPropertySectionHeaderView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withIdentifier:@"ZZPropertySectionHeaderView"];
-}
-
-- (void)viewWillLayout
-{
-    [super viewWillLayout];
-    
-    [self.collectionView reloadData];
-}
-
-- (void)setData:(NSArray *)data
-{
-    _data = data;
-    
-    [self.collectionView reloadData];
+    [self.collectionView registerClass:[ZZPropertyEventCell class] forItemWithIdentifier:@"ZZPropertyEventCell"];
+    [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
 }
 
 #pragma mark - # Delegate
@@ -63,15 +41,20 @@
 
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZZPropertyMethodCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyMethodCell" forIndexPath:indexPath];
-    if (indexPath.section > self.data.count || indexPath.item > [self.data[indexPath.section] count]) {
-        [cell setMethod:nil];
+    ZZPropertySectionModel *model = self.data[indexPath.section];
+    if (model.sectionType == ZZPropertySectionTypeEvent) {
+        ZZPropertyEventCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyEventCell" forIndexPath:indexPath];
+        ZZEvent *event = [self.data[indexPath.section] objectAtIndex:indexPath.item];
+        [cell setEvent:event];
+        return cell;
     }
-    else {
+    else if (model.sectionType == ZZPropertySectionTypeDelegate) {
+        ZZPropertyMethodCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyMethodCell" forIndexPath:indexPath];
         ZZMethod *method = [self.data[indexPath.section] objectAtIndex:indexPath.item];
         [cell setMethod:method];
+        return cell;
     }
-    return cell;
+    return nil;
 }
 
 - (NSView *)collectionView:(NSCollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -90,7 +73,14 @@
 //MARK: NSCollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(collectionView.frame.size.width, 25);
+    ZZPropertySectionModel *model = self.data[indexPath.section];
+    if (model.sectionType == ZZPropertySectionTypeEvent) {
+        return CGSizeMake(collectionView.frame.size.width, 60);
+    }
+    else if (model.sectionType == ZZPropertySectionTypeDelegate) {
+        return CGSizeMake(collectionView.frame.size.width, 25);
+    }
+    return CGSizeZero;
 }
 
 - (CGSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
@@ -113,5 +103,6 @@
     model.showAllItems = !model.showAllItems;
     [self.collectionView reloadData];
 }
+
 
 @end
