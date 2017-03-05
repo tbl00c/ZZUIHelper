@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, ZZPropertyType) {
 @property (nonatomic, strong) NSString *(^propertyCodeByValue)(id Value);
 
 /// 直接插入代码，选中
-- (id)initWithPropertyCode:(NSString *)propertyCode;
+- (id)initWithPropertyCode:(NSString *)propertyCode selected:(BOOL)selected;
 
 - (id)initWithPropertyName:(NSString *)propertyName type:(ZZPropertyType)type defaultValue:(id)defaultValue;
 - (id)initWithPropertyName:(NSString *)propertyName type:(ZZPropertyType)type defaultValue:(id)defaultValue selecetd:(BOOL)selected;

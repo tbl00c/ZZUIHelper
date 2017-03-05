@@ -60,11 +60,9 @@
         }
         NSMutableArray *privateProperties = [[NSMutableArray alloc] init];
         for (ZZEvent *event in self.events) {
-            if (event.selected) {
-                NSString *propertyCode = [NSString stringWithFormat:@"[_%@ addTarget:self action:@selector(%@) forControlEvents:%@]", self.propertyName, event.actionName, event.eventType];
-                ZZProperty *property = [[ZZProperty alloc] initWithPropertyCode:propertyCode];
-                [privateProperties addObject:property];
-            }
+            ZZProperty *property = event.property;
+            [privateProperties addObject:property];
+            
         }
         ZZProperty *enabled = [[ZZProperty alloc] initWithPropertyName:@"enabled" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIControl" properties:@[enabled] privateProperties:privateProperties];

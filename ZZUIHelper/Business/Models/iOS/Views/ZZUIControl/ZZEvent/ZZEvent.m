@@ -22,7 +22,7 @@
 
 - (NSString *)actionName
 {
-    if (!_actionName) {
+    if (_actionName.length == 0) {
         return self.defaultActionName;
     }
     return _actionName;
@@ -40,6 +40,12 @@
     return actionName;
 }
 
+- (void)setSelected:(BOOL)selected
+{
+    _selected = selected;
+    [self.property setSelected:selected];
+}
+
 - (ZZMethod *)method
 {
     NSString *methodName = [NSString stringWithFormat:@"- (void)%@", self.actionName];
@@ -53,6 +59,18 @@
     }
     ZZMethod *method = [[ZZMethod alloc] initWithMethodName:methodName];
     return method;
+}
+
+- (ZZProperty *)property
+{
+    if (!_property) {
+        _property = [[ZZProperty alloc] initWithPropertyName:self.eventType type:ZZPropertyTypeObject defaultValue:nil selecetd:self.selected];
+        __weak typeof(self) weakSelf = self;
+        [_property setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"addTarget:self action:@selector(%@) forControlEvents:%@", weakSelf.actionName, weakSelf.eventType];
+        }];
+    }
+    return _property;
 }
 
 @end

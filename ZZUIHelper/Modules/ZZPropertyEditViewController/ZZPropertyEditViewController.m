@@ -48,6 +48,9 @@
 - (void)editProperty:(NSNotification *)notification
 {
     ZZNSObject *object = notification.object;
+    if (!object) {
+        return;
+    }
     
     NSMutableArray *data = [[NSMutableArray alloc] init];
     

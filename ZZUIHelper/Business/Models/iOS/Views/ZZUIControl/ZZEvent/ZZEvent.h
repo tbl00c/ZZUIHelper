@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZZMethod.h"
+#import "ZZProperty.h"
 
 @interface ZZEvent : NSObject
 
@@ -21,6 +22,8 @@
 @property (nonatomic, strong) NSString *defaultActionName;
 
 @property (nonatomic, strong, readonly) ZZMethod *method;
+
+@property (nonatomic, strong) ZZProperty *property;
 
 @property (nonatomic, assign) BOOL selected;
 

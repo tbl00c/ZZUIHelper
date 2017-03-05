@@ -29,11 +29,11 @@
     return self;
 }
 
-- (id)initWithPropertyCode:(NSString *)propertyCode
+- (id)initWithPropertyCode:(NSString *)propertyCode selected:(BOOL)selected
 {
     if (self = [self init]) {
         _propertyCode = propertyCode;
-        _selected = YES;
+        _selected = selected;
     }
     return self;
 }
