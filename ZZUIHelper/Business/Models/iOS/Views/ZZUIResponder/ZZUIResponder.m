@@ -93,16 +93,16 @@
         if (delegatesArray.count > 0) {    // 协议
             NSString *delegateCode = @"";
             for (ZZProtocol *protocol in delegatesArray) {
-                NSInteger count = 0;
-                for (ZZMethod *method in protocol.protocolMethods) {
-                    count += (method.selected ? 1 : 0);
-                }
-                if (count > 0) {
+//                NSInteger count = 0;
+//                for (ZZMethod *method in protocol.protocolMethods) {
+//                    count += (method.selected ? 1 : 0);
+//                }
+//                if (count > 0) {
                     if (delegateCode.length > 0) {
                         delegateCode = [delegateCode stringByAppendingString:@",\n"];
                     }
                     delegateCode = [delegateCode stringByAppendingString:protocol.protocolName];
-                }
+//                }
             }
             if (delegateCode.length > 0) {
                 extensionCode = [extensionCode stringByAppendingFormat:@" <\n%@\n>", delegateCode];
