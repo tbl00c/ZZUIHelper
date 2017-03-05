@@ -22,7 +22,14 @@
 {
     NSString *fileName = [self.className stringByAppendingString:@".h"];
     NSString *copyrightCode = [[ZZUIHelperConfig sharedInstance] copyrightCodeByFileName:fileName];
-    NSString *code = [NSString stringWithFormat:@"%@#import <UIKit/UIKit.h>\n\n%@", copyrightCode, self.interfaceCode];
+    NSString *code = copyrightCode;
+    if ([self.superClassName hasPrefix:@"UI"]) {
+        code = [code stringByAppendingString:@"#import <UIKit/UIKit.h>"];
+    }
+    else {
+        code = [code stringByAppendingFormat:@"#import \"%@.h\"", self.superClassName];
+    }
+    code = [code stringByAppendingFormat:@"\n\n%@", self.interfaceCode];
     return code;
 }
 
