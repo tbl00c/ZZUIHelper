@@ -12,6 +12,10 @@
 
 @property (nonatomic, strong) NSArray *controls;
 
+@property (nonatomic, strong) NSArray *contentMode;
+
+@property (nonatomic, strong) NSArray *textAlignment;
+
 + (ZZControlHelper *)sharedInstance;
 
 @end

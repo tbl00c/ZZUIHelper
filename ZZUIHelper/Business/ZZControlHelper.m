@@ -22,7 +22,6 @@
 
 - (NSArray *)controls
 {
-//    return @[@{@"ClassName" : @"UIView"}];
     return @[
              @"UIImageView",
              @"UILabel",
@@ -35,6 +34,30 @@
              @"UIScrollView",
              @"UISwitch",
              @"NSMutableArray"];
+}
+
+- (NSArray *)contentMode
+{
+    return @[@"UIViewContentModeScaleToFill",
+             @"UIViewContentModeScaleAspectFit",
+             @"UIViewContentModeScaleAspectFill",
+             @"UIViewContentModeRedraw",
+             @"UIViewContentModeCenter",
+             @"UIViewContentModeTop",
+             @"UIViewContentModeBottom",
+             @"UIViewContentModeLeft",
+             @"UIViewContentModeRight",
+             @"UIViewContentModeTopLeft",
+             @"UIViewContentModeTopRight",
+             @"UIViewContentModeBottomLeft",
+             @"UIViewContentModeBottomRight"];
+}
+
+- (NSArray *)textAlignment
+{
+    return @[@"NSTextAlignmentLeft",
+             @"NSTextAlignmentCenter",
+             @"NSTextAlignmentRight"];
 }
 
 @end

@@ -30,7 +30,7 @@
         ZZProperty *alpha = [[ZZProperty alloc] initWithPropertyName:@"alpha" type:ZZPropertyTypeNumber defaultValue:@(1)];
         ZZProperty *hidden = [[ZZProperty alloc] initWithPropertyName:@"hidden" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *userInteractionEnabled = [[ZZProperty alloc] initWithPropertyName:@"userInteractionEnabled" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZProperty *contentMode = [[ZZProperty alloc] initWithPropertyName:@"contentMode" type:ZZPropertyTypeObject defaultValue:@"UIViewContentModeScaleToFill"];
+        ZZProperty *contentMode = [[ZZProperty alloc] initWithPropertyName:@"contentMode" selectionData:[ZZControlHelper sharedInstance].contentMode andDefaultSelectIndex:0];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIView" properties:@[tag, color, alpha, hidden, userInteractionEnabled, contentMode]];
         [_properties addObject:group];
     }

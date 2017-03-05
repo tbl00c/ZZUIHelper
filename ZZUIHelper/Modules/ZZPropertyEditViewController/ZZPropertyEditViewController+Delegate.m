@@ -11,6 +11,7 @@
 #import "ZZPropertyStringCell.h"
 #import "ZZPropertyEventCell.h"
 #import "ZZPropertyMethodCell.h"
+#import "ZZPropertySelectionCell.h"
 
 @implementation ZZPropertyEditViewController (Delegate)
 
@@ -23,6 +24,7 @@
     [self.collectionView registerClass:[ZZPropertySectionHeaderView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withIdentifier:@"ZZPropertySectionHeaderView"];
     [self.collectionView registerClass:[ZZPropertyBoolCell class] forItemWithIdentifier:@"ZZPropertyBoolCell"];
     [self.collectionView registerClass:[ZZPropertyStringCell class] forItemWithIdentifier:@"ZZPropertyStringCell"];
+    [self.collectionView registerClass:[ZZPropertySelectionCell class] forItemWithIdentifier:@"ZZPropertySelectionCell"];
     [self.collectionView registerClass:[ZZPropertyEventCell class] forItemWithIdentifier:@"ZZPropertyEventCell"];
     [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
 }
@@ -57,6 +59,12 @@
             ZZPropertyStringCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyStringCell" forIndexPath:indexPath];
             [cell setProperty:property];
             return cell;
+        }
+        else if (property.type == ZZPropertyTypeSelection) {
+            ZZPropertySelectionCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertySelectionCell" forIndexPath:indexPath];
+            [cell setProperty:property];
+            return cell;
+
         }
     }
     if (model.sectionType == ZZPropertySectionTypeEvent) {

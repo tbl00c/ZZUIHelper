@@ -30,7 +30,7 @@
         ZZProperty *placeholder = [[ZZProperty alloc] initWithPropertyName:@"placeholder" type:ZZPropertyTypeString defaultValue:@""];
         ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" type:ZZPropertyTypeString defaultValue:@"[UIFont systemFontOfSize:13]"];
         ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" type:ZZPropertyTypeObject defaultValue:@"[UIColor blackColor]"];
-        ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" type:ZZPropertyTypeObject defaultValue:@"NSTextAlignmentLeft"];
+        ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" selectionData:[ZZControlHelper sharedInstance].textAlignment andDefaultSelectIndex:0];
         ZZProperty *delegate = [[ZZProperty alloc] initWithPropertyName:@"delegate" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, font, textColor, textAlignment] privateProperties:@[delegate]];
         [_properties addObject:group];
