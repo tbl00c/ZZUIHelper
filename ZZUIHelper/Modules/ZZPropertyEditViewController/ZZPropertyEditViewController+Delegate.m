@@ -78,6 +78,9 @@
 {
     if ([kind isEqualToString:@"UICollectionElementKindSectionHeader"]) {
         ZZPropertySectionModel *sectionModel = indexPath.section < self.data.count ? self.data[indexPath.section] : nil;
+        if (sectionModel.sectionTitle.length == 0) {
+            return nil;
+        }
         ZZPropertySectionHeaderView *headerView = [collectionView makeSupplementaryViewOfKind:kind withIdentifier:@"ZZPropertySectionHeaderView" forIndexPath:indexPath];
         [headerView setModel:sectionModel];
         [headerView setDelegate:self];
@@ -105,6 +108,10 @@
 
 - (CGSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
+    ZZPropertySectionModel *sectionModel = section < self.data.count ? self.data[section] : nil;
+    if (!sectionModel || sectionModel.sectionTitle.length == 0) {
+        return CGSizeMake(collectionView.frame.size.width, 10);
+    }
     return CGSizeMake(collectionView.frame.size.width, 30);
 }
 

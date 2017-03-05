@@ -51,12 +51,16 @@
     
     NSMutableArray *data = [[NSMutableArray alloc] init];
     
+    // base
+    ZZPropertySectionModel *baseSection = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeProperty title:nil andData:@[object.propertyNameProperty, object.remarksProperty]];
+    [data addObject:baseSection];
+    
     // Properties
     if (object.properties.count > 0) {
         for (ZZPropertyGroup *group in object.properties) {
             if (group.properties.count > 0) {
                 ZZPropertySectionModel *classSection = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeProperty title:group.groupName andData:group.properties];
-                [data insertObject:classSection atIndex:0];
+                [data insertObject:classSection atIndex:1];
             }
         }
     }

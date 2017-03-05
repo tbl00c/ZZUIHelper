@@ -34,6 +34,38 @@
     return _className;
 }
 
+- (void)setPropertyName:(NSString *)propertyName
+{
+    self.propertyNameProperty.value = propertyName;
+}
+- (NSString *)propertyName
+{
+    return self.propertyNameProperty.value;
+}
+- (ZZProperty *)propertyNameProperty
+{
+    if (!_propertyNameProperty) {
+        _propertyNameProperty = [[ZZProperty alloc] initWithPropertyName:@"Property Name" type:ZZPropertyTypeString defaultValue:nil];
+    }
+    return _propertyNameProperty;
+}
+
+- (void)setRemarks:(NSString *)remarks
+{
+    self.remarksProperty.value = remarks;
+}
+- (NSString *)remarks
+{
+    return self.remarksProperty.value;
+}
+- (ZZProperty *)remarksProperty
+{
+    if (!_remarksProperty) {
+        _remarksProperty = [[ZZProperty alloc] initWithPropertyName:@"remarks" type:ZZPropertyTypeString defaultValue:nil];
+    }
+    return _remarksProperty;
+}
+
 #pragma mark - # 属性代码
 - (NSString *)propertyCode
 {
