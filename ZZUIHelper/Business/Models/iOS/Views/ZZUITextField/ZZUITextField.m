@@ -28,11 +28,17 @@
         _properties = [super properties];
         ZZProperty *text = [[ZZProperty alloc] initWithPropertyName:@"text" type:ZZPropertyTypeString defaultValue:@""];
         ZZProperty *placeholder = [[ZZProperty alloc] initWithPropertyName:@"placeholder" type:ZZPropertyTypeString defaultValue:@""];
-        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" type:ZZPropertyTypeString defaultValue:@"[UIFont systemFontOfSize:13]"];
-        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" type:ZZPropertyTypeObject defaultValue:@"[UIColor blackColor]"];
+        ZZProperty *fontSize = [[ZZProperty alloc] initWithPropertyName:@"fontSize" type:ZZPropertyTypeString defaultValue:@"17"];
+        [fontSize setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setFont:[UIFont systemFontOfSize:%@]", value];
+        }];
+        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" type:ZZPropertyTypeObject defaultValue:@"blackColor"];
+        [textColor setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setTextColor:[UIColor %@]", value];
+        }];
         ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" selectionData:[ZZControlHelper sharedInstance].textAlignment andDefaultSelectIndex:0];
         ZZProperty *delegate = [[ZZProperty alloc] initWithPropertyName:@"delegate" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, font, textColor, textAlignment] privateProperties:@[delegate]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, fontSize, textColor, textAlignment] privateProperties:@[delegate]];
         [_properties addObject:group];
     }
     return _properties;

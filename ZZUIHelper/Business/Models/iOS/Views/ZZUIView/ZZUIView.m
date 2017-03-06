@@ -26,7 +26,10 @@
         _properties = [super properties];
         [_properties addObjectsFromArray:self.layer.properties];
         ZZProperty *tag = [[ZZProperty alloc] initWithPropertyName:@"tag" type:ZZPropertyTypeNumber defaultValue:@(0)];
-        ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" type:ZZPropertyTypeObject defaultValue:@"[UIColor clearColor]"];
+        ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" type:ZZPropertyTypeObject defaultValue:@"clearColor"];
+        [color setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setBackgroundColor:[UIColor %@]", value];
+        }];
         ZZProperty *alpha = [[ZZProperty alloc] initWithPropertyName:@"alpha" type:ZZPropertyTypeNumber defaultValue:@(1)];
         ZZProperty *hidden = [[ZZProperty alloc] initWithPropertyName:@"hidden" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *userInteractionEnabled = [[ZZProperty alloc] initWithPropertyName:@"userInteractionEnabled" type:ZZPropertyTypeBOOL defaultValue:@(NO)];

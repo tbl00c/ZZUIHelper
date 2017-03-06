@@ -21,15 +21,15 @@
         [title setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setTitle:%@ forState:UIControlStateNormal", value];
         }];
-        ZZProperty *titleColor = [[ZZProperty alloc] initWithPropertyName:@"titleColor" type:ZZPropertyTypeObject defaultValue:@"[UIColor blackColor]"];
+        ZZProperty *titleColor = [[ZZProperty alloc] initWithPropertyName:@"titleColor" type:ZZPropertyTypeObject defaultValue:@"blackColor"];
         [titleColor setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setTitleColor:%@ forState:UIControlStateNormal", value];
+            return [NSString stringWithFormat:@"setTitleColor:[UIColor %@] forState:UIControlStateNormal", value];
         }];
-        ZZProperty *image = [[ZZProperty alloc] initWithPropertyName:@"image" type:ZZPropertyTypeObject defaultValue:@""];
-        [image setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setImage:%@ forState:UIControlStateNormal", value];
+        ZZProperty *imageName = [[ZZProperty alloc] initWithPropertyName:@"imageName" type:ZZPropertyTypeObject defaultValue:@""];
+        [imageName setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setImage:[UIImage imageNamed:@\"%@\"] forState:UIControlStateNormal", value];
         }];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIButton" properties:@[title, titleColor, image]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIButton" properties:@[title, titleColor, imageName]];
         [_properties addObject:group];
     }
     return _properties;

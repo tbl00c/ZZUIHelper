@@ -42,7 +42,7 @@
             for (ZZProperty *property in group.properties) {
                 if ([property.propertyName isEqualToString:@"backgroundColor"]) {
                     property.selected = YES;
-                    property.value = @"[UIColor whiteColor]";
+                    property.value = @"whiteColor";
                 }
             }
         }

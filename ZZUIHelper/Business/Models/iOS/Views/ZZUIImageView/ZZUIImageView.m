@@ -27,10 +27,13 @@
             }
         }
         
-        ZZProperty *image = [[ZZProperty alloc] initWithPropertyName:@"image" type:ZZPropertyTypeObject defaultValue:@""];
+        ZZProperty *imageName = [[ZZProperty alloc] initWithPropertyName:@"imageName" type:ZZPropertyTypeObject defaultValue:@""];
+        [imageName setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"[UIImage imageNamed:@\"%@\"]", value];
+        }];
         ZZProperty *highlightedImage = [[ZZProperty alloc] initWithPropertyName:@"highlightedImage" type:ZZPropertyTypeObject defaultValue:@""];
         ZZProperty *highlighted = [[ZZProperty alloc] initWithPropertyName:@"highlighted" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIImageView" properties:@[image, highlightedImage, highlighted, contentMode]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIImageView" properties:@[imageName, highlightedImage, highlighted, contentMode]];
         [_properties addObject:group];
     }
     return _properties;
