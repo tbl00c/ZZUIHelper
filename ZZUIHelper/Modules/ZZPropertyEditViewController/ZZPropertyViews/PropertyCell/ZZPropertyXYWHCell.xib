@@ -77,7 +77,7 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nW9-26-hFz">
-                    <rect key="frame" x="277" y="183" width="66" height="17"/>
+                    <rect key="frame" x="277" y="183" width="12" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="w" id="RjE-Yb-owD">
                         <font key="font" metaFont="system" size="10"/>

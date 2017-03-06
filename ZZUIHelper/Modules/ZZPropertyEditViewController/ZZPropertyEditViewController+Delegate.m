@@ -116,6 +116,10 @@
 {
     ZZPropertySectionModel *model = self.data[indexPath.section];
     if (model.sectionType == ZZPropertySectionTypeProperty) {
+        ZZProperty *property = model.sectionData[indexPath.item];
+        if (property.type == ZZPropertyTypeRect || property.type == ZZPropertyTypeEdgeInsets) {
+            return CGSizeMake(collectionView.frame.size.width, 55);
+        }
         return CGSizeMake(collectionView.frame.size.width, 25);
     }
     else if (model.sectionType == ZZPropertySectionTypeEvent) {

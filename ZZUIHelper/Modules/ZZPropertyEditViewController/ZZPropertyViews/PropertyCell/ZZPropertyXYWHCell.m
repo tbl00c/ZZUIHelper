@@ -60,10 +60,10 @@
         CGFloat l = getCGFloatValueFormDic(property.value, @"l");
         CGFloat b = getCGFloatValueFormDic(property.value, @"b");
         CGFloat r = getCGFloatValueFormDic(property.value, @"r");
-        [self.xLabel setStringValue:@"t"];
-        [self.yLabel setStringValue:@"l"];
-        [self.wLabel setStringValue:@"b"];
-        [self.hLabel setStringValue:@"r"];
+        [self.xLabel setStringValue:@"top      "];
+        [self.yLabel setStringValue:@"left    "];
+        [self.wLabel setStringValue:@"bottom"];
+        [self.hLabel setStringValue:@"right  "];
         [self.xTextField setStringValue:@(t).stringValue];
         [self.yTextField setStringValue:@(l).stringValue];
         [self.wTextField setStringValue:@(b).stringValue];
@@ -114,11 +114,11 @@
 {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
-        make.centerY.mas_equalTo(0);
+        make.top.mas_equalTo(7);
         make.width.mas_equalTo(100);
     }];
     [self.xLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.titleLabel.mas_right).mas_offset(5);
+        make.left.mas_equalTo(self.titleLabel.mas_right).mas_offset(3);
         make.bottom.mas_equalTo(self.titleLabel);
         make.height.mas_equalTo(12);
     }];
@@ -137,26 +137,27 @@
         make.centerY.mas_equalTo(self.titleLabel);
         make.height.mas_equalTo(23);
         make.width.mas_equalTo(self.xTextField);
+        make.right.mas_equalTo(-10);
     }];
+    
     [self.wLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.yTextField.mas_right).mas_offset(10);
-        make.bottom.mas_equalTo(self.xLabel);
+        make.left.mas_equalTo(self.xLabel);
+        make.bottom.mas_equalTo(self.wTextField);
         make.height.mas_equalTo(12);
     }];
     [self.wTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.wLabel.mas_right).mas_offset(3);
-        make.centerY.mas_equalTo(self.titleLabel);
         make.height.mas_equalTo(23);
-        make.width.mas_equalTo(self.yTextField);
+        make.top.mas_equalTo(self.xTextField.mas_bottom).mas_offset(3);
     }];
     [self.hLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.wTextField.mas_right).mas_offset(10);
-        make.bottom.mas_equalTo(self.xLabel);
+        make.bottom.mas_equalTo(self.wLabel);
         make.height.mas_equalTo(12);
     }];
     [self.hTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.hLabel.mas_right).mas_offset(3);
-        make.centerY.mas_equalTo(self.titleLabel);
+        make.centerY.mas_equalTo(self.wTextField);
         make.height.mas_equalTo(23);
         make.width.mas_equalTo(self.wTextField);
         make.right.mas_equalTo(-10);
