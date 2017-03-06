@@ -38,6 +38,10 @@
 		C2B3F6021E62FC96000E42CE /* ZZCodeHFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F6011E62FC96000E42CE /* ZZCodeHFileViewController.m */; };
 		C2B3F60B1E62FCC2000E42CE /* ZZCodeMFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F6091E62FCC2000E42CE /* ZZCodeMFileViewController.m */; };
 		C2B3F6101E62FCD1000E42CE /* ZZCodeLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F60E1E62FCD1000E42CE /* ZZCodeLayoutViewController.m */; };
+		C2C7762A1E6D377D00464A27 /* ZZPropertyXYCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C776281E6D377D00464A27 /* ZZPropertyXYCell.m */; };
+		C2C7762B1E6D377D00464A27 /* ZZPropertyXYCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C776291E6D377D00464A27 /* ZZPropertyXYCell.xib */; };
+		C2C7762F1E6D426C00464A27 /* ZZPropertyXYWHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7762D1E6D426C00464A27 /* ZZPropertyXYWHCell.m */; };
+		C2C776301E6D426C00464A27 /* ZZPropertyXYWHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C7762E1E6D426C00464A27 /* ZZPropertyXYWHCell.xib */; };
 		C2D406471E6BEC0000D52F95 /* ZZPropertyBoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D406421E6BEC0000D52F95 /* ZZPropertyBoolCell.m */; };
 		C2D406481E6BEC0000D52F95 /* ZZPropertyBoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D406431E6BEC0000D52F95 /* ZZPropertyBoolCell.xib */; };
 		C2D406491E6BEC0000D52F95 /* ZZPropertyStringCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D406451E6BEC0000D52F95 /* ZZPropertyStringCell.m */; };
@@ -169,6 +173,12 @@
 		C2B3F6091E62FCC2000E42CE /* ZZCodeMFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeMFileViewController.m; sourceTree = "<group>"; };
 		C2B3F60D1E62FCD1000E42CE /* ZZCodeLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeLayoutViewController.h; sourceTree = "<group>"; };
 		C2B3F60E1E62FCD1000E42CE /* ZZCodeLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeLayoutViewController.m; sourceTree = "<group>"; };
+		C2C776271E6D377D00464A27 /* ZZPropertyXYCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyXYCell.h; sourceTree = "<group>"; };
+		C2C776281E6D377D00464A27 /* ZZPropertyXYCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyXYCell.m; sourceTree = "<group>"; };
+		C2C776291E6D377D00464A27 /* ZZPropertyXYCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyXYCell.xib; sourceTree = "<group>"; };
+		C2C7762C1E6D426C00464A27 /* ZZPropertyXYWHCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyXYWHCell.h; sourceTree = "<group>"; };
+		C2C7762D1E6D426C00464A27 /* ZZPropertyXYWHCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyXYWHCell.m; sourceTree = "<group>"; };
+		C2C7762E1E6D426C00464A27 /* ZZPropertyXYWHCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyXYWHCell.xib; sourceTree = "<group>"; };
 		C2D406411E6BEC0000D52F95 /* ZZPropertyBoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyBoolCell.h; sourceTree = "<group>"; };
 		C2D406421E6BEC0000D52F95 /* ZZPropertyBoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyBoolCell.m; sourceTree = "<group>"; };
 		C2D406431E6BEC0000D52F95 /* ZZPropertyBoolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyBoolCell.xib; sourceTree = "<group>"; };
@@ -522,6 +532,12 @@
 		C2D406311E6BD4BB00D52F95 /* PropertyCell */ = {
 			isa = PBXGroup;
 			children = (
+				C2C7762C1E6D426C00464A27 /* ZZPropertyXYWHCell.h */,
+				C2C7762D1E6D426C00464A27 /* ZZPropertyXYWHCell.m */,
+				C2C7762E1E6D426C00464A27 /* ZZPropertyXYWHCell.xib */,
+				C2C776271E6D377D00464A27 /* ZZPropertyXYCell.h */,
+				C2C776281E6D377D00464A27 /* ZZPropertyXYCell.m */,
+				C2C776291E6D377D00464A27 /* ZZPropertyXYCell.xib */,
 				C2D4066C1E6C5EA600D52F95 /* ZZPropertySelectionCell.h */,
 				C2D4066D1E6C5EA600D52F95 /* ZZPropertySelectionCell.m */,
 				C2D4066E1E6C5EA600D52F95 /* ZZPropertySelectionCell.xib */,
@@ -1003,8 +1019,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2F387011E6B2AD100BA1448 /* ZZPropertyEventCell.xib in Resources */,
+				C2C7762B1E6D377D00464A27 /* ZZPropertyXYCell.xib in Resources */,
 				C2D6CA231E5BE12700EEF76B /* LICENSE in Resources */,
 				C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */,
+				C2C776301E6D426C00464A27 /* ZZPropertyXYWHCell.xib in Resources */,
 				C2D406481E6BEC0000D52F95 /* ZZPropertyBoolCell.xib in Resources */,
 				C21789C41E55D64500AF8BEE /* Assets.xcassets in Resources */,
 				C22569FA1E67F048008E7785 /* ZZControlListItem.xib in Resources */,
@@ -1051,6 +1069,7 @@
 				C2D6CA2A1E5BE12700EEF76B /* NSArray+MASAdditions.m in Sources */,
 				C2D6CA2C1E5BE12700EEF76B /* View+MASAdditions.m in Sources */,
 				C2D6CA7F1E5BE14E00EEF76B /* ZZUICollectionViewCell.m in Sources */,
+				C2C7762A1E6D377D00464A27 /* ZZPropertyXYCell.m in Sources */,
 				C2D6CA8D1E5BE14E00EEF76B /* ZZUIView.m in Sources */,
 				C2D406601E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.m in Sources */,
 				C2A10C4F1E5A1597000960D9 /* ZZControlAreaViewController.m in Sources */,
@@ -1091,6 +1110,7 @@
 				C2A10CB11E5AEF0B000960D9 /* ZZNewPropertyViewController.m in Sources */,
 				C2D6CA221E5BE12700EEF76B /* NSString+MMBJ.m in Sources */,
 				C2D6CA871E5BE14E00EEF76B /* ZZUITableView.m in Sources */,
+				C2C7762F1E6D426C00464A27 /* ZZPropertyXYWHCell.m in Sources */,
 				C2D6CA7A1E5BE14E00EEF76B /* ZZUIViewController.m in Sources */,
 				C2D6CA831E5BE14E00EEF76B /* ZZUIResponder.m in Sources */,
 				C2D6CA8C1E5BE14E00EEF76B /* ZZUITextView.m in Sources */,

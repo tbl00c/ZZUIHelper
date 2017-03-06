@@ -12,6 +12,8 @@
 #import "ZZPropertyEventCell.h"
 #import "ZZPropertyMethodCell.h"
 #import "ZZPropertySelectionCell.h"
+#import "ZZPropertyXYCell.h"
+#import "ZZPropertyXYWHCell.h"
 
 @implementation ZZPropertyEditViewController (Delegate)
 
@@ -27,6 +29,8 @@
     [self.collectionView registerClass:[ZZPropertySelectionCell class] forItemWithIdentifier:@"ZZPropertySelectionCell"];
     [self.collectionView registerClass:[ZZPropertyEventCell class] forItemWithIdentifier:@"ZZPropertyEventCell"];
     [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
+    [self.collectionView registerClass:[ZZPropertyXYCell class] forItemWithIdentifier:@"ZZPropertyXYCell"];
+    [self.collectionView registerClass:[ZZPropertyXYWHCell class] forItemWithIdentifier:@"ZZPropertyXYWHCell"];
 }
 
 #pragma mark - # Delegate
@@ -64,7 +68,16 @@
             ZZPropertySelectionCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertySelectionCell" forIndexPath:indexPath];
             [cell setProperty:property];
             return cell;
-
+        }
+        else if (property.type == ZZPropertyTypeSize || property.type == ZZPropertyTypePoint) {
+            ZZPropertyXYCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyXYCell" forIndexPath:indexPath];
+            [cell setProperty:property];
+            return cell;
+        }
+        else if (property.type == ZZPropertyTypeEdgeInsets || property.type == ZZPropertyTypeRect) {
+            ZZPropertyXYWHCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyXYWHCell" forIndexPath:indexPath];
+            [cell setProperty:property];
+            return cell;
         }
     }
     if (model.sectionType == ZZPropertySectionTypeEvent) {

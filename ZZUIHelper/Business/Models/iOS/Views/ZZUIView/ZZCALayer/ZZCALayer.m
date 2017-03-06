@@ -23,7 +23,8 @@
             return [NSString stringWithFormat:@"setBorderColor:[UIColor %@]", value];
         }];
         ZZProperty *zPosition = [[ZZProperty alloc] initWithPropertyName:@"zPosition" type:ZZPropertyTypeNumber defaultValue:@(0)];
-        ZZProperty *anchorPoint = [[ZZProperty alloc] initWithPropertyName:@"anchorPoint" type:ZZPropertyTypeObject defaultValue:@"CGPointMake(0.5, 0.5)"];
+        ZZProperty *anchorPoint = [[ZZProperty alloc] initWithPropertyName:@"anchorPoint" type:ZZPropertyTypePoint defaultValue:@{@"x" : @(0.5),
+                                                                                                                                  @"y" : @(0.5)}];
         ZZProperty *transform = [[ZZProperty alloc] initWithPropertyName:@"transform" type:ZZPropertyTypeObject defaultValue:@""];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"CALayer" properties:@[masksToBounds, cornerRadius, borderWidth, borderColor, zPosition, anchorPoint, transform]];
         [_properties addObject:group];

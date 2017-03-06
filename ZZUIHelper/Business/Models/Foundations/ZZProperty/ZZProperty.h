@@ -14,6 +14,10 @@ typedef NS_ENUM(NSInteger, ZZPropertyType) {
     ZZPropertyTypeSelection,
     ZZPropertyTypeBOOL,
     ZZPropertyTypeString,
+    ZZPropertyTypeSize,
+    ZZPropertyTypePoint,
+    ZZPropertyTypeEdgeInsets,
+    ZZPropertyTypeRect,
 };
 
 @interface ZZProperty : NSObject
