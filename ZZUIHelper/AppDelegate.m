@@ -10,10 +10,15 @@
 
 @interface AppDelegate ()
 
+
 @end
 
 @implementation AppDelegate
 
-
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag
+{
+    
+    return YES;
+}
 
 @end

@@ -28,17 +28,19 @@
         _properties = [super properties];
         ZZProperty *text = [[ZZProperty alloc] initWithPropertyName:@"text" type:ZZPropertyTypeString defaultValue:@""];
         ZZProperty *placeholder = [[ZZProperty alloc] initWithPropertyName:@"placeholder" type:ZZPropertyTypeString defaultValue:@""];
-        ZZProperty *fontSize = [[ZZProperty alloc] initWithPropertyName:@"fontSize" type:ZZPropertyTypeString defaultValue:@"17"];
-        [fontSize setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setFont:[UIFont systemFontOfSize:%@]", value];
+        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZControlHelper sharedInstance].fonts andDefaultSelectIndex:7];
+        [font setSelected:YES];
+        [font setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setFont:[UIFont %@]", value];
         }];
-        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" type:ZZPropertyTypeObject defaultValue:@"blackColor"];
+        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"borderColor" selectionData:[ZZControlHelper sharedInstance].colors andDefaultSelectIndex:2];
+        [textColor setSelected:YES];
         [textColor setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setTextColor:[UIColor %@]", value];
         }];
         ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" selectionData:[ZZControlHelper sharedInstance].textAlignment andDefaultSelectIndex:0];
         ZZProperty *delegate = [[ZZProperty alloc] initWithPropertyName:@"delegate" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, fontSize, textColor, textAlignment] privateProperties:@[delegate]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, font, textColor, textAlignment] privateProperties:@[delegate]];
         [_properties addObject:group];
     }
     return _properties;

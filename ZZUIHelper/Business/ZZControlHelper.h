@@ -16,6 +16,10 @@
 
 @property (nonatomic, strong) NSArray *textAlignment;
 
+@property (nonatomic, strong) NSArray *colors;
+
+@property (nonatomic, strong) NSArray *fonts;
+
 + (ZZControlHelper *)sharedInstance;
 
 @end

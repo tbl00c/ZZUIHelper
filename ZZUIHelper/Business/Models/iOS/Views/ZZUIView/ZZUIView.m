@@ -27,7 +27,7 @@
         [_properties addObjectsFromArray:self.layer.properties];
         ZZProperty *frame = [[ZZProperty alloc] initWithPropertyName:@"frame" type:ZZPropertyTypeRect defaultValue:nil];
         ZZProperty *tag = [[ZZProperty alloc] initWithPropertyName:@"tag" type:ZZPropertyTypeNumber defaultValue:@(0)];
-                ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" type:ZZPropertyTypeObject defaultValue:@"clearColor"];
+        ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"borderColor" selectionData:[ZZControlHelper sharedInstance].colors andDefaultSelectIndex:0];
         [color setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setBackgroundColor:[UIColor %@]", value];
         }];

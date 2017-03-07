@@ -36,6 +36,8 @@ typedef NS_ENUM(NSInteger, ZZPropertyType) {
 
 @property (nonatomic, strong) NSString *(^propertyCodeByValue)(id Value);
 
+@property (nonatomic, strong) NSString *placeholder;
+
 #pragma mark - 选择模式
 @property (nonatomic, strong) NSArray *selectionData;
 

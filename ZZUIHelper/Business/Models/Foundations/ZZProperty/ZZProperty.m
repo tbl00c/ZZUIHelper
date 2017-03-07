@@ -200,6 +200,14 @@
     return _defaultValue;
 }
 
+- (NSString *)placeholder
+{
+    if (!_placeholder) {
+        return self.propertyName;
+    }
+    return _placeholder;
+}
+
 @end
 
 @implementation ZZPropertyGroup

@@ -60,4 +60,73 @@
              @"NSTextAlignmentRight"];
 }
 
+- (NSArray *)fonts
+{
+    if (!_fonts) {
+        NSMutableArray *fonts = [[NSMutableArray alloc] init];
+        for (int i = 18; i <= 42; i+=2) {
+            [fonts addObject:[NSString stringWithFormat:@"zz%dpxFont", i]];
+            [fonts addObject:[NSString stringWithFormat:@"zz%dpxBoldFont", i]];
+        }
+        
+        _fonts = fonts;
+    }
+    return _fonts;
+}
+
+- (NSArray *)colors
+{
+    if (!_colors) {
+        NSMutableArray *colors = [[NSMutableArray alloc] init];
+        [colors addObjectsFromArray:@[@"clearColor",
+                                      @"whiteColor",
+                                      @"blackColor"]];
+        [colors addObjectsFromArray:@[@"zzRedColor",
+                                      @"zzRedColorWithAlpha",
+                                      @"zzRedColorForZZ",
+                                      @"zzRedColorForBackgroud",
+                                      @"zzRedColorForButton",
+                                      @"zzRedColorForButtonHighlighted",
+                                      @"zzRedColorForButtonBorder",
+                                      @"zzRedColorForButtonBorderHightlighted",
+                                      @"zzRedColorForButtonTitle",
+                                      @"zzRedColorForButtonTitleHightlighted",
+                                      @"zzRedColorForButtonTitleDisable"]];
+        [colors addObjectsFromArray:@[@"zzYellowColorForWarning",
+                                      @"zzYellowColorForBackgroud",
+                                      @"zzYellowColorForFriendComment",
+                                      @"zzDarkYellocColorForFriendComment",
+                                      @"zzYellocColorForFriendCommentText"]];
+        [colors addObjectsFromArray:@[@"zzGreenColorForCertification",
+                                      @"zzGreenColorForZhiMa",
+                                      @"zzLightGreenForZhiMa",
+                                      @"zzGreenColorForButton",
+                                      @"zzGreenColorForButtonHL"]];
+        [colors addObjectsFromArray:@[@"zzBlueColorForLink",
+                                      @"zzBlueColorForGroup",
+                                      @"zzBuleColorForMomentsHeader"]];
+        [colors addObjectsFromArray:@[@"zzBlackColorForText",
+                                      @"zzBlackColorForToast",
+                                      @"zzBlackColorForButtonTitle",
+                                      @"zzBlackColorForButtonTitleHightlighted",
+                                      @"zzGrayColorSys"]];
+        [colors addObjectsFromArray:@[@"zzWhiteColorForBackgroud",
+                                      @"zzWhiteColorForPersonCentered",
+                                      @"zzWhiteColorForButtonTitle"]];
+        [colors addObjectsFromArray:@[@"zzDarkGrayColorForText",
+                                      @"zzLightGrayColorForText",
+                                      @"zzGrayColorForSeparatorLine",
+                                      @"zzGrayColorForTag",
+                                      @"zzGrayColorForBackgroud",
+                                      @"zzGrayColorForButton",
+                                      @"zzGrayColorForButtonHighlighted",
+                                      @"zzGrayColorForButtonBorder",
+                                      @"zzGrayColorForButtonBorderHightlighted",
+                                      @"zzGrayColorForButtonBorderDisable",
+                                      @"zzGrayColorForButtonTitleDisable"]];
+        _colors = colors;
+    }
+    return _colors;
+}
+
 @end

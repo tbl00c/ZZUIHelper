@@ -18,7 +18,7 @@
         ZZProperty *masksToBounds = [[ZZProperty alloc] initWithPropertyName:@"masksToBounds" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *cornerRadius = [[ZZProperty alloc] initWithPropertyName:@"cornerRadius" type:ZZPropertyTypeNumber defaultValue:@(0)];
         ZZProperty *borderWidth = [[ZZProperty alloc] initWithPropertyName:@"borderWidth" type:ZZPropertyTypeNumber defaultValue:@(0)];
-        ZZProperty *borderColor = [[ZZProperty alloc] initWithPropertyName:@"borderColor" type:ZZPropertyTypeObject defaultValue:@"clearColor"];
+        ZZProperty *borderColor = [[ZZProperty alloc] initWithPropertyName:@"borderColor" selectionData:[ZZControlHelper sharedInstance].colors andDefaultSelectIndex:0];
         [borderColor setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setBorderColor:[UIColor %@]", value];
         }];

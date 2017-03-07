@@ -37,6 +37,7 @@
     _property = property;
     [self.titleLabel setStringValue:[property.propertyName stringByAppendingString:@":"]];
     [self.valuteTextFiled setStringValue:property.value];
+    [self.valuteTextFiled setPlaceholderString:property.placeholder];
 }
 
 #pragma mark - # NSTextFieldDelegate
