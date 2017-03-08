@@ -44,7 +44,7 @@
 - (IBAction)textDidChanged:(id)sender {
     self.property.selectIndex = -1;
     self.property.value = self.comboBox.stringValue;
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:self.property.propertyName];
 }
 
 #pragma mark - # Delegate
@@ -53,7 +53,7 @@
 {
     if (notification.object == self.comboBox && self.comboBox.indexOfSelectedItem > 0 && self.comboBox.indexOfSelectedItem < self.property.selectionData.count) {
         self.property.selectIndex = self.comboBox.indexOfSelectedItem;
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:self.property.propertyName];
     }
 }
 

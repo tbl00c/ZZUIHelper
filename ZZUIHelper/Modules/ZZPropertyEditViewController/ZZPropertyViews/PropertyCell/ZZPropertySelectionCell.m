@@ -43,7 +43,7 @@
 
 - (IBAction)selectionButtonClick:(NSPopUpButton *)sender {
     self.property.selectIndex = sender.indexOfSelectedItem;
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:self.property.propertyName];
 }
 
 @end

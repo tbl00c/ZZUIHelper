@@ -106,7 +106,7 @@
         }
     }
     self.property.value = dic;
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_EDIT object:self.property.propertyName];
 }
 
 #pragma mark - # Private Methods

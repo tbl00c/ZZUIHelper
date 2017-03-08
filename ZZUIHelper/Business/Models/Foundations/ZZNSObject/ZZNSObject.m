@@ -45,7 +45,7 @@
 - (ZZProperty *)propertyNameProperty
 {
     if (!_propertyNameProperty) {
-        _propertyNameProperty = [[ZZProperty alloc] initWithPropertyName:@"Property Name" type:ZZPropertyTypeString defaultValue:nil];
+        _propertyNameProperty = [[ZZProperty alloc] initWithPropertyName:@"name" type:ZZPropertyTypeString defaultValue:nil];
     }
     return _propertyNameProperty;
 }

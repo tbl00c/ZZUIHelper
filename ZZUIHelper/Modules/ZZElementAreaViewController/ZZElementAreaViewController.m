@@ -33,7 +33,7 @@
     [super viewDidAppear];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_NEW_PROJECT object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_CLASS_PROPERTY_EDIT object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataIfNeed:) name:NOTI_CLASS_PROPERTY_EDIT object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deselectAllCells) name:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
 }
 
@@ -42,12 +42,21 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)reloadDataIfNeed:(NSNotification *)notification
+{
+    NSString *key = [notification object];
+    if (key && [key isKindOfClass:[NSString class]] && ([key isEqualToString:@"name"] || [key isEqualToString:@"remarks"])) {
+        [self reloadData];
+    }
+}
+
 - (void)reloadData
 {
     self.data = [ZZClassHelper sharedInstance].properties.mutableCopy;
     [self.tableView reloadData];
     [self.tableView deselectRow:self.tableView.selectedRow];
     if (self.data.count > 0) {
+        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:self.data.count - 1] byExtendingSelection:YES];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:self.data.count - 1] byExtendingSelection:YES];
         });
