@@ -16,4 +16,6 @@
 
 - (NSString *)strip;
 
+- (BOOL)isPureNumber;
+
 @end

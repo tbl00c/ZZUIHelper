@@ -27,7 +27,7 @@
     if (!_properties) {
         _properties = [super properties];
         ZZProperty *text = [[ZZProperty alloc] initWithPropertyName:@"text" type:ZZPropertyTypeString defaultValue:@""];
-        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZUIHelperConfig sharedInstance].fonts andDefaultSelectIndex:7];
+        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZUIHelperConfig sharedInstance].fonts defaultSelectIndex:7 editable:YES];
         [font setSelected:YES];
         [font setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setFont:[UIFont %@]", value];

@@ -36,4 +36,17 @@
     return stripString;
 }
 
+- (BOOL)isPureNumber
+{
+    NSScanner *scan = [NSScanner scannerWithString:self];
+    int vInt;
+    BOOL ok = [scan scanInt:&vInt] && [scan isAtEnd];
+    if (!ok) {
+        scan = [NSScanner scannerWithString:self];
+        float vFloat;
+        ok = [scan scanFloat:&vFloat] && [scan isAtEnd];
+    }
+    return ok;
+}
+
 @end
