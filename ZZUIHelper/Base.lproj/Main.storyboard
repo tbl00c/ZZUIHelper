@@ -901,7 +901,7 @@
                         <subviews>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eP-DD-BdN">
                                 <rect key="frame" x="0.0" y="0.0" width="230" height="282"/>
-                                <clipView key="contentView" id="4zu-7K-ckc">
+                                <clipView key="contentView" drawsBackground="NO" id="4zu-7K-ckc">
                                     <rect key="frame" x="0.0" y="0.0" width="230" height="282"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>

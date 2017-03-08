@@ -12,6 +12,7 @@
 #import "ZZPropertyEventCell.h"
 #import "ZZPropertyMethodCell.h"
 #import "ZZPropertySelectionCell.h"
+#import "ZZPropertySelectionAndEditCell.h"
 #import "ZZPropertyXYCell.h"
 #import "ZZPropertyXYWHCell.h"
 
@@ -27,6 +28,7 @@
     [self.collectionView registerClass:[ZZPropertyBoolCell class] forItemWithIdentifier:@"ZZPropertyBoolCell"];
     [self.collectionView registerClass:[ZZPropertyStringCell class] forItemWithIdentifier:@"ZZPropertyStringCell"];
     [self.collectionView registerClass:[ZZPropertySelectionCell class] forItemWithIdentifier:@"ZZPropertySelectionCell"];
+    [self.collectionView registerClass:[ZZPropertySelectionAndEditCell class] forItemWithIdentifier:@"ZZPropertySelectionAndEditCell"];
     [self.collectionView registerClass:[ZZPropertyEventCell class] forItemWithIdentifier:@"ZZPropertyEventCell"];
     [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
     [self.collectionView registerClass:[ZZPropertyXYCell class] forItemWithIdentifier:@"ZZPropertyXYCell"];
@@ -54,33 +56,33 @@
     ZZPropertySectionModel *model = self.data[indexPath.section];
     if (model.sectionType == ZZPropertySectionTypeProperty) {
         ZZProperty *property = [self.data[indexPath.section] objectAtIndex:indexPath.item];
+        NSString *identifier;
         if (property.type == ZZPropertyTypeBOOL) {
-            ZZPropertyBoolCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyBoolCell" forIndexPath:indexPath];
-            [cell setProperty:property];
-            return cell;
+            identifier = @"ZZPropertyBoolCell";
         }
         else if (property.type == ZZPropertyTypeNumber || property.type == ZZPropertyTypeString || property.type == ZZPropertyTypeObject) {
-            ZZPropertyStringCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyStringCell" forIndexPath:indexPath];
-            [cell setProperty:property];
-            return cell;
+            identifier = @"ZZPropertyStringCell";
         }
         else if (property.type == ZZPropertyTypeSelection) {
-            ZZPropertySelectionCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertySelectionCell" forIndexPath:indexPath];
-            [cell setProperty:property];
-            return cell;
+            identifier = @"ZZPropertySelectionCell";
+        }
+        else if (property.type == ZZPropertyTypeSelectionAndEdit) {
+            identifier = @"ZZPropertySelectionAndEditCell";
         }
         else if (property.type == ZZPropertyTypeSize || property.type == ZZPropertyTypePoint) {
-            ZZPropertyXYCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyXYCell" forIndexPath:indexPath];
-            [cell setProperty:property];
-            return cell;
+            identifier = @"ZZPropertyXYCell";
         }
         else if (property.type == ZZPropertyTypeEdgeInsets || property.type == ZZPropertyTypeRect) {
-            ZZPropertyXYWHCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyXYWHCell" forIndexPath:indexPath];
+            identifier = @"ZZPropertyXYWHCell";
+        }
+        if (identifier) {
+            id cell = [collectionView makeItemWithIdentifier:identifier forIndexPath:indexPath];
             [cell setProperty:property];
             return cell;
         }
+        return nil;
     }
-    if (model.sectionType == ZZPropertySectionTypeEvent) {
+    else if (model.sectionType == ZZPropertySectionTypeEvent) {
         ZZPropertyEventCell *cell = [collectionView makeItemWithIdentifier:@"ZZPropertyEventCell" forIndexPath:indexPath];
         ZZEvent *event = [self.data[indexPath.section] objectAtIndex:indexPath.item];
         [cell setEvent:event];

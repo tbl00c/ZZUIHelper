@@ -11,6 +11,8 @@
 		C21789BF1E55D64500AF8BEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C21789BE1E55D64500AF8BEE /* main.m */; };
 		C21789C41E55D64500AF8BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21789C31E55D64500AF8BEE /* Assets.xcassets */; };
 		C21789C71E55D64500AF8BEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21789C51E55D64500AF8BEE /* Main.storyboard */; };
+		C21DDE901E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDE8E1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m */; };
+		C21DDE911E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21DDE8F1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib */; };
 		C2223A0B1E5875F8002CB428 /* ZZCodeAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2223A0A1E5875F8002CB428 /* ZZCodeAreaViewController.m */; };
 		C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2223A0F1E5876B1002CB428 /* ZZMainViewController.m */; };
 		C223E6831E66C7AF0004F3DD /* ZZPropertySectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C223E6821E66C7AF0004F3DD /* ZZPropertySectionModel.m */; };
@@ -123,6 +125,9 @@
 		C21789C31E55D64500AF8BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C21789C61E55D64500AF8BEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C21789C81E55D64500AF8BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C21DDE8D1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertySelectionAndEditCell.h; sourceTree = "<group>"; };
+		C21DDE8E1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertySelectionAndEditCell.m; sourceTree = "<group>"; };
+		C21DDE8F1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertySelectionAndEditCell.xib; sourceTree = "<group>"; };
 		C2223A091E5875F8002CB428 /* ZZCodeAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeAreaViewController.h; sourceTree = "<group>"; };
 		C2223A0A1E5875F8002CB428 /* ZZCodeAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeAreaViewController.m; sourceTree = "<group>"; };
 		C2223A0E1E5876B1002CB428 /* ZZMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMainViewController.h; sourceTree = "<group>"; };
@@ -541,6 +546,9 @@
 				C2D4066C1E6C5EA600D52F95 /* ZZPropertySelectionCell.h */,
 				C2D4066D1E6C5EA600D52F95 /* ZZPropertySelectionCell.m */,
 				C2D4066E1E6C5EA600D52F95 /* ZZPropertySelectionCell.xib */,
+				C21DDE8D1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.h */,
+				C21DDE8E1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m */,
+				C21DDE8F1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib */,
 				C2D406411E6BEC0000D52F95 /* ZZPropertyBoolCell.h */,
 				C2D406421E6BEC0000D52F95 /* ZZPropertyBoolCell.m */,
 				C2D406431E6BEC0000D52F95 /* ZZPropertyBoolCell.xib */,
@@ -1030,6 +1038,7 @@
 				C2A10C641E5A2A4A000960D9 /* ZZControlItem.xib in Resources */,
 				C2D4064A1E6BEC0000D52F95 /* ZZPropertyStringCell.xib in Resources */,
 				C2D406701E6C5EA600D52F95 /* ZZPropertySelectionCell.xib in Resources */,
+				C21DDE911E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib in Resources */,
 				C2A10CB81E5AEF39000960D9 /* ZZNewFileViewController.xib in Resources */,
 				C2D4064F1E6BEC5000D52F95 /* ZZPropertyMethodCell.xib in Resources */,
 			);
@@ -1103,6 +1112,7 @@
 				C2D6CA8B1E5BE14E00EEF76B /* ZZUITextField.m in Sources */,
 				C2B3F5D31E60F307000E42CE /* ZZParam.m in Sources */,
 				C2D6CA261E5BE12700EEF76B /* MASConstraintMaker.m in Sources */,
+				C21DDE901E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m in Sources */,
 				C2D406561E6C19FE00D52F95 /* ZZUITextViewDelegate.m in Sources */,
 				C2D406531E6C141F00D52F95 /* ZZUITextFieldDelegate.m in Sources */,
 				C2D6CA271E5BE12700EEF76B /* MASLayoutConstraint.m in Sources */,

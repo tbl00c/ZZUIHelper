@@ -21,7 +21,7 @@
         [font setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setFont:[UIFont %@]", value];
         }];
-        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"borderColor" selectionData:[ZZControlHelper sharedInstance].colors andDefaultSelectIndex:2];
+        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" selectionData:[ZZControlHelper sharedInstance].colors defaultSelectIndex:2 editable:YES];
         [textColor setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setTextColor:[UIColor %@]", value];
         }];

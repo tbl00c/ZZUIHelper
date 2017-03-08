@@ -57,8 +57,13 @@
 
 - (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData andDefaultSelectIndex:(NSInteger)selectIndex;
 {
+    return [self initWithPropertyName:propertyName selectionData:selectionData defaultSelectIndex:selectIndex editable:NO];
+}
+
+- (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData defaultSelectIndex:(NSInteger)selectIndex editable:(BOOL)editable
+{
     if (self = [self init]) {
-        _type = ZZPropertyTypeSelection;
+        _type = editable ? ZZPropertyTypeSelectionAndEdit : ZZPropertyTypeSelection;
         _propertyName = propertyName;
         _selectionData = selectionData;
         _selectIndex = selectIndex;
@@ -71,7 +76,9 @@
 - (void)setSelectIndex:(NSInteger)selectIndex
 {
     _selectIndex = selectIndex;
-    self.value = self.selectionData[selectIndex];
+    if (selectIndex > 0 && selectIndex < self.selectionData.count) {
+        self.value = self.selectionData[selectIndex];
+    }
 }
 
 - (id)value
@@ -88,7 +95,7 @@
             return [value doubleValue];
         };
         
-        if (self.type == ZZPropertyTypeString || self.type == ZZPropertyTypeObject || self.type == ZZPropertyTypeSelection) {
+        if (self.type == ZZPropertyTypeString || self.type == ZZPropertyTypeObject || self.type == ZZPropertyTypeSelection || self.type == ZZPropertyTypeSelectionAndEdit) {
             _selected = ![value isEqualToString:self.defaultValue];
         }
         else if (self.type == ZZPropertyTypeBOOL) {
