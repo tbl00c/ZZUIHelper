@@ -19,34 +19,6 @@
 @synthesize viewDidDisappear = _viewDidDisappear;
 @synthesize deallocMethod = _deallocMethod;
 
-- (NSString *)implementationInitCode
-{
-    NSArray *childViewArray = self.childViewsArray;
-    if (childViewArray.count > 0) {
-        [self.loadView setSelected:YES];
-        NSMutableString *code = [[NSMutableString alloc] initWithString:@"[super loadView];\n"];
-        for (ZZUIView *view in childViewArray) {
-            [code appendFormat:@"[%@ addSubview:self.%@];\n", self.curView, view.propertyName];
-        }
-        if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
-            [code appendString:@"[self p_addMasonry];\n"];
-        }
-        [self.loadView clearMethodContent];
-        [self.loadView addMethodContentCode:code];
-    }
-    else {
-        [self.loadView setSelected:NO];
-    }
-
-    NSMutableString *initCode = [NSMutableString stringWithFormat:@"%@ Life Cycle\n", PMARK_];
-    for (ZZMethod *method in self.methodArray) {
-        if (method.selected) {
-            [initCode appendFormat:@"%@\n", method.methodCode];
-        }
-    }
-    return initCode;
-}
-
 - (NSString *)curView
 {
     return @"self.view";

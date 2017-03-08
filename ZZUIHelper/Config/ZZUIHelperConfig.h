@@ -36,4 +36,16 @@ typedef NS_ENUM(NSInteger, ZZUIHelperLayoutLibrary) {
 
 - (NSString *)copyrightCodeByFileName:(NSString *)fileName;
 
+#pragma mark - # 控件可配置属性
+
+@property (nonatomic, strong) NSArray *controls;
+
+@property (nonatomic, strong) NSArray *contentMode;
+
+@property (nonatomic, strong) NSArray *textAlignment;
+
+@property (nonatomic, strong) NSArray *colors;
+
+@property (nonatomic, strong) NSArray *fonts;
+
 @end

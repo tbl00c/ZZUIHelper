@@ -21,7 +21,7 @@
         [title setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setTitle:%@ forState:UIControlStateNormal", value];
         }];
-        ZZProperty *titleColor = [[ZZProperty alloc] initWithPropertyName:@"titleColor" selectionData:[ZZControlHelper sharedInstance].colors defaultSelectIndex:2 editable:YES];
+        ZZProperty *titleColor = [[ZZProperty alloc] initWithPropertyName:@"titleColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultSelectIndex:2 editable:YES];
         [titleColor setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setTitleColor:[UIColor %@] forState:UIControlStateNormal", value];
         }];

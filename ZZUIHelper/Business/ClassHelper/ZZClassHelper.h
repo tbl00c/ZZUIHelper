@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZZUIResponder.h"
+#import "ZZUIResponder+ClassHelper.h"
 
 @interface ZZClassHelper : NSObject
 

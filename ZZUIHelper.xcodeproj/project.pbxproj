@@ -13,6 +13,37 @@
 		C21789C71E55D64500AF8BEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21789C51E55D64500AF8BEE /* Main.storyboard */; };
 		C21DDE901E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDE8E1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m */; };
 		C21DDE911E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21DDE8F1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib */; };
+		C21DDE9E1E6FDA4E000BCD9C /* ZZCodeCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDE9D1E6FDA4E000BCD9C /* ZZCodeCreator.m */; };
+		C21DDEA11E6FEC93000BCD9C /* ZZUIResponder+CodeCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEA01E6FEC93000BCD9C /* ZZUIResponder+CodeCreator.m */; };
+		C21DDEA41E6FEDFC000BCD9C /* ZZUIResponder+Masonry.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEA31E6FEDFC000BCD9C /* ZZUIResponder+Masonry.m */; };
+		C21DDEC61E6FEFB6000BCD9C /* ZZUIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEC51E6FEFB6000BCD9C /* ZZUIResponder.m */; };
+		C21DDEC91E6FEFC8000BCD9C /* ZZUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEC71E6FEFC8000BCD9C /* ZZUIViewController.m */; };
+		C21DDECF1E6FEFF6000BCD9C /* ZZEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDECE1E6FEFF6000BCD9C /* ZZEvent.m */; };
+		C21DDED21E6FF004000BCD9C /* ZZUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDED11E6FF004000BCD9C /* ZZUIButton.m */; };
+		C21DDED51E6FF00C000BCD9C /* ZZUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDED41E6FF00C000BCD9C /* ZZUICollectionView.m */; };
+		C21DDED81E6FF014000BCD9C /* ZZUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDED71E6FF014000BCD9C /* ZZUICollectionViewCell.m */; };
+		C21DDEDD1E6FF022000BCD9C /* ZZUICollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEDA1E6FF022000BCD9C /* ZZUICollectionViewDataSource.m */; };
+		C21DDEDE1E6FF022000BCD9C /* ZZUICollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEDC1E6FF022000BCD9C /* ZZUICollectionViewDelegate.m */; };
+		C21DDEE31E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEE01E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.m */; };
+		C21DDEE41E6FF02A000BCD9C /* ZZUICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEE21E6FF02A000BCD9C /* ZZUICollectionViewFlowLayout.m */; };
+		C21DDEE71E6FF034000BCD9C /* ZZUIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEE61E6FF034000BCD9C /* ZZUIControl.m */; };
+		C21DDEEA1E6FF03C000BCD9C /* ZZUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEE91E6FF03C000BCD9C /* ZZUIImageView.m */; };
+		C21DDEED1E6FF043000BCD9C /* ZZUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEEC1E6FF043000BCD9C /* ZZUILabel.m */; };
+		C21DDEF21E6FF04C000BCD9C /* ZZUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEEF1E6FF04C000BCD9C /* ZZUIScrollView.m */; };
+		C21DDEF31E6FF04C000BCD9C /* ZZUIScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEF11E6FF04C000BCD9C /* ZZUIScrollViewDelegate.m */; };
+		C21DDEF61E6FF053000BCD9C /* ZZUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEF51E6FF053000BCD9C /* ZZUISwitch.m */; };
+		C21DDEF91E6FF05B000BCD9C /* ZZUITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEF81E6FF05B000BCD9C /* ZZUITableView.m */; };
+		C21DDEFC1E6FF061000BCD9C /* ZZUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEFB1E6FF061000BCD9C /* ZZUITableViewCell.m */; };
+		C21DDF011E6FF067000BCD9C /* ZZUITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDEFE1E6FF067000BCD9C /* ZZUITableViewDataSource.m */; };
+		C21DDF021E6FF067000BCD9C /* ZZUITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF001E6FF067000BCD9C /* ZZUITableViewDelegate.m */; };
+		C21DDF051E6FF06E000BCD9C /* ZZUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF041E6FF06E000BCD9C /* ZZUITextField.m */; };
+		C21DDF081E6FF075000BCD9C /* ZZUITextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF071E6FF075000BCD9C /* ZZUITextFieldDelegate.m */; };
+		C21DDF0D1E6FF07B000BCD9C /* ZZUITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF0A1E6FF07B000BCD9C /* ZZUITextView.m */; };
+		C21DDF0E1E6FF07B000BCD9C /* ZZUITextViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF0C1E6FF07B000BCD9C /* ZZUITextViewDelegate.m */; };
+		C21DDF111E6FF080000BCD9C /* ZZUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF101E6FF080000BCD9C /* ZZUIView.m */; };
+		C21DDF141E6FF08B000BCD9C /* ZZCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF131E6FF08B000BCD9C /* ZZCALayer.m */; };
+		C21DDF211E6FF2BC000BCD9C /* ZZClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF1E1E6FF2BC000BCD9C /* ZZClassHelper.m */; };
+		C21DDF221E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF201E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m */; };
 		C2223A0B1E5875F8002CB428 /* ZZCodeAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2223A0A1E5875F8002CB428 /* ZZCodeAreaViewController.m */; };
 		C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2223A0F1E5876B1002CB428 /* ZZMainViewController.m */; };
 		C223E6831E66C7AF0004F3DD /* ZZPropertySectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C223E6821E66C7AF0004F3DD /* ZZPropertySectionModel.m */; };
@@ -22,10 +53,8 @@
 		C2256A8F1E680813008E7785 /* MGSFragaria.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C2256A8C1E680808008E7785 /* MGSFragaria.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C28FDA7F1E6B00D400AE41A2 /* ZZProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C28FDA7E1E6B00D400AE41A2 /* ZZProperty.m */; };
 		C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C1B1E59614B000960D9 /* ZZUIHelperConfig.m */; };
-		C2A10C461E5A0D6B000960D9 /* ZZClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C451E5A0D6B000960D9 /* ZZClassHelper.m */; };
 		C2A10C4A1E5A0E79000960D9 /* ZZElementAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C491E5A0E79000960D9 /* ZZElementAreaViewController.m */; };
 		C2A10C4F1E5A1597000960D9 /* ZZControlAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C4E1E5A1597000960D9 /* ZZControlAreaViewController.m */; };
-		C2A10C521E5A161A000960D9 /* ZZControlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C511E5A161A000960D9 /* ZZControlHelper.m */; };
 		C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C5F1E5A22BA000960D9 /* ZZControlItem.m */; };
 		C2A10C641E5A2A4A000960D9 /* ZZControlItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10C631E5A2A4A000960D9 /* ZZControlItem.xib */; };
 		C2A10C801E5A41E6000960D9 /* ZZWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C7F1E5A41E6000960D9 /* ZZWindowController.m */; };
@@ -50,11 +79,6 @@
 		C2D4064A1E6BEC0000D52F95 /* ZZPropertyStringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D406461E6BEC0000D52F95 /* ZZPropertyStringCell.xib */; };
 		C2D4064E1E6BEC5000D52F95 /* ZZPropertyMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4064C1E6BEC5000D52F95 /* ZZPropertyMethodCell.m */; };
 		C2D4064F1E6BEC5000D52F95 /* ZZPropertyMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4064D1E6BEC5000D52F95 /* ZZPropertyMethodCell.xib */; };
-		C2D406531E6C141F00D52F95 /* ZZUITextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D406521E6C141F00D52F95 /* ZZUITextFieldDelegate.m */; };
-		C2D406561E6C19FE00D52F95 /* ZZUITextViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D406551E6C19FE00D52F95 /* ZZUITextViewDelegate.m */; };
-		C2D4065A1E6C294300D52F95 /* ZZUICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D406591E6C294300D52F95 /* ZZUICollectionViewFlowLayout.m */; };
-		C2D406601E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4065F1E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.m */; };
-		C2D406641E6C408C00D52F95 /* ZZCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D406631E6C408C00D52F95 /* ZZCALayer.m */; };
 		C2D4066F1E6C5EA600D52F95 /* ZZPropertySelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4066D1E6C5EA600D52F95 /* ZZPropertySelectionCell.m */; };
 		C2D406701E6C5EA600D52F95 /* ZZPropertySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4066E1E6C5EA600D52F95 /* ZZPropertySelectionCell.xib */; };
 		C2D6CA211E5BE12700EEF76B /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA011E5BE12700EEF76B /* NSDate+Extension.m */; };
@@ -74,31 +98,10 @@
 		C2D6CA771E5BE14E00EEF76B /* ZZNSMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA331E5BE14E00EEF76B /* ZZNSMutableArray.m */; };
 		C2D6CA781E5BE14E00EEF76B /* ZZNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA361E5BE14E00EEF76B /* ZZNSObject.m */; };
 		C2D6CA791E5BE14E00EEF76B /* ZZProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA391E5BE14E00EEF76B /* ZZProtocol.m */; };
-		C2D6CA7A1E5BE14E00EEF76B /* ZZUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA3E1E5BE14E00EEF76B /* ZZUIViewController.m */; };
-		C2D6CA7B1E5BE14E00EEF76B /* ZZUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA421E5BE14E00EEF76B /* ZZUIButton.m */; };
-		C2D6CA7C1E5BE14E00EEF76B /* ZZUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA451E5BE14E00EEF76B /* ZZUICollectionView.m */; };
-		C2D6CA7D1E5BE14E00EEF76B /* ZZUICollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA471E5BE14E00EEF76B /* ZZUICollectionViewDataSource.m */; };
-		C2D6CA7E1E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA491E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m */; };
-		C2D6CA7F1E5BE14E00EEF76B /* ZZUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA4C1E5BE14E00EEF76B /* ZZUICollectionViewCell.m */; };
-		C2D6CA801E5BE14E00EEF76B /* ZZUIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA4F1E5BE14E00EEF76B /* ZZUIControl.m */; };
-		C2D6CA811E5BE14E00EEF76B /* ZZUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA521E5BE14E00EEF76B /* ZZUIImageView.m */; };
-		C2D6CA821E5BE14E00EEF76B /* ZZUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA551E5BE14E00EEF76B /* ZZUILabel.m */; };
-		C2D6CA831E5BE14E00EEF76B /* ZZUIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA581E5BE14E00EEF76B /* ZZUIResponder.m */; };
-		C2D6CA841E5BE14E00EEF76B /* ZZUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA5B1E5BE14E00EEF76B /* ZZUIScrollView.m */; };
-		C2D6CA851E5BE14E00EEF76B /* ZZUIScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA5D1E5BE14E00EEF76B /* ZZUIScrollViewDelegate.m */; };
-		C2D6CA861E5BE14E00EEF76B /* ZZUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA601E5BE14E00EEF76B /* ZZUISwitch.m */; };
-		C2D6CA871E5BE14E00EEF76B /* ZZUITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA631E5BE14E00EEF76B /* ZZUITableView.m */; };
-		C2D6CA881E5BE14E00EEF76B /* ZZUITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA651E5BE14E00EEF76B /* ZZUITableViewDataSource.m */; };
-		C2D6CA891E5BE14E00EEF76B /* ZZUITableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA671E5BE14E00EEF76B /* ZZUITableViewDelegate.m */; };
-		C2D6CA8A1E5BE14E00EEF76B /* ZZUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA6A1E5BE14E00EEF76B /* ZZUITableViewCell.m */; };
-		C2D6CA8B1E5BE14E00EEF76B /* ZZUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA6D1E5BE14E00EEF76B /* ZZUITextField.m */; };
-		C2D6CA8C1E5BE14E00EEF76B /* ZZUITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA701E5BE14E00EEF76B /* ZZUITextView.m */; };
-		C2D6CA8D1E5BE14E00EEF76B /* ZZUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA731E5BE14E00EEF76B /* ZZUIView.m */; };
 		C2D6CA931E5C0CF400EEF76B /* ZZElementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA921E5C0CF400EEF76B /* ZZElementCell.m */; };
 		C2D6CA971E5C191B00EEF76B /* ZZPropertyEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D6CA961E5C191B00EEF76B /* ZZPropertyEditViewController.m */; };
 		C2F386DF1E6B0DA700BA1448 /* ZZPropertyEditViewController+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F386DE1E6B0DA700BA1448 /* ZZPropertyEditViewController+Delegate.m */; };
 		C2F386F41E6B178D00BA1448 /* ZZPropertySectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F386EF1E6B178D00BA1448 /* ZZPropertySectionHeaderView.m */; };
-		C2F386F81E6B186E00BA1448 /* ZZEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F386F71E6B186E00BA1448 /* ZZEvent.m */; };
 		C2F387001E6B2AD100BA1448 /* ZZPropertyEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F386FE1E6B2AD100BA1448 /* ZZPropertyEventCell.m */; };
 		C2F387011E6B2AD100BA1448 /* ZZPropertyEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2F386FF1E6B2AD100BA1448 /* ZZPropertyEventCell.xib */; };
 /* End PBXBuildFile section */
@@ -128,6 +131,68 @@
 		C21DDE8D1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertySelectionAndEditCell.h; sourceTree = "<group>"; };
 		C21DDE8E1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertySelectionAndEditCell.m; sourceTree = "<group>"; };
 		C21DDE8F1E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertySelectionAndEditCell.xib; sourceTree = "<group>"; };
+		C21DDE9C1E6FDA4E000BCD9C /* ZZCodeCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeCreator.h; sourceTree = "<group>"; };
+		C21DDE9D1E6FDA4E000BCD9C /* ZZCodeCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeCreator.m; sourceTree = "<group>"; };
+		C21DDE9F1E6FEC93000BCD9C /* ZZUIResponder+CodeCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZUIResponder+CodeCreator.h"; sourceTree = "<group>"; };
+		C21DDEA01E6FEC93000BCD9C /* ZZUIResponder+CodeCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZZUIResponder+CodeCreator.m"; sourceTree = "<group>"; };
+		C21DDEA21E6FEDFC000BCD9C /* ZZUIResponder+Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZUIResponder+Masonry.h"; sourceTree = "<group>"; };
+		C21DDEA31E6FEDFC000BCD9C /* ZZUIResponder+Masonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZZUIResponder+Masonry.m"; sourceTree = "<group>"; };
+		C21DDEC41E6FEFB6000BCD9C /* ZZUIResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIResponder.h; sourceTree = "<group>"; };
+		C21DDEC51E6FEFB6000BCD9C /* ZZUIResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIResponder.m; sourceTree = "<group>"; };
+		C21DDEC71E6FEFC8000BCD9C /* ZZUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIViewController.m; sourceTree = "<group>"; };
+		C21DDEC81E6FEFC8000BCD9C /* ZZUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIViewController.h; sourceTree = "<group>"; };
+		C21DDECD1E6FEFF6000BCD9C /* ZZEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZEvent.h; sourceTree = "<group>"; };
+		C21DDECE1E6FEFF6000BCD9C /* ZZEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZEvent.m; sourceTree = "<group>"; };
+		C21DDED01E6FF004000BCD9C /* ZZUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIButton.h; sourceTree = "<group>"; };
+		C21DDED11E6FF004000BCD9C /* ZZUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIButton.m; sourceTree = "<group>"; };
+		C21DDED31E6FF00C000BCD9C /* ZZUICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionView.h; sourceTree = "<group>"; };
+		C21DDED41E6FF00C000BCD9C /* ZZUICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionView.m; sourceTree = "<group>"; };
+		C21DDED61E6FF014000BCD9C /* ZZUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewCell.h; sourceTree = "<group>"; };
+		C21DDED71E6FF014000BCD9C /* ZZUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewCell.m; sourceTree = "<group>"; };
+		C21DDED91E6FF022000BCD9C /* ZZUICollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewDataSource.h; sourceTree = "<group>"; };
+		C21DDEDA1E6FF022000BCD9C /* ZZUICollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDataSource.m; sourceTree = "<group>"; };
+		C21DDEDB1E6FF022000BCD9C /* ZZUICollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewDelegate.h; sourceTree = "<group>"; };
+		C21DDEDC1E6FF022000BCD9C /* ZZUICollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDelegate.m; sourceTree = "<group>"; };
+		C21DDEDF1E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewDelegateFlowLayout.h; sourceTree = "<group>"; };
+		C21DDEE01E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDelegateFlowLayout.m; sourceTree = "<group>"; };
+		C21DDEE11E6FF02A000BCD9C /* ZZUICollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		C21DDEE21E6FF02A000BCD9C /* ZZUICollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		C21DDEE51E6FF034000BCD9C /* ZZUIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIControl.h; sourceTree = "<group>"; };
+		C21DDEE61E6FF034000BCD9C /* ZZUIControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIControl.m; sourceTree = "<group>"; };
+		C21DDEE81E6FF03C000BCD9C /* ZZUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIImageView.h; sourceTree = "<group>"; };
+		C21DDEE91E6FF03C000BCD9C /* ZZUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIImageView.m; sourceTree = "<group>"; };
+		C21DDEEB1E6FF043000BCD9C /* ZZUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUILabel.h; sourceTree = "<group>"; };
+		C21DDEEC1E6FF043000BCD9C /* ZZUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUILabel.m; sourceTree = "<group>"; };
+		C21DDEEE1E6FF04C000BCD9C /* ZZUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIScrollView.h; sourceTree = "<group>"; };
+		C21DDEEF1E6FF04C000BCD9C /* ZZUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIScrollView.m; sourceTree = "<group>"; };
+		C21DDEF01E6FF04C000BCD9C /* ZZUIScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIScrollViewDelegate.h; sourceTree = "<group>"; };
+		C21DDEF11E6FF04C000BCD9C /* ZZUIScrollViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIScrollViewDelegate.m; sourceTree = "<group>"; };
+		C21DDEF41E6FF053000BCD9C /* ZZUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUISwitch.h; sourceTree = "<group>"; };
+		C21DDEF51E6FF053000BCD9C /* ZZUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUISwitch.m; sourceTree = "<group>"; };
+		C21DDEF71E6FF05B000BCD9C /* ZZUITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableView.h; sourceTree = "<group>"; };
+		C21DDEF81E6FF05B000BCD9C /* ZZUITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableView.m; sourceTree = "<group>"; };
+		C21DDEFA1E6FF061000BCD9C /* ZZUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableViewCell.h; sourceTree = "<group>"; };
+		C21DDEFB1E6FF061000BCD9C /* ZZUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableViewCell.m; sourceTree = "<group>"; };
+		C21DDEFD1E6FF067000BCD9C /* ZZUITableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableViewDataSource.h; sourceTree = "<group>"; };
+		C21DDEFE1E6FF067000BCD9C /* ZZUITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableViewDataSource.m; sourceTree = "<group>"; };
+		C21DDEFF1E6FF067000BCD9C /* ZZUITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableViewDelegate.h; sourceTree = "<group>"; };
+		C21DDF001E6FF067000BCD9C /* ZZUITableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableViewDelegate.m; sourceTree = "<group>"; };
+		C21DDF031E6FF06E000BCD9C /* ZZUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextField.h; sourceTree = "<group>"; };
+		C21DDF041E6FF06E000BCD9C /* ZZUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextField.m; sourceTree = "<group>"; };
+		C21DDF061E6FF075000BCD9C /* ZZUITextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextFieldDelegate.h; sourceTree = "<group>"; };
+		C21DDF071E6FF075000BCD9C /* ZZUITextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextFieldDelegate.m; sourceTree = "<group>"; };
+		C21DDF091E6FF07B000BCD9C /* ZZUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextView.h; sourceTree = "<group>"; };
+		C21DDF0A1E6FF07B000BCD9C /* ZZUITextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextView.m; sourceTree = "<group>"; };
+		C21DDF0B1E6FF07B000BCD9C /* ZZUITextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextViewDelegate.h; sourceTree = "<group>"; };
+		C21DDF0C1E6FF07B000BCD9C /* ZZUITextViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextViewDelegate.m; sourceTree = "<group>"; };
+		C21DDF0F1E6FF080000BCD9C /* ZZUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIView.h; sourceTree = "<group>"; };
+		C21DDF101E6FF080000BCD9C /* ZZUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIView.m; sourceTree = "<group>"; };
+		C21DDF121E6FF08B000BCD9C /* ZZCALayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCALayer.h; sourceTree = "<group>"; };
+		C21DDF131E6FF08B000BCD9C /* ZZCALayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCALayer.m; sourceTree = "<group>"; };
+		C21DDF1D1E6FF2BC000BCD9C /* ZZClassHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZClassHelper.h; sourceTree = "<group>"; };
+		C21DDF1E1E6FF2BC000BCD9C /* ZZClassHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZClassHelper.m; sourceTree = "<group>"; };
+		C21DDF1F1E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZUIResponder+ClassHelper.h"; sourceTree = "<group>"; };
+		C21DDF201E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZZUIResponder+ClassHelper.m"; sourceTree = "<group>"; };
 		C2223A091E5875F8002CB428 /* ZZCodeAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeAreaViewController.h; sourceTree = "<group>"; };
 		C2223A0A1E5875F8002CB428 /* ZZCodeAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeAreaViewController.m; sourceTree = "<group>"; };
 		C2223A0E1E5876B1002CB428 /* ZZMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMainViewController.h; sourceTree = "<group>"; };
@@ -144,15 +209,11 @@
 		C2A10C1B1E59614B000960D9 /* ZZUIHelperConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIHelperConfig.m; sourceTree = "<group>"; };
 		C2A10C1D1E596210000960D9 /* ZZPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZPrefixHeader.pch; sourceTree = "<group>"; };
 		C2A10C251E59A919000960D9 /* ZZMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZMacros.h; sourceTree = "<group>"; };
-		C2A10C441E5A0D6B000960D9 /* ZZClassHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZClassHelper.h; sourceTree = "<group>"; };
-		C2A10C451E5A0D6B000960D9 /* ZZClassHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZClassHelper.m; sourceTree = "<group>"; };
 		C2A10C481E5A0E79000960D9 /* ZZElementAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZElementAreaViewController.h; sourceTree = "<group>"; };
 		C2A10C491E5A0E79000960D9 /* ZZElementAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZElementAreaViewController.m; sourceTree = "<group>"; };
 		C2A10C4B1E5A1400000960D9 /* ZZNotificationKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZNotificationKey.h; sourceTree = "<group>"; };
 		C2A10C4D1E5A1597000960D9 /* ZZControlAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZControlAreaViewController.h; sourceTree = "<group>"; };
 		C2A10C4E1E5A1597000960D9 /* ZZControlAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZControlAreaViewController.m; sourceTree = "<group>"; };
-		C2A10C501E5A161A000960D9 /* ZZControlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZControlHelper.h; sourceTree = "<group>"; };
-		C2A10C511E5A161A000960D9 /* ZZControlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZControlHelper.m; sourceTree = "<group>"; };
 		C2A10C5E1E5A22BA000960D9 /* ZZControlItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZControlItem.h; sourceTree = "<group>"; };
 		C2A10C5F1E5A22BA000960D9 /* ZZControlItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZControlItem.m; sourceTree = "<group>"; };
 		C2A10C631E5A2A4A000960D9 /* ZZControlItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZControlItem.xib; sourceTree = "<group>"; };
@@ -193,16 +254,6 @@
 		C2D4064B1E6BEC5000D52F95 /* ZZPropertyMethodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyMethodCell.h; sourceTree = "<group>"; };
 		C2D4064C1E6BEC5000D52F95 /* ZZPropertyMethodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyMethodCell.m; sourceTree = "<group>"; };
 		C2D4064D1E6BEC5000D52F95 /* ZZPropertyMethodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyMethodCell.xib; sourceTree = "<group>"; };
-		C2D406511E6C141F00D52F95 /* ZZUITextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextFieldDelegate.h; sourceTree = "<group>"; };
-		C2D406521E6C141F00D52F95 /* ZZUITextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextFieldDelegate.m; sourceTree = "<group>"; };
-		C2D406541E6C19FE00D52F95 /* ZZUITextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextViewDelegate.h; sourceTree = "<group>"; };
-		C2D406551E6C19FE00D52F95 /* ZZUITextViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextViewDelegate.m; sourceTree = "<group>"; };
-		C2D406581E6C294300D52F95 /* ZZUICollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		C2D406591E6C294300D52F95 /* ZZUICollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		C2D4065E1E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewDelegateFlowLayout.h; sourceTree = "<group>"; };
-		C2D4065F1E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDelegateFlowLayout.m; sourceTree = "<group>"; };
-		C2D406621E6C408C00D52F95 /* ZZCALayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCALayer.h; sourceTree = "<group>"; };
-		C2D406631E6C408C00D52F95 /* ZZCALayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCALayer.m; sourceTree = "<group>"; };
 		C2D4066C1E6C5EA600D52F95 /* ZZPropertySelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertySelectionCell.h; sourceTree = "<group>"; };
 		C2D4066D1E6C5EA600D52F95 /* ZZPropertySelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertySelectionCell.m; sourceTree = "<group>"; };
 		C2D4066E1E6C5EA600D52F95 /* ZZPropertySelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertySelectionCell.xib; sourceTree = "<group>"; };
@@ -243,46 +294,6 @@
 		C2D6CA361E5BE14E00EEF76B /* ZZNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNSObject.m; sourceTree = "<group>"; };
 		C2D6CA381E5BE14E00EEF76B /* ZZProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZProtocol.h; sourceTree = "<group>"; };
 		C2D6CA391E5BE14E00EEF76B /* ZZProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZProtocol.m; sourceTree = "<group>"; };
-		C2D6CA3D1E5BE14E00EEF76B /* ZZUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIViewController.h; sourceTree = "<group>"; };
-		C2D6CA3E1E5BE14E00EEF76B /* ZZUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIViewController.m; sourceTree = "<group>"; };
-		C2D6CA411E5BE14E00EEF76B /* ZZUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIButton.h; sourceTree = "<group>"; };
-		C2D6CA421E5BE14E00EEF76B /* ZZUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIButton.m; sourceTree = "<group>"; };
-		C2D6CA441E5BE14E00EEF76B /* ZZUICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionView.h; sourceTree = "<group>"; };
-		C2D6CA451E5BE14E00EEF76B /* ZZUICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionView.m; sourceTree = "<group>"; };
-		C2D6CA461E5BE14E00EEF76B /* ZZUICollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewDataSource.h; sourceTree = "<group>"; };
-		C2D6CA471E5BE14E00EEF76B /* ZZUICollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDataSource.m; sourceTree = "<group>"; };
-		C2D6CA481E5BE14E00EEF76B /* ZZUICollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewDelegate.h; sourceTree = "<group>"; };
-		C2D6CA491E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewDelegate.m; sourceTree = "<group>"; };
-		C2D6CA4B1E5BE14E00EEF76B /* ZZUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUICollectionViewCell.h; sourceTree = "<group>"; };
-		C2D6CA4C1E5BE14E00EEF76B /* ZZUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUICollectionViewCell.m; sourceTree = "<group>"; };
-		C2D6CA4E1E5BE14E00EEF76B /* ZZUIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIControl.h; sourceTree = "<group>"; };
-		C2D6CA4F1E5BE14E00EEF76B /* ZZUIControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIControl.m; sourceTree = "<group>"; };
-		C2D6CA511E5BE14E00EEF76B /* ZZUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIImageView.h; sourceTree = "<group>"; };
-		C2D6CA521E5BE14E00EEF76B /* ZZUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIImageView.m; sourceTree = "<group>"; };
-		C2D6CA541E5BE14E00EEF76B /* ZZUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUILabel.h; sourceTree = "<group>"; };
-		C2D6CA551E5BE14E00EEF76B /* ZZUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUILabel.m; sourceTree = "<group>"; };
-		C2D6CA571E5BE14E00EEF76B /* ZZUIResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIResponder.h; sourceTree = "<group>"; };
-		C2D6CA581E5BE14E00EEF76B /* ZZUIResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIResponder.m; sourceTree = "<group>"; };
-		C2D6CA5A1E5BE14E00EEF76B /* ZZUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIScrollView.h; sourceTree = "<group>"; };
-		C2D6CA5B1E5BE14E00EEF76B /* ZZUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIScrollView.m; sourceTree = "<group>"; };
-		C2D6CA5C1E5BE14E00EEF76B /* ZZUIScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIScrollViewDelegate.h; sourceTree = "<group>"; };
-		C2D6CA5D1E5BE14E00EEF76B /* ZZUIScrollViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIScrollViewDelegate.m; sourceTree = "<group>"; };
-		C2D6CA5F1E5BE14E00EEF76B /* ZZUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUISwitch.h; sourceTree = "<group>"; };
-		C2D6CA601E5BE14E00EEF76B /* ZZUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUISwitch.m; sourceTree = "<group>"; };
-		C2D6CA621E5BE14E00EEF76B /* ZZUITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableView.h; sourceTree = "<group>"; };
-		C2D6CA631E5BE14E00EEF76B /* ZZUITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableView.m; sourceTree = "<group>"; };
-		C2D6CA641E5BE14E00EEF76B /* ZZUITableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableViewDataSource.h; sourceTree = "<group>"; };
-		C2D6CA651E5BE14E00EEF76B /* ZZUITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableViewDataSource.m; sourceTree = "<group>"; };
-		C2D6CA661E5BE14E00EEF76B /* ZZUITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableViewDelegate.h; sourceTree = "<group>"; };
-		C2D6CA671E5BE14E00EEF76B /* ZZUITableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableViewDelegate.m; sourceTree = "<group>"; };
-		C2D6CA691E5BE14E00EEF76B /* ZZUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITableViewCell.h; sourceTree = "<group>"; };
-		C2D6CA6A1E5BE14E00EEF76B /* ZZUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITableViewCell.m; sourceTree = "<group>"; };
-		C2D6CA6C1E5BE14E00EEF76B /* ZZUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextField.h; sourceTree = "<group>"; };
-		C2D6CA6D1E5BE14E00EEF76B /* ZZUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextField.m; sourceTree = "<group>"; };
-		C2D6CA6F1E5BE14E00EEF76B /* ZZUITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUITextView.h; sourceTree = "<group>"; };
-		C2D6CA701E5BE14E00EEF76B /* ZZUITextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUITextView.m; sourceTree = "<group>"; };
-		C2D6CA721E5BE14E00EEF76B /* ZZUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIView.h; sourceTree = "<group>"; };
-		C2D6CA731E5BE14E00EEF76B /* ZZUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIView.m; sourceTree = "<group>"; };
 		C2D6CA911E5C0CF400EEF76B /* ZZElementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZElementCell.h; sourceTree = "<group>"; };
 		C2D6CA921E5C0CF400EEF76B /* ZZElementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZElementCell.m; sourceTree = "<group>"; };
 		C2D6CA951E5C191B00EEF76B /* ZZPropertyEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyEditViewController.h; sourceTree = "<group>"; };
@@ -291,8 +302,6 @@
 		C2F386DE1E6B0DA700BA1448 /* ZZPropertyEditViewController+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZZPropertyEditViewController+Delegate.m"; sourceTree = "<group>"; };
 		C2F386EE1E6B178D00BA1448 /* ZZPropertySectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertySectionHeaderView.h; sourceTree = "<group>"; };
 		C2F386EF1E6B178D00BA1448 /* ZZPropertySectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertySectionHeaderView.m; sourceTree = "<group>"; };
-		C2F386F61E6B186E00BA1448 /* ZZEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZEvent.h; sourceTree = "<group>"; };
-		C2F386F71E6B186E00BA1448 /* ZZEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZEvent.m; sourceTree = "<group>"; };
 		C2F386FD1E6B2AD100BA1448 /* ZZPropertyEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyEventCell.h; sourceTree = "<group>"; };
 		C2F386FE1E6B2AD100BA1448 /* ZZPropertyEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyEventCell.m; sourceTree = "<group>"; };
 		C2F386FF1E6B2AD100BA1448 /* ZZPropertyEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyEventCell.xib; sourceTree = "<group>"; };
@@ -349,6 +358,249 @@
 				C21789BE1E55D64500AF8BEE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C21DDE961E6FDA27000BCD9C /* CodeCreator */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDE9C1E6FDA4E000BCD9C /* ZZCodeCreator.h */,
+				C21DDE9D1E6FDA4E000BCD9C /* ZZCodeCreator.m */,
+				C21DDE9F1E6FEC93000BCD9C /* ZZUIResponder+CodeCreator.h */,
+				C21DDEA01E6FEC93000BCD9C /* ZZUIResponder+CodeCreator.m */,
+				C21DDEA21E6FEDFC000BCD9C /* ZZUIResponder+Masonry.h */,
+				C21DDEA31E6FEDFC000BCD9C /* ZZUIResponder+Masonry.m */,
+			);
+			path = CodeCreator;
+			sourceTree = "<group>";
+		};
+		C21DDEA91E6FEF42000BCD9C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEC31E6FEFB6000BCD9C /* ZZUIResponder */,
+				C21DDEAA1E6FEF42000BCD9C /* ViewControllers */,
+				C21DDEAC1E6FEF42000BCD9C /* Views */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		C21DDEAA1E6FEF42000BCD9C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEAB1E6FEF42000BCD9C /* ZZUIViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C21DDEAB1E6FEF42000BCD9C /* ZZUIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEC81E6FEFC8000BCD9C /* ZZUIViewController.h */,
+				C21DDEC71E6FEFC8000BCD9C /* ZZUIViewController.m */,
+			);
+			path = ZZUIViewController;
+			sourceTree = "<group>";
+		};
+		C21DDEAC1E6FEF42000BCD9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEBD1E6FEF42000BCD9C /* ZZUIView */,
+				C21DDEB51E6FEF42000BCD9C /* ZZUILabel */,
+				C21DDEB41E6FEF42000BCD9C /* ZZUIImageView */,
+				C21DDEB21E6FEF42000BCD9C /* ZZUIControl */,
+				C21DDEAE1E6FEF42000BCD9C /* ZZUIButton */,
+				C21DDEB81E6FEF42000BCD9C /* ZZUISwitch */,
+				C21DDEB71E6FEF42000BCD9C /* ZZUIScrollView */,
+				C21DDEB91E6FEF42000BCD9C /* ZZUITableView */,
+				C21DDEBA1E6FEF42000BCD9C /* ZZUITableViewCell */,
+				C21DDEBB1E6FEF42000BCD9C /* ZZUITextField */,
+				C21DDEBC1E6FEF42000BCD9C /* ZZUITextView */,
+				C21DDEAF1E6FEF42000BCD9C /* ZZUICollectionView */,
+				C21DDEB01E6FEF42000BCD9C /* ZZUICollectionViewCell */,
+				C21DDEB11E6FEF42000BCD9C /* ZZUICollectionViewFlowLayout */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C21DDEAE1E6FEF42000BCD9C /* ZZUIButton */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDED01E6FF004000BCD9C /* ZZUIButton.h */,
+				C21DDED11E6FF004000BCD9C /* ZZUIButton.m */,
+			);
+			path = ZZUIButton;
+			sourceTree = "<group>";
+		};
+		C21DDEAF1E6FEF42000BCD9C /* ZZUICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDED91E6FF022000BCD9C /* ZZUICollectionViewDataSource.h */,
+				C21DDEDA1E6FF022000BCD9C /* ZZUICollectionViewDataSource.m */,
+				C21DDEDB1E6FF022000BCD9C /* ZZUICollectionViewDelegate.h */,
+				C21DDEDC1E6FF022000BCD9C /* ZZUICollectionViewDelegate.m */,
+				C21DDED31E6FF00C000BCD9C /* ZZUICollectionView.h */,
+				C21DDED41E6FF00C000BCD9C /* ZZUICollectionView.m */,
+			);
+			path = ZZUICollectionView;
+			sourceTree = "<group>";
+		};
+		C21DDEB01E6FEF42000BCD9C /* ZZUICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDED61E6FF014000BCD9C /* ZZUICollectionViewCell.h */,
+				C21DDED71E6FF014000BCD9C /* ZZUICollectionViewCell.m */,
+			);
+			path = ZZUICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C21DDEB11E6FEF42000BCD9C /* ZZUICollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEDF1E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.h */,
+				C21DDEE01E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.m */,
+				C21DDEE11E6FF02A000BCD9C /* ZZUICollectionViewFlowLayout.h */,
+				C21DDEE21E6FF02A000BCD9C /* ZZUICollectionViewFlowLayout.m */,
+			);
+			path = ZZUICollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		C21DDEB21E6FEF42000BCD9C /* ZZUIControl */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEB31E6FEF42000BCD9C /* ZZEvent */,
+				C21DDEE51E6FF034000BCD9C /* ZZUIControl.h */,
+				C21DDEE61E6FF034000BCD9C /* ZZUIControl.m */,
+			);
+			path = ZZUIControl;
+			sourceTree = "<group>";
+		};
+		C21DDEB31E6FEF42000BCD9C /* ZZEvent */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDECD1E6FEFF6000BCD9C /* ZZEvent.h */,
+				C21DDECE1E6FEFF6000BCD9C /* ZZEvent.m */,
+			);
+			path = ZZEvent;
+			sourceTree = "<group>";
+		};
+		C21DDEB41E6FEF42000BCD9C /* ZZUIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEE81E6FF03C000BCD9C /* ZZUIImageView.h */,
+				C21DDEE91E6FF03C000BCD9C /* ZZUIImageView.m */,
+			);
+			path = ZZUIImageView;
+			sourceTree = "<group>";
+		};
+		C21DDEB51E6FEF42000BCD9C /* ZZUILabel */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEEB1E6FF043000BCD9C /* ZZUILabel.h */,
+				C21DDEEC1E6FF043000BCD9C /* ZZUILabel.m */,
+			);
+			path = ZZUILabel;
+			sourceTree = "<group>";
+		};
+		C21DDEB71E6FEF42000BCD9C /* ZZUIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEEE1E6FF04C000BCD9C /* ZZUIScrollView.h */,
+				C21DDEEF1E6FF04C000BCD9C /* ZZUIScrollView.m */,
+				C21DDEF01E6FF04C000BCD9C /* ZZUIScrollViewDelegate.h */,
+				C21DDEF11E6FF04C000BCD9C /* ZZUIScrollViewDelegate.m */,
+			);
+			path = ZZUIScrollView;
+			sourceTree = "<group>";
+		};
+		C21DDEB81E6FEF42000BCD9C /* ZZUISwitch */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEF41E6FF053000BCD9C /* ZZUISwitch.h */,
+				C21DDEF51E6FF053000BCD9C /* ZZUISwitch.m */,
+			);
+			path = ZZUISwitch;
+			sourceTree = "<group>";
+		};
+		C21DDEB91E6FEF42000BCD9C /* ZZUITableView */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEF71E6FF05B000BCD9C /* ZZUITableView.h */,
+				C21DDEF81E6FF05B000BCD9C /* ZZUITableView.m */,
+				C21DDEFD1E6FF067000BCD9C /* ZZUITableViewDataSource.h */,
+				C21DDEFE1E6FF067000BCD9C /* ZZUITableViewDataSource.m */,
+				C21DDEFF1E6FF067000BCD9C /* ZZUITableViewDelegate.h */,
+				C21DDF001E6FF067000BCD9C /* ZZUITableViewDelegate.m */,
+			);
+			path = ZZUITableView;
+			sourceTree = "<group>";
+		};
+		C21DDEBA1E6FEF42000BCD9C /* ZZUITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEFA1E6FF061000BCD9C /* ZZUITableViewCell.h */,
+				C21DDEFB1E6FF061000BCD9C /* ZZUITableViewCell.m */,
+			);
+			path = ZZUITableViewCell;
+			sourceTree = "<group>";
+		};
+		C21DDEBB1E6FEF42000BCD9C /* ZZUITextField */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF061E6FF075000BCD9C /* ZZUITextFieldDelegate.h */,
+				C21DDF071E6FF075000BCD9C /* ZZUITextFieldDelegate.m */,
+				C21DDF031E6FF06E000BCD9C /* ZZUITextField.h */,
+				C21DDF041E6FF06E000BCD9C /* ZZUITextField.m */,
+			);
+			path = ZZUITextField;
+			sourceTree = "<group>";
+		};
+		C21DDEBC1E6FEF42000BCD9C /* ZZUITextView */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF091E6FF07B000BCD9C /* ZZUITextView.h */,
+				C21DDF0A1E6FF07B000BCD9C /* ZZUITextView.m */,
+				C21DDF0B1E6FF07B000BCD9C /* ZZUITextViewDelegate.h */,
+				C21DDF0C1E6FF07B000BCD9C /* ZZUITextViewDelegate.m */,
+			);
+			path = ZZUITextView;
+			sourceTree = "<group>";
+		};
+		C21DDEBD1E6FEF42000BCD9C /* ZZUIView */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF0F1E6FF080000BCD9C /* ZZUIView.h */,
+				C21DDF101E6FF080000BCD9C /* ZZUIView.m */,
+				C21DDEBE1E6FEF42000BCD9C /* ZZCALayer */,
+			);
+			path = ZZUIView;
+			sourceTree = "<group>";
+		};
+		C21DDEBE1E6FEF42000BCD9C /* ZZCALayer */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF121E6FF08B000BCD9C /* ZZCALayer.h */,
+				C21DDF131E6FF08B000BCD9C /* ZZCALayer.m */,
+			);
+			path = ZZCALayer;
+			sourceTree = "<group>";
+		};
+		C21DDEC31E6FEFB6000BCD9C /* ZZUIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDEC41E6FEFB6000BCD9C /* ZZUIResponder.h */,
+				C21DDEC51E6FEFB6000BCD9C /* ZZUIResponder.m */,
+			);
+			path = ZZUIResponder;
+			sourceTree = "<group>";
+		};
+		C21DDF1C1E6FF2BC000BCD9C /* ClassHelper */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF1D1E6FF2BC000BCD9C /* ZZClassHelper.h */,
+				C21DDF1E1E6FF2BC000BCD9C /* ZZClassHelper.m */,
+				C21DDF1F1E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.h */,
+				C21DDF201E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m */,
+			);
+			path = ClassHelper;
 			sourceTree = "<group>";
 		};
 		C22239E31E5815F5002CB428 /* Modules */ = {
@@ -423,11 +675,9 @@
 		C2A10C431E5A0D5D000960D9 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				C21DDF1C1E6FF2BC000BCD9C /* ClassHelper */,
+				C21DDE961E6FDA27000BCD9C /* CodeCreator */,
 				C2D6CA2F1E5BE14E00EEF76B /* Models */,
-				C2A10C441E5A0D6B000960D9 /* ZZClassHelper.h */,
-				C2A10C451E5A0D6B000960D9 /* ZZClassHelper.m */,
-				C2A10C501E5A161A000960D9 /* ZZControlHelper.h */,
-				C2A10C511E5A161A000960D9 /* ZZControlHelper.m */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -559,26 +809,6 @@
 			path = PropertyCell;
 			sourceTree = "<group>";
 		};
-		C2D406571E6C28FE00D52F95 /* ZZUICollectionViewFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				C2D406581E6C294300D52F95 /* ZZUICollectionViewFlowLayout.h */,
-				C2D406591E6C294300D52F95 /* ZZUICollectionViewFlowLayout.m */,
-				C2D4065E1E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.h */,
-				C2D4065F1E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.m */,
-			);
-			path = ZZUICollectionViewFlowLayout;
-			sourceTree = "<group>";
-		};
-		C2D406611E6C407E00D52F95 /* ZZCALayer */ = {
-			isa = PBXGroup;
-			children = (
-				C2D406621E6C408C00D52F95 /* ZZCALayer.h */,
-				C2D406631E6C408C00D52F95 /* ZZCALayer.m */,
-			);
-			path = ZZCALayer;
-			sourceTree = "<group>";
-		};
 		C2D6C9FE1E5BE12700EEF76B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,7 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				C2D6CA301E5BE14E00EEF76B /* Foundations */,
-				C2D6CA3A1E5BE14E00EEF76B /* iOS */,
+				C21DDEA91E6FEF42000BCD9C /* iOS */,
 				C2D6CA741E5BE14E00EEF76B /* MacOS */,
 			);
 			path = Models;
@@ -689,196 +919,6 @@
 				C2D6CA391E5BE14E00EEF76B /* ZZProtocol.m */,
 			);
 			path = ZZPortocol;
-			sourceTree = "<group>";
-		};
-		C2D6CA3A1E5BE14E00EEF76B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA3B1E5BE14E00EEF76B /* ViewControllers */,
-				C2D6CA3F1E5BE14E00EEF76B /* Views */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		C2D6CA3B1E5BE14E00EEF76B /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA3C1E5BE14E00EEF76B /* ZZUIViewController */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		C2D6CA3C1E5BE14E00EEF76B /* ZZUIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA3D1E5BE14E00EEF76B /* ZZUIViewController.h */,
-				C2D6CA3E1E5BE14E00EEF76B /* ZZUIViewController.m */,
-			);
-			path = ZZUIViewController;
-			sourceTree = "<group>";
-		};
-		C2D6CA3F1E5BE14E00EEF76B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA561E5BE14E00EEF76B /* ZZUIResponder */,
-				C2D6CA711E5BE14E00EEF76B /* ZZUIView */,
-				C2D6CA501E5BE14E00EEF76B /* ZZUIImageView */,
-				C2D6CA531E5BE14E00EEF76B /* ZZUILabel */,
-				C2D406571E6C28FE00D52F95 /* ZZUICollectionViewFlowLayout */,
-				C2D6CA431E5BE14E00EEF76B /* ZZUICollectionView */,
-				C2D6CA4A1E5BE14E00EEF76B /* ZZUICollectionViewCell */,
-				C2D6CA4D1E5BE14E00EEF76B /* ZZUIControl */,
-				C2D6CA5E1E5BE14E00EEF76B /* ZZUISwitch */,
-				C2D6CA401E5BE14E00EEF76B /* ZZUIButton */,
-				C2D6CA591E5BE14E00EEF76B /* ZZUIScrollView */,
-				C2D6CA611E5BE14E00EEF76B /* ZZUITableView */,
-				C2D6CA681E5BE14E00EEF76B /* ZZUITableViewCell */,
-				C2D6CA6B1E5BE14E00EEF76B /* ZZUITextField */,
-				C2D6CA6E1E5BE14E00EEF76B /* ZZUITextView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C2D6CA401E5BE14E00EEF76B /* ZZUIButton */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA411E5BE14E00EEF76B /* ZZUIButton.h */,
-				C2D6CA421E5BE14E00EEF76B /* ZZUIButton.m */,
-			);
-			path = ZZUIButton;
-			sourceTree = "<group>";
-		};
-		C2D6CA431E5BE14E00EEF76B /* ZZUICollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA441E5BE14E00EEF76B /* ZZUICollectionView.h */,
-				C2D6CA451E5BE14E00EEF76B /* ZZUICollectionView.m */,
-				C2D6CA461E5BE14E00EEF76B /* ZZUICollectionViewDataSource.h */,
-				C2D6CA471E5BE14E00EEF76B /* ZZUICollectionViewDataSource.m */,
-				C2D6CA481E5BE14E00EEF76B /* ZZUICollectionViewDelegate.h */,
-				C2D6CA491E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m */,
-			);
-			path = ZZUICollectionView;
-			sourceTree = "<group>";
-		};
-		C2D6CA4A1E5BE14E00EEF76B /* ZZUICollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA4B1E5BE14E00EEF76B /* ZZUICollectionViewCell.h */,
-				C2D6CA4C1E5BE14E00EEF76B /* ZZUICollectionViewCell.m */,
-			);
-			path = ZZUICollectionViewCell;
-			sourceTree = "<group>";
-		};
-		C2D6CA4D1E5BE14E00EEF76B /* ZZUIControl */ = {
-			isa = PBXGroup;
-			children = (
-				C2F386F51E6B186500BA1448 /* ZZEvent */,
-				C2D6CA4E1E5BE14E00EEF76B /* ZZUIControl.h */,
-				C2D6CA4F1E5BE14E00EEF76B /* ZZUIControl.m */,
-			);
-			path = ZZUIControl;
-			sourceTree = "<group>";
-		};
-		C2D6CA501E5BE14E00EEF76B /* ZZUIImageView */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA511E5BE14E00EEF76B /* ZZUIImageView.h */,
-				C2D6CA521E5BE14E00EEF76B /* ZZUIImageView.m */,
-			);
-			path = ZZUIImageView;
-			sourceTree = "<group>";
-		};
-		C2D6CA531E5BE14E00EEF76B /* ZZUILabel */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA541E5BE14E00EEF76B /* ZZUILabel.h */,
-				C2D6CA551E5BE14E00EEF76B /* ZZUILabel.m */,
-			);
-			path = ZZUILabel;
-			sourceTree = "<group>";
-		};
-		C2D6CA561E5BE14E00EEF76B /* ZZUIResponder */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA571E5BE14E00EEF76B /* ZZUIResponder.h */,
-				C2D6CA581E5BE14E00EEF76B /* ZZUIResponder.m */,
-			);
-			path = ZZUIResponder;
-			sourceTree = "<group>";
-		};
-		C2D6CA591E5BE14E00EEF76B /* ZZUIScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA5A1E5BE14E00EEF76B /* ZZUIScrollView.h */,
-				C2D6CA5B1E5BE14E00EEF76B /* ZZUIScrollView.m */,
-				C2D6CA5C1E5BE14E00EEF76B /* ZZUIScrollViewDelegate.h */,
-				C2D6CA5D1E5BE14E00EEF76B /* ZZUIScrollViewDelegate.m */,
-			);
-			path = ZZUIScrollView;
-			sourceTree = "<group>";
-		};
-		C2D6CA5E1E5BE14E00EEF76B /* ZZUISwitch */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA5F1E5BE14E00EEF76B /* ZZUISwitch.h */,
-				C2D6CA601E5BE14E00EEF76B /* ZZUISwitch.m */,
-			);
-			path = ZZUISwitch;
-			sourceTree = "<group>";
-		};
-		C2D6CA611E5BE14E00EEF76B /* ZZUITableView */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA621E5BE14E00EEF76B /* ZZUITableView.h */,
-				C2D6CA631E5BE14E00EEF76B /* ZZUITableView.m */,
-				C2D6CA641E5BE14E00EEF76B /* ZZUITableViewDataSource.h */,
-				C2D6CA651E5BE14E00EEF76B /* ZZUITableViewDataSource.m */,
-				C2D6CA661E5BE14E00EEF76B /* ZZUITableViewDelegate.h */,
-				C2D6CA671E5BE14E00EEF76B /* ZZUITableViewDelegate.m */,
-			);
-			path = ZZUITableView;
-			sourceTree = "<group>";
-		};
-		C2D6CA681E5BE14E00EEF76B /* ZZUITableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA691E5BE14E00EEF76B /* ZZUITableViewCell.h */,
-				C2D6CA6A1E5BE14E00EEF76B /* ZZUITableViewCell.m */,
-			);
-			path = ZZUITableViewCell;
-			sourceTree = "<group>";
-		};
-		C2D6CA6B1E5BE14E00EEF76B /* ZZUITextField */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA6C1E5BE14E00EEF76B /* ZZUITextField.h */,
-				C2D6CA6D1E5BE14E00EEF76B /* ZZUITextField.m */,
-				C2D406511E6C141F00D52F95 /* ZZUITextFieldDelegate.h */,
-				C2D406521E6C141F00D52F95 /* ZZUITextFieldDelegate.m */,
-			);
-			path = ZZUITextField;
-			sourceTree = "<group>";
-		};
-		C2D6CA6E1E5BE14E00EEF76B /* ZZUITextView */ = {
-			isa = PBXGroup;
-			children = (
-				C2D6CA6F1E5BE14E00EEF76B /* ZZUITextView.h */,
-				C2D6CA701E5BE14E00EEF76B /* ZZUITextView.m */,
-				C2D406541E6C19FE00D52F95 /* ZZUITextViewDelegate.h */,
-				C2D406551E6C19FE00D52F95 /* ZZUITextViewDelegate.m */,
-			);
-			path = ZZUITextView;
-			sourceTree = "<group>";
-		};
-		C2D6CA711E5BE14E00EEF76B /* ZZUIView */ = {
-			isa = PBXGroup;
-			children = (
-				C2D406611E6C407E00D52F95 /* ZZCALayer */,
-				C2D6CA721E5BE14E00EEF76B /* ZZUIView.h */,
-				C2D6CA731E5BE14E00EEF76B /* ZZUIView.m */,
-			);
-			path = ZZUIView;
 			sourceTree = "<group>";
 		};
 		C2D6CA741E5BE14E00EEF76B /* MacOS */ = {
@@ -955,15 +995,6 @@
 				C2F386EF1E6B178D00BA1448 /* ZZPropertySectionHeaderView.m */,
 			);
 			path = SectionHeader;
-			sourceTree = "<group>";
-		};
-		C2F386F51E6B186500BA1448 /* ZZEvent */ = {
-			isa = PBXGroup;
-			children = (
-				C2F386F61E6B186E00BA1448 /* ZZEvent.h */,
-				C2F386F71E6B186E00BA1448 /* ZZEvent.m */,
-			);
-			path = ZZEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1051,83 +1082,86 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D6CA891E5BE14E00EEF76B /* ZZUITableViewDelegate.m in Sources */,
-				C2D6CA8A1E5BE14E00EEF76B /* ZZUITableViewCell.m in Sources */,
 				C2D6CA291E5BE12700EEF76B /* MASViewConstraint.m in Sources */,
-				C2D6CA7D1E5BE14E00EEF76B /* ZZUICollectionViewDataSource.m in Sources */,
 				C21789BF1E55D64500AF8BEE /* main.m in Sources */,
+				C21DDF111E6FF080000BCD9C /* ZZUIView.m in Sources */,
 				C2D4066F1E6C5EA600D52F95 /* ZZPropertySelectionCell.m in Sources */,
+				C21DDEDD1E6FF022000BCD9C /* ZZUICollectionViewDataSource.m in Sources */,
+				C21DDF221E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m in Sources */,
 				C2D6CA281E5BE12700EEF76B /* MASViewAttribute.m in Sources */,
-				C2D6CA821E5BE14E00EEF76B /* ZZUILabel.m in Sources */,
 				C2223A0B1E5875F8002CB428 /* ZZCodeAreaViewController.m in Sources */,
-				C2D6CA851E5BE14E00EEF76B /* ZZUIScrollViewDelegate.m in Sources */,
+				C21DDEA41E6FEDFC000BCD9C /* ZZUIResponder+Masonry.m in Sources */,
 				C21789BC1E55D64500AF8BEE /* AppDelegate.m in Sources */,
 				C2D6CA241E5BE12700EEF76B /* MASCompositeConstraint.m in Sources */,
 				C2D6CA2B1E5BE12700EEF76B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */,
-				C2D6CA841E5BE14E00EEF76B /* ZZUIScrollView.m in Sources */,
 				C2D6CA2D1E5BE12700EEF76B /* ViewController+MASAdditions.m in Sources */,
 				C2D6CA2E1E5BE12700EEF76B /* README.md in Sources */,
+				C21DDF0D1E6FF07B000BCD9C /* ZZUITextView.m in Sources */,
 				C2D406471E6BEC0000D52F95 /* ZZPropertyBoolCell.m in Sources */,
+				C21DDEC61E6FEFB6000BCD9C /* ZZUIResponder.m in Sources */,
+				C21DDEEA1E6FF03C000BCD9C /* ZZUIImageView.m in Sources */,
 				C2A10CB71E5AEF39000960D9 /* ZZNewFileViewController.m in Sources */,
 				C2A10C4A1E5A0E79000960D9 /* ZZElementAreaViewController.m in Sources */,
+				C21DDEE71E6FF034000BCD9C /* ZZUIControl.m in Sources */,
 				C2D4064E1E6BEC5000D52F95 /* ZZPropertyMethodCell.m in Sources */,
+				C21DDEF31E6FF04C000BCD9C /* ZZUIScrollViewDelegate.m in Sources */,
+				C21DDEED1E6FF043000BCD9C /* ZZUILabel.m in Sources */,
 				C2D6CA211E5BE12700EEF76B /* NSDate+Extension.m in Sources */,
+				C21DDEF91E6FF05B000BCD9C /* ZZUITableView.m in Sources */,
 				C2B3F60B1E62FCC2000E42CE /* ZZCodeMFileViewController.m in Sources */,
-				C2D4065A1E6C294300D52F95 /* ZZUICollectionViewFlowLayout.m in Sources */,
+				C21DDF051E6FF06E000BCD9C /* ZZUITextField.m in Sources */,
 				C2D6CA2A1E5BE12700EEF76B /* NSArray+MASAdditions.m in Sources */,
+				C21DDEF21E6FF04C000BCD9C /* ZZUIScrollView.m in Sources */,
+				C21DDF141E6FF08B000BCD9C /* ZZCALayer.m in Sources */,
 				C2D6CA2C1E5BE12700EEF76B /* View+MASAdditions.m in Sources */,
-				C2D6CA7F1E5BE14E00EEF76B /* ZZUICollectionViewCell.m in Sources */,
 				C2C7762A1E6D377D00464A27 /* ZZPropertyXYCell.m in Sources */,
-				C2D6CA8D1E5BE14E00EEF76B /* ZZUIView.m in Sources */,
-				C2D406601E6C2A5C00D52F95 /* ZZUICollectionViewDelegateFlowLayout.m in Sources */,
 				C2A10C4F1E5A1597000960D9 /* ZZControlAreaViewController.m in Sources */,
+				C21DDED21E6FF004000BCD9C /* ZZUIButton.m in Sources */,
+				C21DDE9E1E6FDA4E000BCD9C /* ZZCodeCreator.m in Sources */,
+				C21DDF211E6FF2BC000BCD9C /* ZZClassHelper.m in Sources */,
 				C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */,
+				C21DDEA11E6FEC93000BCD9C /* ZZUIResponder+CodeCreator.m in Sources */,
 				C2D6CA781E5BE14E00EEF76B /* ZZNSObject.m in Sources */,
+				C21DDED81E6FF014000BCD9C /* ZZUICollectionViewCell.m in Sources */,
 				C2D6CA251E5BE12700EEF76B /* MASConstraint.m in Sources */,
-				C2A10C521E5A161A000960D9 /* ZZControlHelper.m in Sources */,
+				C21DDF011E6FF067000BCD9C /* ZZUITableViewDataSource.m in Sources */,
 				C28FDA7F1E6B00D400AE41A2 /* ZZProperty.m in Sources */,
 				C2D406491E6BEC0000D52F95 /* ZZPropertyStringCell.m in Sources */,
 				C2F386F41E6B178D00BA1448 /* ZZPropertySectionHeaderView.m in Sources */,
+				C21DDEC91E6FEFC8000BCD9C /* ZZUIViewController.m in Sources */,
 				C2D6CA771E5BE14E00EEF76B /* ZZNSMutableArray.m in Sources */,
+				C21DDF021E6FF067000BCD9C /* ZZUITableViewDelegate.m in Sources */,
 				C2F387001E6B2AD100BA1448 /* ZZPropertyEventCell.m in Sources */,
-				C2D6CA7B1E5BE14E00EEF76B /* ZZUIButton.m in Sources */,
-				C2D6CA811E5BE14E00EEF76B /* ZZUIImageView.m in Sources */,
-				C2D6CA881E5BE14E00EEF76B /* ZZUITableViewDataSource.m in Sources */,
+				C21DDED51E6FF00C000BCD9C /* ZZUICollectionView.m in Sources */,
 				C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */,
+				C21DDEDE1E6FF022000BCD9C /* ZZUICollectionViewDelegate.m in Sources */,
 				C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */,
+				C21DDEE31E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.m in Sources */,
 				C2F386DF1E6B0DA700BA1448 /* ZZPropertyEditViewController+Delegate.m in Sources */,
 				C2B3F6101E62FCD1000E42CE /* ZZCodeLayoutViewController.m in Sources */,
 				C2B3F5D61E60F621000E42CE /* ZZUtility.m in Sources */,
-				C2D6CA801E5BE14E00EEF76B /* ZZUIControl.m in Sources */,
-				C2D406641E6C408C00D52F95 /* ZZCALayer.m in Sources */,
 				C2B3F6021E62FC96000E42CE /* ZZCodeHFileViewController.m in Sources */,
+				C21DDEFC1E6FF061000BCD9C /* ZZUITableViewCell.m in Sources */,
 				C2B3F5D01E608096000E42CE /* ZZMethod.m in Sources */,
 				C2D6CA971E5C191B00EEF76B /* ZZPropertyEditViewController.m in Sources */,
-				C2D6CA7C1E5BE14E00EEF76B /* ZZUICollectionView.m in Sources */,
 				C2D6CA791E5BE14E00EEF76B /* ZZProtocol.m in Sources */,
 				C22569F91E67F048008E7785 /* ZZControlListItem.m in Sources */,
-				C2D6CA7E1E5BE14E00EEF76B /* ZZUICollectionViewDelegate.m in Sources */,
-				C2F386F81E6B186E00BA1448 /* ZZEvent.m in Sources */,
-				C2D6CA8B1E5BE14E00EEF76B /* ZZUITextField.m in Sources */,
 				C2B3F5D31E60F307000E42CE /* ZZParam.m in Sources */,
 				C2D6CA261E5BE12700EEF76B /* MASConstraintMaker.m in Sources */,
 				C21DDE901E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m in Sources */,
-				C2D406561E6C19FE00D52F95 /* ZZUITextViewDelegate.m in Sources */,
-				C2D406531E6C141F00D52F95 /* ZZUITextFieldDelegate.m in Sources */,
+				C21DDEF61E6FF053000BCD9C /* ZZUISwitch.m in Sources */,
 				C2D6CA271E5BE12700EEF76B /* MASLayoutConstraint.m in Sources */,
-				C2A10C461E5A0D6B000960D9 /* ZZClassHelper.m in Sources */,
 				C2A10CB11E5AEF0B000960D9 /* ZZNewPropertyViewController.m in Sources */,
+				C21DDECF1E6FEFF6000BCD9C /* ZZEvent.m in Sources */,
 				C2D6CA221E5BE12700EEF76B /* NSString+MMBJ.m in Sources */,
-				C2D6CA871E5BE14E00EEF76B /* ZZUITableView.m in Sources */,
+				C21DDEE41E6FF02A000BCD9C /* ZZUICollectionViewFlowLayout.m in Sources */,
 				C2C7762F1E6D426C00464A27 /* ZZPropertyXYWHCell.m in Sources */,
-				C2D6CA7A1E5BE14E00EEF76B /* ZZUIViewController.m in Sources */,
-				C2D6CA831E5BE14E00EEF76B /* ZZUIResponder.m in Sources */,
-				C2D6CA8C1E5BE14E00EEF76B /* ZZUITextView.m in Sources */,
 				C2D6CA931E5C0CF400EEF76B /* ZZElementCell.m in Sources */,
-				C2D6CA861E5BE14E00EEF76B /* ZZUISwitch.m in Sources */,
 				C223E6831E66C7AF0004F3DD /* ZZPropertySectionModel.m in Sources */,
 				C2A10C801E5A41E6000960D9 /* ZZWindowController.m in Sources */,
+				C21DDF081E6FF075000BCD9C /* ZZUITextFieldDelegate.m in Sources */,
+				C21DDF0E1E6FF07B000BCD9C /* ZZUITextViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,7 +35,7 @@
     [layout setMinimumLineSpacing:0];
     [layout setMinimumInteritemSpacing:0];
     
-    self.data = [ZZControlHelper sharedInstance].controls;
+    self.data = [ZZUIHelperConfig sharedInstance].controls;
     [self.collectionView registerClass:[ZZControlItem class] forItemWithIdentifier:@"ZZControlItem"];
     [self.collectionView registerClass:[ZZControlListItem class] forItemWithIdentifier:@"ZZControlListItem"];
     self.collectionView.content = self.data;
@@ -110,7 +110,7 @@
     NSString *searchString = [obj.object stringValue];
     if (searchString.length > 0) {
         NSMutableArray *data = [[NSMutableArray alloc] init];
-        for (NSString *title in [ZZControlHelper sharedInstance].controls) {
+        for (NSString *title in [ZZUIHelperConfig sharedInstance].controls) {
             if ([[title lowercaseString] containsString:[searchString lowercaseString]]) {
                 [data addObject:title];
             }
@@ -118,14 +118,14 @@
         self.data = data;
     }
     else {
-        self.data = [ZZControlHelper sharedInstance].controls;
+        self.data = [ZZUIHelperConfig sharedInstance].controls;
     }
     [self.collectionView reloadData];
 }
 
 - (void)searchFieldDidEndSearching:(NSSearchField *)sender
 {
-    self.data = [ZZControlHelper sharedInstance].controls;
+    self.data = [ZZUIHelperConfig sharedInstance].controls;
     [self.collectionView reloadData];
 }
 

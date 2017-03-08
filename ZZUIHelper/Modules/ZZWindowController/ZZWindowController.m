@@ -9,7 +9,7 @@
 #import "ZZWindowController.h"
 #import "ZZNewFileViewController.h"
 #import <MGSFragaria/MGSFragaria.h>
-
+#import "ZZCodeCreator.h"
 
 @interface ZZWindowController ()
 
@@ -41,10 +41,11 @@
 
 - (void)exportFilesToPath:(NSString *)path
 {
+    ZZUIResponder *curClass = [ZZClassHelper sharedInstance].curClass;
     //.h
     NSString *fileName = [[ZZClassHelper sharedInstance].curClass.className stringByAppendingString:@".h"];
     NSString *hPath = [path stringByAppendingPathComponent:fileName];
-    NSString *hCode = [ZZClassHelper sharedInstance].curClass.hFileCode;
+    NSString *hCode = [[ZZCodeCreator sharedInstance] hFileForViewClass:curClass];
     if (![self p_writeCode:hCode toFileAtPath:hPath]) {
         
         return;
@@ -53,7 +54,7 @@
     //.m
     fileName = [[ZZClassHelper sharedInstance].curClass.className stringByAppendingString:@".m"];
     NSString *mPath = [path stringByAppendingPathComponent:fileName];
-    NSString *mCode = [ZZClassHelper sharedInstance].curClass.mFileCode;
+    NSString *mCode = [[ZZCodeCreator sharedInstance] mFileForViewClass:curClass];
     if (![self p_writeCode:mCode toFileAtPath:mPath]) {
         
         return;
