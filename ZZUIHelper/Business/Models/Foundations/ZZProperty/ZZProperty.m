@@ -55,19 +55,22 @@
     return self;
 }
 
-- (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData andDefaultSelectIndex:(NSInteger)selectIndex;
+- (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData andDefaultSelectIndex:(NSInteger)selectIndex
 {
-    return [self initWithPropertyName:propertyName selectionData:selectionData defaultSelectIndex:selectIndex editable:NO];
+    if (self = [self initWithPropertyName:propertyName selectionData:selectionData defaultValue:selectionData[selectIndex] editable:NO]){
+        self.selectIndex = selectIndex;
+    }
+    return self;
 }
 
-- (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData defaultSelectIndex:(NSInteger)selectIndex editable:(BOOL)editable
+- (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData defaultValue:(NSString *)defaultValue editable:(BOOL)editable
 {
     if (self = [self init]) {
         _type = editable ? ZZPropertyTypeSelectionAndEdit : ZZPropertyTypeSelection;
         _propertyName = propertyName;
         _selectionData = selectionData;
-        _selectIndex = selectIndex;
-        _defaultValue = selectionData[selectIndex];
+        _selectIndex = 0;
+        _defaultValue = defaultValue;
     }
     return self;
 }

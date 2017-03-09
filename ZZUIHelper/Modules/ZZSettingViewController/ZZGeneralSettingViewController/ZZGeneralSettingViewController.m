@@ -1,14 +1,14 @@
 //
-//  ZZSettingViewController.m
+//  ZZGeneralSettingViewController.m
 //  ZZUIHelper
 //
 //  Created by 李伯坤 on 2017/2/20.
 //  Copyright © 2017年 李伯坤. All rights reserved.
 //
 
-#import "ZZSettingViewController.h"
+#import "ZZGeneralSettingViewController.h"
 
-@interface ZZSettingViewController ()
+@interface ZZGeneralSettingViewController ()
 @property (weak) IBOutlet NSTextField *projectNameTF;
 @property (weak) IBOutlet NSTextField *authorNameTF;
 @property (weak) IBOutlet NSTextField *classPrefixTF;
@@ -17,12 +17,18 @@
 
 @end
 
-@implementation ZZSettingViewController
+@implementation ZZGeneralSettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self loadData];
+}
+
+- (void)viewWillDisappear
+{
+    [super viewWillDisappear];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_SETTING_EDIT object:nil userInfo:nil];
 }
 
 - (void)loadData
@@ -37,7 +43,6 @@
 - (IBAction)resetButtonClick:(id)sender {
     [[ZZUIHelperConfig sharedInstance] resetToDefaultConfig];
     [self loadData];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_SETTING_EDIT object:nil userInfo:nil];
 }
 
 - (IBAction)okButtonClick:(id)sender {
@@ -46,8 +51,7 @@
     [ZZUIHelperConfig sharedInstance].classPrefix = self.classPrefixTF.stringValue;
     [ZZUIHelperConfig sharedInstance].newLineLeftParenthesis = self.leftParenthesisInNewLine.state;
     [ZZUIHelperConfig sharedInstance].layoutLibrary = [self.layoutMethod indexOfSelectedItem];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_SETTING_EDIT object:nil userInfo:nil];
-    [self dismissController:self];
+    [self.parentViewController dismissController:self];
 }
 
 

@@ -28,12 +28,11 @@
         _properties = [super properties];
         ZZProperty *text = [[ZZProperty alloc] initWithPropertyName:@"text" type:ZZPropertyTypeString defaultValue:@""];
         ZZProperty *placeholder = [[ZZProperty alloc] initWithPropertyName:@"placeholder" type:ZZPropertyTypeString defaultValue:@""];
-        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZUIHelperConfig sharedInstance].fonts defaultSelectIndex:7 editable:YES];
-        [font setSelected:YES];
+        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZUIHelperConfig sharedInstance].fonts defaultValue:nil editable:YES];
         [font setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setFont:[UIFont %@]", value];
         }];
-        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultSelectIndex:2 editable:YES];
+        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"blackColor" editable:YES];
         [textColor setSelected:YES];
         [textColor setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setTextColor:[UIColor %@]", value];

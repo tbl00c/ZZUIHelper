@@ -10,6 +10,10 @@
 #import "NSDate+Extension.h"
 
 @implementation ZZUIHelperConfig
+{
+    NSMutableArray *p_fonts;
+    NSMutableArray *p_colors;
+}
 
 + (ZZUIHelperConfig *)sharedInstance
 {
@@ -22,6 +26,8 @@
             // 默认设置
             [config setAuthorName:@"ZZUIHelper"];
             [config setProjectName:@"zhuanzhuan"];
+            [config setColors:[ZZUIHelperConfig zzColors]];
+            [config setFonts:[ZZUIHelperConfig zzFonts]];
             [config resetToDefaultConfig];
         }
     });
@@ -33,6 +39,18 @@
     [self setClassPrefix:@"ZZ"];
     [self setNewLineLeftParenthesis:NO];
     [self setLayoutLibrary:ZZUIHelperLayoutLibraryMasonry];
+}
+
+- (void)resetToDefaultColors
+{
+    [self setColors:@[@"clearColor",
+                      @"whiteColor",
+                      @"blackColor"]];
+}
+
+- (void)resetToDefaultFonts
+{
+    [self setFonts:@[]];
 }
 
 - (NSString *)copyrightCodeByFileName:(NSString *)fileName
@@ -103,6 +121,42 @@
     [[NSUserDefaults standardUserDefaults] setObject:@(layoutLibrary) forKey:@"layoutLibrary"];
 }
 
+//MARK: 颜色
+- (NSArray *)colors
+{
+    if (!p_colors) {
+        p_colors = [[NSMutableArray alloc] init];
+    }
+    NSArray *colors = [[NSUserDefaults standardUserDefaults] objectForKey:@"colors"];
+    [p_colors removeAllObjects];
+    [p_colors addObjectsFromArray:colors];
+    return p_colors;
+}
+- (void)setColors:(NSArray *)colors
+{
+    [p_colors removeAllObjects];
+    [p_colors addObjectsFromArray:colors];
+    [[NSUserDefaults standardUserDefaults] setObject:colors ? colors : @[] forKey:@"colors"];
+}
+
+//MARK: 字体
+- (NSArray *)fonts
+{
+    if (!p_fonts) {
+        p_fonts = [[NSMutableArray alloc] init];
+    }
+    NSArray *fonts = [[NSUserDefaults standardUserDefaults] objectForKey:@"fonts"];
+    [p_fonts removeAllObjects];
+    [p_fonts addObjectsFromArray:fonts];
+    return p_fonts;
+}
+- (void)setFonts:(NSArray *)fonts
+{
+    [p_fonts removeAllObjects];
+    [p_fonts addObjectsFromArray:fonts];
+    [[NSUserDefaults standardUserDefaults] setObject:fonts ? fonts : @[] forKey:@"fonts"];
+}
+
 #pragma mark - # 控件可配置属性
 - (NSArray *)controls
 {
@@ -144,74 +198,70 @@
              @"NSTextAlignmentRight"];
 }
 
-- (NSArray *)fonts
+#pragma mark - # Private Methods
++ (NSMutableArray *)zzColors
 {
-    if (!_fonts) {
-        NSMutableArray *fonts = [[NSMutableArray alloc] init];
-        for (int i = 18; i <= 42; i+=2) {
-            [fonts addObject:[NSString stringWithFormat:@"zz%dpxFont", i]];
-            [fonts addObject:[NSString stringWithFormat:@"zz%dpxBoldFont", i]];
-        }
-        
-        _fonts = fonts;
-    }
-    return _fonts;
+
+    NSMutableArray *colors = [[NSMutableArray alloc] init];
+    [colors addObjectsFromArray:@[@"clearColor",
+                                  @"whiteColor",
+                                  @"blackColor"]];
+    [colors addObjectsFromArray:@[@"zzRedColor",
+                                  @"zzRedColorWithAlpha",
+                                  @"zzRedColorForZZ",
+                                  @"zzRedColorForBackgroud",
+                                  @"zzRedColorForButton",
+                                  @"zzRedColorForButtonHighlighted",
+                                  @"zzRedColorForButtonBorder",
+                                  @"zzRedColorForButtonBorderHightlighted",
+                                  @"zzRedColorForButtonTitle",
+                                  @"zzRedColorForButtonTitleHightlighted",
+                                  @"zzRedColorForButtonTitleDisable"]];
+    [colors addObjectsFromArray:@[@"zzYellowColorForWarning",
+                                  @"zzYellowColorForBackgroud",
+                                  @"zzYellowColorForFriendComment",
+                                  @"zzDarkYellocColorForFriendComment",
+                                  @"zzYellocColorForFriendCommentText"]];
+    [colors addObjectsFromArray:@[@"zzGreenColorForCertification",
+                                  @"zzGreenColorForZhiMa",
+                                  @"zzLightGreenForZhiMa",
+                                  @"zzGreenColorForButton",
+                                  @"zzGreenColorForButtonHL"]];
+    [colors addObjectsFromArray:@[@"zzBlueColorForLink",
+                                  @"zzBlueColorForGroup",
+                                  @"zzBuleColorForMomentsHeader"]];
+    [colors addObjectsFromArray:@[@"zzBlackColorForText",
+                                  @"zzBlackColorForToast",
+                                  @"zzBlackColorForButtonTitle",
+                                  @"zzBlackColorForButtonTitleHightlighted",
+                                  @"zzGrayColorSys"]];
+    [colors addObjectsFromArray:@[@"zzWhiteColorForBackgroud",
+                                  @"zzWhiteColorForPersonCentered",
+                                  @"zzWhiteColorForButtonTitle"]];
+    [colors addObjectsFromArray:@[@"zzDarkGrayColorForText",
+                                  @"zzLightGrayColorForText",
+                                  @"zzGrayColorForSeparatorLine",
+                                  @"zzGrayColorForTag",
+                                  @"zzGrayColorForBackgroud",
+                                  @"zzGrayColorForButton",
+                                  @"zzGrayColorForButtonHighlighted",
+                                  @"zzGrayColorForButtonBorder",
+                                  @"zzGrayColorForButtonBorderHightlighted",
+                                  @"zzGrayColorForButtonBorderDisable",
+                                  @"zzGrayColorForButtonTitleDisable"]];
+    return colors;
 }
 
-- (NSArray *)colors
-{
-    if (!_colors) {
-        NSMutableArray *colors = [[NSMutableArray alloc] init];
-        [colors addObjectsFromArray:@[@"clearColor",
-                                      @"whiteColor",
-                                      @"blackColor"]];
-        [colors addObjectsFromArray:@[@"zzRedColor",
-                                      @"zzRedColorWithAlpha",
-                                      @"zzRedColorForZZ",
-                                      @"zzRedColorForBackgroud",
-                                      @"zzRedColorForButton",
-                                      @"zzRedColorForButtonHighlighted",
-                                      @"zzRedColorForButtonBorder",
-                                      @"zzRedColorForButtonBorderHightlighted",
-                                      @"zzRedColorForButtonTitle",
-                                      @"zzRedColorForButtonTitleHightlighted",
-                                      @"zzRedColorForButtonTitleDisable"]];
-        [colors addObjectsFromArray:@[@"zzYellowColorForWarning",
-                                      @"zzYellowColorForBackgroud",
-                                      @"zzYellowColorForFriendComment",
-                                      @"zzDarkYellocColorForFriendComment",
-                                      @"zzYellocColorForFriendCommentText"]];
-        [colors addObjectsFromArray:@[@"zzGreenColorForCertification",
-                                      @"zzGreenColorForZhiMa",
-                                      @"zzLightGreenForZhiMa",
-                                      @"zzGreenColorForButton",
-                                      @"zzGreenColorForButtonHL"]];
-        [colors addObjectsFromArray:@[@"zzBlueColorForLink",
-                                      @"zzBlueColorForGroup",
-                                      @"zzBuleColorForMomentsHeader"]];
-        [colors addObjectsFromArray:@[@"zzBlackColorForText",
-                                      @"zzBlackColorForToast",
-                                      @"zzBlackColorForButtonTitle",
-                                      @"zzBlackColorForButtonTitleHightlighted",
-                                      @"zzGrayColorSys"]];
-        [colors addObjectsFromArray:@[@"zzWhiteColorForBackgroud",
-                                      @"zzWhiteColorForPersonCentered",
-                                      @"zzWhiteColorForButtonTitle"]];
-        [colors addObjectsFromArray:@[@"zzDarkGrayColorForText",
-                                      @"zzLightGrayColorForText",
-                                      @"zzGrayColorForSeparatorLine",
-                                      @"zzGrayColorForTag",
-                                      @"zzGrayColorForBackgroud",
-                                      @"zzGrayColorForButton",
-                                      @"zzGrayColorForButtonHighlighted",
-                                      @"zzGrayColorForButtonBorder",
-                                      @"zzGrayColorForButtonBorderHightlighted",
-                                      @"zzGrayColorForButtonBorderDisable",
-                                      @"zzGrayColorForButtonTitleDisable"]];
-        _colors = colors;
-    }
-    return _colors;
-}
 
++ (NSMutableArray *)zzFonts
+{
+    NSMutableArray *fonts = [[NSMutableArray alloc] init];
+    for (int i = 18; i <= 42; i+=2) {
+        [fonts addObject:[NSString stringWithFormat:@"zz%dpxFont", i]];
+        [fonts addObject:[NSString stringWithFormat:@"zz%dpxBoldFont", i]];
+    }
+
+    return fonts;
+}
 
 @end

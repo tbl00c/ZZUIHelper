@@ -31,6 +31,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_SELECTED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_SETTING_EDIT object:nil];
 }
 
 - (void)viewWillLayout
@@ -83,6 +84,11 @@
     
     self.object = object;
     self.data = data;
+    [self.collectionView reloadData];
+}
+
+- (void)reloadData
+{
     [self.collectionView reloadData];
 }
 

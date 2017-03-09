@@ -33,7 +33,8 @@ typedef NS_ENUM(NSInteger, ZZUIHelperLayoutLibrary) {
 + (ZZUIHelperConfig *)sharedInstance;
 
 - (void)resetToDefaultConfig;
-
+- (void)resetToDefaultColors;
+- (void)resetToDefaultFonts;
 - (NSString *)copyrightCodeByFileName:(NSString *)fileName;
 
 #pragma mark - # 控件可配置属性

@@ -1,5 +1,5 @@
 //
-//  ZZSettingViewController.h
+//  ZZGeneralSettingViewController.h
 //  ZZUIHelper
 //
 //  Created by 李伯坤 on 2017/2/20.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ZZSettingViewController : NSViewController
+@interface ZZGeneralSettingViewController : NSViewController
 
 @end

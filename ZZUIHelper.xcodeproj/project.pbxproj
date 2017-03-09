@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2154E4A1E710C5100E3D18C /* ZZSettingItemsAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2154E481E710C5100E3D18C /* ZZSettingItemsAddViewController.m */; };
+		C2154E4B1E710C5100E3D18C /* ZZSettingItemsAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2154E491E710C5100E3D18C /* ZZSettingItemsAddViewController.xib */; };
 		C21789BC1E55D64500AF8BEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C21789BB1E55D64500AF8BEE /* AppDelegate.m */; };
 		C21789BF1E55D64500AF8BEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C21789BE1E55D64500AF8BEE /* main.m */; };
 		C21789C41E55D64500AF8BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21789C31E55D64500AF8BEE /* Assets.xcassets */; };
@@ -44,6 +46,9 @@
 		C21DDF141E6FF08B000BCD9C /* ZZCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF131E6FF08B000BCD9C /* ZZCALayer.m */; };
 		C21DDF211E6FF2BC000BCD9C /* ZZClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF1E1E6FF2BC000BCD9C /* ZZClassHelper.m */; };
 		C21DDF221E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF201E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m */; };
+		C21DDF2C1E700648000BCD9C /* ZZGeneralSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF2B1E700648000BCD9C /* ZZGeneralSettingViewController.m */; };
+		C21DDF2F1E701386000BCD9C /* ZZColorSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF2E1E701386000BCD9C /* ZZColorSettingViewController.m */; };
+		C21DDF331E701396000BCD9C /* ZZFontSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21DDF311E701396000BCD9C /* ZZFontSettingViewController.m */; };
 		C2223A0B1E5875F8002CB428 /* ZZCodeAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2223A0A1E5875F8002CB428 /* ZZCodeAreaViewController.m */; };
 		C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2223A0F1E5876B1002CB428 /* ZZMainViewController.m */; };
 		C223E6831E66C7AF0004F3DD /* ZZPropertySectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C223E6821E66C7AF0004F3DD /* ZZPropertySectionModel.m */; };
@@ -58,7 +63,6 @@
 		C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C5F1E5A22BA000960D9 /* ZZControlItem.m */; };
 		C2A10C641E5A2A4A000960D9 /* ZZControlItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10C631E5A2A4A000960D9 /* ZZControlItem.xib */; };
 		C2A10C801E5A41E6000960D9 /* ZZWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C7F1E5A41E6000960D9 /* ZZWindowController.m */; };
-		C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */; };
 		C2A10CB11E5AEF0B000960D9 /* ZZNewPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CAF1E5AEF0B000960D9 /* ZZNewPropertyViewController.m */; };
 		C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */; };
 		C2A10CB71E5AEF39000960D9 /* ZZNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */; };
@@ -121,6 +125,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C2154E471E710C5100E3D18C /* ZZSettingItemsAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSettingItemsAddViewController.h; sourceTree = "<group>"; };
+		C2154E481E710C5100E3D18C /* ZZSettingItemsAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSettingItemsAddViewController.m; sourceTree = "<group>"; };
+		C2154E491E710C5100E3D18C /* ZZSettingItemsAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZSettingItemsAddViewController.xib; sourceTree = "<group>"; };
 		C21789B71E55D64500AF8BEE /* ZZUIHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZUIHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21789BA1E55D64500AF8BEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C21789BB1E55D64500AF8BEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -193,6 +200,12 @@
 		C21DDF1E1E6FF2BC000BCD9C /* ZZClassHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZClassHelper.m; sourceTree = "<group>"; };
 		C21DDF1F1E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZUIResponder+ClassHelper.h"; sourceTree = "<group>"; };
 		C21DDF201E6FF2BC000BCD9C /* ZZUIResponder+ClassHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZZUIResponder+ClassHelper.m"; sourceTree = "<group>"; };
+		C21DDF2A1E700648000BCD9C /* ZZGeneralSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZGeneralSettingViewController.h; sourceTree = "<group>"; };
+		C21DDF2B1E700648000BCD9C /* ZZGeneralSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZGeneralSettingViewController.m; sourceTree = "<group>"; };
+		C21DDF2D1E701386000BCD9C /* ZZColorSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZColorSettingViewController.h; sourceTree = "<group>"; };
+		C21DDF2E1E701386000BCD9C /* ZZColorSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZColorSettingViewController.m; sourceTree = "<group>"; };
+		C21DDF301E701396000BCD9C /* ZZFontSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZFontSettingViewController.h; sourceTree = "<group>"; };
+		C21DDF311E701396000BCD9C /* ZZFontSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZFontSettingViewController.m; sourceTree = "<group>"; };
 		C2223A091E5875F8002CB428 /* ZZCodeAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeAreaViewController.h; sourceTree = "<group>"; };
 		C2223A0A1E5875F8002CB428 /* ZZCodeAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeAreaViewController.m; sourceTree = "<group>"; };
 		C2223A0E1E5876B1002CB428 /* ZZMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMainViewController.h; sourceTree = "<group>"; };
@@ -219,8 +232,6 @@
 		C2A10C631E5A2A4A000960D9 /* ZZControlItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZControlItem.xib; sourceTree = "<group>"; };
 		C2A10C7E1E5A41E6000960D9 /* ZZWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZWindowController.h; sourceTree = "<group>"; };
 		C2A10C7F1E5A41E6000960D9 /* ZZWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZWindowController.m; sourceTree = "<group>"; };
-		C2A10C9F1E5AE12D000960D9 /* ZZSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSettingViewController.h; sourceTree = "<group>"; };
-		C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSettingViewController.m; sourceTree = "<group>"; };
 		C2A10CAE1E5AEF0B000960D9 /* ZZNewPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewPropertyViewController.h; sourceTree = "<group>"; };
 		C2A10CAF1E5AEF0B000960D9 /* ZZNewPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewPropertyViewController.m; sourceTree = "<group>"; };
 		C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewPropertyViewController.xib; sourceTree = "<group>"; };
@@ -603,6 +614,36 @@
 			path = ClassHelper;
 			sourceTree = "<group>";
 		};
+		C21DDF271E700648000BCD9C /* ZZColorSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF2D1E701386000BCD9C /* ZZColorSettingViewController.h */,
+				C21DDF2E1E701386000BCD9C /* ZZColorSettingViewController.m */,
+				C2154E471E710C5100E3D18C /* ZZSettingItemsAddViewController.h */,
+				C2154E481E710C5100E3D18C /* ZZSettingItemsAddViewController.m */,
+				C2154E491E710C5100E3D18C /* ZZSettingItemsAddViewController.xib */,
+			);
+			path = ZZColorSettingViewController;
+			sourceTree = "<group>";
+		};
+		C21DDF281E700648000BCD9C /* ZZFontSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF301E701396000BCD9C /* ZZFontSettingViewController.h */,
+				C21DDF311E701396000BCD9C /* ZZFontSettingViewController.m */,
+			);
+			path = ZZFontSettingViewController;
+			sourceTree = "<group>";
+		};
+		C21DDF291E700648000BCD9C /* ZZGeneralSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C21DDF2A1E700648000BCD9C /* ZZGeneralSettingViewController.h */,
+				C21DDF2B1E700648000BCD9C /* ZZGeneralSettingViewController.m */,
+			);
+			path = ZZGeneralSettingViewController;
+			sourceTree = "<group>";
+		};
 		C22239E31E5815F5002CB428 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,8 +761,9 @@
 		C2A10C9E1E5AE11C000960D9 /* ZZSettingViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C2A10C9F1E5AE12D000960D9 /* ZZSettingViewController.h */,
-				C2A10CA01E5AE12D000960D9 /* ZZSettingViewController.m */,
+				C21DDF291E700648000BCD9C /* ZZGeneralSettingViewController */,
+				C21DDF271E700648000BCD9C /* ZZColorSettingViewController */,
+				C21DDF281E700648000BCD9C /* ZZFontSettingViewController */,
 			);
 			path = ZZSettingViewController;
 			sourceTree = "<group>";
@@ -1057,6 +1099,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2154E4B1E710C5100E3D18C /* ZZSettingItemsAddViewController.xib in Resources */,
 				C2F387011E6B2AD100BA1448 /* ZZPropertyEventCell.xib in Resources */,
 				C2C7762B1E6D377D00464A27 /* ZZPropertyXYCell.xib in Resources */,
 				C2D6CA231E5BE12700EEF76B /* LICENSE in Resources */,
@@ -1097,6 +1140,7 @@
 				C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */,
 				C2D6CA2D1E5BE12700EEF76B /* ViewController+MASAdditions.m in Sources */,
 				C2D6CA2E1E5BE12700EEF76B /* README.md in Sources */,
+				C21DDF2F1E701386000BCD9C /* ZZColorSettingViewController.m in Sources */,
 				C21DDF0D1E6FF07B000BCD9C /* ZZUITextView.m in Sources */,
 				C2D406471E6BEC0000D52F95 /* ZZPropertyBoolCell.m in Sources */,
 				C21DDEC61E6FEFB6000BCD9C /* ZZUIResponder.m in Sources */,
@@ -1117,6 +1161,7 @@
 				C2D6CA2C1E5BE12700EEF76B /* View+MASAdditions.m in Sources */,
 				C2C7762A1E6D377D00464A27 /* ZZPropertyXYCell.m in Sources */,
 				C2A10C4F1E5A1597000960D9 /* ZZControlAreaViewController.m in Sources */,
+				C21DDF331E701396000BCD9C /* ZZFontSettingViewController.m in Sources */,
 				C21DDED21E6FF004000BCD9C /* ZZUIButton.m in Sources */,
 				C21DDE9E1E6FDA4E000BCD9C /* ZZCodeCreator.m in Sources */,
 				C21DDF211E6FF2BC000BCD9C /* ZZClassHelper.m in Sources */,
@@ -1134,9 +1179,9 @@
 				C21DDF021E6FF067000BCD9C /* ZZUITableViewDelegate.m in Sources */,
 				C2F387001E6B2AD100BA1448 /* ZZPropertyEventCell.m in Sources */,
 				C21DDED51E6FF00C000BCD9C /* ZZUICollectionView.m in Sources */,
-				C2A10CA11E5AE12D000960D9 /* ZZSettingViewController.m in Sources */,
 				C21DDEDE1E6FF022000BCD9C /* ZZUICollectionViewDelegate.m in Sources */,
 				C2223A101E5876B1002CB428 /* ZZMainViewController.m in Sources */,
+				C2154E4A1E710C5100E3D18C /* ZZSettingItemsAddViewController.m in Sources */,
 				C21DDEE31E6FF02A000BCD9C /* ZZUICollectionViewDelegateFlowLayout.m in Sources */,
 				C2F386DF1E6B0DA700BA1448 /* ZZPropertyEditViewController+Delegate.m in Sources */,
 				C2B3F6101E62FCD1000E42CE /* ZZCodeLayoutViewController.m in Sources */,
@@ -1152,6 +1197,7 @@
 				C21DDE901E6FAD7D000BCD9C /* ZZPropertySelectionAndEditCell.m in Sources */,
 				C21DDEF61E6FF053000BCD9C /* ZZUISwitch.m in Sources */,
 				C2D6CA271E5BE12700EEF76B /* MASLayoutConstraint.m in Sources */,
+				C21DDF2C1E700648000BCD9C /* ZZGeneralSettingViewController.m in Sources */,
 				C2A10CB11E5AEF0B000960D9 /* ZZNewPropertyViewController.m in Sources */,
 				C21DDECF1E6FEFF6000BCD9C /* ZZEvent.m in Sources */,
 				C2D6CA221E5BE12700EEF76B /* NSString+MMBJ.m in Sources */,

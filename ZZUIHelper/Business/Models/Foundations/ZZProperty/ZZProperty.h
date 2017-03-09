@@ -50,7 +50,7 @@ typedef NS_ENUM(NSInteger, ZZPropertyType) {
 - (id)initWithPropertyName:(NSString *)propertyName type:(ZZPropertyType)type defaultValue:(id)defaultValue;
 - (id)initWithPropertyName:(NSString *)propertyName type:(ZZPropertyType)type defaultValue:(id)defaultValue selecetd:(BOOL)selected;
 - (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData andDefaultSelectIndex:(NSInteger)selectIndex;
-- (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData defaultSelectIndex:(NSInteger)selectIndex editable:(BOOL)editable;
+- (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData defaultValue:(NSString *)defaultValue editable:(BOOL)editable;
 
 @end
 
