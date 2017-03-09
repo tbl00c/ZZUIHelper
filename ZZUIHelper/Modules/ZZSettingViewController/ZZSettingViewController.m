@@ -31,6 +31,8 @@
     [editingTabViewItem setView:editingVC.view];
     [editingTabViewItem setViewController:editingVC];
     [self insertTabViewItem:editingTabViewItem atIndex:2];
+    
+    [self setSelectedTabViewItemIndex:0];
 }
 
 @end
