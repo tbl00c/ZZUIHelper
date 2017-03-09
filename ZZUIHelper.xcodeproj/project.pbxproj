@@ -73,6 +73,7 @@
 		C2B3F6021E62FC96000E42CE /* ZZCodeHFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F6011E62FC96000E42CE /* ZZCodeHFileViewController.m */; };
 		C2B3F60B1E62FCC2000E42CE /* ZZCodeMFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F6091E62FCC2000E42CE /* ZZCodeMFileViewController.m */; };
 		C2B3F6101E62FCD1000E42CE /* ZZCodeLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F60E1E62FCD1000E42CE /* ZZCodeLayoutViewController.m */; };
+		C2BB54D81E713A3D004D34CE /* ZZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB54D71E713A3D004D34CE /* ZZSettingViewController.m */; };
 		C2C7762A1E6D377D00464A27 /* ZZPropertyXYCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C776281E6D377D00464A27 /* ZZPropertyXYCell.m */; };
 		C2C7762B1E6D377D00464A27 /* ZZPropertyXYCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C776291E6D377D00464A27 /* ZZPropertyXYCell.xib */; };
 		C2C7762F1E6D426C00464A27 /* ZZPropertyXYWHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7762D1E6D426C00464A27 /* ZZPropertyXYWHCell.m */; };
@@ -250,6 +251,8 @@
 		C2B3F6091E62FCC2000E42CE /* ZZCodeMFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeMFileViewController.m; sourceTree = "<group>"; };
 		C2B3F60D1E62FCD1000E42CE /* ZZCodeLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeLayoutViewController.h; sourceTree = "<group>"; };
 		C2B3F60E1E62FCD1000E42CE /* ZZCodeLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeLayoutViewController.m; sourceTree = "<group>"; };
+		C2BB54D61E713A3D004D34CE /* ZZSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSettingViewController.h; sourceTree = "<group>"; };
+		C2BB54D71E713A3D004D34CE /* ZZSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSettingViewController.m; sourceTree = "<group>"; };
 		C2C776271E6D377D00464A27 /* ZZPropertyXYCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyXYCell.h; sourceTree = "<group>"; };
 		C2C776281E6D377D00464A27 /* ZZPropertyXYCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyXYCell.m; sourceTree = "<group>"; };
 		C2C776291E6D377D00464A27 /* ZZPropertyXYCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyXYCell.xib; sourceTree = "<group>"; };
@@ -764,6 +767,8 @@
 				C21DDF291E700648000BCD9C /* ZZGeneralSettingViewController */,
 				C21DDF271E700648000BCD9C /* ZZColorSettingViewController */,
 				C21DDF281E700648000BCD9C /* ZZFontSettingViewController */,
+				C2BB54D61E713A3D004D34CE /* ZZSettingViewController.h */,
+				C2BB54D71E713A3D004D34CE /* ZZSettingViewController.m */,
 			);
 			path = ZZSettingViewController;
 			sourceTree = "<group>";
@@ -1138,6 +1143,7 @@
 				C2D6CA241E5BE12700EEF76B /* MASCompositeConstraint.m in Sources */,
 				C2D6CA2B1E5BE12700EEF76B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */,
+				C2BB54D81E713A3D004D34CE /* ZZSettingViewController.m in Sources */,
 				C2D6CA2D1E5BE12700EEF76B /* ViewController+MASAdditions.m in Sources */,
 				C2D6CA2E1E5BE12700EEF76B /* README.md in Sources */,
 				C21DDF2F1E701386000BCD9C /* ZZColorSettingViewController.m in Sources */,
