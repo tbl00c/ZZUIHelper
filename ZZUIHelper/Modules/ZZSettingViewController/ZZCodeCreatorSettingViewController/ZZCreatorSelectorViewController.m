@@ -30,7 +30,7 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NSString *title = @"Normal - Getter";
+    NSString *title = @"Default";
     return title;
 }
 
