@@ -7,8 +7,6 @@
 //
 
 #import "ZZNSObject.h"
-#import "ZZCALayer.h"
-#import "ZZUIResponder+Masonry.h"
 
 @implementation ZZNSObject
 @synthesize properties = _properties;
@@ -95,78 +93,7 @@
     return _properties;
 }
 
-- (ZZMethod *)getterMethod
-{
-    ZZMethod *getterMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (%@ *)%@", self.className, self.propertyName]];
-    NSMutableString *getterCode = [NSMutableString stringWithFormat:@"if (!_%@) {\n", self.propertyName];
-    [getterCode appendFormat:@"_%@ = %@;\n", self.propertyName, self.getterCodeInitMethodName];
-    
-    NSArray *properties = self.properties;
-    for (ZZPropertyGroup *group in properties) {
-        for (ZZProperty *item in group.properties) {
-            if (item.selected) {
-                if ([group.groupName isEqualToString:@"CALayer"]) {
-                    [getterCode appendFormat:@"[_%@.layer %@];\n", self.propertyName, item.propertyCode];
-                }
-                else {
-                    [getterCode appendFormat:@"[_%@ %@];\n", self.propertyName, item.propertyCode];
-                }
-            }
-        }
-        for (ZZProperty *item in group.privateProperties) {
-            if (item.selected) {
-                [getterCode appendFormat:@"[_%@ %@];\n", self.propertyName, item.propertyCode];
-            }
-        }
-    }
-    
-    [getterCode appendFormat:@"}\nreturn _%@;\n", self.propertyName];
-    [getterMethod addMethodContentCode:getterCode];
-    return getterMethod;
-}
-- (NSString *)getterCode
-{
-    return [[self.getterMethod methodCode] stringByAppendingString:@"\n"];
-}
-
-- (ZZMethod *)setupMethod
-{
-    ZZMethod *setupMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)setup%@", [self.propertyName uppercaseFirstCharacter]]];
-    NSMutableString *setupCode = [NSMutableString stringWithFormat:@"self.%@ = %@;\n", self.propertyName, self.getterCodeInitMethodName];
-    
-    NSArray *properties = self.properties;
-    for (ZZPropertyGroup *group in properties) {
-        for (ZZProperty *item in group.properties) {
-            if (item.selected) {
-                if ([group.groupName isEqualToString:@"CALayer"]) {
-                    [setupCode appendFormat:@"[self.%@.layer %@];\n", self.propertyName, item.propertyCode];
-                }
-                else {
-                    [setupCode appendFormat:@"[self.%@ %@];\n", self.propertyName, item.propertyCode];
-                }
-            }
-        }
-        for (ZZProperty *item in group.privateProperties) {
-            if (item.selected) {
-                [setupCode appendFormat:@"[self.%@ %@];\n", self.propertyName, item.propertyCode];
-            }
-        }
-    }
-    [setupCode appendFormat:@"[self addSubview:self.%@];\n", self.propertyName];
-    
-    if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
-        [setupCode appendString:[(ZZUIResponder *)self masonryCode]];
-    }
-    
-    [setupMethod addMethodContentCode:setupCode];
-    return setupMethod;
-}
-- (NSString *)setupCode
-{
-    return [[self.setupMethod methodCode] stringByAppendingString:@"\n"];
-}
-
-- (NSString *)getterCodeInitMethodName
+- (NSString *)allocInitMethodName
 {
     return [NSString stringWithFormat:@"[[%@ alloc] init]", self.className];
 }

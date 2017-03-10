@@ -29,7 +29,7 @@
     return @"self.contentView";
 }
 
-- (NSString *)getterCodeInitMethodName
+- (NSString *)allocInitMethodName
 {
     return [NSString stringWithFormat:@"[[%@ alloc] initWithFrame:CGRectZero collectionViewLayout:self.collectionViewFlowLayout]", self.className];
 }

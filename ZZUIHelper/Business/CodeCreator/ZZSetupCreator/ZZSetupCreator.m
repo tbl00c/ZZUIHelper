@@ -12,14 +12,68 @@
 #import "ZZUIControl.h"
 #import "ZZUIView.h"
 #import "ZZUIViewController.h"
+#import "ZZUITableView.h"
+#import "ZZUICollectionView.h"
 
 @interface ZZSetupCreator ()
 
 @property (nonatomic, strong) NSArray *codeBlocks;
 
+@property (nonatomic, strong) NSString *(^setupMethodForObject)(ZZUIResponder *superView, ZZNSObject *object);
+
 @end
 
 @implementation ZZSetupCreator
+
+- (id)init
+{
+    if (self = [super init]) {
+        [self setSetupMethodForObject:^NSString *(ZZUIResponder *superView, ZZNSObject *object) {
+            ZZMethod *setupMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)setup%@", [object.propertyName uppercaseFirstCharacter]]];
+            NSMutableString *setupCode = [[NSMutableString alloc] init];
+ 
+            if ([superView isKindOfClass:[ZZUICollectionView class]]) {
+                [setupCode appendString:@"[self setupData];\n"];
+                [setupCode appendString:@"[self setupCollectionViewFlowLayout];\n"];
+            }
+            else if ([superView isKindOfClass:[ZZUITableView class]]) {
+                [setupCode appendString:@"[self setupData];\n"];
+            }
+            
+            [setupCode appendFormat:@"self.%@ = %@;\n", object.propertyName, object.allocInitMethodName];
+            
+            NSArray *properties = object.properties;
+            for (ZZPropertyGroup *group in properties) {
+                for (ZZProperty *item in group.properties) {
+                    if (item.selected) {
+                        if ([group.groupName isEqualToString:@"CALayer"]) {
+                            [setupCode appendFormat:@"[self.%@.layer %@];\n", object.propertyName, item.propertyCode];
+                        }
+                        else {
+                            [setupCode appendFormat:@"[self.%@ %@];\n", object.propertyName, item.propertyCode];
+                        }
+                    }
+                }
+                for (ZZProperty *item in group.privateProperties) {
+                    if (item.selected) {
+                        [setupCode appendFormat:@"[self.%@ %@];\n", object.propertyName, item.propertyCode];
+                    }
+                }
+            }
+            if ([[object class] isSubclassOfClass:[ZZUIResponder class]]) {
+                [setupCode appendFormat:@"[%@ addSubview:self.%@];\n", superView.curView, object.propertyName];
+            }
+            
+            if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry && [object respondsToSelector:@selector(masonryCode)]) {
+                [setupCode appendString:[(ZZUIResponder *)object masonryCode]];
+            }
+            [setupMethod addMethodContentCode:setupCode];
+            NSString *code = [[setupMethod methodCode] stringByAppendingString:@"\n"];
+            return code;
+        }];
+    }
+    return self;
+}
 
 - (NSMutableArray *)modules
 {
@@ -54,7 +108,7 @@
 {
     NSString *fileName = [viewClass.className stringByAppendingString:@".m"];
     NSString *copyrightCode = [[ZZUIHelperConfig sharedInstance] copyrightCodeByFileName:fileName];
-    NSString *code = [copyrightCode stringByAppendingFormat:@"#import \"%@.h\"\n\n", self.className];
+    NSString *code = [copyrightCode stringByAppendingFormat:@"#import \"%@.h\"\n\n", viewClass.className];
     // 类拓展
     NSString *extensionCode = [self m_extensionCodeForViewClass:viewClass];
     if (extensionCode.length > 0) {
@@ -71,7 +125,7 @@
 {
     NSArray *delegatesArray = viewClass.childDelegateViewsArray;
     if (viewClass.extensionProperties.count > 0 || delegatesArray.count > 0) {
-        NSString *extensionCode = [NSString stringWithFormat:@"@interface %@ ()", self.className];
+        NSString *extensionCode = [NSString stringWithFormat:@"@interface %@ ()", viewClass.className];
         if (delegatesArray.count > 0) {    // 协议
             NSString *delegateCode = @"";
             for (ZZProtocol *protocol in delegatesArray) {
@@ -100,7 +154,7 @@
 /// .m中，类实现代码
 - (NSString *)m_implementationCodeForViewClass:(ZZUIResponder *)viewClass
 {
-    NSMutableString *implementationCode = [NSMutableString stringWithFormat:@"@implementation %@\n\n", self.className];
+    NSMutableString *implementationCode = [NSMutableString stringWithFormat:@"@implementation %@\n\n", viewClass.className];
     
     for (ZZCreatorCodeBlock *block in self.modules) {
         NSString *code = block.action(viewClass);
@@ -261,17 +315,20 @@
 - (ZZCreatorCodeBlock *)setupCodeBlock
 {
     if (!_setupCodeBlock) {
+        __weak typeof(self) weakSelf = self;
         _setupCodeBlock = [[ZZCreatorCodeBlock alloc] initWithBlockName:@"Setup UI" action:^NSString *(ZZUIResponder *viewClass) {
             if (viewClass.interfaceProperties.count + viewClass.extensionProperties.count > 0) {
                 NSString *getterCode = [NSString stringWithFormat:@"%@ Setup UI\n", PMARK_];
                 for (ZZNSObject *resp in viewClass.interfaceProperties) {
-                    if (resp.getterCode.length > 0) {
-                        getterCode = [getterCode stringByAppendingString:resp.setupCode];
+                    NSString *code = weakSelf.setupMethodForObject(viewClass, resp);
+                    if (code.length > 0) {
+                        getterCode = [getterCode stringByAppendingString:code];
                     }
                 }
                 for (ZZNSObject *resp in viewClass.extensionProperties) {
-                    if (resp.getterCode.length > 0) {
-                        getterCode = [getterCode stringByAppendingString:resp.setupCode];
+                    NSString *code = weakSelf.setupMethodForObject(viewClass, resp);
+                    if (code.length > 0) {
+                        getterCode = [getterCode stringByAppendingString:code];
                     }
                 }
                 return getterCode;

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZZMethod.h"
 #import "ZZProperty.h"
 #import "ZZProtocol.h"
 
@@ -34,15 +33,7 @@
 
 @property (nonatomic, strong, readonly) NSArray *delegates;
 
-#pragma mark - # Getter
-/// Getter方法
-@property (nonatomic, strong, readonly) ZZMethod *getterMethod;
-@property (nonatomic, strong, readonly) NSString *getterCode;
-/// setup方法
-@property (nonatomic, strong, readonly) ZZMethod *setupMethod;
-@property (nonatomic, strong, readonly) NSString *setupCode;
-
-@property (nonatomic, strong) NSString *getterCodeInitMethodName;
+@property (nonatomic, strong) NSString *allocInitMethodName;
 
 /// 属性
 @property (nonatomic, strong, readonly) NSMutableArray *properties;

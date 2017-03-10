@@ -17,9 +17,47 @@
 
 @property (nonatomic, strong) NSArray *codeBlocks;
 
+@property (nonatomic, strong) NSString *(^getterMethodForViewClass)(ZZNSObject *object);
+
 @end
 
 @implementation ZZLazyLoadCreator
+
+- (id)init
+{
+    if (self = [super init]) {
+        [self setGetterMethodForViewClass:^NSString *(ZZNSObject *object) {
+            ZZMethod *getterMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (%@ *)%@", object.className, object.propertyName]];
+            NSMutableString *getterCode = [NSMutableString stringWithFormat:@"if (!_%@) {\n", object.propertyName];
+            [getterCode appendFormat:@"_%@ = %@;\n", object.propertyName, object.allocInitMethodName];
+            
+            NSArray *properties = object.properties;
+            for (ZZPropertyGroup *group in properties) {
+                for (ZZProperty *item in group.properties) {
+                    if (item.selected) {
+                        if ([group.groupName isEqualToString:@"CALayer"]) {
+                            [getterCode appendFormat:@"[_%@.layer %@];\n", object.propertyName, item.propertyCode];
+                        }
+                        else {
+                            [getterCode appendFormat:@"[_%@ %@];\n", object.propertyName, item.propertyCode];
+                        }
+                    }
+                }
+                for (ZZProperty *item in group.privateProperties) {
+                    if (item.selected) {
+                        [getterCode appendFormat:@"[_%@ %@];\n", object.propertyName, item.propertyCode];
+                    }
+                }
+            }
+            
+            [getterCode appendFormat:@"}\nreturn _%@;\n", object.propertyName];
+            [getterMethod addMethodContentCode:getterCode];
+            NSString *code = [[getterMethod methodCode] stringByAppendingString:@"\n"];
+            return code;
+        }];
+    }
+    return self;
+}
 
 - (NSMutableArray *)modules
 {
@@ -54,7 +92,7 @@
 {
     NSString *fileName = [viewClass.className stringByAppendingString:@".m"];
     NSString *copyrightCode = [[ZZUIHelperConfig sharedInstance] copyrightCodeByFileName:fileName];
-    NSString *code = [copyrightCode stringByAppendingFormat:@"#import \"%@.h\"\n\n", self.className];
+    NSString *code = [copyrightCode stringByAppendingFormat:@"#import \"%@.h\"\n\n", viewClass.className];
     // 类拓展
     NSString *extensionCode = [self m_extensionCodeForViewClass:viewClass];
     if (extensionCode.length > 0) {
@@ -71,7 +109,7 @@
 {
     NSArray *delegatesArray = viewClass.childDelegateViewsArray;
     if (viewClass.extensionProperties.count > 0 || delegatesArray.count > 0) {
-        NSString *extensionCode = [NSString stringWithFormat:@"@interface %@ ()", self.className];
+        NSString *extensionCode = [NSString stringWithFormat:@"@interface %@ ()", viewClass.className];
         if (delegatesArray.count > 0) {    // 协议
             NSString *delegateCode = @"";
             for (ZZProtocol *protocol in delegatesArray) {
@@ -100,7 +138,7 @@
 /// .m中，类实现代码
 - (NSString *)m_implementationCodeForViewClass:(ZZUIResponder *)viewClass
 {
-    NSMutableString *implementationCode = [NSMutableString stringWithFormat:@"@implementation %@\n\n", self.className];
+    NSMutableString *implementationCode = [NSMutableString stringWithFormat:@"@implementation %@\n\n", viewClass.className];
     
     for (ZZCreatorCodeBlock *block in self.modules) {
         NSString *code = block.action(viewClass);
@@ -294,17 +332,20 @@
 - (ZZCreatorCodeBlock *)getterCodeBlock
 {
     if (!_getterCodeBlock) {
+        __weak typeof(self) weakSelf = self;
         _getterCodeBlock = [[ZZCreatorCodeBlock alloc] initWithBlockName:@"Getters" action:^NSString *(ZZUIResponder *viewClass) {
             if (viewClass.interfaceProperties.count + viewClass.extensionProperties.count > 0) {
                 NSString *getterCode = [NSString stringWithFormat:@"%@ Getter\n", PMARK_];
                 for (ZZNSObject *resp in viewClass.interfaceProperties) {
-                    if (resp.getterCode.length > 0) {
-                        getterCode = [getterCode stringByAppendingString:resp.getterCode];
+                    NSString *code = weakSelf.getterMethodForViewClass(resp);
+                    if (code.length > 0) {
+                        getterCode = [getterCode stringByAppendingString:code];
                     }
                 }
                 for (ZZNSObject *resp in viewClass.extensionProperties) {
-                    if (resp.getterCode.length > 0) {
-                        getterCode = [getterCode stringByAppendingString:resp.getterCode];
+                    NSString *code = weakSelf.getterMethodForViewClass(resp);
+                    if (code.length > 0) {
+                        getterCode = [getterCode stringByAppendingString:code];
                     }
                 }
                 return getterCode;
