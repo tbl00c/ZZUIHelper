@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) NSString *name;
 
+@property (nonatomic, strong) NSString *des;
+
 @property (nonatomic, strong) id<ZZCreatorProtocol> creator;
 
 - (id)initWithName:(NSString *)name andCreator:(id<ZZCreatorProtocol>)creator;

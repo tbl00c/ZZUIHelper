@@ -8,6 +8,7 @@
 
 #import "ZZCreatorManager.h"
 #import "ZZLazyLoadCreator.h"
+#import "ZZSetupCreator.h"
 
 @implementation ZZCreatorManager
 
@@ -45,9 +46,17 @@
 - (NSArray *)creatorList
 {
     if (!_curCreator) {
+        // 惰性初始化
         ZZLazyLoadCreator *lazyLoadCreator = [[ZZLazyLoadCreator alloc] init];
-        ZZCreatorModel *lazyLoadModel = [[ZZCreatorModel alloc] initWithName:@"Lazy Load" andCreator:lazyLoadCreator];
-        _creatorList = @[lazyLoadModel];
+        ZZCreatorModel *lazyLoadModel = [[ZZCreatorModel alloc] initWithName:@"Lazy Load Creator" andCreator:lazyLoadCreator];
+        [lazyLoadModel setDes:@"通过惰性初始化的方式添加UI"];
+        
+        // setup
+        ZZSetupCreator *setupCreator = [[ZZSetupCreator alloc] init];
+        ZZCreatorModel *setupModel = [[ZZCreatorModel alloc] initWithName:@"Setup Creator" andCreator:setupCreator];
+        [setupModel setDes:@"通过在setup方法中初始化UI"];
+        
+        _creatorList = @[lazyLoadModel, setupModel];
     }
     return _creatorList;
 }
@@ -59,6 +68,7 @@
 }
 - (void)setCurCreatorIndex:(NSInteger)curCreatorIndex
 {
+    self.curCreator = [self.creatorList[curCreatorIndex] creator];
     [[NSUserDefaults standardUserDefaults] setObject:@(curCreatorIndex) forKey:@"curCreatorIndex"];
 }
 

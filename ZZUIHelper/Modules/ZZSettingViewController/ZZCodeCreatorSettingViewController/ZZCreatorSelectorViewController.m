@@ -7,6 +7,7 @@
 //
 
 #import "ZZCreatorSelectorViewController.h"
+#import "ZZCreatorSelectorCell.h"
 
 @interface ZZCreatorSelectorViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
@@ -31,16 +32,28 @@
     return self.data.count;
 }
 
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     ZZCreatorModel *model = self.data[row];
-    
-    return model.name;
+    ZZCreatorSelectorCell *cell = [tableView makeViewWithIdentifier:@"ZZCreatorSelectorCell" owner:self];
+    [cell setModel:model];
+    [cell setIsDefault:row == [ZZCreatorManager sharedInstance].curCreatorIndex];
+    return cell;
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
-    return 20.0f;
+    return 50.0f;
+}
+
+#pragma mark - # Delegate
+- (IBAction)setDefault:(id)sender {
+    NSInteger index = self.tableView.selectedRow;
+    if (index >= 0 && index < self.data.count) {
+        [[ZZCreatorManager sharedInstance] setCurCreatorIndex:index];
+        [self.tableView reloadData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROJECT object:nil];
+    }
 }
 
 @end

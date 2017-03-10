@@ -12,6 +12,7 @@
 #import "ZZUIControl.h"
 #import "ZZUIView.h"
 #import "ZZUIViewController.h"
+#import "ZZCreatorCodeBlock.h"
 
 @implementation ZZLazyLoadCreator
 
@@ -68,6 +69,11 @@
 - (NSString *)m_implementationCodeForViewClass:(ZZUIResponder *)viewClass
 {
     NSString *implementationCode = [NSString stringWithFormat:@"@implementation %@\n\n", self.className];
+    
+    
+//    ZZCreatorCodeBlock *initCode = [[ZZCreatorCodeBlock alloc] initWithBlockName:@"LifeCycle" action:^NSString *(ZZUIResponder *) {
+//        
+//    }];
     
     // 初始化代码
     NSString *initCode = [self m_initCodeForViewClass:viewClass];
@@ -271,5 +277,7 @@
     interfaceCode = [interfaceCode stringByAppendingString:@"@end\n"];
     return interfaceCode;
 }
+
+#pragma mark - # Getter
 
 @end

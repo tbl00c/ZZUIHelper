@@ -11,4 +11,6 @@
 
 @interface ZZLazyLoadCreator : NSObject <ZZCreatorProtocol>
 
+@property (nonatomic, strong) NSMutableArray *modules;
+
 @end
