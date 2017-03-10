@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "ZZCreatorProtocol.h"
+#import "ZZCreatorCodeBlock.h"
 
 @interface ZZLazyLoadCreator : NSObject <ZZCreatorProtocol>
 
-@property (nonatomic, strong) NSMutableArray *modules;
+@property (nonatomic, strong) ZZCreatorCodeBlock *lifeCycleCodeBlock;
+@property (nonatomic, strong) ZZCreatorCodeBlock *delegateCodeBlock;
+@property (nonatomic, strong) ZZCreatorCodeBlock *eventCodeBlock;
+@property (nonatomic, strong) ZZCreatorCodeBlock *privateCodeBlock;
+@property (nonatomic, strong) ZZCreatorCodeBlock *getterCodeBlock;
 
 @end

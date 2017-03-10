@@ -37,9 +37,10 @@
 #pragma mark - # Getter
 /// Getter方法
 @property (nonatomic, strong, readonly) ZZMethod *getterMethod;
-
-/// Getter方法代码 ([getterMethod methodCode])
 @property (nonatomic, strong, readonly) NSString *getterCode;
+/// setup方法
+@property (nonatomic, strong, readonly) ZZMethod *setupMethod;
+@property (nonatomic, strong, readonly) NSString *setupCode;
 
 @property (nonatomic, strong) NSString *getterCodeInitMethodName;
 

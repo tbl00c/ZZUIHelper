@@ -8,6 +8,7 @@
 
 #import "ZZNSObject.h"
 #import "ZZCALayer.h"
+#import "ZZUIResponder+Masonry.h"
 
 @implementation ZZNSObject
 @synthesize properties = _properties;
@@ -123,15 +124,51 @@
     [getterMethod addMethodContentCode:getterCode];
     return getterMethod;
 }
+- (NSString *)getterCode
+{
+    return [[self.getterMethod methodCode] stringByAppendingString:@"\n"];
+}
+
+- (ZZMethod *)setupMethod
+{
+    ZZMethod *setupMethod = [[ZZMethod alloc] initWithMethodName:[NSString stringWithFormat:@"- (void)setup%@", [self.propertyName uppercaseFirstCharacter]]];
+    NSMutableString *setupCode = [NSMutableString stringWithFormat:@"self.%@ = %@;\n", self.propertyName, self.getterCodeInitMethodName];
+    
+    NSArray *properties = self.properties;
+    for (ZZPropertyGroup *group in properties) {
+        for (ZZProperty *item in group.properties) {
+            if (item.selected) {
+                if ([group.groupName isEqualToString:@"CALayer"]) {
+                    [setupCode appendFormat:@"[self.%@.layer %@];\n", self.propertyName, item.propertyCode];
+                }
+                else {
+                    [setupCode appendFormat:@"[self.%@ %@];\n", self.propertyName, item.propertyCode];
+                }
+            }
+        }
+        for (ZZProperty *item in group.privateProperties) {
+            if (item.selected) {
+                [setupCode appendFormat:@"[self.%@ %@];\n", self.propertyName, item.propertyCode];
+            }
+        }
+    }
+    [setupCode appendFormat:@"[self addSubview:self.%@];\n", self.propertyName];
+    
+    if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
+        [setupCode appendString:[(ZZUIResponder *)self masonryCode]];
+    }
+    
+    [setupMethod addMethodContentCode:setupCode];
+    return setupMethod;
+}
+- (NSString *)setupCode
+{
+    return [[self.setupMethod methodCode] stringByAppendingString:@"\n"];
+}
 
 - (NSString *)getterCodeInitMethodName
 {
     return [NSString stringWithFormat:@"[[%@ alloc] init]", self.className];
-}
-
-- (NSString *)getterCode
-{
-    return [[self.getterMethod methodCode] stringByAppendingString:@"\n"];
 }
 
 @end

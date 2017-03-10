@@ -25,6 +25,13 @@
     self.data = [ZZCreatorManager sharedInstance].creatorList.mutableCopy;
 }
 
+- (void)viewWillAppear
+{
+    [super viewWillAppear];
+    [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:[ZZCreatorManager sharedInstance].curCreatorIndex] byExtendingSelection:NO];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_SETTING_SELECT_CREATOR object:[ZZCreatorManager sharedInstance].curCreator];
+}
+
 #pragma mark - # Delegate
 //MARK: NSTableViewDataSource
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -44,6 +51,15 @@
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
     return 50.0f;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+    NSInteger row = [notification.object selectedRow];
+    if (row > 0 && row < [ZZCreatorManager sharedInstance].creatorList.count) {
+        id<ZZCreatorProtocol> creator = [ZZCreatorManager sharedInstance].creatorList[row];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_SETTING_SELECT_CREATOR object:creator];
+    }
 }
 
 #pragma mark - # Delegate

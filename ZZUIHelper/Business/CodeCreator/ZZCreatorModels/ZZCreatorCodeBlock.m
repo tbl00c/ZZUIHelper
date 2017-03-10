@@ -10,4 +10,13 @@
 
 @implementation ZZCreatorCodeBlock
 
+- (id)initWithBlockName:(NSString *)blockName action:(NSString *(^)(ZZUIResponder *))action
+{
+    if (self = [super init]) {
+        self.blockName = blockName;
+        self.action = action;
+    }
+    return self;
+}
+
 @end

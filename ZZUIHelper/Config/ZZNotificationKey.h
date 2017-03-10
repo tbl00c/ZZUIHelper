@@ -16,5 +16,6 @@
 #define     NOTI_CLASS_PROPERTY_EDIT            @"NOTI_CLASS_PROPERTY_EDIT"         // 控件编辑
 #define     NOTI_NEW_PROPERTY_VC_CLOSE          @"NOTI_NEW_PROPERTY_VC_CLOSE"
 #define     NOTI_SETTING_EDIT                   @"NOTI_SETTING_EDIT"
+#define     NOTI_SETTING_SELECT_CREATOR         @"NOTI_SETTING_SELECT_CREATOR"      // 设置-选中了生成器
 
 #endif /* ZZNotificationKey_h */

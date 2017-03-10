@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSString *blockName;
 
+@property (nonatomic, strong) NSString *remarks;
+
 @property (nonatomic, strong) NSString *(^action)(ZZUIResponder *object);
 
 - (id)initWithBlockName:(NSString *)blockName action:(NSString *(^)(ZZUIResponder *))action;

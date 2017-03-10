@@ -10,6 +10,8 @@
 
 @protocol ZZCreatorProtocol <NSObject>
 
+@property (nonatomic, strong) NSMutableArray *modules;
+
 - (NSString *)hFileForViewClass:(ZZUIResponder *)viewClass;
 
 - (NSString *)mFileForViewClass:(ZZUIResponder *)viewClass;

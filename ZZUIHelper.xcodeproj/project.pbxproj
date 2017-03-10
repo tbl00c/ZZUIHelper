@@ -61,6 +61,7 @@
 		C22D8D841E72854F00A33083 /* ZZCreatorSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D8D831E72854F00A33083 /* ZZCreatorSelectorCell.m */; };
 		C22D8D881E728A7D00A33083 /* ZZSetupCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D8D871E728A7D00A33083 /* ZZSetupCreator.m */; };
 		C22D8D8B1E728F9200A33083 /* ZZCreatorCodeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D8D8A1E728F9200A33083 /* ZZCreatorCodeBlock.m */; };
+		C22D8D8E1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D8D8D1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m */; };
 		C28FDA7F1E6B00D400AE41A2 /* ZZProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C28FDA7E1E6B00D400AE41A2 /* ZZProperty.m */; };
 		C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C1B1E59614B000960D9 /* ZZUIHelperConfig.m */; };
 		C2A10C4A1E5A0E79000960D9 /* ZZElementAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C491E5A0E79000960D9 /* ZZElementAreaViewController.m */; };
@@ -235,6 +236,8 @@
 		C22D8D871E728A7D00A33083 /* ZZSetupCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSetupCreator.m; sourceTree = "<group>"; };
 		C22D8D891E728F9200A33083 /* ZZCreatorCodeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCreatorCodeBlock.h; sourceTree = "<group>"; };
 		C22D8D8A1E728F9200A33083 /* ZZCreatorCodeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCreatorCodeBlock.m; sourceTree = "<group>"; };
+		C22D8D8C1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCreatorCodeModuleCell.h; sourceTree = "<group>"; };
+		C22D8D8D1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCreatorCodeModuleCell.m; sourceTree = "<group>"; };
 		C28FDA7D1E6B00D400AE41A2 /* ZZProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZProperty.h; sourceTree = "<group>"; };
 		C28FDA7E1E6B00D400AE41A2 /* ZZProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZProperty.m; sourceTree = "<group>"; };
 		C2A10C1A1E59614B000960D9 /* ZZUIHelperConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIHelperConfig.h; sourceTree = "<group>"; };
@@ -894,6 +897,8 @@
 				C22D8D831E72854F00A33083 /* ZZCreatorSelectorCell.m */,
 				C2B776CB1E7157DE00D333E4 /* ZZCreatorSelectorViewController.h */,
 				C2B776CC1E7157DE00D333E4 /* ZZCreatorSelectorViewController.m */,
+				C22D8D8C1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.h */,
+				C22D8D8D1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m */,
 				C2B776CD1E7157DE00D333E4 /* ZZCreatorSettingViewController.h */,
 				C2B776CE1E7157DE00D333E4 /* ZZCreatorSettingViewController.m */,
 			);
@@ -1244,6 +1249,7 @@
 				C2A10C4F1E5A1597000960D9 /* ZZControlAreaViewController.m in Sources */,
 				C21DDF331E701396000BCD9C /* ZZFontSettingViewController.m in Sources */,
 				C21DDED21E6FF004000BCD9C /* ZZUIButton.m in Sources */,
+				C22D8D8E1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m in Sources */,
 				C21DDF211E6FF2BC000BCD9C /* ZZClassHelper.m in Sources */,
 				C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */,
 				C22D8D781E72525C00A33083 /* ZZUIResponder+CodeCreator.m in Sources */,
