@@ -8,9 +8,11 @@
 
 #import "ZZCreatorSelectorViewController.h"
 
-@interface ZZCreatorSelectorViewController () <NSTableViewDataSource>
+@interface ZZCreatorSelectorViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet NSTableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray *data;
 
 @end
 
@@ -18,20 +20,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    self.data = [ZZCreatorManager sharedInstance].creatorList.mutableCopy;
 }
 
 #pragma mark - # Delegate
 //MARK: NSTableViewDataSource
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return 1;
+    return self.data.count;
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NSString *title = @"Default";
-    return title;
+    ZZCreatorModel *model = self.data[row];
+    
+    return model.name;
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    return 20.0f;
 }
 
 @end

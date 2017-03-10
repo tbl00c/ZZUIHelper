@@ -8,7 +8,7 @@
 
 #import "ZZWindowController.h"
 #import "ZZNewFileViewController.h"
-#import "ZZCodeCreator.h"
+#import "ZZLazyLoadCreator.h"
 
 @interface ZZWindowController ()
 
@@ -44,7 +44,7 @@
     //.h
     NSString *fileName = [[ZZClassHelper sharedInstance].curClass.className stringByAppendingString:@".h"];
     NSString *hPath = [path stringByAppendingPathComponent:fileName];
-    NSString *hCode = [[ZZCodeCreator sharedInstance] hFileForViewClass:curClass];
+    NSString *hCode = [[ZZCreatorManager sharedInstance] hFileForViewClass:curClass];
     if (![self p_writeCode:hCode toFileAtPath:hPath]) {
         
         return;
@@ -53,7 +53,7 @@
     //.m
     fileName = [[ZZClassHelper sharedInstance].curClass.className stringByAppendingString:@".m"];
     NSString *mPath = [path stringByAppendingPathComponent:fileName];
-    NSString *mCode = [[ZZCodeCreator sharedInstance] mFileForViewClass:curClass];
+    NSString *mCode = [[ZZCreatorManager sharedInstance] mFileForViewClass:curClass];
     if (![self p_writeCode:mCode toFileAtPath:mPath]) {
         
         return;

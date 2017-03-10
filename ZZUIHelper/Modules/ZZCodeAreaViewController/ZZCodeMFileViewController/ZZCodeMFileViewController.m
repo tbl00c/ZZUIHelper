@@ -8,7 +8,6 @@
 
 #import "ZZCodeMFileViewController.h"
 #import <MGSFragaria/MGSFragaria.h>
-#import "ZZCodeCreator.h"
 
 @interface ZZCodeMFileViewController ()
 
@@ -38,7 +37,7 @@
 {
     if ([ZZClassHelper sharedInstance].curClass) {
         ZZUIResponder *curClass = [ZZClassHelper sharedInstance].curClass;
-        [self.fragaria setString:[[ZZCodeCreator sharedInstance] mFileForViewClass:curClass]];
+        [self.fragaria setString:[[ZZCreatorManager sharedInstance] mFileForViewClass:curClass]];
     }
 }
 

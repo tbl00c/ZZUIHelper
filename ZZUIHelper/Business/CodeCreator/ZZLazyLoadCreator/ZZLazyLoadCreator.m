@@ -1,29 +1,19 @@
 //
-//  ZZCodeCreator.m
+//  ZZLazyLoadCreator.m
 //  ZZUIHelper
 //
 //  Created by 李伯坤 on 2017/3/8.
 //  Copyright © 2017年 李伯坤. All rights reserved.
 //
 
-#import "ZZCodeCreator.h"
+#import "ZZLazyLoadCreator.h"
 #import "ZZUIResponder+CodeCreator.h"
 #import "ZZUIResponder+Masonry.h"
 #import "ZZUIControl.h"
 #import "ZZUIView.h"
 #import "ZZUIViewController.h"
 
-@implementation ZZCodeCreator
-
-+ (ZZCodeCreator *)sharedInstance
-{
-    static ZZCodeCreator *creator;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        creator = [[ZZCodeCreator alloc] init];
-    });
-    return creator;
-}
+@implementation ZZLazyLoadCreator
 
 #pragma mark - # m
 /// .m文件代码
