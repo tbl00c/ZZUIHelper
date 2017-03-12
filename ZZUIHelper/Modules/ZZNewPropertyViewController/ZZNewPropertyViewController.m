@@ -18,6 +18,7 @@
 @property (weak) IBOutlet NSTextField *propertyNameTF;
 @property (weak) IBOutlet NSTextField *remarkTF;
 @property (weak) IBOutlet NSTextField *warningLabel;
+@property (weak) IBOutlet NSButton *publicButton;
 
 @end
 
@@ -48,7 +49,12 @@
         Class cls = NSClassFromString(self.className);
         ZZNSObject *object = [[cls alloc] init];
         [object setClassName:definedClassName];
-        [[ZZClassHelper sharedInstance].curClass addPrivateProperty:object withName:propertyName andRemarks:remark];
+        if (self.publicButton.state) {
+            [[ZZClassHelper sharedInstance].curClass addPublicProperty:object withName:propertyName andRemarks:remark];
+        }
+        else {
+            [[ZZClassHelper sharedInstance].curClass addPrivateProperty:object withName:propertyName andRemarks:remark];
+        }
         [self dismissController:self];
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:object];
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];

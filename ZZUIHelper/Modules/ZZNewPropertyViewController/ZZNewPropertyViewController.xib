@@ -10,6 +10,7 @@
                 <outlet property="classNameLabel" destination="d2x-k6-ZX0" id="gJB-s6-IUc"/>
                 <outlet property="definedClassNameLabel" destination="jGH-yp-GJ1" id="2BG-Z6-69a"/>
                 <outlet property="propertyNameTF" destination="JMZ-gp-1FW" id="2Nk-21-Fe9"/>
+                <outlet property="publicButton" destination="8PI-D4-pyU" id="XbJ-kI-lI4"/>
                 <outlet property="remarkTF" destination="v2m-Xo-72z" id="JDu-Gy-5Dg"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="warningLabel" destination="VLp-BQ-VvY" id="iw9-6V-N0o"/>
@@ -121,15 +122,24 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="8PI-D4-pyU">
+                    <rect key="frame" x="18" y="31" width="60" height="18"/>
+                    <buttonCell key="cell" type="check" title="Public" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MVB-2a-Vgv">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="jGH-yp-GJ1" firstAttribute="leading" secondItem="JMZ-gp-1FW" secondAttribute="trailing" constant="30" id="0tZ-yz-2DK"/>
                 <constraint firstItem="vib-no-6g1" firstAttribute="leading" secondItem="VLp-BQ-VvY" secondAttribute="trailing" constant="17" id="1up-xz-0uB"/>
+                <constraint firstItem="8PI-D4-pyU" firstAttribute="leading" secondItem="4gV-G6-Igg" secondAttribute="leading" id="27a-tx-Cwi"/>
                 <constraint firstItem="JMZ-gp-1FW" firstAttribute="leading" secondItem="1zG-1N-g6E" secondAttribute="trailing" constant="14" id="2Tl-fg-tiM"/>
                 <constraint firstItem="vib-no-6g1" firstAttribute="centerY" secondItem="oMI-bt-ohV" secondAttribute="centerY" id="5Wf-FZ-euX"/>
                 <constraint firstItem="7Gv-SV-GSP" firstAttribute="centerY" secondItem="JMZ-gp-1FW" secondAttribute="centerY" id="78D-8K-0g4"/>
                 <constraint firstItem="oMI-bt-ohV" firstAttribute="leading" secondItem="vib-no-6g1" secondAttribute="trailing" constant="21" id="BG3-Mp-aLu"/>
                 <constraint firstItem="d2x-k6-ZX0" firstAttribute="leading" secondItem="JMZ-gp-1FW" secondAttribute="trailing" constant="-276" id="Rfd-7x-SW8"/>
+                <constraint firstItem="8PI-D4-pyU" firstAttribute="centerY" secondItem="vib-no-6g1" secondAttribute="centerY" id="WDg-OW-IoE"/>
                 <constraint firstItem="JMZ-gp-1FW" firstAttribute="centerY" secondItem="1zG-1N-g6E" secondAttribute="centerY" id="YXL-Uh-FFi"/>
                 <constraint firstItem="1zG-1N-g6E" firstAttribute="leading" secondItem="d2x-k6-ZX0" secondAttribute="leading" id="YhT-vq-Jib"/>
                 <constraint firstItem="VLp-BQ-VvY" firstAttribute="top" secondItem="4gV-G6-Igg" secondAttribute="bottom" constant="35" id="YlI-RT-0yr"/>
