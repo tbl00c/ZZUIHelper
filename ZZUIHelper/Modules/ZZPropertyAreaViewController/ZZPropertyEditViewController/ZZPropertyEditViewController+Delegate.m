@@ -120,9 +120,9 @@
     if (model.sectionType == ZZPropertySectionTypeProperty) {
         ZZProperty *property = model.sectionData[indexPath.item];
         if (property.type == ZZPropertyTypeRect || property.type == ZZPropertyTypeEdgeInsets) {
-            return CGSizeMake(collectionView.frame.size.width, 55);
+            return CGSizeMake(collectionView.frame.size.width, 56);
         }
-        return CGSizeMake(collectionView.frame.size.width, 25);
+        return CGSizeMake(collectionView.frame.size.width, 26);
     }
     else if (model.sectionType == ZZPropertySectionTypeEvent) {
         return CGSizeMake(collectionView.frame.size.width, 60);

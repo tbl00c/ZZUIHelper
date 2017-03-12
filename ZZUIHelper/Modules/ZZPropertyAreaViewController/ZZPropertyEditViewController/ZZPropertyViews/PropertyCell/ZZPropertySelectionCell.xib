@@ -23,7 +23,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9cR-6v-fXb" id="poF-fN-we0">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" size="12" name=".AppleSystemUIFont"/>
                         <menu key="menu" id="UIP-m1-Qtc">
                             <items>
                                 <menuItem title="Item 1" state="on" id="9cR-6v-fXb"/>
