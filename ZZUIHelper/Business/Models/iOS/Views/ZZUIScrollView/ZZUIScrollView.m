@@ -26,13 +26,6 @@
 {
     if (!_properties) {
         _properties = [super properties];
-        for (ZZPropertyGroup *group in _properties) {
-            for (ZZProperty *property in group.properties) {
-                if ([property.propertyName isEqualToString:@"userInteractionEnabled"]) {
-                    property.defaultValue = @(YES);
-                }
-            }
-        }
         ZZProperty *delegate = [[ZZProperty alloc] initWithPropertyName:@"delegate" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
         ZZProperty *pagingEnabled = [[ZZProperty alloc] initWithPropertyName:@"pagingEnabled" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *scrollEnabled = [[ZZProperty alloc] initWithPropertyName:@"scrollEnabled" type:ZZPropertyTypeBOOL defaultValue:@(YES)];

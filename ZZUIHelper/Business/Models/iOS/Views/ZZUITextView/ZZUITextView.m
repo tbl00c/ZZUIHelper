@@ -39,7 +39,22 @@
         ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" selectionData:[ZZUIHelperConfig sharedInstance].textAlignment andDefaultSelectIndex:0];
         ZZProperty *editable = [[ZZProperty alloc] initWithPropertyName:@"editable" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
         ZZProperty *selectable = [[ZZProperty alloc] initWithPropertyName:@"selectable" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextView" properties:@[text, font, textColor, textAlignment, editable, selectable]];
+        
+        ZZProperty *borderStyle = [[ZZProperty alloc] initWithPropertyName:@"borderStyle" selectionData:[ZZUIHelperConfig sharedInstance].borderStyle andDefaultSelectIndex:0];
+        
+        ZZProperty *clearButtonMode = [[ZZProperty alloc] initWithPropertyName:@"clearButtonMode" selectionData:[ZZUIHelperConfig sharedInstance].clearButtonModel andDefaultSelectIndex:0];
+        ZZProperty *clearsOnBeginEditing = [[ZZProperty alloc] initWithPropertyName:@"clearsOnBeginEditing" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        
+        // 键盘
+        ZZProperty *keyboardType = [[ZZProperty alloc] initWithPropertyName:@"keyboardType" selectionData:[ZZUIHelperConfig sharedInstance].keyboardType andDefaultSelectIndex:0];
+        ZZProperty *returnKeyType = [[ZZProperty alloc] initWithPropertyName:@"returnKeyType" selectionData:[ZZUIHelperConfig sharedInstance].returnKeyType andDefaultSelectIndex:0];
+        ZZProperty *keyboardAppearance = [[ZZProperty alloc] initWithPropertyName:@"keyboardAppearance" selectionData:[ZZUIHelperConfig sharedInstance].keyboardAppearance andDefaultSelectIndex:0];
+        
+        
+        ZZProperty *enablesReturnKeyAutomatically = [[ZZProperty alloc] initWithPropertyName:@"enablesReturnKeyAutomatically" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZProperty *secureTextEntry = [[ZZProperty alloc] initWithPropertyName:@"secureTextEntry" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextView" properties:@[text, font, textColor, textAlignment, editable, selectable, borderStyle, clearButtonMode, clearsOnBeginEditing, keyboardType, returnKeyType, keyboardAppearance, enablesReturnKeyAutomatically, secureTextEntry]];
         [_properties addObject:group];
     }
     return _properties;

@@ -15,6 +15,15 @@
 {
     if (!_properties) {
         _properties = [super properties];
+        for (ZZPropertyGroup *group in _properties) {
+            for (ZZProperty *property in group.properties) {
+                if ([property.propertyName isEqualToString:@"userInteractionEnabled"]) {
+                    property.defaultValue = @(NO);
+                    break;
+                }
+            }
+        }
+        
         ZZProperty *text = [[ZZProperty alloc] initWithPropertyName:@"text" type:ZZPropertyTypeString defaultValue:@""];
         ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZUIHelperConfig sharedInstance].fonts defaultValue:nil editable:YES];
         [font setPropertyCodeByValue:^NSString *(NSString *value) {

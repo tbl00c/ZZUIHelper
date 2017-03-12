@@ -19,7 +19,15 @@
         _properties = [super properties];
         
         ZZProperty *on = [[ZZProperty alloc] initWithPropertyName:@"on" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UISwitch" properties:@[on]];
+        ZZProperty *onImage = [[ZZProperty alloc] initWithPropertyName:@"onImage" type:ZZPropertyTypeObject defaultValue:@""];
+        [onImage setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setOnImage:[UIImage imageNamed:@\"%@\"]",  value];
+        }];
+        ZZProperty *offImage = [[ZZProperty alloc] initWithPropertyName:@"offImage" type:ZZPropertyTypeObject defaultValue:@""];
+        [offImage setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setOffImage:[UIImage imageNamed:@\"%@\"]",  value];
+        }];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UISwitch" properties:@[on, onImage, offImage]];
         [_properties addObject:group];
     }
     return _properties;

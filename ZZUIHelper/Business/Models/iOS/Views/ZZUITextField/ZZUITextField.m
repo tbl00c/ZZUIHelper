@@ -26,20 +26,39 @@
 {
     if (!_properties) {
         _properties = [super properties];
+        
+        // 文字
         ZZProperty *text = [[ZZProperty alloc] initWithPropertyName:@"text" type:ZZPropertyTypeString defaultValue:@""];
         ZZProperty *placeholder = [[ZZProperty alloc] initWithPropertyName:@"placeholder" type:ZZPropertyTypeString defaultValue:@""];
+        
+        // 字体格式
         ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZUIHelperConfig sharedInstance].fonts defaultValue:nil editable:YES];
         [font setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setFont:[UIFont %@]", value];
         }];
         ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"blackColor" editable:YES];
-        [textColor setSelected:YES];
         [textColor setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setTextColor:[UIColor %@]", value];
         }];
         ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" selectionData:[ZZUIHelperConfig sharedInstance].textAlignment andDefaultSelectIndex:0];
+        
+        ZZProperty *borderStyle = [[ZZProperty alloc] initWithPropertyName:@"borderStyle" selectionData:[ZZUIHelperConfig sharedInstance].borderStyle andDefaultSelectIndex:0];
+        
+        ZZProperty *clearButtonMode = [[ZZProperty alloc] initWithPropertyName:@"clearButtonMode" selectionData:[ZZUIHelperConfig sharedInstance].clearButtonModel andDefaultSelectIndex:0];
+        ZZProperty *clearsOnBeginEditing = [[ZZProperty alloc] initWithPropertyName:@"clearsOnBeginEditing" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        
+        // 键盘
+        ZZProperty *keyboardType = [[ZZProperty alloc] initWithPropertyName:@"keyboardType" selectionData:[ZZUIHelperConfig sharedInstance].keyboardType andDefaultSelectIndex:0];
+        ZZProperty *returnKeyType = [[ZZProperty alloc] initWithPropertyName:@"returnKeyType" selectionData:[ZZUIHelperConfig sharedInstance].returnKeyType andDefaultSelectIndex:0];
+        ZZProperty *keyboardAppearance = [[ZZProperty alloc] initWithPropertyName:@"keyboardAppearance" selectionData:[ZZUIHelperConfig sharedInstance].keyboardAppearance andDefaultSelectIndex:0];
+
+
+        ZZProperty *enablesReturnKeyAutomatically = [[ZZProperty alloc] initWithPropertyName:@"enablesReturnKeyAutomatically" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZProperty *secureTextEntry = [[ZZProperty alloc] initWithPropertyName:@"secureTextEntry" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        
+        // 代理
         ZZProperty *delegate = [[ZZProperty alloc] initWithPropertyName:@"delegate" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, font, textColor, textAlignment] privateProperties:@[delegate]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, font, textColor, textAlignment, borderStyle, clearButtonMode, clearsOnBeginEditing, keyboardType, returnKeyType, keyboardAppearance, enablesReturnKeyAutomatically, secureTextEntry] privateProperties:@[delegate]];
         [_properties addObject:group];
     }
     return _properties;

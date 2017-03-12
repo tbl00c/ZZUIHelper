@@ -45,15 +45,27 @@
         [_properties addObjectsFromArray:self.layer.properties];
         ZZProperty *frame = [[ZZProperty alloc] initWithPropertyName:@"frame" type:ZZPropertyTypeRect defaultValue:nil];
         ZZProperty *tag = [[ZZProperty alloc] initWithPropertyName:@"tag" type:ZZPropertyTypeNumber defaultValue:@(0)];
-        ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"clearColor" editable:YES];
-        [color setPropertyCodeByValue:^NSString *(id value) {
+        ZZProperty *contentMode = [[ZZProperty alloc] initWithPropertyName:@"contentMode" selectionData:[ZZUIHelperConfig sharedInstance].contentMode andDefaultSelectIndex:0];
+        
+        // 用户响应
+        ZZProperty *userInteractionEnabled = [[ZZProperty alloc] initWithPropertyName:@"userInteractionEnabled" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *multipleTouch = [[ZZProperty alloc] initWithPropertyName:@"multipleTouchEnabled" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        
+        // 颜色
+        ZZProperty *alpha = [[ZZProperty alloc] initWithPropertyName:@"alpha" type:ZZPropertyTypeNumber defaultValue:@(1)];
+        ZZProperty *backgroundColor = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"clearColor" editable:YES];
+        [backgroundColor setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setBackgroundColor:[UIColor %@]", value];
         }];
-        ZZProperty *alpha = [[ZZProperty alloc] initWithPropertyName:@"alpha" type:ZZPropertyTypeNumber defaultValue:@(1)];
+        ZZProperty *tintColor = [[ZZProperty alloc] initWithPropertyName:@"tintColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"blueColor" editable:YES];
+        [tintColor setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setTintColor:[UIColor %@]", value];
+        }];
+        
+        ZZProperty *opaque = [[ZZProperty alloc] initWithPropertyName:@"opaque" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
         ZZProperty *hidden = [[ZZProperty alloc] initWithPropertyName:@"hidden" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZProperty *userInteractionEnabled = [[ZZProperty alloc] initWithPropertyName:@"userInteractionEnabled" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZProperty *contentMode = [[ZZProperty alloc] initWithPropertyName:@"contentMode" selectionData:[ZZUIHelperConfig sharedInstance].contentMode andDefaultSelectIndex:0];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIView" properties:@[frame, tag, color, alpha, hidden, userInteractionEnabled, contentMode]];
+        ZZProperty *clipsToBounds = [[ZZProperty alloc] initWithPropertyName:@"clipsToBounds" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIView" properties:@[frame, contentMode, tag, userInteractionEnabled, multipleTouch, alpha, backgroundColor, tintColor, opaque, hidden, clipsToBounds]];
         [_properties addObject:group];
     }
     return _properties;

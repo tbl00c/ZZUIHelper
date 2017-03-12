@@ -49,4 +49,17 @@ typedef NS_ENUM(NSInteger, ZZUIHelperLayoutLibrary) {
 
 @property (nonatomic, strong) NSArray *fonts;
 
+@property (nonatomic, strong) NSArray *controlContentVerticalAlignment;
+
+@property (nonatomic, strong) NSArray *controlContentHorizontalAlignment;
+
+@property (nonatomic, strong) NSArray *borderStyle;
+
+@property (nonatomic, strong) NSArray *clearButtonModel;
+@property (nonatomic, strong) NSArray *keyboardType;
+@property (nonatomic, strong) NSArray *returnKeyType;
+@property (nonatomic, strong) NSArray *keyboardAppearance;
+
+@property (nonatomic, strong) NSArray *separatorStyle;
+
 @end

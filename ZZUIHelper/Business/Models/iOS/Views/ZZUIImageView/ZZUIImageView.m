@@ -15,13 +15,10 @@
 {
     if (!_properties) {
         _properties = [super properties];
-        ZZProperty *contentMode;
         for (ZZPropertyGroup *group in _properties) {
-            for (int i = 0; i < group.properties.count; i++) {
-                ZZProperty *property = group.properties[i];
-                if ([property.propertyName isEqualToString:@"contentMode"]) {
-                    contentMode = property;
-                    [group removePropertiy:property];
+            for (ZZProperty *property in group.properties) {
+                if ([property.propertyName isEqualToString:@"userInteractionEnabled"]) {
+                    property.defaultValue = @(NO);
                     break;
                 }
             }
@@ -29,11 +26,14 @@
         
         ZZProperty *imageName = [[ZZProperty alloc] initWithPropertyName:@"imageName" type:ZZPropertyTypeObject defaultValue:@""];
         [imageName setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setImage:[UIImage imageNamed:@\"%@\"] forState:UIControlStateNormal", value];
+            return [NSString stringWithFormat:@"setImage:[UIImage imageNamed:@\"%@\"]",  value];
         }];
         ZZProperty *highlightedImage = [[ZZProperty alloc] initWithPropertyName:@"highlightedImage" type:ZZPropertyTypeObject defaultValue:@""];
+        [highlightedImage setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setHighlightedImage:[UIImage imageNamed:@\"%@\"]",  value];
+        }];
         ZZProperty *highlighted = [[ZZProperty alloc] initWithPropertyName:@"highlighted" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIImageView" properties:@[imageName, highlightedImage, highlighted, contentMode]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIImageView" properties:@[imageName, highlightedImage, highlighted]];
         [_properties addObject:group];
     }
     return _properties;

@@ -51,13 +51,6 @@
 {
     if (!_properties) {
         _properties = [super properties];
-        for (ZZPropertyGroup *group in _properties) {
-            for (ZZProperty *property in group.properties) {
-                if ([property.propertyName isEqualToString:@"userInteractionEnabled"]) {
-                    property.defaultValue = @(YES);
-                }
-            }
-        }
         NSMutableArray *privateProperties = [[NSMutableArray alloc] init];
         for (ZZEvent *event in self.events) {
             ZZProperty *property = event.property;
@@ -65,7 +58,15 @@
             
         }
         ZZProperty *enabled = [[ZZProperty alloc] initWithPropertyName:@"enabled" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIControl" properties:@[enabled] privateProperties:privateProperties];
+        ZZProperty *verticalAlignment = [[ZZProperty alloc] initWithPropertyName:@"verticalAlignment" selectionData:[ZZUIHelperConfig sharedInstance].controlContentVerticalAlignment andDefaultSelectIndex:0];
+        [verticalAlignment setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setContentVerticalAlignment:%@", value];
+        }];
+        ZZProperty *horizontalAlignment = [[ZZProperty alloc] initWithPropertyName:@"HorizontalAlignment" selectionData:[ZZUIHelperConfig sharedInstance].controlContentHorizontalAlignment andDefaultSelectIndex:0];
+        [horizontalAlignment setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setContentHorizontalAlignment:%@", value];
+        }];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIControl" properties:@[enabled, verticalAlignment, horizontalAlignment] privateProperties:privateProperties];
         [_properties addObject:group];
     }
     return _properties;

@@ -171,6 +171,7 @@
              @"UITextView",
              @"UIScrollView",
              @"UISwitch",
+             @"UIPageControl",
              @"NSMutableArray"];
 }
 
@@ -196,6 +197,85 @@
     return @[@"NSTextAlignmentLeft",
              @"NSTextAlignmentCenter",
              @"NSTextAlignmentRight"];
+}
+
+- (NSArray *)controlContentVerticalAlignment
+{
+    return @[@"UIControlContentVerticalAlignmentCenter",
+             @"UIControlContentVerticalAlignmentTop",
+             @"UIControlContentVerticalAlignmentBottom",
+             @"UIControlContentVerticalAlignmentFill"];
+}
+
+- (NSArray *)controlContentHorizontalAlignment
+{
+    return @[@"UIControlContentHorizontalAlignmentCenter",
+             @"UIControlContentHorizontalAlignmentLeft",
+             @"UIControlContentHorizontalAlignmentRight",
+             @"UIControlContentHorizontalAlignmentFill"];
+}
+
+- (NSArray *)borderStyle
+{
+    return @[@"UITextBorderStyleNone",
+             @"UITextBorderStyleLine",
+             @"UITextBorderStyleBezel",
+             @"UITextBorderStyleRoundedRect"];
+}
+
+- (NSArray *)clearButtonModel
+{
+    return @[@"UITextFieldViewModeNever",
+             @"UITextFieldViewModeWhileEditing",
+             @"UITextFieldViewModeUnlessEditing",
+             @"UITextFieldViewModeAlways"];
+}
+
+- (NSArray *)keyboardType
+{
+    return @[@"UIKeyboardTypeDefault",
+             @"UIKeyboardTypeASCIICapable",
+             @"UIKeyboardTypeNumbersAndPunctuation",
+             @"UIKeyboardTypeURL",
+             @"UIKeyboardTypeNumberPad",
+             @"UIKeyboardTypePhonePad",
+             @"UIKeyboardTypeNamePhonePad",
+             @"UIKeyboardTypeEmailAddress",
+             @"UIKeyboardTypeDecimalPad",
+             @"IKeyboardTypeTwitter",
+             @"UIKeyboardTypeWebSearch",
+             @"UIKeyboardTypeASCIICapableNumberPad"];
+}
+
+- (NSArray *)returnKeyType
+{
+    return @[@"UIReturnKeyDefault",
+             @"UIReturnKeyGo",
+             @"UIReturnKeyGoogle",
+             @"UIReturnKeyJoin",
+             @"UIReturnKeyNext",
+             @"UIReturnKeyRoute",
+             @"UIReturnKeySearch",
+             @"UIReturnKeySend",
+             @"UIReturnKeyYahoo",
+             @"UIReturnKeyDone",
+             @"UIReturnKeyEmergencyCall",
+             @"UIReturnKeyContinue"];
+}
+
+- (NSArray *)keyboardAppearance
+{
+    return @[@"UIKeyboardAppearanceDefault",
+             @"UIKeyboardAppearanceDark",
+             @"UIKeyboardAppearanceLight",
+             @"UIKeyboardAppearanceAlert"];
+}
+
+- (NSArray *)separatorStyle
+{
+    return @[@"UITableViewCellSeparatorStyleNone",
+             @"UITableViewCellSeparatorStyleSingleLine",
+             @"UITableViewCellSeparatorStyleSingleLineEtched"];
 }
 
 #pragma mark - # Private Methods

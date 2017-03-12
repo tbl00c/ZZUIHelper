@@ -29,7 +29,11 @@
         [imageName setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setImage:[UIImage imageNamed:@\"%@\"] forState:UIControlStateNormal", value];
         }];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIButton" properties:@[title, titleColor, imageName]];
+        ZZProperty *backgroundImage = [[ZZProperty alloc] initWithPropertyName:@"backgroundImage" type:ZZPropertyTypeObject defaultValue:@""];
+        [backgroundImage setPropertyCodeByValue:^NSString *(id value) {
+            return [NSString stringWithFormat:@"setBackgroundImage:[UIImage imageNamed:@\"%@\"] forState:UIControlStateNormal", value];
+        }];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIButton" properties:@[title, titleColor, imageName, backgroundImage]];
         [_properties addObject:group];
     }
     return _properties;

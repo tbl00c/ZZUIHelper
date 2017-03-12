@@ -69,6 +69,7 @@
 		C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */; };
 		C2A10CB71E5AEF39000960D9 /* ZZNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */; };
 		C2A10CB81E5AEF39000960D9 /* ZZNewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */; };
+		C2AEFB361E759D7200972320 /* ZZUIPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB351E759D7200972320 /* ZZUIPageControl.m */; };
 		C2B3F5D01E608096000E42CE /* ZZMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5CF1E608096000E42CE /* ZZMethod.m */; };
 		C2B3F5D31E60F307000E42CE /* ZZParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5D21E60F307000E42CE /* ZZParam.m */; };
 		C2B3F5D61E60F621000E42CE /* ZZUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5D51E60F621000E42CE /* ZZUtility.m */; };
@@ -255,6 +256,8 @@
 		C2A10CB41E5AEF39000960D9 /* ZZNewFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewFileViewController.h; sourceTree = "<group>"; };
 		C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewFileViewController.m; sourceTree = "<group>"; };
 		C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewFileViewController.xib; sourceTree = "<group>"; };
+		C2AEFB341E759D7200972320 /* ZZUIPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIPageControl.h; sourceTree = "<group>"; };
+		C2AEFB351E759D7200972320 /* ZZUIPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIPageControl.m; sourceTree = "<group>"; };
 		C2B3F5CE1E608096000E42CE /* ZZMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMethod.h; sourceTree = "<group>"; };
 		C2B3F5CF1E608096000E42CE /* ZZMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMethod.m; sourceTree = "<group>"; };
 		C2B3F5D11E60F307000E42CE /* ZZParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZParam.h; sourceTree = "<group>"; };
@@ -464,6 +467,7 @@
 				C21DDEBC1E6FEF42000BCD9C /* ZZUITextView */,
 				C21DDEAF1E6FEF42000BCD9C /* ZZUICollectionView */,
 				C21DDEB01E6FEF42000BCD9C /* ZZUICollectionViewCell */,
+				C2AEFB331E759D5C00972320 /* ZZUIPageControl */,
 				C21DDEB11E6FEF42000BCD9C /* ZZUICollectionViewFlowLayout */,
 			);
 			path = Views;
@@ -848,6 +852,15 @@
 				C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */,
 			);
 			path = ZZNewFileViewController;
+			sourceTree = "<group>";
+		};
+		C2AEFB331E759D5C00972320 /* ZZUIPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEFB341E759D7200972320 /* ZZUIPageControl.h */,
+				C2AEFB351E759D7200972320 /* ZZUIPageControl.m */,
+			);
+			path = ZZUIPageControl;
 			sourceTree = "<group>";
 		};
 		C2B3F5CD1E60807C000E42CE /* ZZMethod */ = {
@@ -1270,6 +1283,7 @@
 				C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */,
 				C2BB54D81E713A3D004D34CE /* ZZSettingViewController.m in Sources */,
 				C2D738C01E74F8ED00344E5F /* ZZPropertySelectionCell.m in Sources */,
+				C2AEFB361E759D7200972320 /* ZZUIPageControl.m in Sources */,
 				C2D6CA2D1E5BE12700EEF76B /* ViewController+MASAdditions.m in Sources */,
 				C2D6CA2E1E5BE12700EEF76B /* README.md in Sources */,
 				C21DDF2F1E701386000BCD9C /* ZZColorSettingViewController.m in Sources */,

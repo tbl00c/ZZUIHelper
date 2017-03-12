@@ -35,7 +35,7 @@
 - (void)setProperty:(ZZProperty *)property
 {
     _property = property;
-    [self.titleLabel setStringValue:property.propertyName];
+    [self.titleLabel setStringValue:[property.propertyName stringByAppendingString:@":"]];
     [self.comboBox removeAllItems];
     [self.comboBox addItemsWithObjectValues:property.selectionData];
     [self.comboBox setStringValue:property.value];

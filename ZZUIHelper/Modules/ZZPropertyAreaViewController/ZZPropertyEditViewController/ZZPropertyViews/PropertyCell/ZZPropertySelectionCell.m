@@ -35,7 +35,7 @@
 - (void)setProperty:(ZZProperty *)property
 {
     _property = property;
-    [self.titleLabel setStringValue:property.propertyName];
+    [self.titleLabel setStringValue:[property.propertyName stringByAppendingString:@":"]];
     [self.selectionButton removeAllItems];
     [self.selectionButton addItemsWithTitles:property.selectionData];
     [self.selectionButton selectItemAtIndex:property.selectIndex];

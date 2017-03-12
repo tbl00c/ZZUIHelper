@@ -32,9 +32,13 @@
         ZZProperty *rowHeight = [[ZZProperty alloc] initWithPropertyName:@"rowHeight" type:ZZPropertyTypeNumber defaultValue:@(0)];
         ZZProperty *sectionHeaderHeight = [[ZZProperty alloc] initWithPropertyName:@"sectionHeaderHeight" type:ZZPropertyTypeNumber defaultValue:@(0)];
         ZZProperty *sectionFooterHeight = [[ZZProperty alloc] initWithPropertyName:@"sectionFooterHeight" type:ZZPropertyTypeNumber defaultValue:@(0)];
-        ZZProperty *separatorInset = [[ZZProperty alloc] initWithPropertyName:@"separatorInset" type:ZZPropertyTypeObject defaultValue:@"NSEdgeInsetsZero"];
+        ZZProperty *separatorStyle = [[ZZProperty alloc] initWithPropertyName:@"separatorStyle" selectionData:[ZZUIHelperConfig sharedInstance].separatorStyle andDefaultSelectIndex:0];
+        ZZProperty *separatorInset = [[ZZProperty alloc] initWithPropertyName:@"separatorInset" type:ZZPropertyTypeEdgeInsets defaultValue:nil];
+        ZZProperty *allowsSelection = [[ZZProperty alloc] initWithPropertyName:@"allowsSelection" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
+        ZZProperty *allowsMultipleSelection = [[ZZProperty alloc] initWithPropertyName:@"allowsMultipleSelection" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *editing = [[ZZProperty alloc] initWithPropertyName:@"editing" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITableView" properties:@[rowHeight, sectionHeaderHeight, sectionFooterHeight, separatorInset, editing] privateProperties:@[dataSource]];
+
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITableView" properties:@[rowHeight, sectionHeaderHeight, sectionFooterHeight, separatorStyle, separatorInset, allowsSelection, allowsMultipleSelection, editing] privateProperties:@[dataSource]];
         [_properties addObject:group];
     }
     return _properties;
