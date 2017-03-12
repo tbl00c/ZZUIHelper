@@ -79,17 +79,6 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLp-BQ-VvY">
-                    <rect key="frame" x="20" y="30" width="232" height="17"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="228" id="Iqe-zF-hGS"/>
-                    </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="Skm-6C-M09">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vib-no-6g1">
                     <rect key="frame" x="261" y="23" width="98" height="32"/>
                     <constraints>
@@ -129,6 +118,17 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLp-BQ-VvY">
+                    <rect key="frame" x="20" y="8" width="232" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="228" id="Iqe-zF-hGS"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="Skm-6C-M09">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="jGH-yp-GJ1" firstAttribute="leading" secondItem="JMZ-gp-1FW" secondAttribute="trailing" constant="30" id="0tZ-yz-2DK"/>
@@ -142,9 +142,9 @@
                 <constraint firstItem="8PI-D4-pyU" firstAttribute="centerY" secondItem="vib-no-6g1" secondAttribute="centerY" id="WDg-OW-IoE"/>
                 <constraint firstItem="JMZ-gp-1FW" firstAttribute="centerY" secondItem="1zG-1N-g6E" secondAttribute="centerY" id="YXL-Uh-FFi"/>
                 <constraint firstItem="1zG-1N-g6E" firstAttribute="leading" secondItem="d2x-k6-ZX0" secondAttribute="leading" id="YhT-vq-Jib"/>
-                <constraint firstItem="VLp-BQ-VvY" firstAttribute="top" secondItem="4gV-G6-Igg" secondAttribute="bottom" constant="35" id="YlI-RT-0yr"/>
                 <constraint firstAttribute="trailing" secondItem="d2x-k6-ZX0" secondAttribute="trailing" constant="20" id="You-NM-yPw"/>
                 <constraint firstItem="jGH-yp-GJ1" firstAttribute="centerY" secondItem="JMZ-gp-1FW" secondAttribute="centerY" id="aPy-5I-6TI"/>
+                <constraint firstAttribute="bottom" secondItem="VLp-BQ-VvY" secondAttribute="bottom" constant="8" id="ap2-Bi-1e5"/>
                 <constraint firstItem="oMI-bt-ohV" firstAttribute="top" secondItem="v2m-Xo-72z" secondAttribute="bottom" constant="29" id="gUQ-6x-mJG"/>
                 <constraint firstItem="oMI-bt-ohV" firstAttribute="trailing" secondItem="v2m-Xo-72z" secondAttribute="trailing" id="iDZ-dC-7pD"/>
                 <constraint firstItem="d2x-k6-ZX0" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="iT5-Jk-xyh"/>
