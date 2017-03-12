@@ -11,6 +11,7 @@
 #import "ZZUICollectionView.h"
 #import "ZZNSMutableArray.h"
 #import "ZZUICollectionViewFlowLayout.h"
+#import "ZZUIResponder+CodeCreator.h"
 
 
 @implementation ZZUIResponder (ClassHelper)
@@ -37,6 +38,13 @@
 {
     if ([self.interfaceProperties containsObject:property]) {
         [self.interfaceProperties removeObject:property];
+        // 级联删除
+        NSArray *data = self.interfaceProperties.copy;
+        for (ZZUIView *view in data) {
+            if ([[view class] isSubclassOfClass:[ZZUIView class]] && [view.superViewName hasSuffix:[@"." stringByAppendingString:property.propertyName]]) {
+                [self removePublicProperty:view];
+            }
+        }
         return YES;
     }
     return NO;
@@ -65,6 +73,13 @@
 {
     if ([self.extensionProperties containsObject:property]) {
         [self.extensionProperties removeObject:property];
+        // 级联删除
+        NSArray *data = self.extensionProperties.copy;
+        for (ZZUIView *view in data) {
+            if ([[view class] isSubclassOfClass:[ZZUIView class]] && [view.superViewName hasSuffix:[@"." stringByAppendingString:property.propertyName]]) {
+                [self removePrivateProperty:view];
+            }
+        }
         return YES;
     }
     return NO;
@@ -73,7 +88,15 @@
 - (BOOL)removePrivatePropertyAtIndex:(NSInteger)index
 {
     if (index < self.extensionProperties.count) {
+        ZZProperty *property = self.extensionProperties[index];
         [self.extensionProperties removeObjectAtIndex:index];
+        // 级联删除
+        NSArray *data = self.extensionProperties.copy;
+        for (ZZUIView *view in data) {
+            if ([[view class] isSubclassOfClass:[ZZUIView class]] && [view.superViewName hasSuffix:[@"." stringByAppendingString:property.propertyName]]) {
+                [self removePrivateProperty:view];
+            }
+        }
         return YES;
     }
     return NO;
