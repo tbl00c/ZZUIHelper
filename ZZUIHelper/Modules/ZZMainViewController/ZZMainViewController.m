@@ -17,14 +17,6 @@
 
 @implementation ZZMainViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    ZZMethod *methods = [[ZZMethod alloc] init];
-    [methods setMethodName:@"    - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath   "];
-}
-
 - (void)viewDidAppear {
     [super viewDidAppear];
     

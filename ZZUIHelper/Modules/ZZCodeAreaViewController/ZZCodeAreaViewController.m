@@ -18,7 +18,7 @@
     [super viewDidLoad];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_NEW_PROJECT object:nil];
-    [self.tabView selectTabViewItemAtIndex:1];
+    [self setSelectedTabViewItemIndex:1];
 }
 
 - (void)dealloc{
@@ -33,7 +33,7 @@
         [self.tabViewItems[1] setLabel:[NSString stringWithFormat:@"%@.m", className]];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tabView selectTabViewItemAtIndex:1];
+        [self setSelectedTabViewItemIndex:1];
     });
 }
 
