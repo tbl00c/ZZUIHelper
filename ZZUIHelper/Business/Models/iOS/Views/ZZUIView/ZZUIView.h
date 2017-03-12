@@ -15,4 +15,9 @@
 
 @property (nonatomic, strong) ZZCALayer *layer;
 
+@property (nonatomic, strong) ZZUIView *superView;
+
+/// 约束
+@property (nonatomic, strong, readonly) NSMutableArray *layouts;
+
 @end

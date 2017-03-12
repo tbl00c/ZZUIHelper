@@ -47,6 +47,11 @@
 - (void)setObject:(ZZNSObject *)object
 {
     _object = object;
+    if (!object) {
+        self.data = nil;
+        [self.collectionView reloadData];
+        return;
+    }
     
     NSMutableArray *data = [[NSMutableArray alloc] init];
     

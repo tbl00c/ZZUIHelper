@@ -8,7 +8,7 @@
 
 #import "ZZSetupCreator.h"
 #import "ZZUIResponder+CodeCreator.h"
-#import "ZZUIResponder+Masonry.h"
+#import "ZZUIView+Masonry.h"
 #import "ZZUIControl.h"
 #import "ZZUIView.h"
 #import "ZZUIViewController.h"
@@ -65,7 +65,7 @@
             }
             
             if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry && [object respondsToSelector:@selector(masonryCode)]) {
-                [setupCode appendString:[(ZZUIResponder *)object masonryCode]];
+                [setupCode appendString:[(ZZUIView *)object masonryCode]];
             }
             [setupMethod addMethodContentCode:setupCode];
             NSString *code = [[setupMethod methodCode] stringByAppendingString:@"\n"];

@@ -8,7 +8,7 @@
 
 #import "ZZLazyLoadCreator.h"
 #import "ZZUIResponder+CodeCreator.h"
-#import "ZZUIResponder+Masonry.h"
+#import "ZZUIView+Masonry.h"
 #import "ZZUIControl.h"
 #import "ZZUIView.h"
 #import "ZZUIViewController.h"
@@ -314,7 +314,7 @@
                 
                 ZZMethod *method = [[ZZMethod alloc] initWithMethodName:@"- (void)p_addMasonry"];
                 NSMutableString *code = [[NSMutableString alloc] init];
-                for (ZZUIResponder *view in childViews) {
+                for (ZZUIView *view in childViews) {
                     [code appendString:view.masonryCode];
                 }
                 [method addMethodContentCode:code];

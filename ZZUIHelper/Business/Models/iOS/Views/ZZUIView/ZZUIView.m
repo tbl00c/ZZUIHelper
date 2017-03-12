@@ -11,6 +11,7 @@
 @implementation ZZUIView
 @synthesize properties = _properties;
 @synthesize delegates = _delegates;
+@synthesize layouts = _layouts;
 
 - (NSArray *)delegates
 {
@@ -52,6 +53,14 @@
         _layer = [[ZZCALayer alloc] init];
     }
     return _layer;
+}
+
+- (NSMutableArray *)layouts
+{
+    if (!_layouts) {
+        _layouts = [[NSMutableArray alloc] init];
+    }
+    return _layouts;
 }
 
 @end

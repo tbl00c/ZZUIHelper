@@ -932,7 +932,7 @@
                                     <rect key="frame" x="1" y="0.0" width="635" height="299"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="6fw-Ou-Hhw" id="eAA-qf-bsF">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" headerView="6fw-Ou-Hhw" id="eAA-qf-bsF">
                                             <rect key="frame" x="0.0" y="0.0" width="635" height="276"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -940,7 +940,7 @@
                                             <tableViewGridLines key="gridStyleMask" vertical="YES" horizontal="YES"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="99" minWidth="40" maxWidth="1000" id="xBv-6J-ZNH">
+                                                <tableColumn identifier="Attribute" width="85" minWidth="75" maxWidth="100" id="xBv-6J-ZNH">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Attribute">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -952,26 +952,26 @@
                                                     </buttonCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn width="88" minWidth="40" maxWidth="1000" id="Rx4-VQ-La3">
+                                                <tableColumn identifier="Relation" width="50" minWidth="40" maxWidth="60" id="Rx4-VQ-La3">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Relation">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <popUpButtonCell key="dataCell" type="bevel" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="Bo6-kj-kKH" id="ggX-FX-uaR">
+                                                    <popUpButtonCell key="dataCell" type="bevel" title="=" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="Bo6-kj-kKH" id="ggX-FX-uaR">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <menu key="menu" id="hHy-HV-62V">
                                                             <items>
-                                                                <menuItem title="Item 1" state="on" id="Bo6-kj-kKH"/>
-                                                                <menuItem title="Item 2" id="xeX-PR-TFR"/>
-                                                                <menuItem title="Item 3" id="vH9-HX-JBf"/>
+                                                                <menuItem title="=" state="on" id="Bo6-kj-kKH"/>
+                                                                <menuItem title="≦" id="xeX-PR-TFR"/>
+                                                                <menuItem title="≧" id="vH9-HX-JBf"/>
                                                             </items>
                                                         </menu>
                                                     </popUpButtonCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="" width="89.5" minWidth="10" maxWidth="3.4028234663852886e+38" id="iRR-ks-Tol">
+                                                <tableColumn identifier="Object" width="90" minWidth="70" maxWidth="110" id="iRR-ks-Tol">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Object">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -990,8 +990,8 @@
                                                     </popUpButtonCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="" width="93" minWidth="10" maxWidth="3.4028234663852886e+38" id="3lj-u4-dmS">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Object Attribute">
+                                                <tableColumn identifier="Object Attribute" width="75" minWidth="60" maxWidth="90" id="3lj-u4-dmS">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="O-Attribute">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1009,20 +1009,39 @@
                                                     </popUpButtonCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="" width="93.5" minWidth="10" maxWidth="3.4028234663852886e+38" id="Eow-tB-5LR">
+                                                <tableColumn identifier="C-Relation" width="70" minWidth="60" maxWidth="80" id="EOQ-x8-HOE">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="C-Relation">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </tableHeaderCell>
+                                                    <popUpButtonCell key="dataCell" type="bevel" title="offset" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="1AC-re-dOl" id="JCk-LQ-3TU">
+                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <menu key="menu" id="GMo-IJ-zPe">
+                                                            <items>
+                                                                <menuItem title="offset" state="on" id="1AC-re-dOl"/>
+                                                                <menuItem title="multipliedBy" id="5JL-zZ-QPY"/>
+                                                                <menuItem title="dividedBy" id="uIX-so-1J6"/>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpButtonCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                </tableColumn>
+                                                <tableColumn identifier="Constant" width="70" minWidth="60" maxWidth="80" id="Eow-tB-5LR">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Constant">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Text" id="5q3-R5-KIO">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" id="5q3-R5-KIO">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="" width="68" minWidth="10" maxWidth="3.4028234663852886e+38" id="sZH-rp-Pvp">
+                                                <tableColumn identifier="Priority" width="80" minWidth="70" maxWidth="90" headerToolTip="" id="sZH-rp-Pvp">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Priority">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1033,14 +1052,19 @@
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         <objectValues>
-                                                            <string>Item 1</string>
-                                                            <string>Item 2</string>
-                                                            <string>Item 3</string>
+                                                            <string></string>
+                                                            <string>Low</string>
+                                                            <string>Medium</string>
+                                                            <string>High</string>
                                                         </objectValues>
                                                     </comboBoxCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="9xZ-VE-FF0" id="dBj-xI-6vl"/>
+                                                <outlet property="delegate" destination="9xZ-VE-FF0" id="t4c-PX-hZB"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
@@ -1235,11 +1259,11 @@
             <objects>
                 <viewController title="控件区" id="xHv-3Q-xFa" customClass="ZZControlAreaViewController" sceneMemberID="viewController">
                     <view key="view" id="NrK-He-J4Z">
-                        <rect key="frame" x="0.0" y="0.0" width="230" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBH-yY-txs">
-                                <rect key="frame" x="27" y="3" width="197" height="24"/>
+                                <rect key="frame" x="27" y="3" width="227" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="VQy-Cm-mAu"/>
                                 </constraints>
@@ -1253,13 +1277,13 @@
                                 </connections>
                             </searchField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6V-0D-MuF">
-                                <rect key="frame" x="0.0" y="30" width="230" height="270"/>
+                                <rect key="frame" x="0.0" y="30" width="260" height="270"/>
                                 <clipView key="contentView" drawsBackground="NO" id="e65-7q-6vK">
-                                    <rect key="frame" x="0.0" y="0.0" width="230" height="270"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="260" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="JR1-6f-QFG">
-                                            <rect key="frame" x="0.0" y="0.0" width="230" height="270"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="270"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="MiJ-Wn-LD5">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -1274,8 +1298,8 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="4QY-Gn-bIm"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="Msn-KG-lAH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="4QY-Gn-bIm"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="535" id="Msn-KG-lAH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="n1B-1W-ctN"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4lD-lL-Uxj">

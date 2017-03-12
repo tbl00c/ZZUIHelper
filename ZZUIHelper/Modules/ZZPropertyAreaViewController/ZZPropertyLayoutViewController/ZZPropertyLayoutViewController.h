@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ZZUIView.h"
 
 @interface ZZPropertyLayoutViewController : NSViewController
+
+@property (nonatomic, strong) ZZUIView *object;
 
 @end

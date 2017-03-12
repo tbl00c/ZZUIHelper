@@ -19,9 +19,16 @@
 {
     property.propertyName = name;
     property.remarks = remarks;
+    if ([[property class] isSubclassOfClass:[ZZUIView class]]) {
+        [(ZZUIView *)property setSuperView:(ZZUIView *)self];
+    }
     if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
         [self addPublicProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+    }
+    if ([[property class] isSubclassOfClass:[ZZUICollectionView class]] && [[ZZClassHelper sharedInstance] canNamed:@"collectionViewFlowLayout"]) {
+        ZZUICollectionViewFlowLayout *layout = [[ZZUICollectionViewFlowLayout alloc] init];
+        [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:[property.propertyName stringByAppendingString:@"CollectionViewLayout"]];
     }
     [self.interfaceProperties addObject:property];
 }
@@ -40,6 +47,9 @@
 {
     property.propertyName = name;
     property.remarks = remarks;
+    if ([[property class] isSubclassOfClass:[ZZUIView class]]) {
+        [(ZZUIView *)property setSuperView:(ZZUIView *)self];
+    }
     if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
         [self addPrivateProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];

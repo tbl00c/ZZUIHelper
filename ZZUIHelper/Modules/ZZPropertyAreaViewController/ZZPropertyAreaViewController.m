@@ -32,6 +32,7 @@
         [self removeTabViewItem:self.layoutVCItem];
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_NEW_PROJECT object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_SELECTED object:nil];
 }
@@ -39,21 +40,19 @@
 - (void)editProperty:(NSNotification *)notification
 {
     ZZNSObject *object = notification.object;
-    if (!object) {
-        return;
-    }
-    
+
     [self.editVC setObject:object];
     
-    if ([[object class] isSubclassOfClass:[ZZUIResponder class]]) {
+    if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry && object && [[object class] isSubclassOfClass:[ZZUIResponder class]]) {
+        [self.layoutVC setObject:(ZZUIView *)object];
         if (![self.tabViewItems containsObject:self.layoutVCItem]) {
             [self addTabViewItem:self.layoutVCItem];
         }
+        return;
     }
-    else {
-        if ([self.tabViewItems containsObject:self.layoutVCItem]) {
-            [self removeTabViewItem:self.layoutVCItem];
-        }
+    
+    if ([self.tabViewItems containsObject:self.layoutVCItem]) {
+        [self removeTabViewItem:self.layoutVCItem];
     }
 }
 
