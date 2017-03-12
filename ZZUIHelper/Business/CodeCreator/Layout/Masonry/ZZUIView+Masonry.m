@@ -48,13 +48,13 @@
                     constant = attribute.constant;
                 }
                 else if (attribute.attributeType == ZZLayoutAttributeTypeSize) {
-                    constant = [NSString stringWithFormat:@"CGSizeMake(%@)", attribute.object];
+                    constant = [NSString stringWithFormat:@"CGSizeMake(%@)", attribute.constant];
                 }
                 else if (attribute.attributeType == ZZLayoutAttributeTypeCenter) {
-                    constant = [NSString stringWithFormat:@"CGPointMake(%@)", attribute.object];
+                    constant = [NSString stringWithFormat:@"CGPointMake(%@)", attribute.constant];
                 }
                 else if (attribute.attributeType == ZZLayoutAttributeTypeEdge) {
-                    constant = [NSString stringWithFormat:@"UIEdgeInsetsMake(%@)", attribute.object];
+                    constant = [NSString stringWithFormat:@"UIEdgeInsetsMake(%@)", attribute.constant];
                 }
                 [masonryCode appendFormat:@".mas_%@(%@)", attribute.constantRelationName, constant];
             }
