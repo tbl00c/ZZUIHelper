@@ -9,6 +9,7 @@
 #import "ZZPropertyLayoutViewController.h"
 
 @interface ZZPropertyLayoutViewController ()
+
 @property (weak) IBOutlet NSTableView *tableView;
 
 @end

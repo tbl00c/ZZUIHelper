@@ -29,8 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editProperty:) name:NOTI_CLASS_PROPERTY_SELECTED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_SETTING_EDIT object:nil];
 }
 
@@ -46,12 +44,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)editProperty:(NSNotification *)notification
+- (void)setObject:(ZZNSObject *)object
 {
-    ZZNSObject *object = notification.object;
-    if (!object) {
-        return;
-    }
+    _object = object;
     
     NSMutableArray *data = [[NSMutableArray alloc] init];
     
@@ -80,9 +75,7 @@
         ZZPropertySectionModel *protocolMethods = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeDelegate title:protocol.protocolName andData:protocol.protocolMethods];
         [data addObject:protocolMethods];
     }
-    
-    
-    self.object = object;
+
     self.data = data;
     [self.collectionView reloadData];
 }

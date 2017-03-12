@@ -882,12 +882,13 @@
             </objects>
             <point key="canvasLocation" x="1164" y="127"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--Property Area View Controller-->
         <scene sceneID="jOx-2m-7Eh">
             <objects>
-                <tabViewController selectedTabViewItemIndex="0" id="5hx-lC-XfF" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" id="5hx-lC-XfF" customClass="ZZPropertyAreaViewController" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem id="Cez-mc-QAR"/>
+                        <tabViewItem id="b79-6m-mjA"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="cuk-ah-Nhr">
                         <rect key="frame" x="0.0" y="0.0" width="229" height="300"/>
@@ -897,11 +898,12 @@
                     </tabView>
                     <connections>
                         <segue destination="Toi-Sp-i1Q" kind="relationship" relationship="tabItems" id="MEe-AV-XGK"/>
+                        <segue destination="9xZ-VE-FF0" kind="relationship" relationship="tabItems" id="NEE-dW-sWT"/>
                     </connections>
                 </tabViewController>
                 <customObject id="zfS-XQ-w0x" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979.5" y="482"/>
+            <point key="canvasLocation" x="1090" y="484"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MJu-5i-FeR">
@@ -1126,7 +1128,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1316" y="482"/>
+            <point key="canvasLocation" x="1460" y="474"/>
         </scene>
         <!--Class.h-->
         <scene sceneID="nEi-0E-6Dh">
