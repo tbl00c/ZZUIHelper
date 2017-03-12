@@ -62,4 +62,6 @@ typedef NS_ENUM(NSInteger, ZZUIHelperLayoutLibrary) {
 
 @property (nonatomic, strong) NSArray *separatorStyle;
 
+@property (nonatomic, strong) NSArray *lineBreakMode;
+
 @end

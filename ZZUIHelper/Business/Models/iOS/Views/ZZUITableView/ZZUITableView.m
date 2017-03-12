@@ -38,7 +38,7 @@
         ZZProperty *allowsMultipleSelection = [[ZZProperty alloc] initWithPropertyName:@"allowsMultipleSelection" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *editing = [[ZZProperty alloc] initWithPropertyName:@"editing" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
 
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITableView" properties:@[rowHeight, sectionHeaderHeight, sectionFooterHeight, separatorStyle, separatorInset, allowsSelection, allowsMultipleSelection, editing] privateProperties:@[dataSource]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITableView" properties:@[rowHeight, sectionHeaderHeight, sectionFooterHeight, separatorStyle, separatorInset, ZZ_PROPERTY_LINE, allowsSelection, allowsMultipleSelection, editing] privateProperties:@[dataSource]];
         [_properties addObject:group];
     }
     return _properties;

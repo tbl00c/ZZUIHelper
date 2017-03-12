@@ -27,7 +27,7 @@
     [masonryCode appendFormat:@"[self.%@ mas_makeConstraints:^(MASConstraintMaker *make) {\n", self.propertyName];
     for (ZZMasonryAttribute *attribute in self.layouts) {
         if (attribute.selected) {
-            [masonryCode appendFormat:@"make.%@.mas_%@(", attribute.attributeName, attribute.relationName];
+            [masonryCode appendFormat:@"make.%@.%@(", attribute.attributeName, attribute.relationName];
             
             // 约束
             if (attribute.object.length > 0 && ![attribute.object isEqualToString:@"superView"]) {
@@ -56,7 +56,7 @@
                 else if (attribute.attributeType == ZZLayoutAttributeTypeEdge) {
                     constant = [NSString stringWithFormat:@"UIEdgeInsetsMake(%@)", attribute.constant];
                 }
-                [masonryCode appendFormat:@".mas_%@(%@)", attribute.constantRelationName, constant];
+                [masonryCode appendFormat:@".%@(%@)", attribute.constantRelationName, constant];
             }
             
             // 优先级

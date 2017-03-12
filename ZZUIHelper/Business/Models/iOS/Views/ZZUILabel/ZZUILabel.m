@@ -38,7 +38,9 @@
         }];
         ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" selectionData:[ZZUIHelperConfig sharedInstance].textAlignment andDefaultSelectIndex:0];
         ZZProperty *numberOfLines = [[ZZProperty alloc] initWithPropertyName:@"numberOfLines" type:ZZPropertyTypeNumber defaultValue:@"1"];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UILabel" properties:@[text, font, textColor, textAlignment, numberOfLines]];
+        
+        ZZProperty *lineBreakMode = [[ZZProperty alloc] initWithPropertyName:@"lineBreakMode" selectionData:[ZZUIHelperConfig sharedInstance].lineBreakMode andDefaultSelectIndex:0];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UILabel" properties:@[text, font, textColor, textAlignment, numberOfLines, lineBreakMode]];
         [_properties addObject:group];
     }
     return _properties;

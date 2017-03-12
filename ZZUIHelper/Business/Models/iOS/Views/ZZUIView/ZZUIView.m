@@ -65,7 +65,7 @@
         ZZProperty *opaque = [[ZZProperty alloc] initWithPropertyName:@"opaque" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
         ZZProperty *hidden = [[ZZProperty alloc] initWithPropertyName:@"hidden" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *clipsToBounds = [[ZZProperty alloc] initWithPropertyName:@"clipsToBounds" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIView" properties:@[frame, contentMode, tag, userInteractionEnabled, multipleTouch, alpha, backgroundColor, tintColor, opaque, hidden, clipsToBounds]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIView" properties:@[frame, contentMode, tag, ZZ_PROPERTY_LINE, userInteractionEnabled, multipleTouch, ZZ_PROPERTY_LINE, alpha, backgroundColor, tintColor, ZZ_PROPERTY_LINE, opaque, hidden, clipsToBounds]];
         [_properties addObject:group];
     }
     return _properties;

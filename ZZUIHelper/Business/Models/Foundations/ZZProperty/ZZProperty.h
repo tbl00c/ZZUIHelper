@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define ZZ_PROPERTY_LINE       [ZZProperty seperatorLine]
+
 typedef NS_ENUM(NSInteger, ZZPropertyType) {
     ZZPropertyTypeObject,
     ZZPropertyTypeNumber,
@@ -19,6 +21,7 @@ typedef NS_ENUM(NSInteger, ZZPropertyType) {
     ZZPropertyTypePoint,
     ZZPropertyTypeEdgeInsets,
     ZZPropertyTypeRect,
+    ZZPropertyTypeLine,
 };
 
 @interface ZZProperty : NSObject
@@ -51,6 +54,8 @@ typedef NS_ENUM(NSInteger, ZZPropertyType) {
 - (id)initWithPropertyName:(NSString *)propertyName type:(ZZPropertyType)type defaultValue:(id)defaultValue selecetd:(BOOL)selected;
 - (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData andDefaultSelectIndex:(NSInteger)selectIndex;
 - (id)initWithPropertyName:(NSString *)propertyName selectionData:(NSArray *)selectionData defaultValue:(NSString *)defaultValue editable:(BOOL)editable;
+
++ (ZZProperty *)seperatorLine;
 
 @end
 

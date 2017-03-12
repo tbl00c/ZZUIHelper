@@ -278,6 +278,16 @@
              @"UITableViewCellSeparatorStyleSingleLineEtched"];
 }
 
+- (NSArray *)lineBreakMode
+{
+    return @[@"NSLineBreakByWordWrapping = 0",
+             @"NSLineBreakByCharWrapping",
+             @"NSLineBreakByClipping",
+             @"NSLineBreakByTruncatingHead",
+             @"NSLineBreakByTruncatingTail",
+             @"NSLineBreakByTruncatingMiddle"];
+}
+
 #pragma mark - # Private Methods
 + (NSMutableArray *)zzColors
 {

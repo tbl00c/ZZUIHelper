@@ -32,7 +32,7 @@
             return [NSString stringWithFormat:@"setCurrentPageIndicatorTintColor:[UIColor %@]", value];
         }];
         
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIButton" properties:@[numberOfPages, currentPage, hidesForSinglePage, defersCurrentPageDisplay, pageIndicatorTintColor, currentPageIndicatorTintColor]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIPageControl" properties:@[numberOfPages, currentPage, ZZ_PROPERTY_LINE, hidesForSinglePage, defersCurrentPageDisplay, ZZ_PROPERTY_LINE, pageIndicatorTintColor, currentPageIndicatorTintColor]];
         [_properties addObject:group];
     }
     return _properties;

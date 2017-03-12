@@ -54,7 +54,7 @@
         ZZProperty *enablesReturnKeyAutomatically = [[ZZProperty alloc] initWithPropertyName:@"enablesReturnKeyAutomatically" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *secureTextEntry = [[ZZProperty alloc] initWithPropertyName:@"secureTextEntry" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextView" properties:@[text, font, textColor, textAlignment, editable, selectable, borderStyle, clearButtonMode, clearsOnBeginEditing, keyboardType, returnKeyType, keyboardAppearance, enablesReturnKeyAutomatically, secureTextEntry]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextView" properties:@[text, font, textColor, textAlignment, ZZ_PROPERTY_LINE, editable, selectable, ZZ_PROPERTY_LINE, borderStyle, ZZ_PROPERTY_LINE, clearButtonMode, clearsOnBeginEditing, ZZ_PROPERTY_LINE, keyboardType, returnKeyType, keyboardAppearance, enablesReturnKeyAutomatically, secureTextEntry]];
         [_properties addObject:group];
     }
     return _properties;

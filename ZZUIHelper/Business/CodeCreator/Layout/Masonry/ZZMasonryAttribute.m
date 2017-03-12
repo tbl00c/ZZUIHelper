@@ -33,13 +33,13 @@
 {
     switch (self.relation) {
         case ZZLayoutRelationEqual:
-            return @"equalTo";
+            return @"mas_equalTo";
             break;
         case ZZLayoutRelationLessThanEqual:
-            return @"lessThanOrEqualTo";
+            return @"mas_lessThanOrEqualTo";
             break;
         case ZZLayoutRelationGreaterThanEqual:
-            return @"greaterThanOrEqualTo";
+            return @"mas_greaterThanOrEqualTo";
             break;
             
         default:
@@ -52,7 +52,7 @@
 {
     switch (self.constantRelation) {
         case ZZLayoutConstantRelationOffset:
-            return @"offset";
+            return @"mas_offset";
             break;
         case ZZLayoutConstantRelationMutipliedBy:
             return @"mutipliedBy";

@@ -18,6 +18,13 @@
 @synthesize value = _value;
 @synthesize propertyCode = _propertyCode;
 
++ (ZZProperty *)seperatorLine
+{
+    ZZProperty *line = [[ZZProperty alloc] init];
+    [line setType:ZZPropertyTypeLine];
+    return line;
+}
+
 - (id)init
 {
     if (self = [super init]) {

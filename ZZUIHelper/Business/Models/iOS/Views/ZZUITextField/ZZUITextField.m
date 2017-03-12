@@ -58,7 +58,7 @@
         
         // 代理
         ZZProperty *delegate = [[ZZProperty alloc] initWithPropertyName:@"delegate" type:ZZPropertyTypeObject defaultValue:@"self" selecetd:YES];
-        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, font, textColor, textAlignment, borderStyle, clearButtonMode, clearsOnBeginEditing, keyboardType, returnKeyType, keyboardAppearance, enablesReturnKeyAutomatically, secureTextEntry] privateProperties:@[delegate]];
+        ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UITextField" properties:@[text, placeholder, ZZ_PROPERTY_LINE, font, textColor, textAlignment, ZZ_PROPERTY_LINE, borderStyle, ZZ_PROPERTY_LINE, clearButtonMode, clearsOnBeginEditing, ZZ_PROPERTY_LINE, keyboardType, returnKeyType, keyboardAppearance, enablesReturnKeyAutomatically, secureTextEntry] privateProperties:@[delegate]];
         [_properties addObject:group];
     }
     return _properties;

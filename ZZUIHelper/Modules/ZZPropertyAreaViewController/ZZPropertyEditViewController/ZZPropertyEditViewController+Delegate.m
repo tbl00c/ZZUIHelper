@@ -15,6 +15,7 @@
 #import "ZZPropertySelectionAndEditCell.h"
 #import "ZZPropertyXYCell.h"
 #import "ZZPropertyXYWHCell.h"
+#import "ZZPropertyLineCell.h"
 
 @implementation ZZPropertyEditViewController (Delegate)
 
@@ -33,6 +34,7 @@
     [self.collectionView registerClass:[ZZPropertyMethodCell class] forItemWithIdentifier:@"ZZPropertyMethodCell"];
     [self.collectionView registerClass:[ZZPropertyXYCell class] forItemWithIdentifier:@"ZZPropertyXYCell"];
     [self.collectionView registerClass:[ZZPropertyXYWHCell class] forItemWithIdentifier:@"ZZPropertyXYWHCell"];
+    [self.collectionView registerClass:[ZZPropertyLineCell class] forItemWithIdentifier:@"ZZPropertyLineCell"];
 }
 
 #pragma mark - # Delegate
@@ -74,6 +76,9 @@
         }
         else if (property.type == ZZPropertyTypeEdgeInsets || property.type == ZZPropertyTypeRect) {
             identifier = @"ZZPropertyXYWHCell";
+        }
+        else if (property.type == ZZPropertyTypeLine) {
+            identifier = @"ZZPropertyLineCell";
         }
         if (identifier) {
             id cell = [collectionView makeItemWithIdentifier:identifier forIndexPath:indexPath];
@@ -121,6 +126,9 @@
         ZZProperty *property = model.sectionData[indexPath.item];
         if (property.type == ZZPropertyTypeRect || property.type == ZZPropertyTypeEdgeInsets) {
             return CGSizeMake(collectionView.frame.size.width, 56);
+        }
+        else if (property.type == ZZPropertyTypeLine) {
+            return CGSizeMake(collectionView.frame.size.width, 10);
         }
         return CGSizeMake(collectionView.frame.size.width, 26);
     }
