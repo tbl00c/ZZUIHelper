@@ -61,7 +61,7 @@
                 }
             }
             if ([[object class] isSubclassOfClass:[ZZUIResponder class]]) {
-                [setupCode appendFormat:@"[%@ addSubview:self.%@];\n", superView.curView, object.propertyName];
+                [setupCode appendFormat:@"[%@ addSubview:self.%@];\n", [(ZZUIView *)object superViewName], object.propertyName];
             }
             
             if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry && [object respondsToSelector:@selector(masonryCode)]) {

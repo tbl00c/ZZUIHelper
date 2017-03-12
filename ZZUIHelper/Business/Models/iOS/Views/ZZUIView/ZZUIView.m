@@ -12,6 +12,23 @@
 @synthesize properties = _properties;
 @synthesize delegates = _delegates;
 @synthesize layouts = _layouts;
+@synthesize superViewNameProperty = _superViewNameProperty;
+
+- (void)setSuperViewName:(NSString *)superViewName
+{
+    [self.superViewNameProperty setValue:superViewName];
+}
+- (NSString *)superViewName
+{
+    return self.superViewNameProperty.value;
+}
+- (ZZProperty *)superViewNameProperty
+{
+    if (!_superViewNameProperty) {
+        _superViewNameProperty = [[ZZProperty alloc] initWithPropertyName:@"superView" selectionData:@[] defaultValue:nil editable:NO];
+    }
+    return _superViewNameProperty;
+}
 
 - (NSArray *)delegates
 {

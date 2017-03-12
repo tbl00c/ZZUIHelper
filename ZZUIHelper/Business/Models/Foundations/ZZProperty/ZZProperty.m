@@ -79,7 +79,7 @@
 - (void)setSelectIndex:(NSInteger)selectIndex
 {
     _selectIndex = selectIndex;
-    if (selectIndex > 0 && selectIndex < self.selectionData.count) {
+    if (selectIndex >= 0 && selectIndex < self.selectionData.count) {
         self.value = self.selectionData[selectIndex];
     }
 }

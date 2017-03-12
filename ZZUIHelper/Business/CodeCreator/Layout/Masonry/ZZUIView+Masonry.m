@@ -34,7 +34,7 @@
                 [masonryCode appendFormat:@"self.%@", attribute.object];
             }
             else {
-                [masonryCode appendString:self.superView.curView];
+                [masonryCode appendString:self.superViewName];
             }
             if (attribute.objectAttributeType != attribute.attributeType) {
                 [masonryCode appendFormat:@".mas_%@", attribute.objectAttributeName];

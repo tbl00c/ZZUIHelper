@@ -20,7 +20,7 @@
     property.propertyName = name;
     property.remarks = remarks;
     if ([[property class] isSubclassOfClass:[ZZUIView class]]) {
-        [(ZZUIView *)property setSuperView:(ZZUIView *)self];
+        [(ZZUIView *)property setSuperViewName:[(ZZUIView *)self curView]];
     }
     if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
@@ -48,7 +48,7 @@
     property.propertyName = name;
     property.remarks = remarks;
     if ([[property class] isSubclassOfClass:[ZZUIView class]]) {
-        [(ZZUIView *)property setSuperView:(ZZUIView *)self];
+        [(ZZUIView *)property setSuperViewName:[(ZZUIView *)self curView]];
     }
     if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
         ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];

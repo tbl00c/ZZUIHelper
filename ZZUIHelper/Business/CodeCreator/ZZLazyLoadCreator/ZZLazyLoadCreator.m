@@ -206,7 +206,7 @@
                     
                     NSMutableString *initCode = [NSMutableString stringWithFormat:@"if (self = [super %@]) {", initMethod.superMethodName];
                     for (ZZUIView *view in childViewArray) {
-                        [initCode appendFormat:@"[%@ addSubview:self.%@];\n", viewClass.curView, view.propertyName];
+                        [initCode appendFormat:@"[%@ addSubview:self.%@];\n", view.superViewName, view.propertyName];
                     }
                     
                     if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
@@ -229,7 +229,7 @@
                 [vc.loadView setSelected:YES];
                 NSMutableString *code = [[NSMutableString alloc] initWithString:@"[super loadView];\n"];
                 for (ZZUIView *view in childViewArray) {
-                    [code appendFormat:@"[%@ addSubview:self.%@];\n", viewClass.curView, view.propertyName];
+                    [code appendFormat:@"[%@ addSubview:self.%@];\n", view.superViewName, view.propertyName];
                 }
                 if ([ZZUIHelperConfig sharedInstance].layoutLibrary == ZZUIHelperLayoutLibraryMasonry) {
                     [code appendString:@"[self p_addMasonry];\n"];

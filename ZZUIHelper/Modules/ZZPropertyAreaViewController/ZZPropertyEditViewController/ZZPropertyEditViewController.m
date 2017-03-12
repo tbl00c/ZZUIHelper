@@ -8,6 +8,7 @@
 
 #import "ZZPropertyEditViewController.h"
 #import "ZZPropertyEditViewController+Delegate.h"
+#import "ZZUIResponder+CodeCreator.h"
 #import "ZZUIControl.h"
 
 @interface ZZPropertyEditViewController ()
@@ -56,7 +57,23 @@
     NSMutableArray *data = [[NSMutableArray alloc] init];
     
     // base
-    ZZPropertySectionModel *baseSection = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeProperty title:nil andData:@[object.propertyNameProperty, object.remarksProperty]];
+    NSMutableArray *baseData = @[object.propertyNameProperty, object.remarksProperty].mutableCopy;
+    if ([[object class] isSubclassOfClass:[ZZUIView class]]) {
+        ZZProperty *supviewNameProperty = [(ZZUIView *)object superViewNameProperty];
+        NSArray *childViewArray = [[ZZClassHelper sharedInstance].curClass childViewsArray];
+        NSMutableArray *selectionData = [[NSMutableArray alloc] init];
+        for (ZZUIView *view in childViewArray) {
+            if (view != object) {
+                NSString *name = [@"self." stringByAppendingString:view.propertyName];
+                [selectionData addObject:name];
+            }
+        }
+        [selectionData insertObject:[ZZClassHelper sharedInstance].curClass.curView atIndex:0];
+        
+        [supviewNameProperty setSelectionData:selectionData];
+        [baseData addObject:supviewNameProperty];
+    }
+    ZZPropertySectionModel *baseSection = [[ZZPropertySectionModel alloc] initWithSectionType:ZZPropertySectionTypeProperty title:nil andData:baseData];
     [data addObject:baseSection];
     
     // Properties
