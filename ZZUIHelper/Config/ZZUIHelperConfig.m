@@ -172,6 +172,9 @@
              @"UIScrollView",
              @"UISwitch",
              @"UIPageControl",
+             @"UIActivityIndicatorView",
+             @"UISlider",
+             @"UIProgressView",
              @"NSMutableArray"];
 }
 
@@ -286,6 +289,13 @@
              @"NSLineBreakByTruncatingHead",
              @"NSLineBreakByTruncatingTail",
              @"NSLineBreakByTruncatingMiddle"];
+}
+
+- (NSArray *)activityIndicatorViewStyle
+{
+    return @[@"UIActivityIndicatorViewStyleWhiteLarge",
+             @"UIActivityIndicatorViewStyleWhite",
+             @"UIActivityIndicatorViewStyleGray"];
 }
 
 #pragma mark - # Private Methods

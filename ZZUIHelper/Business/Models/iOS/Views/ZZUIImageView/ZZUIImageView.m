@@ -24,7 +24,7 @@
             }
         }
         
-        ZZProperty *imageName = [[ZZProperty alloc] initWithPropertyName:@"imageName" type:ZZPropertyTypeObject defaultValue:@""];
+        ZZProperty *imageName = [[ZZProperty alloc] initWithPropertyName:@"image" type:ZZPropertyTypeObject defaultValue:@""];
         [imageName setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"setImage:[UIImage imageNamed:@\"%@\"]",  value];
         }];

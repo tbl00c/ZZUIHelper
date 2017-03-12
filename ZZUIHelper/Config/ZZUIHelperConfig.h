@@ -64,4 +64,6 @@ typedef NS_ENUM(NSInteger, ZZUIHelperLayoutLibrary) {
 
 @property (nonatomic, strong) NSArray *lineBreakMode;
 
+@property (nonatomic, strong) NSArray *activityIndicatorViewStyle;
+
 @end

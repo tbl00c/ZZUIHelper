@@ -72,6 +72,9 @@
 		C2AEFB361E759D7200972320 /* ZZUIPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB351E759D7200972320 /* ZZUIPageControl.m */; };
 		C2AEFB3A1E75A10100972320 /* ZZPropertyLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB381E75A10100972320 /* ZZPropertyLineCell.m */; };
 		C2AEFB3B1E75A10100972320 /* ZZPropertyLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AEFB391E75A10100972320 /* ZZPropertyLineCell.xib */; };
+		C2AEFB3F1E75AA3B00972320 /* ZZUIActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB3E1E75AA3B00972320 /* ZZUIActivityIndicatorView.m */; };
+		C2AEFB431E75AC1000972320 /* ZZUIProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB421E75AC1000972320 /* ZZUIProgressView.m */; };
+		C2AEFB471E75AE6500972320 /* ZZUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB461E75AE6500972320 /* ZZUISlider.m */; };
 		C2B3F5D01E608096000E42CE /* ZZMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5CF1E608096000E42CE /* ZZMethod.m */; };
 		C2B3F5D31E60F307000E42CE /* ZZParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5D21E60F307000E42CE /* ZZParam.m */; };
 		C2B3F5D61E60F621000E42CE /* ZZUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3F5D51E60F621000E42CE /* ZZUtility.m */; };
@@ -263,6 +266,12 @@
 		C2AEFB371E75A10100972320 /* ZZPropertyLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyLineCell.h; sourceTree = "<group>"; };
 		C2AEFB381E75A10100972320 /* ZZPropertyLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPropertyLineCell.m; sourceTree = "<group>"; };
 		C2AEFB391E75A10100972320 /* ZZPropertyLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPropertyLineCell.xib; sourceTree = "<group>"; };
+		C2AEFB3D1E75AA3B00972320 /* ZZUIActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIActivityIndicatorView.h; sourceTree = "<group>"; };
+		C2AEFB3E1E75AA3B00972320 /* ZZUIActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIActivityIndicatorView.m; sourceTree = "<group>"; };
+		C2AEFB411E75AC1000972320 /* ZZUIProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIProgressView.h; sourceTree = "<group>"; };
+		C2AEFB421E75AC1000972320 /* ZZUIProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIProgressView.m; sourceTree = "<group>"; };
+		C2AEFB451E75AE6500972320 /* ZZUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUISlider.h; sourceTree = "<group>"; };
+		C2AEFB461E75AE6500972320 /* ZZUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUISlider.m; sourceTree = "<group>"; };
 		C2B3F5CE1E608096000E42CE /* ZZMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMethod.h; sourceTree = "<group>"; };
 		C2B3F5CF1E608096000E42CE /* ZZMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMethod.m; sourceTree = "<group>"; };
 		C2B3F5D11E60F307000E42CE /* ZZParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZParam.h; sourceTree = "<group>"; };
@@ -471,9 +480,12 @@
 				C21DDEBB1E6FEF42000BCD9C /* ZZUITextField */,
 				C21DDEBC1E6FEF42000BCD9C /* ZZUITextView */,
 				C21DDEAF1E6FEF42000BCD9C /* ZZUICollectionView */,
-				C21DDEB01E6FEF42000BCD9C /* ZZUICollectionViewCell */,
-				C2AEFB331E759D5C00972320 /* ZZUIPageControl */,
 				C21DDEB11E6FEF42000BCD9C /* ZZUICollectionViewFlowLayout */,
+				C21DDEB01E6FEF42000BCD9C /* ZZUICollectionViewCell */,
+				C2AEFB3C1E75AA2B00972320 /* ZZUIActivityIndicatorView */,
+				C2AEFB441E75AE5700972320 /* ZZUISlider */,
+				C2AEFB401E75AC0000972320 /* ZZUIProgressView */,
+				C2AEFB331E759D5C00972320 /* ZZUIPageControl */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -866,6 +878,33 @@
 				C2AEFB351E759D7200972320 /* ZZUIPageControl.m */,
 			);
 			path = ZZUIPageControl;
+			sourceTree = "<group>";
+		};
+		C2AEFB3C1E75AA2B00972320 /* ZZUIActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEFB3D1E75AA3B00972320 /* ZZUIActivityIndicatorView.h */,
+				C2AEFB3E1E75AA3B00972320 /* ZZUIActivityIndicatorView.m */,
+			);
+			path = ZZUIActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		C2AEFB401E75AC0000972320 /* ZZUIProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEFB411E75AC1000972320 /* ZZUIProgressView.h */,
+				C2AEFB421E75AC1000972320 /* ZZUIProgressView.m */,
+			);
+			path = ZZUIProgressView;
+			sourceTree = "<group>";
+		};
+		C2AEFB441E75AE5700972320 /* ZZUISlider */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEFB451E75AE6500972320 /* ZZUISlider.h */,
+				C2AEFB461E75AE6500972320 /* ZZUISlider.m */,
+			);
+			path = ZZUISlider;
 			sourceTree = "<group>";
 		};
 		C2B3F5CD1E60807C000E42CE /* ZZMethod */ = {
@@ -1323,6 +1362,7 @@
 				C21DDF331E701396000BCD9C /* ZZFontSettingViewController.m in Sources */,
 				C21DDED21E6FF004000BCD9C /* ZZUIButton.m in Sources */,
 				C22D8D8E1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m in Sources */,
+				C2AEFB471E75AE6500972320 /* ZZUISlider.m in Sources */,
 				C21DDF211E6FF2BC000BCD9C /* ZZClassHelper.m in Sources */,
 				C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */,
 				C22D8D781E72525C00A33083 /* ZZUIResponder+CodeCreator.m in Sources */,
@@ -1351,12 +1391,14 @@
 				C22569F91E67F048008E7785 /* ZZControlListItem.m in Sources */,
 				C2D738C41E74F8ED00344E5F /* ZZPropertyXYCell.m in Sources */,
 				C2B3F5D31E60F307000E42CE /* ZZParam.m in Sources */,
+				C2AEFB431E75AC1000972320 /* ZZUIProgressView.m in Sources */,
 				C2D738E31E752FA000344E5F /* ZZUIView+Masonry.m in Sources */,
 				C2D6CA261E5BE12700EEF76B /* MASConstraintMaker.m in Sources */,
 				C21DDEF61E6FF053000BCD9C /* ZZUISwitch.m in Sources */,
 				C2D6CA271E5BE12700EEF76B /* MASLayoutConstraint.m in Sources */,
 				C2D738C61E74F8ED00344E5F /* ZZPropertyXYWHCell.m in Sources */,
 				C2D738BC1E74F8ED00344E5F /* ZZPropertyBoolCell.m in Sources */,
+				C2AEFB3F1E75AA3B00972320 /* ZZUIActivityIndicatorView.m in Sources */,
 				C21DDF2C1E700648000BCD9C /* ZZGeneralSettingViewController.m in Sources */,
 				C2A10CB11E5AEF0B000960D9 /* ZZNewPropertyViewController.m in Sources */,
 				C21DDECF1E6FEFF6000BCD9C /* ZZEvent.m in Sources */,
