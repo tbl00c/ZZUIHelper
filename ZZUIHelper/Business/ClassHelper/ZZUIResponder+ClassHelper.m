@@ -29,7 +29,7 @@
     }
     if ([[property class] isSubclassOfClass:[ZZUICollectionView class]] && [[ZZClassHelper sharedInstance] canNamed:@"collectionViewFlowLayout"]) {
         ZZUICollectionViewFlowLayout *layout = [[ZZUICollectionViewFlowLayout alloc] init];
-        [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:[property.propertyName stringByAppendingString:@"CollectionViewLayout"]];
+        [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:@"collectionViewFlowLayout"];
     }
     [self.interfaceProperties addObject:property];
 }

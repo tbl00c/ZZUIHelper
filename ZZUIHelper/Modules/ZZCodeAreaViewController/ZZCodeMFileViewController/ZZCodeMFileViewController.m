@@ -9,7 +9,9 @@
 #import "ZZCodeMFileViewController.h"
 #import <MGSFragaria/MGSFragaria.h>
 
-@interface ZZCodeMFileViewController ()
+@interface ZZCodeMFileViewController () <NSTextViewDelegate>
+
+@property (nonatomic, strong) ZZUIResponder *curClass;
 
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 
@@ -35,9 +37,15 @@
 
 - (void)reloadData
 {
+    
     if ([ZZClassHelper sharedInstance].curClass) {
         ZZUIResponder *curClass = [ZZClassHelper sharedInstance].curClass;
+        CGRect rect = self.fragaria.textView.visibleRect;
         [self.fragaria setString:[[ZZCreatorManager sharedInstance] mFileForViewClass:curClass]];
+        if (curClass == self.curClass) {
+            [self.fragaria.textView scrollRectToVisible:rect];
+        }
+        self.curClass = curClass;
     }
 }
 

@@ -282,8 +282,6 @@
 		C2B3F6011E62FC96000E42CE /* ZZCodeHFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeHFileViewController.m; sourceTree = "<group>"; };
 		C2B3F6081E62FCC2000E42CE /* ZZCodeMFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeMFileViewController.h; sourceTree = "<group>"; };
 		C2B3F6091E62FCC2000E42CE /* ZZCodeMFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeMFileViewController.m; sourceTree = "<group>"; };
-		C2B3F60D1E62FCD1000E42CE /* ZZCodeLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCodeLayoutViewController.h; sourceTree = "<group>"; };
-		C2B3F60E1E62FCD1000E42CE /* ZZCodeLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCodeLayoutViewController.m; sourceTree = "<group>"; };
 		C2B776CB1E7157DE00D333E4 /* ZZCreatorSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCreatorSelectorViewController.h; sourceTree = "<group>"; };
 		C2B776CC1E7157DE00D333E4 /* ZZCreatorSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCreatorSelectorViewController.m; sourceTree = "<group>"; };
 		C2B776CD1E7157DE00D333E4 /* ZZCreatorSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCreatorSettingViewController.h; sourceTree = "<group>"; };
@@ -724,7 +722,6 @@
 			children = (
 				C2B3F5FB1E62FB18000E42CE /* ZZCodeHFileViewController */,
 				C2B3F5FD1E62FB18000E42CE /* ZZCodeMFileViewController */,
-				C2B3F5FC1E62FB18000E42CE /* ZZCodeLayoutViewController */,
 				C2223A091E5875F8002CB428 /* ZZCodeAreaViewController.h */,
 				C2223A0A1E5875F8002CB428 /* ZZCodeAreaViewController.m */,
 			);
@@ -925,15 +922,6 @@
 				C2B3F6011E62FC96000E42CE /* ZZCodeHFileViewController.m */,
 			);
 			path = ZZCodeHFileViewController;
-			sourceTree = "<group>";
-		};
-		C2B3F5FC1E62FB18000E42CE /* ZZCodeLayoutViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C2B3F60D1E62FCD1000E42CE /* ZZCodeLayoutViewController.h */,
-				C2B3F60E1E62FCD1000E42CE /* ZZCodeLayoutViewController.m */,
-			);
-			path = ZZCodeLayoutViewController;
 			sourceTree = "<group>";
 		};
 		C2B3F5FD1E62FB18000E42CE /* ZZCodeMFileViewController */ = {
