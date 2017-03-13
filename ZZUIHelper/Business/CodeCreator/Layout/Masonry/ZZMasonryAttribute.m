@@ -181,4 +181,12 @@
     return attrbuteName;
 }
 
+- (NSString *)object
+{
+    if (!_object) {
+        _object = @"";
+    }
+    return _object;
+}
+
 @end

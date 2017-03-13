@@ -20,6 +20,55 @@
 
 - (NSString *)masonryCode
 {
+    NSString *(^getConstantValueFromAttribute)(ZZMasonryAttribute *attribute) = ^NSString *(ZZMasonryAttribute *attribute) {
+        NSString *constant;
+        if ([attribute.constant isPureNumber]) {
+            constant = attribute.constant;
+        }
+        else if (attribute.attributeType == ZZLayoutAttributeTypeSize) {
+            constant = [NSString stringWithFormat:@"CGSizeMake(%@)", attribute.constant];
+        }
+        else if (attribute.attributeType == ZZLayoutAttributeTypeCenter) {
+            constant = [NSString stringWithFormat:@"CGPointMake(%@)", attribute.constant];
+        }
+        else if (attribute.attributeType == ZZLayoutAttributeTypeEdge) {
+            constant = [NSString stringWithFormat:@"UIEdgeInsetsMake(%@)", attribute.constant];
+        }
+        return constant;
+    };
+    
+    NSString *(^getObjectNameFromAttribute)(ZZMasonryAttribute *attribute) = ^NSString *(ZZMasonryAttribute *attribute) {
+        // 约束对象不同
+        if (attribute.object.length > 0 && ![attribute.object isEqualToString:@"superView"]) {
+            NSString *object = [@"self." stringByAppendingString:attribute.object];
+            if (attribute.attributeType != attribute.objectAttributeType) {
+                object = [object stringByAppendingFormat:@".mas_%@", attribute.objectAttributeName];
+            }
+            return object;
+        }
+        
+        // 约束条件不同
+        if (attribute.attributeType != attribute.objectAttributeType) {
+            return [self.superViewName stringByAppendingFormat:@".mas_%@", attribute.objectAttributeName];
+        }
+        
+        // 设置了superView，且约束条件与大小有关
+        if ([attribute.object isEqualToString:@"superView"]
+            && (attribute.attributeType == ZZLayoutAttributeTypeWidth
+                || attribute.attributeType == ZZLayoutAttributeTypeHeight
+                || attribute.attributeType == ZZLayoutAttributeTypeSize)
+            ) {
+            return self.superViewName;
+        }
+        
+        // 常量意义不是+
+        if (attribute.constantRelation != ZZLayoutConstantRelationOffset) {
+            return self.superViewName;
+        }
+        
+        return nil;
+    };
+    
     NSMutableString *masonryCode = [[NSMutableString alloc] init];;
     if (self.remarks.length > 0) {
         [masonryCode appendFormat:@"// %@\n", self.remarks];
@@ -30,33 +79,20 @@
             [masonryCode appendFormat:@"make.%@.%@(", attribute.attributeName, attribute.relationName];
             
             // 约束
-            if (attribute.object.length > 0 && ![attribute.object isEqualToString:@"superView"]) {
-                [masonryCode appendFormat:@"self.%@", attribute.object];
+            NSString *object = getObjectNameFromAttribute(attribute);
+            if (object) {
+                [masonryCode appendFormat:@"%@)", object];
+                if (attribute.constant.length > 0) {
+                    NSString *constant = getConstantValueFromAttribute(attribute);
+                    [masonryCode appendFormat:@".%@(%@)", attribute.constantRelationName, constant];
+                }
+            }
+            else if (attribute.constant.length > 0) {
+                NSString *constant = getConstantValueFromAttribute(attribute);
+                [masonryCode appendFormat:@"%@)", constant];
             }
             else {
-                [masonryCode appendString:self.superViewName];
-            }
-            if (attribute.objectAttributeType != attribute.attributeType) {
-                [masonryCode appendFormat:@".mas_%@", attribute.objectAttributeName];
-            }
-            [masonryCode appendString:@")"];
-            
-            // 相对偏移量
-            if (attribute.constant.length > 0) {
-                NSString *constant;
-                if ([attribute.constant isPureNumber]) {
-                    constant = attribute.constant;
-                }
-                else if (attribute.attributeType == ZZLayoutAttributeTypeSize) {
-                    constant = [NSString stringWithFormat:@"CGSizeMake(%@)", attribute.constant];
-                }
-                else if (attribute.attributeType == ZZLayoutAttributeTypeCenter) {
-                    constant = [NSString stringWithFormat:@"CGPointMake(%@)", attribute.constant];
-                }
-                else if (attribute.attributeType == ZZLayoutAttributeTypeEdge) {
-                    constant = [NSString stringWithFormat:@"UIEdgeInsetsMake(%@)", attribute.constant];
-                }
-                [masonryCode appendFormat:@".%@(%@)", attribute.constantRelationName, constant];
+                [masonryCode appendString:@"0)"];
             }
             
             // 优先级

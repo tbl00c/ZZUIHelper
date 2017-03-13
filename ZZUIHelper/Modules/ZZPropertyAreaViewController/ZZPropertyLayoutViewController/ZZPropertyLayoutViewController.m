@@ -29,6 +29,7 @@
     
     NSMutableArray *otherObjects = [[NSMutableArray alloc] init];
     NSArray *respArray = [ZZClassHelper sharedInstance].curClass.childViewsArray;
+    [otherObjects addObject:@""];
     [otherObjects addObject:@"superView"];
     for (ZZUIResponder *resp in respArray) {
         [otherObjects addObject:resp.propertyName];
