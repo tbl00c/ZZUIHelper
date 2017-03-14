@@ -16,6 +16,8 @@
 
 @property (weak) IBOutlet NSTextField *defineSuperClassNameLabel;
 
+@property (weak) IBOutlet NSButton *cancelButton;
+
 @end
 
 @implementation ZZNewFileViewController
@@ -26,6 +28,7 @@
     self.classNameTF.stringValue = [ZZUIHelperConfig sharedInstance].classPrefix;
     [self.superClassCobox addItemsWithObjectValues:[ZZClassHelper sharedInstance].superClassArray];
     [self.superClassCobox selectItemAtIndex:0];
+    [self.cancelButton setHidden:[ZZClassHelper sharedInstance].curClass == nil];
 }
 
 #pragma mark - # Delegate
@@ -54,6 +57,10 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROJECT object:nil];
         [self dismissViewController:self];
     }
+}
+
+- (IBAction)cancelButtonClick:(id)sender {
+    [self dismissViewController:self];
 }
 
 @end
