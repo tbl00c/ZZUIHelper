@@ -1148,44 +1148,7 @@
                     <view key="view" id="Vwr-dN-Ynk">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyN-nq-l6j">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" id="34h-VN-kfC">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView editable="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="voP-W6-azm">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="450" height="300"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
-                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1hh-Bg-2gh">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ysE-bh-aYR">
-                                    <rect key="frame" x="434" y="0.0" width="16" height="300"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="MyN-nq-l6j" firstAttribute="leading" secondItem="Vwr-dN-Ynk" secondAttribute="leading" id="KXt-Cv-re8"/>
-                            <constraint firstAttribute="trailing" secondItem="MyN-nq-l6j" secondAttribute="trailing" id="Kpb-zA-dqC"/>
-                            <constraint firstItem="MyN-nq-l6j" firstAttribute="top" secondItem="Vwr-dN-Ynk" secondAttribute="top" id="bcD-jY-gUd"/>
-                            <constraint firstAttribute="bottom" secondItem="MyN-nq-l6j" secondAttribute="bottom" id="i3R-3L-EjL"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="textView" destination="voP-W6-azm" id="byS-dc-mAc"/>
-                    </connections>
                 </viewController>
                 <customObject id="a67-KG-FLs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1198,44 +1161,7 @@
                     <view key="view" id="Udx-vh-Ofl">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksZ-FK-nll">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" id="JQW-ie-Lbi">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView editable="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="8ln-KF-lfR">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="450" height="300"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
-                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="5Bk-VX-vlJ">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="P21-CI-uJr">
-                                    <rect key="frame" x="434" y="0.0" width="16" height="300"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ksZ-FK-nll" secondAttribute="trailing" id="0y9-Rd-TRJ"/>
-                            <constraint firstAttribute="bottom" secondItem="ksZ-FK-nll" secondAttribute="bottom" id="6OR-VH-R9W"/>
-                            <constraint firstItem="ksZ-FK-nll" firstAttribute="leading" secondItem="Udx-vh-Ofl" secondAttribute="leading" id="LOD-cD-oYI"/>
-                            <constraint firstItem="ksZ-FK-nll" firstAttribute="top" secondItem="Udx-vh-Ofl" secondAttribute="top" id="umi-wL-rL4"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="textView" destination="8ln-KF-lfR" id="jGf-EX-Gnk"/>
-                    </connections>
                 </viewController>
                 <customObject id="Pqw-eh-QxU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

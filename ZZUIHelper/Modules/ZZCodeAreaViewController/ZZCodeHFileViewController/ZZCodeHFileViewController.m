@@ -11,7 +11,7 @@
 
 @interface ZZCodeHFileViewController ()
 
-@property (unsafe_unretained) IBOutlet NSTextView *textView;
+@property (nonatomic, strong) ZZUIResponder *curClass;
 
 @property (nonatomic, strong) MGSFragaria *fragaria;
 
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.fragaria embedInView:self.textView];
+    [self.fragaria embedInView:self.view];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_CLASS_PROPERTY_EDIT object:nil];
@@ -37,7 +37,12 @@
 {
     if ([ZZClassHelper sharedInstance].curClass) {
         ZZUIResponder *curClass = [ZZClassHelper sharedInstance].curClass;
+        CGRect rect = self.fragaria.textView.visibleRect;
         [self.fragaria setString:[[ZZCreatorManager sharedInstance] hFileForViewClass:curClass]];
+        if (curClass == self.curClass) {
+            [self.fragaria.textView scrollRectToVisible:rect];
+        }
+        self.curClass = curClass;
     }
 }
 
