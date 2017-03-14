@@ -59,7 +59,9 @@
 - (void)setModel:(ZZPropertySectionModel *)model
 {
     _model = model;
-    self.titleLabel.stringValue = model.sectionTitle;
+    self.titleLabel.stringValue = model.sectionTitle ? model.sectionTitle : @"";
+    [self.statusImageView setHidden:model.sectionTitle.length == 0];
+    [self.topLine setHidden:model.sectionTitle.length == 0];
     [self.statusImageView setImage:model.showAllItems ? [NSImage imageNamed:@"section_selected"] : [NSImage imageNamed:@"section_deselected"]];
     [self setShowBottomLine:_showBottomLine];
 }
@@ -77,7 +79,7 @@
 
 - (void)mouseUp:(NSEvent *)event
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickedPropertySectionHeaderView:)]) {
+    if (self.model.sectionTitle.length > 0 && self.delegate && [self.delegate respondsToSelector:@selector(didClickedPropertySectionHeaderView:)]) {
         [self.delegate didClickedPropertySectionHeaderView:self.model];
     }
 }

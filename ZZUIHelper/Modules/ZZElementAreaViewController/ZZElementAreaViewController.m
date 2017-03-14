@@ -34,7 +34,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTI_NEW_PROJECT object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataIfNeed:) name:NOTI_CLASS_PROPERTY_EDIT object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deselectAllCells) name:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
 }
 
 - (void)dealloc
@@ -143,18 +142,12 @@
     
     [self.tableView noteNumberOfRowsChanged];
     [self.tableView reloadData];
-
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:nil];
     });
     
     return YES;
-}
-
-#pragma mark - # Event Response
-- (void)deselectAllCells
-{
-    [self.tableView deselectRow:self.tableView.selectedRow];
 }
 
 @end

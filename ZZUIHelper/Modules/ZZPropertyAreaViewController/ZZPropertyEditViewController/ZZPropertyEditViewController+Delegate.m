@@ -106,9 +106,6 @@
 {
     if ([kind isEqualToString:@"UICollectionElementKindSectionHeader"]) {
         ZZPropertySectionModel *sectionModel = indexPath.section < self.data.count ? self.data[indexPath.section] : nil;
-        if (sectionModel.sectionTitle.length == 0) {
-            return nil;
-        }
         ZZPropertySectionHeaderView *headerView = [collectionView makeSupplementaryViewOfKind:kind withIdentifier:@"ZZPropertySectionHeaderView" forIndexPath:indexPath];
         [headerView setModel:sectionModel];
         [headerView setDelegate:self];
