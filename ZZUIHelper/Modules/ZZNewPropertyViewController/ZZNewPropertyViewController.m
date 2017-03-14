@@ -55,7 +55,7 @@
         else {
             [[ZZClassHelper sharedInstance].curClass addPrivateProperty:object withName:propertyName andRemarks:remark];
         }
-        [self dismissController:self];
+        [self dismissViewController:self];
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CLASS_PROPERTY_CHANGED object:object];
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
     }
@@ -66,7 +66,7 @@
 
 - (IBAction)cancelButtonClick:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROPERTY_VC_CLOSE object:nil];
-    [self dismissController:self];
+    [self dismissViewController:self];
 }
 
 @end

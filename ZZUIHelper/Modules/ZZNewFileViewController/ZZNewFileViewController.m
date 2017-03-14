@@ -52,7 +52,7 @@
         [object setSuperClassName:defineSuperClass];
         [ZZClassHelper sharedInstance].curClass = object;
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_NEW_PROJECT object:nil];
-        [self dismissController:self];
+        [self dismissViewController:self];
     }
 }
 
