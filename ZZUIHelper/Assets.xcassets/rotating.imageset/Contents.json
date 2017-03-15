@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "rotating3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "passphrase_decide_icon@2x.png",
       "scale" : "2x"
     },
     {

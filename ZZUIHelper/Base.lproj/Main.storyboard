@@ -652,7 +652,7 @@
                                         <action selector="exportButtonClick:" target="B8D-0N-5wS" id="YHf-t3-tUf"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="024F1AEF-35A8-4A9F-B635-FD4C5BCD01A0" label="设置" paletteLabel="设置" tag="-1" image="bar2" id="DLI-T6-xCt">
+                                <toolbarItem implicitItemIdentifier="024F1AEF-35A8-4A9F-B635-FD4C5BCD01A0" label="设置" paletteLabel="设置" tag="-1" image="setting" id="DLI-T6-xCt">
                                     <connections>
                                         <segue destination="dPr-Bm-Zom" kind="modal" id="hGB-6B-0gQ"/>
                                     </connections>
@@ -2008,10 +2008,10 @@
     </scenes>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="bar0" width="60" height="35"/>
+        <image name="bar0" width="384" height="384"/>
         <image name="bar1" width="62" height="36.5"/>
-        <image name="bar2" width="195" height="108"/>
         <image name="close" width="15" height="15"/>
         <image name="list_waterfall" width="17" height="17"/>
+        <image name="setting" width="384" height="384"/>
     </resources>
 </document>
