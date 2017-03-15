@@ -45,7 +45,12 @@
 {
     NSString *key = [notification object];
     if (key && [key isKindOfClass:[NSString class]] && ([key isEqualToString:@"name"] || [key isEqualToString:@"remarks"])) {
-        [self reloadData];
+        NSInteger row = self.tableView.selectedRow;
+        self.data = [ZZClassHelper sharedInstance].properties.mutableCopy;
+        [self.tableView reloadData];
+        if (self.data.count > row) {
+            [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
+        }
     }
 }
 
@@ -55,9 +60,9 @@
     [self.tableView reloadData];
     [self.tableView deselectRow:self.tableView.selectedRow];
     if (self.data.count > 0) {
-        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:self.data.count - 1] byExtendingSelection:YES];
+        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:self.data.count - 1] byExtendingSelection:NO];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:self.data.count - 1] byExtendingSelection:YES];
+            [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:self.data.count - 1] byExtendingSelection:NO];
         });
     }
 }
