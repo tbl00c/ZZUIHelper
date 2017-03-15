@@ -2008,10 +2008,10 @@
     </scenes>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="bar0" width="384" height="384"/>
-        <image name="bar1" width="62" height="36.5"/>
+        <image name="bar0" width="512" height="512"/>
+        <image name="bar1" width="512" height="512"/>
         <image name="close" width="15" height="15"/>
         <image name="list_waterfall" width="17" height="17"/>
-        <image name="setting" width="384" height="384"/>
+        <image name="setting" width="512" height="512"/>
     </resources>
 </document>
