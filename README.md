@@ -38,28 +38,28 @@ ZZUIHelper的主要功能是，根据我们配置去生成代码，目前可生�
 * UIImageView
 * UIScrollView   
 
-<img src="./Screenshot/New File.png" width = "403" height = "171">
+<img src="./Screenshot/New File.png">
 
 ### 2. 添加控件
 从控件区点击需要的控件添加，支持自定义父类名
 
-<img src="./Screenshot/New Property.png" width = "607" height = "393">
+<img src="./Screenshot/New Property.png">
 
 ### 3. 编辑控件属性
 选中元素区的控件后，可以根据需要在属性编辑区对某些属性进行编辑
 
-<img src="./Screenshot/Property Edit.png" width = "607" height = "393">
+<img src="./Screenshot/Property Edit.png">
 
 ### 4. 选择控件事件响应函数或代理方法
 选中元素区的控件后，可以根据需要在属性编辑区选择需要的事件响应函数（支持修改方法名）和代理方法
 
-<img src="./Screenshot/Property Event.png" width = "607" height = "393">
-<img src="./Screenshot/Property Delegate.png" width = "607" height = "393">
+<img src="./Screenshot/Property Event.png">
+<img src="./Screenshot/Property Delegate.png">
 
 ### 5. 添加约束条件
 注：设置必要的参数后，会自动勾选
 
-<img src="./Screenshot/Property Layout.png" width = "607" height = "393">
+<img src="./Screenshot/Property Layout.png">
 
 ### 6. 导出类文件
 点ToolBar上的导出按钮，选择位置后可导出类文件
