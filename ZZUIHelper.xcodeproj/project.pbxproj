@@ -69,6 +69,41 @@
 		C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB01E5AEF0B000960D9 /* ZZNewPropertyViewController.xib */; };
 		C2A10CB71E5AEF39000960D9 /* ZZNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */; };
 		C2A10CB81E5AEF39000960D9 /* ZZNewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */; };
+		C2AC3A941E78F79D006FB8C3 /* UIActivityIndicatorView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A711E78F79D006FB8C3 /* UIActivityIndicatorView.tiff */; };
+		C2AC3A951E78F79D006FB8C3 /* UIBarButtonItem.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A721E78F79D006FB8C3 /* UIBarButtonItem.tiff */; };
+		C2AC3A961E78F79D006FB8C3 /* UIBarButtonItemFixedSpace.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A731E78F79D006FB8C3 /* UIBarButtonItemFixedSpace.tiff */; };
+		C2AC3A971E78F79D006FB8C3 /* UIBarButtonItemFlexibleSpace.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A741E78F79D006FB8C3 /* UIBarButtonItemFlexibleSpace.tiff */; };
+		C2AC3A981E78F79D006FB8C3 /* UIButton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A751E78F79D006FB8C3 /* UIButton.tiff */; };
+		C2AC3A991E78F79D006FB8C3 /* UICollectionView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A761E78F79D006FB8C3 /* UICollectionView.tiff */; };
+		C2AC3A9A1E78F79D006FB8C3 /* UICollectionViewCell.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A771E78F79D006FB8C3 /* UICollectionViewCell.tiff */; };
+		C2AC3A9B1E78F79D006FB8C3 /* UICollectionViewController.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A781E78F79D006FB8C3 /* UICollectionViewController.tiff */; };
+		C2AC3A9C1E78F79D006FB8C3 /* UIContainerView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A791E78F79D006FB8C3 /* UIContainerView.tiff */; };
+		C2AC3A9D1E78F79D006FB8C3 /* UIImageView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A7A1E78F79D006FB8C3 /* UIImageView.tiff */; };
+		C2AC3A9E1E78F79D006FB8C3 /* UILabel.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A7B1E78F79D006FB8C3 /* UILabel.tiff */; };
+		C2AC3A9F1E78F79D006FB8C3 /* UINavigationBar.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A7C1E78F79D006FB8C3 /* UINavigationBar.tiff */; };
+		C2AC3AA01E78F79D006FB8C3 /* UINavigationController.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A7D1E78F79D006FB8C3 /* UINavigationController.tiff */; };
+		C2AC3AA11E78F79D006FB8C3 /* UINavigationItem.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A7E1E78F79D006FB8C3 /* UINavigationItem.tiff */; };
+		C2AC3AA21E78F79D006FB8C3 /* UIPageControl.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A7F1E78F79D006FB8C3 /* UIPageControl.tiff */; };
+		C2AC3AA31E78F79D006FB8C3 /* UIPageViewController.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A801E78F79D006FB8C3 /* UIPageViewController.tiff */; };
+		C2AC3AA41E78F79D006FB8C3 /* UIPickerView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A811E78F79D006FB8C3 /* UIPickerView.tiff */; };
+		C2AC3AA51E78F79D006FB8C3 /* UIProgressView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A821E78F79D006FB8C3 /* UIProgressView.tiff */; };
+		C2AC3AA61E78F79D006FB8C3 /* UIScrollView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A831E78F79D006FB8C3 /* UIScrollView.tiff */; };
+		C2AC3AA71E78F79D006FB8C3 /* UISearchBar.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A841E78F79D006FB8C3 /* UISearchBar.tiff */; };
+		C2AC3AA81E78F79D006FB8C3 /* UISegmentedControl.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A851E78F79D006FB8C3 /* UISegmentedControl.tiff */; };
+		C2AC3AA91E78F79D006FB8C3 /* UISlider.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A861E78F79D006FB8C3 /* UISlider.tiff */; };
+		C2AC3AAA1E78F79D006FB8C3 /* UIStepper.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A871E78F79D006FB8C3 /* UIStepper.tiff */; };
+		C2AC3AAB1E78F79D006FB8C3 /* UISwitch.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A881E78F79D006FB8C3 /* UISwitch.tiff */; };
+		C2AC3AAC1E78F79D006FB8C3 /* UITabBar.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A891E78F79D006FB8C3 /* UITabBar.tiff */; };
+		C2AC3AAD1E78F79D006FB8C3 /* UITabBarController.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A8A1E78F79D006FB8C3 /* UITabBarController.tiff */; };
+		C2AC3AAE1E78F79D006FB8C3 /* UITabBarItem.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A8B1E78F79D006FB8C3 /* UITabBarItem.tiff */; };
+		C2AC3AAF1E78F79D006FB8C3 /* UITableView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A8C1E78F79D006FB8C3 /* UITableView.tiff */; };
+		C2AC3AB01E78F79D006FB8C3 /* UITableViewCell.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A8D1E78F79D006FB8C3 /* UITableViewCell.tiff */; };
+		C2AC3AB11E78F79D006FB8C3 /* UITableViewController.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A8E1E78F79D006FB8C3 /* UITableViewController.tiff */; };
+		C2AC3AB21E78F79D006FB8C3 /* UITextField.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A8F1E78F79D006FB8C3 /* UITextField.tiff */; };
+		C2AC3AB31E78F79D006FB8C3 /* UITextView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A901E78F79D006FB8C3 /* UITextView.tiff */; };
+		C2AC3AB41E78F79D006FB8C3 /* UIView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A911E78F79D006FB8C3 /* UIView.tiff */; };
+		C2AC3AB51E78F79D006FB8C3 /* UIViewController.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A921E78F79D006FB8C3 /* UIViewController.tiff */; };
+		C2AC3AB61E78F79D006FB8C3 /* UIWebView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A931E78F79D006FB8C3 /* UIWebView.tiff */; };
 		C2AEFB361E759D7200972320 /* ZZUIPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB351E759D7200972320 /* ZZUIPageControl.m */; };
 		C2AEFB3A1E75A10100972320 /* ZZPropertyLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB381E75A10100972320 /* ZZPropertyLineCell.m */; };
 		C2AEFB3B1E75A10100972320 /* ZZPropertyLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AEFB391E75A10100972320 /* ZZPropertyLineCell.xib */; };
@@ -261,6 +296,41 @@
 		C2A10CB41E5AEF39000960D9 /* ZZNewFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewFileViewController.h; sourceTree = "<group>"; };
 		C2A10CB51E5AEF39000960D9 /* ZZNewFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewFileViewController.m; sourceTree = "<group>"; };
 		C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZNewFileViewController.xib; sourceTree = "<group>"; };
+		C2AC3A711E78F79D006FB8C3 /* UIActivityIndicatorView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIActivityIndicatorView.tiff; sourceTree = "<group>"; };
+		C2AC3A721E78F79D006FB8C3 /* UIBarButtonItem.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIBarButtonItem.tiff; sourceTree = "<group>"; };
+		C2AC3A731E78F79D006FB8C3 /* UIBarButtonItemFixedSpace.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIBarButtonItemFixedSpace.tiff; sourceTree = "<group>"; };
+		C2AC3A741E78F79D006FB8C3 /* UIBarButtonItemFlexibleSpace.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIBarButtonItemFlexibleSpace.tiff; sourceTree = "<group>"; };
+		C2AC3A751E78F79D006FB8C3 /* UIButton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIButton.tiff; sourceTree = "<group>"; };
+		C2AC3A761E78F79D006FB8C3 /* UICollectionView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UICollectionView.tiff; sourceTree = "<group>"; };
+		C2AC3A771E78F79D006FB8C3 /* UICollectionViewCell.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UICollectionViewCell.tiff; sourceTree = "<group>"; };
+		C2AC3A781E78F79D006FB8C3 /* UICollectionViewController.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UICollectionViewController.tiff; sourceTree = "<group>"; };
+		C2AC3A791E78F79D006FB8C3 /* UIContainerView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIContainerView.tiff; sourceTree = "<group>"; };
+		C2AC3A7A1E78F79D006FB8C3 /* UIImageView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIImageView.tiff; sourceTree = "<group>"; };
+		C2AC3A7B1E78F79D006FB8C3 /* UILabel.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UILabel.tiff; sourceTree = "<group>"; };
+		C2AC3A7C1E78F79D006FB8C3 /* UINavigationBar.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UINavigationBar.tiff; sourceTree = "<group>"; };
+		C2AC3A7D1E78F79D006FB8C3 /* UINavigationController.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UINavigationController.tiff; sourceTree = "<group>"; };
+		C2AC3A7E1E78F79D006FB8C3 /* UINavigationItem.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UINavigationItem.tiff; sourceTree = "<group>"; };
+		C2AC3A7F1E78F79D006FB8C3 /* UIPageControl.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIPageControl.tiff; sourceTree = "<group>"; };
+		C2AC3A801E78F79D006FB8C3 /* UIPageViewController.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIPageViewController.tiff; sourceTree = "<group>"; };
+		C2AC3A811E78F79D006FB8C3 /* UIPickerView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIPickerView.tiff; sourceTree = "<group>"; };
+		C2AC3A821E78F79D006FB8C3 /* UIProgressView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIProgressView.tiff; sourceTree = "<group>"; };
+		C2AC3A831E78F79D006FB8C3 /* UIScrollView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIScrollView.tiff; sourceTree = "<group>"; };
+		C2AC3A841E78F79D006FB8C3 /* UISearchBar.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UISearchBar.tiff; sourceTree = "<group>"; };
+		C2AC3A851E78F79D006FB8C3 /* UISegmentedControl.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UISegmentedControl.tiff; sourceTree = "<group>"; };
+		C2AC3A861E78F79D006FB8C3 /* UISlider.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UISlider.tiff; sourceTree = "<group>"; };
+		C2AC3A871E78F79D006FB8C3 /* UIStepper.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIStepper.tiff; sourceTree = "<group>"; };
+		C2AC3A881E78F79D006FB8C3 /* UISwitch.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UISwitch.tiff; sourceTree = "<group>"; };
+		C2AC3A891E78F79D006FB8C3 /* UITabBar.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITabBar.tiff; sourceTree = "<group>"; };
+		C2AC3A8A1E78F79D006FB8C3 /* UITabBarController.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITabBarController.tiff; sourceTree = "<group>"; };
+		C2AC3A8B1E78F79D006FB8C3 /* UITabBarItem.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITabBarItem.tiff; sourceTree = "<group>"; };
+		C2AC3A8C1E78F79D006FB8C3 /* UITableView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITableView.tiff; sourceTree = "<group>"; };
+		C2AC3A8D1E78F79D006FB8C3 /* UITableViewCell.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITableViewCell.tiff; sourceTree = "<group>"; };
+		C2AC3A8E1E78F79D006FB8C3 /* UITableViewController.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITableViewController.tiff; sourceTree = "<group>"; };
+		C2AC3A8F1E78F79D006FB8C3 /* UITextField.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITextField.tiff; sourceTree = "<group>"; };
+		C2AC3A901E78F79D006FB8C3 /* UITextView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UITextView.tiff; sourceTree = "<group>"; };
+		C2AC3A911E78F79D006FB8C3 /* UIView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIView.tiff; sourceTree = "<group>"; };
+		C2AC3A921E78F79D006FB8C3 /* UIViewController.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIViewController.tiff; sourceTree = "<group>"; };
+		C2AC3A931E78F79D006FB8C3 /* UIWebView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIWebView.tiff; sourceTree = "<group>"; };
 		C2AEFB341E759D7200972320 /* ZZUIPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIPageControl.h; sourceTree = "<group>"; };
 		C2AEFB351E759D7200972320 /* ZZUIPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIPageControl.m; sourceTree = "<group>"; };
 		C2AEFB371E75A10100972320 /* ZZPropertyLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyLineCell.h; sourceTree = "<group>"; };
@@ -779,6 +849,7 @@
 		C25066F11E78F5BA007F669C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C2AC3A701E78F79D006FB8C3 /* Controls */,
 				C25066F21E78F5D1007F669C /* Assets.xcassets */,
 			);
 			path = Images;
@@ -882,6 +953,48 @@
 				C2A10CB61E5AEF39000960D9 /* ZZNewFileViewController.xib */,
 			);
 			path = ZZNewFileViewController;
+			sourceTree = "<group>";
+		};
+		C2AC3A701E78F79D006FB8C3 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				C2AC3A711E78F79D006FB8C3 /* UIActivityIndicatorView.tiff */,
+				C2AC3A721E78F79D006FB8C3 /* UIBarButtonItem.tiff */,
+				C2AC3A731E78F79D006FB8C3 /* UIBarButtonItemFixedSpace.tiff */,
+				C2AC3A741E78F79D006FB8C3 /* UIBarButtonItemFlexibleSpace.tiff */,
+				C2AC3A751E78F79D006FB8C3 /* UIButton.tiff */,
+				C2AC3A761E78F79D006FB8C3 /* UICollectionView.tiff */,
+				C2AC3A771E78F79D006FB8C3 /* UICollectionViewCell.tiff */,
+				C2AC3A781E78F79D006FB8C3 /* UICollectionViewController.tiff */,
+				C2AC3A791E78F79D006FB8C3 /* UIContainerView.tiff */,
+				C2AC3A7A1E78F79D006FB8C3 /* UIImageView.tiff */,
+				C2AC3A7B1E78F79D006FB8C3 /* UILabel.tiff */,
+				C2AC3A7C1E78F79D006FB8C3 /* UINavigationBar.tiff */,
+				C2AC3A7D1E78F79D006FB8C3 /* UINavigationController.tiff */,
+				C2AC3A7E1E78F79D006FB8C3 /* UINavigationItem.tiff */,
+				C2AC3A7F1E78F79D006FB8C3 /* UIPageControl.tiff */,
+				C2AC3A801E78F79D006FB8C3 /* UIPageViewController.tiff */,
+				C2AC3A811E78F79D006FB8C3 /* UIPickerView.tiff */,
+				C2AC3A821E78F79D006FB8C3 /* UIProgressView.tiff */,
+				C2AC3A831E78F79D006FB8C3 /* UIScrollView.tiff */,
+				C2AC3A841E78F79D006FB8C3 /* UISearchBar.tiff */,
+				C2AC3A851E78F79D006FB8C3 /* UISegmentedControl.tiff */,
+				C2AC3A861E78F79D006FB8C3 /* UISlider.tiff */,
+				C2AC3A871E78F79D006FB8C3 /* UIStepper.tiff */,
+				C2AC3A881E78F79D006FB8C3 /* UISwitch.tiff */,
+				C2AC3A891E78F79D006FB8C3 /* UITabBar.tiff */,
+				C2AC3A8A1E78F79D006FB8C3 /* UITabBarController.tiff */,
+				C2AC3A8B1E78F79D006FB8C3 /* UITabBarItem.tiff */,
+				C2AC3A8C1E78F79D006FB8C3 /* UITableView.tiff */,
+				C2AC3A8D1E78F79D006FB8C3 /* UITableViewCell.tiff */,
+				C2AC3A8E1E78F79D006FB8C3 /* UITableViewController.tiff */,
+				C2AC3A8F1E78F79D006FB8C3 /* UITextField.tiff */,
+				C2AC3A901E78F79D006FB8C3 /* UITextView.tiff */,
+				C2AC3A911E78F79D006FB8C3 /* UIView.tiff */,
+				C2AC3A921E78F79D006FB8C3 /* UIViewController.tiff */,
+				C2AC3A931E78F79D006FB8C3 /* UIWebView.tiff */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		C2AEFB331E759D5C00972320 /* ZZUIPageControl */ = {
@@ -1288,23 +1401,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AC3A9D1E78F79D006FB8C3 /* UIImageView.tiff in Resources */,
+				C2AC3A9F1E78F79D006FB8C3 /* UINavigationBar.tiff in Resources */,
+				C2AC3AAC1E78F79D006FB8C3 /* UITabBar.tiff in Resources */,
+				C2AC3A941E78F79D006FB8C3 /* UIActivityIndicatorView.tiff in Resources */,
+				C2AC3AAD1E78F79D006FB8C3 /* UITabBarController.tiff in Resources */,
 				C2D738C71E74F8ED00344E5F /* ZZPropertyXYWHCell.xib in Resources */,
 				C2D738B91E74F8ED00344E5F /* ZZPropertyEventCell.xib in Resources */,
+				C2AC3AA41E78F79D006FB8C3 /* UIPickerView.tiff in Resources */,
+				C2AC3AA71E78F79D006FB8C3 /* UISearchBar.tiff in Resources */,
+				C2AC3AA81E78F79D006FB8C3 /* UISegmentedControl.tiff in Resources */,
+				C2AC3AA21E78F79D006FB8C3 /* UIPageControl.tiff in Resources */,
+				C2AC3A961E78F79D006FB8C3 /* UIBarButtonItemFixedSpace.tiff in Resources */,
+				C2AC3AA91E78F79D006FB8C3 /* UISlider.tiff in Resources */,
 				C2D738C51E74F8ED00344E5F /* ZZPropertyXYCell.xib in Resources */,
+				C2AC3AB01E78F79D006FB8C3 /* UITableViewCell.tiff in Resources */,
+				C2AC3A9B1E78F79D006FB8C3 /* UICollectionViewController.tiff in Resources */,
 				C2D738BB1E74F8ED00344E5F /* ZZPropertyMethodCell.xib in Resources */,
 				C2154E4B1E710C5100E3D18C /* ZZSettingItemsAddViewController.xib in Resources */,
 				C2D738BF1E74F8ED00344E5F /* ZZPropertySelectionAndEditCell.xib in Resources */,
+				C2AC3AAF1E78F79D006FB8C3 /* UITableView.tiff in Resources */,
+				C2AC3AAB1E78F79D006FB8C3 /* UISwitch.tiff in Resources */,
+				C2AC3AB41E78F79D006FB8C3 /* UIView.tiff in Resources */,
+				C2AC3A981E78F79D006FB8C3 /* UIButton.tiff in Resources */,
+				C2AC3A971E78F79D006FB8C3 /* UIBarButtonItemFlexibleSpace.tiff in Resources */,
 				C25066F31E78F5D1007F669C /* Assets.xcassets in Resources */,
 				C2D6CA231E5BE12700EEF76B /* LICENSE in Resources */,
 				C2AEFB3B1E75A10100972320 /* ZZPropertyLineCell.xib in Resources */,
 				C2A10CB21E5AEF0B000960D9 /* ZZNewPropertyViewController.xib in Resources */,
+				C2AC3AAE1E78F79D006FB8C3 /* UITabBarItem.tiff in Resources */,
+				C2AC3AAA1E78F79D006FB8C3 /* UIStepper.tiff in Resources */,
 				C22569FA1E67F048008E7785 /* ZZControlListItem.xib in Resources */,
+				C2AC3A9E1E78F79D006FB8C3 /* UILabel.tiff in Resources */,
 				C21789C71E55D64500AF8BEE /* Main.storyboard in Resources */,
+				C2AC3AA01E78F79D006FB8C3 /* UINavigationController.tiff in Resources */,
 				C2A10C641E5A2A4A000960D9 /* ZZControlItem.xib in Resources */,
+				C2AC3A991E78F79D006FB8C3 /* UICollectionView.tiff in Resources */,
+				C2AC3AB61E78F79D006FB8C3 /* UIWebView.tiff in Resources */,
+				C2AC3AA31E78F79D006FB8C3 /* UIPageViewController.tiff in Resources */,
 				C2D738C11E74F8ED00344E5F /* ZZPropertySelectionCell.xib in Resources */,
+				C2AC3A951E78F79D006FB8C3 /* UIBarButtonItem.tiff in Resources */,
 				C2D738BD1E74F8ED00344E5F /* ZZPropertyBoolCell.xib in Resources */,
+				C2AC3A9A1E78F79D006FB8C3 /* UICollectionViewCell.tiff in Resources */,
+				C2AC3AB11E78F79D006FB8C3 /* UITableViewController.tiff in Resources */,
 				C2A10CB81E5AEF39000960D9 /* ZZNewFileViewController.xib in Resources */,
+				C2AC3AA51E78F79D006FB8C3 /* UIProgressView.tiff in Resources */,
+				C2AC3AB51E78F79D006FB8C3 /* UIViewController.tiff in Resources */,
+				C2AC3AA61E78F79D006FB8C3 /* UIScrollView.tiff in Resources */,
+				C2AC3AA11E78F79D006FB8C3 /* UINavigationItem.tiff in Resources */,
+				C2AC3AB31E78F79D006FB8C3 /* UITextView.tiff in Resources */,
 				C2D738C31E74F8ED00344E5F /* ZZPropertyStringCell.xib in Resources */,
+				C2AC3AB21E78F79D006FB8C3 /* UITextField.tiff in Resources */,
+				C2AC3A9C1E78F79D006FB8C3 /* UIContainerView.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
