@@ -12,6 +12,7 @@
 
 @property (weak) IBOutlet NSView *bgView;
 @property (weak) IBOutlet NSTextField *titleLabel;
+@property (weak) IBOutlet NSImageView *controlImageView;
 
 @property (weak) IBOutlet NSBox *horizontalLine;
 @property (weak) IBOutlet NSBox *verticalLine;
@@ -33,10 +34,15 @@
         make.edges.mas_equalTo(NSEdgeInsetsMake(2, 2, 2, 2));
     }];
     
+    [self.controlImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(self.view).multipliedBy(0.5);
+        make.center.mas_equalTo(0);
+    }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(0);
         make.width.mas_lessThanOrEqualTo(self.view);
     }];
+    [self.titleLabel setHidden:YES];
     
     [self.horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.bottom.mas_equalTo(0);
@@ -52,6 +58,17 @@
 {
     _buttonTitle = buttonTitle;
     self.titleLabel.stringValue = buttonTitle;
+    NSImage *image = [NSImage imageNamed:buttonTitle];
+    if (image) {
+        [self.controlImageView setImage:image];
+        [self.controlImageView setHidden:NO];
+        [self.titleLabel setHidden:YES];
+    }
+    else {
+        [self.titleLabel setHidden:NO];
+        [self.controlImageView setHidden:YES];
+    }
+    
     [self.bgView setHidden:!self.selected];
 }
 

@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ZZControlItem">
             <connections>
                 <outlet property="bgView" destination="BMp-Yx-2aq" id="nZP-IK-UHc"/>
+                <outlet property="controlImageView" destination="mvu-F6-tjL" id="ISf-tx-DYr"/>
                 <outlet property="horizontalLine" destination="np9-bx-pXM" id="lRo-mh-LZl"/>
                 <outlet property="titleLabel" destination="R3D-Yc-bHA" id="VFz-tf-Sxk"/>
                 <outlet property="verticalLine" destination="Mi7-Ea-VTh" id="SSF-rl-Wlc"/>
@@ -41,8 +42,16 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvu-F6-tjL">
+                    <rect key="frame" x="79" y="29" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="UIButton" id="mw8-eR-o1l"/>
+                </imageView>
             </subviews>
             <point key="canvasLocation" x="2.5" y="327.5"/>
         </customView>
     </objects>
+    <resources>
+        <image name="UIButton" width="48" height="48"/>
+    </resources>
 </document>
