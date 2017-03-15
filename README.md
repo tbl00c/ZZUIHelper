@@ -1,6 +1,6 @@
 # ZZUIHelper
 
-ZZUIHelper是一款为代码手写UI的iOS开发者提供的小工具（Mac App），通过类似xib/sb的选择和编辑操作，可以自动生成对应的Objective-C代码，旨在减少重复工作量，提高效率。
+ZZUIHelper是为手写UI党（iOS）提供的辅助工具（Mac App），通过类似xib/sb的选择和编辑操作，可以自动生成对应的Objective-C代码，能够大大减少简单重复工作量。
 
 <img src="./Screenshot/Main.png">
 
@@ -18,7 +18,7 @@ ZZUIHelper的主要功能是，根据我们配置去生成代码，目前可生�
 
 * LazyLoad Creator
 
-<img src="./Screenshot/Lazyload Creator.png" width = "607" height = "393">
+<img src="./Screenshot/LazyLoad Creator.png" width = "607" height = "393">
 
 * Setup UI Creator
 
