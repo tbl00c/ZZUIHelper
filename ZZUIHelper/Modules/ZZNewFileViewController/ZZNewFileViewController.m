@@ -31,6 +31,21 @@
     [self.cancelButton setHidden:[ZZClassHelper sharedInstance].curClass == nil];
 }
 
+- (BOOL)acceptsFirstResponder
+{
+    return YES;
+}
+
+- (void)keyDown:(NSEvent *)event
+{
+    NSLog(@"key down");
+}
+
+- (void)doCommandBySelector:(SEL)selector
+{
+    NSLog(@"===");
+}
+
 #pragma mark - # Delegate
 //MARK: NSComboBoxDelegate
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification
