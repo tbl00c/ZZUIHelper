@@ -8,7 +8,7 @@ ZZUIHelper是为手写UI党（iOS）提供的辅助工具（Mac App），通过�
 
 ### 演示视频：
 
-<iframe width=640 height="498" src="https://v.qq.com/iframe/player.html?vid=e0384ltek23&tiny=0&auto=0">
+<iframe width=640 height=498 src="https://v.qq.com/iframe/player.html?vid=e0384ltek23&tiny=0&auto=0">
 
 ## 主要功能
 
