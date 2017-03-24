@@ -6,6 +6,9 @@ ZZUIHelper是为手写UI党（iOS）提供的辅助工具（Mac App），通过�
 
 <img src="./Screenshot/Main.png">
 
+使用视频
+<embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=e0384ltek23&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
 ## 主要功能
 
 ZZUIHelper的主要功能是，根据我们配置去生成代码，目前可生成的代码模块包括：
