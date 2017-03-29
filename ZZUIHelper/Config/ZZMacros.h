@@ -10,7 +10,7 @@
 #ifndef ZZMacros_h
 #define ZZMacros_h
 
-#define     PMARK                   @"//MARK: "
+#define     PMARK                   @"//MARK:"
 #define     PMARK_                  @"#pragma mark - #"
 
 #define     NEW_LINE                [ZZUIHelperConfig sharedInstance].newLineLeftParenthesis

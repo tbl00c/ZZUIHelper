@@ -149,7 +149,7 @@
             attrbuteName = @"bottom";
             break;
         case ZZLayoutAttributeTypeEdge:
-            attrbuteName = @"edge";
+            attrbuteName = @"edges";
             break;
         case ZZLayoutAttributeTypeWidth:
             attrbuteName = @"width";
