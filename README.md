@@ -10,6 +10,11 @@ ZZUIHelper是为手写UI党（iOS）提供的辅助工具（Mac App），通过�
 
 <iframe width=640 height=498 src="https://v.qq.com/iframe/player.html?vid=e0384ltek23&tiny=0&auto=0">
 
+## 更新记录
+### 1.1.0
+* 1、加入ZZFLEX代码生成器，ZZUIHelper是一款完善的iOS敏捷开发框架，设计原则为“UI控件的模块化”，可大大提升开发和维护效率，开源地址:<https://github.com/tbl00c/ZZFLEX>。
+* 2、优化部分逻辑代码。
+
 ## 主要功能
 
 ZZUIHelper的主要功能是，根据我们配置去生成代码，目前可生成的代码模块包括：
