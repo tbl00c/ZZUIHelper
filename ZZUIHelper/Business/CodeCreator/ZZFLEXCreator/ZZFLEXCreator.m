@@ -145,6 +145,22 @@
     NSArray *delegatesArray = viewClass.childDelegateViewsArray;
     if (viewClass.extensionProperties.count > 0 || delegatesArray.count > 0) {
         NSString *extensionCode = [NSString stringWithFormat:@"@interface %@ ()", viewClass.className];
+        if (delegatesArray.count > 0) {    // 协议
+            NSString *delegateCode = @"";
+            for (ZZProtocol *protocol in delegatesArray) {
+                if ([protocol.protocolName containsString:@"TableView"] || [protocol.protocolName containsString:@"CollectionView"]) {
+                    continue;
+                }
+                if (delegateCode.length > 0) {
+                    delegateCode = [delegateCode stringByAppendingString:@",\n"];
+                }
+                delegateCode = [delegateCode stringByAppendingString:protocol.protocolName];
+            }
+            if (delegateCode.length > 0) {
+                extensionCode = [extensionCode stringByAppendingFormat:@" <\n%@\n>", delegateCode];
+            }
+        }
+        
         extensionCode = [extensionCode stringByAppendingString:@"\n\n"];
         for (ZZNSObject *object in viewClass.extensionProperties) {
             if (object.propertyCode.length > 0) {
