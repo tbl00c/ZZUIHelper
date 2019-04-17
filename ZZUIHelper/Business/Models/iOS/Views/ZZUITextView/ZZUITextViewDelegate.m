@@ -83,7 +83,7 @@
 - (ZZMethod *)textViewDidChange
 {
     if (!_textViewDidChange) {
-        _textViewDidChange = [[ZZMethod alloc] initWithMethodName:@"- (BOOL)textViewDidChange:(UItextView *)textView" selected:NO];
+        _textViewDidChange = [[ZZMethod alloc] initWithMethodName:@"- (void)textViewDidChange:(UITextView *)textView" selected:NO];
     }
     return _textViewDidChange;
 }
@@ -91,7 +91,7 @@
 - (ZZMethod *)textViewDidChangeSelection
 {
     if (!_textViewDidChangeSelection) {
-        _textViewDidChangeSelection = [[ZZMethod alloc] initWithMethodName:@"- (BOOL)textViewDidChangeSelection:(UItextView *)textView" selected:NO];
+        _textViewDidChangeSelection = [[ZZMethod alloc] initWithMethodName:@"- (void)textViewDidChangeSelection:(UITextView *)textView" selected:NO];
     }
     return _textViewDidChangeSelection;
 }

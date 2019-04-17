@@ -222,12 +222,12 @@
             NSMutableString *initCode = [NSMutableString stringWithFormat:@"%@ ZZFlexibleLayoutViewProtocol\n", PMARK_];
             if ([viewClass.superClassName isEqualToString:@"UICollectionViewCell"]) {
                 ZZMethod *method = [[ZZMethod alloc] initWithMethodName:@"+ (CGSize)viewSizeByDataModel:(id)dataModel"];
-                [method addMethodContentCode:@"return CGSizeMake(-1, 100)"];
+                [method addMethodContentCode:@"return CGSizeMake(-1, 100);"];
                 [initCode appendFormat:@"%@\n", method.methodCode];
             }
             else if([viewClass.superClassName isEqualToString:@"UITableViewCell"]) {
                 ZZMethod *method = [[ZZMethod alloc] initWithMethodName:@"+ (CGFloat)viewHeightByDataModel:(id)dataModel"];
-                [method addMethodContentCode:@"return 100"];
+                [method addMethodContentCode:@"return 100;"];
                 [initCode appendFormat:@"%@\n", method.methodCode];
             }
             else {
