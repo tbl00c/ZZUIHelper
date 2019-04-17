@@ -22,11 +22,17 @@ typedef NS_ENUM(NSInteger, ZZPropertyType) {
     ZZPropertyTypeEdgeInsets,
     ZZPropertyTypeRect,
     ZZPropertyTypeLine,
+    ZZPropertyTypeFont,
+    ZZPropertyTypeColor,
+    ZZPropertyTypeCGColor,
+    ZZPropertyTypeImage,
+    ZZPropertyTypeEvent,
 };
 
 @interface ZZProperty : NSObject
 
 @property (nonatomic, strong) NSString *propertyName;
+@property (nonatomic, strong) id propertyValue;
 
 @property (nonatomic, assign) ZZPropertyType type;
 

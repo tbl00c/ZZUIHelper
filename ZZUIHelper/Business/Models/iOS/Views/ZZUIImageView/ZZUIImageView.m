@@ -24,14 +24,8 @@
             }
         }
         
-        ZZProperty *imageName = [[ZZProperty alloc] initWithPropertyName:@"image" type:ZZPropertyTypeObject defaultValue:@""];
-        [imageName setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setImage:[UIImage imageNamed:@\"%@\"]",  value];
-        }];
-        ZZProperty *highlightedImage = [[ZZProperty alloc] initWithPropertyName:@"highlightedImage" type:ZZPropertyTypeObject defaultValue:@""];
-        [highlightedImage setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setHighlightedImage:[UIImage imageNamed:@\"%@\"]",  value];
-        }];
+        ZZProperty *imageName = [[ZZProperty alloc] initWithPropertyName:@"image" type:ZZPropertyTypeImage defaultValue:@""];
+        ZZProperty *highlightedImage = [[ZZProperty alloc] initWithPropertyName:@"highlightedImage" type:ZZPropertyTypeImage defaultValue:@""];
         ZZProperty *highlighted = [[ZZProperty alloc] initWithPropertyName:@"highlighted" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIImageView" properties:@[imageName, highlightedImage, highlighted]];
         [_properties addObject:group];

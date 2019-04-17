@@ -31,11 +31,11 @@
 /// 声明代码
 @property (nonatomic, strong, readonly) NSString *propertyCode;
 
-@property (nonatomic, strong, readonly) NSArray *delegates;
+@property (nonatomic, strong, readonly) NSArray<ZZProperty *> *delegates;
 
 @property (nonatomic, strong) NSString *allocInitMethodName;
 
 /// 属性
-@property (nonatomic, strong, readonly) NSMutableArray *properties;
+@property (nonatomic, strong, readonly) NSMutableArray<ZZPropertyGroup *> *properties;
 
 @end

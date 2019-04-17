@@ -9,6 +9,11 @@
 #import "ZZUIView.h"
 #import "ZZEvent.h"
 
+#define     NOR_ZZUIControl             @"UIControlStateNormal"
+#define     HL_ZZUIControl              @"UIControlStateHighlighted"
+#define     SEL_ZZUIControl             @"UIControlStateSelected"
+#define     DIS_ZZUIControl             @"UIControlStateDisabled"
+
 @interface ZZUIControl : ZZUIView
 
 @property (nonatomic, strong, readonly) NSArray<ZZEvent *> *events;

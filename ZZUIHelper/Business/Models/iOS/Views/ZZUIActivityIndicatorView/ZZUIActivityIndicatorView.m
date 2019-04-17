@@ -20,10 +20,7 @@
      
         ZZProperty *hidesWhenStopped = [[ZZProperty alloc] initWithPropertyName:@"hidesWhenStopped" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
     
-        ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"color" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"whiteColor" editable:YES];
-        [color setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setColor:[UIColor %@]", value];
-        }];
+        ZZProperty *color = [[ZZProperty alloc] initWithPropertyName:@"color" type:ZZPropertyTypeColor defaultValue:@"whiteColor"];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIActivityIndicatorView" properties:@[activityIndicatorViewStyle, color, hidesWhenStopped]];
         [_properties addObject:group];
     }

@@ -64,7 +64,7 @@
 - (ZZProperty *)property
 {
     if (!_property) {
-        _property = [[ZZProperty alloc] initWithPropertyName:self.eventType type:ZZPropertyTypeObject defaultValue:nil selecetd:self.selected];
+        _property = [[ZZProperty alloc] initWithPropertyName:self.eventType type:ZZPropertyTypeEvent defaultValue:nil selecetd:self.selected];
         __weak typeof(self) weakSelf = self;
         [_property setPropertyCodeByValue:^NSString *(id value) {
             return [NSString stringWithFormat:@"addTarget:self action:@selector(%@) forControlEvents:%@", weakSelf.actionName, weakSelf.eventType];

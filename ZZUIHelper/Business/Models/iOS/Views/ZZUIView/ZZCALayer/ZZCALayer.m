@@ -18,10 +18,7 @@
         ZZProperty *masksToBounds = [[ZZProperty alloc] initWithPropertyName:@"masksToBounds" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *cornerRadius = [[ZZProperty alloc] initWithPropertyName:@"cornerRadius" type:ZZPropertyTypeNumber defaultValue:@(0)];
         ZZProperty *borderWidth = [[ZZProperty alloc] initWithPropertyName:@"borderWidth" type:ZZPropertyTypeNumber defaultValue:@(0)];
-        ZZProperty *borderColor = [[ZZProperty alloc] initWithPropertyName:@"borderColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"clearColor" editable:YES];
-        [borderColor setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setBorderColor:[UIColor %@].CGColor", value];
-        }];
+        ZZProperty *borderColor = [[ZZProperty alloc] initWithPropertyName:@"borderColor" type:ZZPropertyTypeCGColor defaultValue:@"clearColor"];
         ZZProperty *zPosition = [[ZZProperty alloc] initWithPropertyName:@"zPosition" type:ZZPropertyTypeNumber defaultValue:@(0)];
         ZZProperty *anchorPoint = [[ZZProperty alloc] initWithPropertyName:@"anchorPoint" type:ZZPropertyTypePoint defaultValue:@{@"x" : @(0.5), @"y" : @(0.5)}];
         ZZProperty *contentsScale = [[ZZProperty alloc] initWithPropertyName:@"contentsScale" type:ZZPropertyTypeNumber defaultValue:@(1.0)];

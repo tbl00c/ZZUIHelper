@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong, readonly) NSString *masonryCode;
 
+@property (nonatomic, strong, readonly) NSString *masonryContentCode;
+
 @end

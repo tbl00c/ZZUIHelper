@@ -23,15 +23,8 @@
         ZZProperty *hidesForSinglePage = [[ZZProperty alloc] initWithPropertyName:@"hidesForSinglePage" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *defersCurrentPageDisplay = [[ZZProperty alloc] initWithPropertyName:@"defersCurrentPageDisplay" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         
-        ZZProperty *pageIndicatorTintColor = [[ZZProperty alloc] initWithPropertyName:@"pageTintColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"whiteColor" editable:YES];
-        [pageIndicatorTintColor setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setPageIndicatorTintColor:[UIColor %@]", value];
-        }];
-        ZZProperty *currentPageIndicatorTintColor = [[ZZProperty alloc] initWithPropertyName:@"currentPageTintColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"whiteColor" editable:YES];
-        [currentPageIndicatorTintColor setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setCurrentPageIndicatorTintColor:[UIColor %@]", value];
-        }];
-        
+        ZZProperty *pageIndicatorTintColor = [[ZZProperty alloc] initWithPropertyName:@"pageIndicatorTintColor" type:ZZPropertyTypeColor defaultValue:@"whiteColor"];
+        ZZProperty *currentPageIndicatorTintColor = [[ZZProperty alloc] initWithPropertyName:@"currentPageIndicatorTintColor" type:ZZPropertyTypeColor defaultValue:@"whiteColor"];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIPageControl" properties:@[numberOfPages, currentPage, ZZ_PROPERTY_LINE, hidesForSinglePage, defersCurrentPageDisplay, ZZ_PROPERTY_LINE, pageIndicatorTintColor, currentPageIndicatorTintColor]];
         [_properties addObject:group];
     }

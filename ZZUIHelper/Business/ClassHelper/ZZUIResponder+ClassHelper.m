@@ -12,7 +12,7 @@
 #import "ZZNSMutableArray.h"
 #import "ZZUICollectionViewFlowLayout.h"
 #import "ZZUIResponder+CodeCreator.h"
-
+#import "ZZZZFLEXAngel.h"
 
 @implementation ZZUIResponder (ClassHelper)
 
@@ -23,13 +23,23 @@
     if ([[property class] isSubclassOfClass:[ZZUIView class]]) {
         [(ZZUIView *)property setSuperViewName:[(ZZUIView *)self curView]];
     }
-    if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
-        ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
-        [self addPublicProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+    if ([NSStringFromClass([[ZZCreatorManager sharedInstance].curCreator class]) containsString:@"ZZFLEX"]) {
+        if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:[NSString stringWithFormat:@"%@Data", property.propertyName]]) {
+            ZZZZFLEXAngel *data = [[ZZZZFLEXAngel alloc] init];
+            NSString *dataName = [NSString stringWithFormat:@"%@Angel", property.propertyName];
+            [self addPublicProperty:data withName:dataName andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+        }
     }
-    if ([[property class] isSubclassOfClass:[ZZUICollectionView class]] && [[ZZClassHelper sharedInstance] canNamed:@"collectionViewFlowLayout"]) {
-        ZZUICollectionViewFlowLayout *layout = [[ZZUICollectionViewFlowLayout alloc] init];
-        [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:@"collectionViewFlowLayout"];
+    else {
+        if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:[NSString stringWithFormat:@"%@Data", property.propertyName]]) {
+            ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
+            NSString *dataName = [NSString stringWithFormat:@"%@Data", property.propertyName];
+            [self addPublicProperty:data withName:dataName andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+        }
+        if ([[property class] isSubclassOfClass:[ZZUICollectionView class]] && [[ZZClassHelper sharedInstance] canNamed:@"collectionViewFlowLayout"]) {
+            ZZUICollectionViewFlowLayout *layout = [[ZZUICollectionViewFlowLayout alloc] init];
+            [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:@"collectionViewFlowLayout"];
+        }
     }
     [self.interfaceProperties addObject:property];
 }
@@ -58,13 +68,23 @@
     if ([[property class] isSubclassOfClass:[ZZUIView class]]) {
         [(ZZUIView *)property setSuperViewName:[(ZZUIView *)self curView]];
     }
-    if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:@"data"]) {
-        ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
-        [self addPrivateProperty:data withName:@"data" andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+    if ([NSStringFromClass([[ZZCreatorManager sharedInstance].curCreator class]) containsString:@"ZZFLEX"]) {
+        if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:[NSString stringWithFormat:@"%@Data", property.propertyName]]) {
+            ZZZZFLEXAngel *data = [[ZZZZFLEXAngel alloc] init];
+            NSString *dataName = [NSString stringWithFormat:@"%@Angel", property.propertyName];
+            [self addPrivateProperty:data withName:dataName andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+        }
     }
-    if ([[property class] isSubclassOfClass:[ZZUICollectionView class]] && [[ZZClassHelper sharedInstance] canNamed:@"collectionViewFlowLayout"]) {
-        ZZUICollectionViewFlowLayout *layout = [[ZZUICollectionViewFlowLayout alloc] init];
-        [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:[property.propertyName stringByAppendingString:@"CollectionViewLayout"]];
+    else {
+        if (([[property class] isSubclassOfClass:[ZZUITableView class]] || [[property class] isSubclassOfClass:[ZZUICollectionView class]]) && [[ZZClassHelper sharedInstance] canNamed:[NSString stringWithFormat:@"%@Data", property.propertyName]]) {
+            ZZNSMutableArray *data = [[ZZNSMutableArray alloc] init];
+            NSString *dataName = [NSString stringWithFormat:@"%@Data", property.propertyName];
+            [self addPrivateProperty:data withName:dataName andRemarks:[property.propertyName stringByAppendingString:@"数据源"]];
+        }
+        if ([[property class] isSubclassOfClass:[ZZUICollectionView class]] && [[ZZClassHelper sharedInstance] canNamed:@"collectionViewFlowLayout"]) {
+            ZZUICollectionViewFlowLayout *layout = [[ZZUICollectionViewFlowLayout alloc] init];
+            [self addPrivateProperty:layout withName:@"collectionViewFlowLayout" andRemarks:[property.propertyName stringByAppendingString:@"CollectionViewLayout"]];
+        }
     }
     [self.extensionProperties addObject:property];
 }

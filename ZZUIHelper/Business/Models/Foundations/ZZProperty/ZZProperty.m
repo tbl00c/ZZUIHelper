@@ -12,6 +12,8 @@
 
 @property (nonatomic, assign) BOOL alwaysSelected;
 
+@property (nonatomic, strong) NSString *(^propertyValueByValue)(id Value);
+
 @end
 
 @implementation ZZProperty
@@ -23,17 +25,6 @@
     ZZProperty *line = [[ZZProperty alloc] init];
     [line setType:ZZPropertyTypeLine];
     return line;
-}
-
-- (id)init
-{
-    if (self = [super init]) {
-        __weak typeof(self) weakSelf = self;
-        [self setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"set%@:%@", [weakSelf.propertyName uppercaseFirstCharacter], value];
-        }];
-    }
-    return self;
 }
 
 - (id)initWithPropertyCode:(NSString *)propertyCode selected:(BOOL)selected
@@ -56,7 +47,40 @@
         _propertyName = propertyName;
         _defaultValue = defaultValue;
         _selected = selected;
-        _type = type;
+        if (type == ZZPropertyTypeFont) {
+            _type = ZZPropertyTypeSelectionAndEdit;
+            _selectionData = [ZZUIHelperConfig sharedInstance].fonts;
+            [self setPropertyValueByValue:^NSString *(NSString *value) {
+                if ([value isPureNumber]) {
+                    value = [@"systemFontOfSize:" stringByAppendingString:value];
+                }
+                return [NSString stringWithFormat:@"[UIFont %@]", value];
+            }];
+        }
+        else if (type == ZZPropertyTypeColor) {
+            _type = ZZPropertyTypeSelectionAndEdit;
+            _selectionData = [ZZUIHelperConfig sharedInstance].colors;
+            [self setPropertyValueByValue:^NSString *(NSString *value) {
+                return [NSString stringWithFormat:@"[UIColor %@]", value];
+            }];
+        }
+        else if (type == ZZPropertyTypeCGColor) {
+            _type = ZZPropertyTypeSelectionAndEdit;
+            _selectionData = [ZZUIHelperConfig sharedInstance].colors;
+            [self setPropertyValueByValue:^NSString *(NSString *value) {
+                return [NSString stringWithFormat:@"[UIColor %@].CGColor", value];
+            }];
+        }
+        else if (type == ZZPropertyTypeImage) {
+            _type = ZZPropertyTypeObject;
+            [self setPropertyValueByValue:^NSString *(id value) {
+                return [NSString stringWithFormat:@"[UIImage imageNamed:@\"%@\"]", value];
+            }];
+        }
+        else {
+            _type = type;
+        }
+        
         _alwaysSelected = selected;
     }
     return self;
@@ -179,9 +203,22 @@
 - (NSString *)propertyCode
 {
     if (!_propertyCode) {
-        return self.propertyCodeByValue(self.codeValue);
+        NSString *code;
+        if (self.propertyCodeByValue) {
+            code = self.propertyCodeByValue(self.propertyValue);
+        }
+        else {
+            code = [NSString stringWithFormat:@"set%@:%@", [self.propertyName uppercaseFirstCharacter], self.propertyValue];
+        }
+        return code;
     }
     return _propertyCode;
+}
+
+- (id)propertyValue
+{
+    id value = self.propertyValueByValue ? self.propertyValueByValue(self.codeValue) : self.codeValue;
+    return value;
 }
 
 - (id)defaultValue

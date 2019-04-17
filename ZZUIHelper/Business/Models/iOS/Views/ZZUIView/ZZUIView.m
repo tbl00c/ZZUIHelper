@@ -53,15 +53,8 @@
         
         // 颜色
         ZZProperty *alpha = [[ZZProperty alloc] initWithPropertyName:@"alpha" type:ZZPropertyTypeNumber defaultValue:@(1)];
-        ZZProperty *backgroundColor = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"clearColor" editable:YES];
-        [backgroundColor setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setBackgroundColor:[UIColor %@]", value];
-        }];
-        ZZProperty *tintColor = [[ZZProperty alloc] initWithPropertyName:@"tintColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"blueColor" editable:YES];
-        [tintColor setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setTintColor:[UIColor %@]", value];
-        }];
-        
+        ZZProperty *backgroundColor = [[ZZProperty alloc] initWithPropertyName:@"backgroundColor" type:ZZPropertyTypeColor defaultValue:@"clearColor"];
+        ZZProperty *tintColor = [[ZZProperty alloc] initWithPropertyName:@"tintColor" type:ZZPropertyTypeColor defaultValue:@"blueColor"];
         ZZProperty *opaque = [[ZZProperty alloc] initWithPropertyName:@"opaque" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
         ZZProperty *hidden = [[ZZProperty alloc] initWithPropertyName:@"hidden" type:ZZPropertyTypeBOOL defaultValue:@(NO)];
         ZZProperty *clipsToBounds = [[ZZProperty alloc] initWithPropertyName:@"clipsToBounds" type:ZZPropertyTypeBOOL defaultValue:@(NO)];

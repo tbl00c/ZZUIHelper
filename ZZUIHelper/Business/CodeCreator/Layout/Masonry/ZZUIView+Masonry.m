@@ -18,7 +18,7 @@
     return self;
 }
 
-- (NSString *)masonryCode
+- (NSString *)masonryContentCode
 {
     NSString *(^getConstantValueFromAttribute)(ZZMasonryAttribute *attribute) = ^NSString *(ZZMasonryAttribute *attribute) {
         NSString *constant;
@@ -36,7 +36,6 @@
         }
         return constant;
     };
-    
     NSString *(^getObjectNameFromAttribute)(ZZMasonryAttribute *attribute) = ^NSString *(ZZMasonryAttribute *attribute) {
         // 约束对象不同
         if (attribute.object.length > 0 && ![attribute.object isEqualToString:@"superView"]) {
@@ -68,12 +67,7 @@
         
         return nil;
     };
-    
     NSMutableString *masonryCode = [[NSMutableString alloc] init];;
-    if (self.remarks.length > 0) {
-        [masonryCode appendFormat:@"// %@\n", self.remarks];
-    }
-    [masonryCode appendFormat:@"[self.%@ mas_makeConstraints:^(MASConstraintMaker *make) {\n", self.propertyName];
     for (ZZMasonryAttribute *attribute in self.layouts) {
         if (attribute.selected) {
             [masonryCode appendFormat:@"make.%@.%@(", attribute.attributeName, attribute.relationName];
@@ -107,7 +101,12 @@
             [masonryCode appendString:@";\n"];
         }
     }
-    [masonryCode appendString:@"\n}];\n"];
+    return masonryCode;
+}
+
+- (NSString *)masonryCode
+{
+    NSString *masonryCode = [NSString stringWithFormat:@"[self.%@ mas_makeConstraints:^(MASConstraintMaker *make) {\n%@\n}];\n", self.propertyName, self.masonryContentCode];
     return masonryCode;
 }
 

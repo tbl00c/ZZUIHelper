@@ -58,6 +58,7 @@
 		C22D8D8B1E728F9200A33083 /* ZZCreatorCodeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D8D8A1E728F9200A33083 /* ZZCreatorCodeBlock.m */; };
 		C22D8D8E1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D8D8D1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m */; };
 		C25066F31E78F5D1007F669C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25066F21E78F5D1007F669C /* Assets.xcassets */; };
+		C26791392265DE5F00151936 /* ZZFLEXCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = C26791382265DE5F00151936 /* ZZFLEXCreator.m */; };
 		C28FDA7F1E6B00D400AE41A2 /* ZZProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C28FDA7E1E6B00D400AE41A2 /* ZZProperty.m */; };
 		C2A10C1C1E59614B000960D9 /* ZZUIHelperConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C1B1E59614B000960D9 /* ZZUIHelperConfig.m */; };
 		C2A10C4A1E5A0E79000960D9 /* ZZElementAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A10C491E5A0E79000960D9 /* ZZElementAreaViewController.m */; };
@@ -104,6 +105,7 @@
 		C2AC3AB41E78F79D006FB8C3 /* UIView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A911E78F79D006FB8C3 /* UIView.tiff */; };
 		C2AC3AB51E78F79D006FB8C3 /* UIViewController.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A921E78F79D006FB8C3 /* UIViewController.tiff */; };
 		C2AC3AB61E78F79D006FB8C3 /* UIWebView.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C2AC3A931E78F79D006FB8C3 /* UIWebView.tiff */; };
+		C2AC94D42266FBA70094366C /* ZZZZFLEXAngel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AC94D32266FBA70094366C /* ZZZZFLEXAngel.m */; };
 		C2AEFB361E759D7200972320 /* ZZUIPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB351E759D7200972320 /* ZZUIPageControl.m */; };
 		C2AEFB3A1E75A10100972320 /* ZZPropertyLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AEFB381E75A10100972320 /* ZZPropertyLineCell.m */; };
 		C2AEFB3B1E75A10100972320 /* ZZPropertyLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AEFB391E75A10100972320 /* ZZPropertyLineCell.xib */; };
@@ -274,6 +276,8 @@
 		C22D8D8C1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCreatorCodeModuleCell.h; sourceTree = "<group>"; };
 		C22D8D8D1E72A5FE00A33083 /* ZZCreatorCodeModuleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCreatorCodeModuleCell.m; sourceTree = "<group>"; };
 		C25066F21E78F5D1007F669C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C26791372265DE5F00151936 /* ZZFLEXCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZFLEXCreator.h; sourceTree = "<group>"; };
+		C26791382265DE5F00151936 /* ZZFLEXCreator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZFLEXCreator.m; sourceTree = "<group>"; };
 		C28FDA7D1E6B00D400AE41A2 /* ZZProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZProperty.h; sourceTree = "<group>"; };
 		C28FDA7E1E6B00D400AE41A2 /* ZZProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZProperty.m; sourceTree = "<group>"; };
 		C2A10C1A1E59614B000960D9 /* ZZUIHelperConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIHelperConfig.h; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 		C2AC3A911E78F79D006FB8C3 /* UIView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIView.tiff; sourceTree = "<group>"; };
 		C2AC3A921E78F79D006FB8C3 /* UIViewController.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIViewController.tiff; sourceTree = "<group>"; };
 		C2AC3A931E78F79D006FB8C3 /* UIWebView.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UIWebView.tiff; sourceTree = "<group>"; };
+		C2AC94D22266FBA70094366C /* ZZZZFLEXAngel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZZZFLEXAngel.h; sourceTree = "<group>"; };
+		C2AC94D32266FBA70094366C /* ZZZZFLEXAngel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZZZFLEXAngel.m; sourceTree = "<group>"; };
 		C2AEFB341E759D7200972320 /* ZZUIPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUIPageControl.h; sourceTree = "<group>"; };
 		C2AEFB351E759D7200972320 /* ZZUIPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUIPageControl.m; sourceTree = "<group>"; };
 		C2AEFB371E75A10100972320 /* ZZPropertyLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPropertyLineCell.h; sourceTree = "<group>"; };
@@ -499,6 +505,7 @@
 				C22D8D7E1E72529F00A33083 /* ZZCreatorModels */,
 				C22D8D701E72525C00A33083 /* ZZLazyLoadCreator */,
 				C22D8D851E728A6A00A33083 /* ZZSetupCreator */,
+				C26791362265DE4700151936 /* ZZFLEXCreator */,
 				C22D8D6F1E72512600A33083 /* ZZCreatorProtocol.h */,
 				C22D8D6C1E72509000A33083 /* ZZCreatorManager.h */,
 				C22D8D6D1E72509000A33083 /* ZZCreatorManager.m */,
@@ -855,6 +862,15 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		C26791362265DE4700151936 /* ZZFLEXCreator */ = {
+			isa = PBXGroup;
+			children = (
+				C26791372265DE5F00151936 /* ZZFLEXCreator.h */,
+				C26791382265DE5F00151936 /* ZZFLEXCreator.m */,
+			);
+			path = ZZFLEXCreator;
+			sourceTree = "<group>";
+		};
 		C28FDA7C1E6B00C800AE41A2 /* ZZProperty */ = {
 			isa = PBXGroup;
 			children = (
@@ -995,6 +1011,15 @@
 				C2AC3A931E78F79D006FB8C3 /* UIWebView.tiff */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		C2AC94CE2266FB640094366C /* ZZZZFLEXAngel */ = {
+			isa = PBXGroup;
+			children = (
+				C2AC94D22266FBA70094366C /* ZZZZFLEXAngel.h */,
+				C2AC94D32266FBA70094366C /* ZZZZFLEXAngel.m */,
+			);
+			path = ZZZZFLEXAngel;
 			sourceTree = "<group>";
 		};
 		C2AEFB331E759D5C00972320 /* ZZUIPageControl */ = {
@@ -1153,6 +1178,7 @@
 		C2D6CA301E5BE14E00EEF76B /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				C2AC94CE2266FB640094366C /* ZZZZFLEXAngel */,
 				C28FDA7C1E6B00C800AE41A2 /* ZZProperty */,
 				C2B3F5CD1E60807C000E42CE /* ZZMethod */,
 				C2D6CA371E5BE14E00EEF76B /* ZZPortocol */,
@@ -1383,6 +1409,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1480,6 +1507,7 @@
 				C2D6CA241E5BE12700EEF76B /* MASCompositeConstraint.m in Sources */,
 				C22D8D6E1E72509000A33083 /* ZZCreatorManager.m in Sources */,
 				C2AEFB3A1E75A10100972320 /* ZZPropertyLineCell.m in Sources */,
+				C26791392265DE5F00151936 /* ZZFLEXCreator.m in Sources */,
 				C2D6CA2B1E5BE12700EEF76B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				C2A10C611E5A22BA000960D9 /* ZZControlItem.m in Sources */,
 				C2BB54D81E713A3D004D34CE /* ZZSettingViewController.m in Sources */,
@@ -1548,6 +1576,7 @@
 				C2D6CA261E5BE12700EEF76B /* MASConstraintMaker.m in Sources */,
 				C21DDEF61E6FF053000BCD9C /* ZZUISwitch.m in Sources */,
 				C2D6CA271E5BE12700EEF76B /* MASLayoutConstraint.m in Sources */,
+				C2AC94D42266FBA70094366C /* ZZZZFLEXAngel.m in Sources */,
 				C2D738C61E74F8ED00344E5F /* ZZPropertyXYWHCell.m in Sources */,
 				C2D738BC1E74F8ED00344E5F /* ZZPropertyBoolCell.m in Sources */,
 				C2AEFB3F1E75AA3B00972320 /* ZZUIActivityIndicatorView.m in Sources */,

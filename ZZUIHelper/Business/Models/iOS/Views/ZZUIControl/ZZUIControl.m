@@ -58,14 +58,8 @@
             
         }
         ZZProperty *enabled = [[ZZProperty alloc] initWithPropertyName:@"enabled" type:ZZPropertyTypeBOOL defaultValue:@(YES)];
-        ZZProperty *verticalAlignment = [[ZZProperty alloc] initWithPropertyName:@"verticalAlignment" selectionData:[ZZUIHelperConfig sharedInstance].controlContentVerticalAlignment andDefaultSelectIndex:0];
-        [verticalAlignment setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setContentVerticalAlignment:%@", value];
-        }];
-        ZZProperty *horizontalAlignment = [[ZZProperty alloc] initWithPropertyName:@"HorizontalAlignment" selectionData:[ZZUIHelperConfig sharedInstance].controlContentHorizontalAlignment andDefaultSelectIndex:0];
-        [horizontalAlignment setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setContentHorizontalAlignment:%@", value];
-        }];
+        ZZProperty *verticalAlignment = [[ZZProperty alloc] initWithPropertyName:@"contentVerticalAlignment" selectionData:[ZZUIHelperConfig sharedInstance].controlContentVerticalAlignment andDefaultSelectIndex:0];
+        ZZProperty *horizontalAlignment = [[ZZProperty alloc] initWithPropertyName:@"contentHorizontalAlignment" selectionData:[ZZUIHelperConfig sharedInstance].controlContentHorizontalAlignment andDefaultSelectIndex:0];
         ZZPropertyGroup *group = [[ZZPropertyGroup alloc] initWithGroupName:@"UIControl" properties:@[enabled, verticalAlignment, horizontalAlignment] privateProperties:privateProperties];
         [_properties addObject:group];
     }

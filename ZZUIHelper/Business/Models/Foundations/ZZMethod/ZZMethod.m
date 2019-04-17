@@ -240,7 +240,7 @@
                 [data addObject:subCode];
             }
         }
-        else if (left.length > right.length){   // }
+        else if (left.length > right.length){   // } or })
             [code deleteCharactersInRange:NSMakeRange(0, right.length + 1)];
             NSArray *lineArray = [right componentsSeparatedByString:@"\n"];
             for (NSString *line in lineArray) {
@@ -274,7 +274,6 @@
     }
     else {
         [code appendFormat:@"\n%@{\n", [self tabSpace:space - 1]];
-        
     }
     for (int i = 0; i < array.count; i++) {
         id item = array[i];
@@ -288,6 +287,9 @@
             NSString *subString = [self p_methodContentByArray:item space:space + 1];
             [code appendString:subString];
             if (i < array.count - 1 && [array[i + 1] isKindOfClass:[NSString class]] && [array[i + 1] hasPrefix:@"]"]) {        // )];
+                [code appendFormat:@"%@\n", array[++i]];
+            }
+            if (i < array.count - 1 && [array[i + 1] isKindOfClass:[NSString class]] && [array[i + 1] hasPrefix:@")"]) {        // });
                 [code appendFormat:@"%@\n", array[++i]];
             }
             else {

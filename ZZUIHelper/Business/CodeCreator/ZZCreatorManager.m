@@ -9,6 +9,7 @@
 #import "ZZCreatorManager.h"
 #import "ZZLazyLoadCreator.h"
 #import "ZZSetupCreator.h"
+#import "ZZFLEXCreator.h"
 
 @implementation ZZCreatorManager
 
@@ -56,7 +57,12 @@
         ZZCreatorModel *setupModel = [[ZZCreatorModel alloc] initWithName:@"Setup Creator" andCreator:setupCreator];
         [setupModel setDes:@"通过在setup方法中初始化UI"];
         
-        _creatorList = @[lazyLoadModel, setupModel];
+        // ZZFLEX
+        ZZFLEXCreator *zzflexCreator = [[ZZFLEXCreator alloc] init];
+        ZZCreatorModel *zzflexModel = [[ZZCreatorModel alloc] initWithName:@"ZZFLEX Creator" andCreator:zzflexCreator];
+        [zzflexModel setDes:@"一个UI敏捷开发框架，用起来爽的飞起"];
+        
+        _creatorList = @[lazyLoadModel, zzflexModel, setupModel];
     }
     return _creatorList;
 }

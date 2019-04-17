@@ -12,6 +12,7 @@
 @implementation ZZUITextField
 @synthesize properties = _properties;
 @synthesize delegates = _delegates;
+@synthesize events = _events;
 
 - (NSArray *)delegates
 {
@@ -32,14 +33,8 @@
         ZZProperty *placeholder = [[ZZProperty alloc] initWithPropertyName:@"placeholder" type:ZZPropertyTypeString defaultValue:@""];
         
         // 字体格式
-        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" selectionData:[ZZUIHelperConfig sharedInstance].fonts defaultValue:nil editable:YES];
-        [font setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setFont:[UIFont %@]", value];
-        }];
-        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" selectionData:[ZZUIHelperConfig sharedInstance].colors defaultValue:@"blackColor" editable:YES];
-        [textColor setPropertyCodeByValue:^NSString *(id value) {
-            return [NSString stringWithFormat:@"setTextColor:[UIColor %@]", value];
-        }];
+        ZZProperty *font = [[ZZProperty alloc] initWithPropertyName:@"font" type:ZZPropertyTypeFont defaultValue:nil];
+        ZZProperty *textColor = [[ZZProperty alloc] initWithPropertyName:@"textColor" type:ZZPropertyTypeColor defaultValue:@"blackColor"];
         ZZProperty *textAlignment = [[ZZProperty alloc] initWithPropertyName:@"textAlignment" selectionData:[ZZUIHelperConfig sharedInstance].textAlignment andDefaultSelectIndex:0];
         
         ZZProperty *borderStyle = [[ZZProperty alloc] initWithPropertyName:@"borderStyle" selectionData:[ZZUIHelperConfig sharedInstance].borderStyle andDefaultSelectIndex:0];
@@ -63,5 +58,18 @@
     }
     return _properties;
 }
+
+- (NSArray *)events
+{
+    if (!_events) {
+        ZZEvent *begin = [[ZZEvent alloc] initWithEventType:@"UIControlEventEditingDidBegin" selected:NO];
+        ZZEvent *changed = [[ZZEvent alloc] initWithEventType:@"UIControlEventEditingChanged" selected:NO];
+        ZZEvent *end = [[ZZEvent alloc] initWithEventType:@"UIControlEventEditingDidEnd" selected:NO];
+        ZZEvent *exit = [[ZZEvent alloc] initWithEventType:@"UIControlEventEditingDidOnExit" selected:NO];
+        _events = @[begin, changed, end, exit];
+    }
+    return _events;
+}
+
 
 @end
